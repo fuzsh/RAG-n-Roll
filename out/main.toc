@@ -66,62 +66,62 @@
 \contentsline {section}{\numberline {5.2}Document Selection}{46}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Unsupervised Methods}{46}{subsection.5.2.1}%
 \contentsline {subsubsection}{BM25}{46}{subsection.5.2.1}%
-\contentsline {subsubsection}{Contriever}{46}{algorithm.3}%
-\contentsline {subsection}{\numberline {5.2.2}Supervised Methods}{48}{subsection.5.2.2}%
-\contentsline {subsubsection}{Jina.ai Reranker}{48}{subsection.5.2.2}%
+\contentsline {subsubsection}{Contriever}{47}{algorithm.3}%
+\contentsline {subsection}{\numberline {5.2.2}Supervised Methods}{49}{subsection.5.2.2}%
+\contentsline {subsubsection}{Jina.ai Reranker}{49}{subsection.5.2.2}%
 \contentsline {subsubsection}{MS MARCO MiniLM}{49}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Evaluation with Large Language Models}{49}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.3}Evaluation with Large Language Models}{50}{subsection.5.2.3}%
 \contentsline {section}{\numberline {5.3}Embedding Models}{51}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Alibaba-NLP/gte-large-en-v1.5}{51}{subsection.5.3.1}%
-\contentsline {subsubsection}{Model Overview}{51}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.1}Alibaba-NLP/gte-large-en-v1.5}{52}{subsection.5.3.1}%
+\contentsline {subsubsection}{Model Overview}{52}{subsection.5.3.1}%
 \contentsline {subsubsection}{Training Methodology}{52}{subsection.5.3.1}%
-\contentsline {subsubsection}{Evaluation}{52}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}jinaai/jina-embeddings-v3}{52}{subsection.5.3.2}%
-\contentsline {subsubsection}{Model Overview}{52}{subsection.5.3.2}%
+\contentsline {subsubsection}{Evaluation}{53}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}jinaai/jina-embeddings-v3}{53}{subsection.5.3.2}%
+\contentsline {subsubsection}{Model Overview}{53}{subsection.5.3.2}%
 \contentsline {subsubsection}{Training Methodology}{53}{subsection.5.3.2}%
-\contentsline {subsubsection}{Evaluation}{53}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}dunzhang/stella\_en\_1.5B\_v5}{53}{subsection.5.3.3}%
-\contentsline {subsubsection}{Model Overview}{53}{subsection.5.3.3}%
-\contentsline {subsubsection}{Training Methodology}{53}{subsection.5.3.3}%
+\contentsline {subsubsection}{Evaluation}{54}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}dunzhang/stella\_en\_1.5B\_v5}{54}{subsection.5.3.3}%
+\contentsline {subsubsection}{Model Overview}{54}{subsection.5.3.3}%
+\contentsline {subsubsection}{Training Methodology}{54}{subsection.5.3.3}%
 \contentsline {subsubsection}{Evaluation}{54}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Nextcloud-AI/multilingual-e5-large-instruct}{54}{subsection.5.3.4}%
-\contentsline {subsubsection}{Model Overview}{54}{subsection.5.3.4}%
-\contentsline {subsubsection}{Training Methodology}{54}{subsection.5.3.4}%
-\contentsline {subsubsection}{Evaluation}{54}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.4}Nextcloud-AI/multilingual-e5-large-instruct}{55}{subsection.5.3.4}%
+\contentsline {subsubsection}{Model Overview}{55}{subsection.5.3.4}%
+\contentsline {subsubsection}{Training Methodology}{55}{subsection.5.3.4}%
+\contentsline {subsubsection}{Evaluation}{55}{subsection.5.3.4}%
 \contentsline {subsection}{\numberline {5.3.5}BAAI/bge-small-en-v1.5}{55}{subsection.5.3.5}%
 \contentsline {subsubsection}{Model Overview}{55}{subsection.5.3.5}%
-\contentsline {subsubsection}{Training Methodology}{55}{subsection.5.3.5}%
-\contentsline {subsubsection}{Evaluation}{55}{subsection.5.3.5}%
+\contentsline {subsubsection}{Training Methodology}{56}{subsection.5.3.5}%
+\contentsline {subsubsection}{Evaluation}{56}{subsection.5.3.5}%
 \contentsline {subsection}{\numberline {5.3.6}Comparative Analysis}{56}{subsection.5.3.6}%
 \contentsline {subsubsection}{Model Size and Efficiency}{56}{subsection.5.3.6}%
-\contentsline {subsubsection}{Language Coverage}{56}{table.caption.39}%
-\contentsline {subsubsection}{Supported Features}{56}{table.caption.39}%
+\contentsline {subsubsection}{Language Coverage}{57}{table.caption.39}%
+\contentsline {subsubsection}{Supported Features}{57}{table.caption.39}%
 \contentsline {subsubsection}{Empirical Performance}{57}{table.caption.39}%
-\contentsline {subsubsection}{Conclusion}{57}{table.caption.39}%
-\contentsline {section}{\numberline {5.4}Chunking Strategies}{58}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Parsing Documents into Text Chunks (Nodes)}{58}{subsection.5.4.1}%
-\contentsline {subsubsection}{Methodology}{58}{subsection.5.4.1}%
+\contentsline {subsubsection}{Conclusion}{58}{table.caption.39}%
+\contentsline {section}{\numberline {5.4}Chunking Strategies}{59}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Parsing Documents into Text Chunks (Nodes)}{59}{subsection.5.4.1}%
+\contentsline {subsubsection}{Methodology}{59}{subsection.5.4.1}%
 \contentsline {subsubsection}{Chunk Sizes}{59}{subsection.5.4.1}%
-\contentsline {subsubsection}{Advantages and Limitations}{59}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}{59}{subsection.5.4.2}%
+\contentsline {subsubsection}{Advantages and Limitations}{60}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}{60}{subsection.5.4.2}%
 \contentsline {subsubsection}{Methodology}{60}{subsection.5.4.2}%
 \contentsline {subsubsection}{Advantages and Limitations}{60}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Sentence Window Retrieval}{60}{subsection.5.4.3}%
-\contentsline {subsubsection}{Methodology}{60}{subsection.5.4.3}%
-\contentsline {subsubsection}{Window Sizes}{60}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.3}Sentence Window Retrieval}{61}{subsection.5.4.3}%
+\contentsline {subsubsection}{Methodology}{61}{subsection.5.4.3}%
+\contentsline {subsubsection}{Window Sizes}{61}{subsection.5.4.3}%
 \contentsline {subsubsection}{Advantages and Limitations}{61}{subsection.5.4.3}%
 \contentsline {subsection}{\numberline {5.4.4}Evaluation}{61}{subsection.5.4.4}%
 \contentsline {section}{\numberline {5.5}Similarity Cut-off}{62}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Evaluation}{62}{section.5.6}%
 \contentsline {section}{\numberline {5.7}Failure Analysis}{62}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Works}{63}{chapter.6}%
-\contentsline {chapter}{Appendices}{65}{section*.42}%
-\contentsline {chapter}{\numberline {A}Prompt Templates}{65}{appendix.1.A}%
-\contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{65}{section.1.A.1}%
-\contentsline {section}{\numberline {A.2}Question Generation Prompt}{66}{section.1.A.2}%
-\contentsline {chapter}{\numberline {B}Chunking Strategies}{69}{appendix.1.B}%
-\contentsline {section}{\numberline {B.1}Text Splitter - Chuck Size 512}{69}{section.1.B.1}%
-\contentsline {section}{\numberline {B.2}Small2Big}{69}{section.1.B.2}%
-\contentsline {section}{\numberline {B.3}Sliding Window - Window Size 3}{69}{section.1.B.3}%
-\contentsline {chapter}{References}{71}{section*.44}%
-\contentsline {chapter}{Acknowledgments}{73}{section*.46}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Works}{65}{chapter.6}%
+\contentsline {chapter}{Appendices}{67}{section*.42}%
+\contentsline {chapter}{\numberline {A}Prompt Templates}{67}{appendix.1.A}%
+\contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{67}{section.1.A.1}%
+\contentsline {section}{\numberline {A.2}Question Generation Prompt}{68}{section.1.A.2}%
+\contentsline {chapter}{\numberline {B}Chunking Strategies}{71}{appendix.1.B}%
+\contentsline {section}{\numberline {B.1}Text Splitter - Chuck Size 512}{71}{section.1.B.1}%
+\contentsline {section}{\numberline {B.2}Small2Big}{71}{section.1.B.2}%
+\contentsline {section}{\numberline {B.3}Sliding Window - Window Size 3}{71}{section.1.B.3}%
+\contentsline {chapter}{References}{73}{section*.44}%
+\contentsline {chapter}{Acknowledgments}{75}{section*.46}%

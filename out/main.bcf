@@ -2385,10 +2385,11 @@
     <bcf:citekey order="27" intorder="1">günther2024jinaembeddings28192token</bcf:citekey>
     <bcf:citekey order="28" intorder="1">liu2023tweet</bcf:citekey>
     <bcf:citekey order="29" intorder="1">liu2023tweet</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">izacard2022unsuperviseddenseinformationretrieval</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">mkqa</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">thakur2021beirheterogenousbenchmarkzeroshot</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">reimers-2019-sentence-bert</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">bm25</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">izacard2022unsuperviseddenseinformationretrieval</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">mkqa</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">thakur2021beirheterogenousbenchmarkzeroshot</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">reimers-2019-sentence-bert</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

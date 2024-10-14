@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  14 OCT 2024 15:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  14 OCT 2024 17:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2201,102 +2201,106 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [44]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 6.6pt on input line 51.
- [45] [46]
-Overfull \hbox (1.48035pt too wide) in paragraph at lines 142--143
+ [45]
+
+LaTeX Warning: Citation 'bm25' on page 46 undefined on input line 96.
+
+
+Underfull \vbox (badness 6526) has occurred while \output is active []
+
+ [46]
+[47]
+Overfull \hbox (1.48035pt too wide) in paragraph at lines 156--157
 \T1/zpltlf/m/n/12 Con-triever's per-for-mance on var-i-ous re-trieval bench-mar
 ks, es-pe-cially those
  []
 
-[47] [48]
+[48] [49]
 
-LaTeX Warning: Reference `fig:document_retrieval_confusion_matrix' on page 49 u
-ndefined on input line 190.
+LaTeX Warning: Reference `fig:document_retrieval_confusion_matrix' on page 50 u
+ndefined on input line 204.
 
-<res/ret_result_sim_1.png, id=1110, 722.7pt x 578.16pt>
+<res/ret_result_sim_1.png, id=1116, 722.7pt x 578.16pt>
 File: res/ret_result_sim_1.png Graphic file (type png)
 <use res/ret_result_sim_1.png>
-Package pdftex.def Info: res/ret_result_sim_1.png  used on input line 200.
+Package pdftex.def Info: res/ret_result_sim_1.png  used on input line 214.
 (pdftex.def)             Requested size: 188.21288pt x 150.56506pt.
 
-Underfull \hbox (badness 1320) in paragraph at lines 201--201
+Underfull \hbox (badness 1320) in paragraph at lines 215--215
 []\T1/zpltlf/m/n/12 Figure 5.1: |Doc-u-ment Re-trieval
  []
 
-<res/ret_result_sim_2.png, id=1111, 722.7pt x 578.16pt>
+<res/ret_result_sim_2.png, id=1117, 722.7pt x 578.16pt>
 File: res/ret_result_sim_2.png Graphic file (type png)
 <use res/ret_result_sim_2.png>
-Package pdftex.def Info: res/ret_result_sim_2.png  used on input line 207.
+Package pdftex.def Info: res/ret_result_sim_2.png  used on input line 221.
 (pdftex.def)             Requested size: 188.21288pt x 150.56506pt.
-[49]
-Overfull \hbox (10.34647pt too wide) in paragraph at lines 236--238
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (10.34647pt too wide) in paragraph at lines 250--252
 []\T1/zpltlf/m/n/12 The em-pir-i-cal re-sults in-di-cate that the model \T1/zpl
 tlf/m/it/12 ms-marco-MiniLM-L-6-v2 \T1/zpltlf/m/n/12 achieved
  []
 
-[50 <./res/ret_result_sim_1.png> <./res/ret_result_sim_2.png>]
-Overfull \hbox (3.70161pt too wide) in paragraph at lines 260--263
+[50] [51 <./res/ret_result_sim_1.png> <./res/ret_result_sim_2.png>]
+Overfull \hbox (3.70161pt too wide) in paragraph at lines 274--277
 \T1/zpltlf/m/n/12 con-trastive learn-ing, and in-struc-tion fine-tuning to pro-
 duce high-quality, general-
  []
 
-[51] [52] [53]
-Overfull \hbox (11.9185pt too wide) in paragraph at lines 330--331
+[52] [53]
+Underfull \vbox (badness 1776) has occurred while \output is active []
+
+ [54]
+Overfull \hbox (11.9185pt too wide) in paragraph at lines 344--345
 []\T1/zpltlf/m/n/12 multilingual-e5-large-instruct demon-strates strong per-for
 -mance on both mono-
  []
 
+[55] [56]
 
-Underfull \vbox (badness 1776) has occurred while \output is active []
-
- [54]
-Underfull \vbox (badness 5374) has occurred while \output is active []
-
- [55]
-
-./chapters/05_ablation.tex:383: LaTeX Error: Unicode character ≥ (U+2265)
+./chapters/05_ablation.tex:397: LaTeX Error: Unicode character ≥ (U+2265)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.383 All models handle long input sequences (≥
+l.397 All models handle long input sequences (≥
                                                  2048 tokens), which is impo...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[56]
-Overfull \hbox (1.7897pt too wide) in paragraph at lines 395--400
+[57]
+Overfull \hbox (1.7897pt too wide) in paragraph at lines 409--414
 \T1/zpltlf/m/n/12 mul-ti-lin-gual use cases. Mod-els with flex-i-ble em-bed-din
 g sizes (stella_en_1.5B_v5,
  []
 
 
-Overfull \hbox (2.7776pt too wide) in paragraph at lines 395--400
+Overfull \hbox (2.7776pt too wide) in paragraph at lines 409--414
 \T1/zpltlf/m/n/12 cated task adapters (jina-embeddings-v3) of-fer con-ve-nient 
 mech-a-nisms for adapt-
  []
 
-[57]
-Underfull \vbox (badness 1603) has occurred while \output is active []
-
- [58]
-[59] [60] [61]) [62]
+[58] [59] [60] [61]) [62] [63]
 \openout2 = `chapters/98_conclusions.aux'.
 
- (./chapters/98_conclusions.tex
-Chapter 6.
-) [63
+ (./chapters/98_conclusions.tex [64
 
 
 
 
 
 ]
+Chapter 6.
+) [65]
 \openout2 = `chapters/99_appendix.aux'.
 
- (./chapters/99_appendix.tex [64
+ (./chapters/99_appendix.tex [66
 
 
 
@@ -2306,10 +2310,10 @@ Chapter 6.
 Appendix A.
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 (Font)              scaled to size 10.95pt on input line 5.
-[65
+[67
 
 
-] [66] [67] [68
+] [68] [69] [70
 
 
 ]
@@ -2317,21 +2321,21 @@ Appendix B.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [69] [70]
+) [71] [72]
 Overfull \hbox (27.48851pt too wide) in paragraph at lines 55--55
 \T1/zpltlf/m/n/12 2023. \T1/zpltlf/m/sc/12 url\T1/zpltlf/m/n/12 : [][]$\T1/npxt
 t/m/n/12 https : / / twitter . com / jerryjliu0 / status / 1708147687084986504$
 [][]\T1/zpltlf/m/n/12 . 
  []
 
-[71
+[73
 
 
 
 
 
 
-] [72] (./frontmatter/thanks.tex) [73
+] [74] (./frontmatter/thanks.tex) [75
 
 
 
@@ -2353,17 +2357,25 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A798BFA43CC6D15BEEB900800A2FF6C5;7077.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48672 strings out of 474116
- 885359 string characters out of 5743682
+ 48676 strings out of 474116
+ 885429 string characters out of 5743682
  2151187 words of memory out of 5000000
- 69860 multiletter control sequences out of 15000+600000
+ 69862 multiletter control sequences out of 15000+600000
  658026 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,17n,131p,1654b,4010s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2421,11 +2433,11 @@ onts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/
 newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zpl
 ri.pfb>
-Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (93 pa
-ges, 8841527 bytes).
+Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (95 pa
+ges, 8843480 bytes).
 PDF statistics:
- 1419 PDF objects out of 1440 (max. 8388607)
- 1254 compressed objects within 13 object streams
- 348 named destinations out of 1000 (max. 500000)
+ 1428 PDF objects out of 1440 (max. 8388607)
+ 1261 compressed objects within 13 object streams
+ 350 named destinations out of 1000 (max. 500000)
  799 words of extra memory for PDF output out of 10000 (max. 10000000)
 

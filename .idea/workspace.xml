@@ -4,27 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="feat(pipeline):  Add the sections related to LLMs &amp; Voting Systems &amp; ..">
-      <change afterPath="$PROJECT_DIR$/out/05_ablation.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="feat(Ablation): Add the section for BM25.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/03_pipeline.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/03_pipeline.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/04_analysis.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/04_analysis.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/05_ablation.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/05_ablation.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/99_appendix.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/99_appendix.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.blg" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.blg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.bcf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.bcf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.loa" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.loa" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.lof" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lof" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.lot" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.out" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.run.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.toc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/pdfa.xmpi" beforeDir="false" afterPath="$PROJECT_DIR$/out/pdfa.xmpi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapters/03_pipeline.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/03_pipeline.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chapters/05_ablation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/05_ablation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/references.bib" beforeDir="false" afterPath="$PROJECT_DIR$/src/references.bib" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +310,17 @@
       <workItem from="1728301220930" duration="2417000" />
       <workItem from="1728308241623" duration="32000" />
       <workItem from="1728308298918" duration="73730000" />
+      <workItem from="1728912467475" duration="2081000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(pipeline): Add the sections related to LLMs &amp; Voting Systems &amp; ..">
+      <option name="closed" value="true" />
+      <created>1728912495248</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728912495248</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +328,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(pipeline):  Add the sections related to LLMs &amp; Voting Systems &amp; .." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(pipeline):  Add the sections related to LLMs &amp; Voting Systems &amp; .." />
+    <MESSAGE value="feat(pipeline): Add the sections related to LLMs &amp; Voting Systems &amp; .." />
+    <MESSAGE value="feat(Ablation): Add the section for BM25." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Ablation): Add the section for BM25." />
   </component>
 </project>

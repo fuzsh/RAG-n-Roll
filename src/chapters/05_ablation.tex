@@ -93,39 +93,54 @@ We consider both unsupervised and supervised approaches.
 \subsection{Unsupervised Methods}\label{subsec:unsupervised-methods}
 
 \subsubsection{BM25}
-BM25 is a widely used unsupervised retrieval method that relies on term frequency and inverse document frequency (TF-IDF) weighting.
+BM25~\cite{bm25} is a widely used unsupervised retrieval method that relies on term frequency and inverse document frequency (TF-IDF) weighting.
 It estimates the relevance of documents to a query based on the frequency of query terms in each document, offset by the rarity of those terms across the full document collection.
 BM25 has proven to be a robust baseline for many retrieval tasks.
 However, it relies on lexical matching between query and document terms, which can limit its effectiveness for queries and documents that use different vocabulary to express similar concepts.
 
-\begin{algorithm}
-    \caption{BM25-based Sentence Retrieval}
-    \begin{algorithmic}[1]
-        \Procedure{Preprocess}{sentence}
-            \State Convert sentence to lowercase
-            \State Remove punctuation
-            \State Tokenize sentence into words
-            \State Remove stopwords
-            \State \Return preprocessed tokens
-        \EndProcedure
-
-        \Procedure{FetchSimilarSentences}{sentences, top\_n}
-            \For{each sentence in sentences}
-                \State preprocessed $\gets$ Preprocess(sentence)
-                \State Add preprocessed to tokenized\_sentences
-            \EndFor
-
-            \State bm25 $\gets$ CreateBM25Object(tokenized\_sentences)
-            \State query $\gets$ tokenized\_sentences[0]
-
-            \State scores $\gets$ bm25.GetScores(query)
-            \State Sort scored\_sentences by score in descending order
-
-            \State result $\gets$ Top top\_n sentences from result
-
-        \EndProcedure
-    \end{algorithmic}
-\end{algorithm}
+\begin{align*}
+    \text{BM25}(D,Q) &= \sum_{i=1}^n \text{IDF}(q_i) \cdot \frac{f(q_i, D) \cdot (k_1 + 1)}{f(q_i, D) + k_1 \cdot (1 - b + b \cdot \frac{|D|}{\text{avgdl}})} \\[2ex]
+    \text{where:} \\
+    D &: \text{document} \\
+    Q &: \text{query containing keywords } q_1, ..., q_n \\
+    f(q_i, D) &: \text{frequency of } q_i \text{ in } D \\
+    |D| &: \text{length of document } D \\
+    \text{avgdl} &: \text{average document length in the corpus} \\
+    k_1, b &: \text{free parameters} \\[2ex]
+    \text{IDF}(q_i) &= \log \frac{N - n(q_i) + 0.5}{n(q_i) + 0.5} \\[2ex]
+    \text{where:} \\
+    N &: \text{total number of documents in the corpus} \\
+    n(q_i) &: \text{number of documents containing } q_i
+\end{align*}
+%
+%\begin{algorithm}
+%    \caption{BM25-based Sentence Retrieval}
+%    \begin{algorithmic}[1]
+%        \Procedure{Preprocess}{sentence}
+%            \State Convert sentence to lowercase
+%            \State Remove punctuation
+%            \State Tokenize sentence into words
+%            \State Remove stopwords
+%            \State \Return preprocessed tokens
+%        \EndProcedure
+%
+%        \Procedure{FetchSimilarSentences}{sentences, top\_n}
+%            \For{each sentence in sentences}
+%                \State preprocessed $\gets$ Preprocess(sentence)
+%                \State Add preprocessed to tokenized\_sentences
+%            \EndFor
+%
+%            \State bm25 $\gets$ CreateBM25Object(tokenized\_sentences)
+%            \State query $\gets$ tokenized\_sentences[0]
+%
+%            \State scores $\gets$ bm25.GetScores(query)
+%            \State Sort scored\_sentences by score in descending order
+%
+%            \State result $\gets$ Top top\_n sentences from result
+%
+%        \EndProcedure
+%    \end{algorithmic}
+%\end{algorithm}
 
 \subsubsection{Contriever}
 Contriever is a more recently proposed unsupervised method by Izacard et al.\cite{izacard2022unsuperviseddenseinformationretrieval} that leverages contrastive learning to train dense retrieval models.
@@ -154,7 +169,7 @@ This approach addresses limitations of vector similarity-based methods by captur
 
 For our project, we use \textit{jina-reranker-v2-base-multilingual}\footnote{\url{https://huggingface.co/jinaai/jina-reranker-v2-base-multilingual}}.
 This model has demonstrated exceptional performance across various benchmarks and practical applications.
-In multilingual tasks, it achieved state-of-the-art recall@10 scores on the MKQA dataset \cite{mkqa} spanning 26 languages, while also exhibiting superior NDCG@10 scores on English-language tasks in the BEIR benchmark \cite{thakur2021beirheterogenousbenchmarkzeroshot}.
+In multilingual tasks, it achieved state-of-the-art recall@10 scores on the MKQA dataset~\cite{mkqa} spanning 26 languages, while also exhibiting superior NDCG@10 scores on English-language tasks in the BEIR benchmark \cite{thakur2021beirheterogenousbenchmarkzeroshot}.
 Notably, it secured the top position on the AirBench leaderboard upon its release \footnote{\url{https://huggingface.co/spaces/AIR-Bench/leaderboard}}.
 
 These capabilities make the model particularly valuable for multilingual information retrieval, agentic Retrieval-Augmented Generation (RAG) systems, and even in programming and software development support.
