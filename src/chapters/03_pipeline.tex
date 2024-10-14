@@ -108,7 +108,7 @@ This multi-question approach serves several purposes:
 \end{itemize}
 
 Implementation of this technique likely involves:
-Using \ac{LLms} to generate 10 questions about the input sentence, leveraging the models' language understanding capabilities to ensure the questions are relevant and contextually appropriate.
+Using \ac{LLMs} to generate 10 questions about the input sentence, leveraging the models' language understanding capabilities to ensure the questions are relevant and contextually appropriate.
 The prompt template used to guide the question generation process reported in Appendix~\ref{sec:prompt-templates:10-question}.
 
 \subsection{Cross-Encoder for Query Relevance Scoring}\label{subsec:cross-encoder-for-query-relevance-scoring}
@@ -424,6 +424,11 @@ Based on the pipeline diagram, the LLMs serve several crucial functions:
     \item \textbf{Reasoning and Inference:} Drawing logical conclusions and making inferences based on the available information, potentially finding the correctness of the knowledge graph.
 \end{itemize}
 
+
+\section{Voting System and Conflict Resolution}\label{sec:model-diversity-and-conflict-resolution}
+Our state-of-the-art pipeline for natural language processing relies heavily on the integration of many models and the deployment of procedures to resolve conflicts.
+To ensure robust and trustworthy outcomes, this section covers the ways adopted to resolve disputes and harness model diversity.
+
 \subsection{Majority Voting System}\label{subsec:majority-voting-system}
 A significant aspect of the LLM integration, is the establishment of a majority voting mechanism for response creation.
 
@@ -441,136 +446,46 @@ Implementation challenges:
     \item \textbf{Threshold Setting:} Establishing the criteria for what constitutes a "majority" and how to handle cases with no clear consensus.
     \item \textbf{Combining Diverse Outputs:} Developing methods to meaningfully aggregate potentially disparate outputs from different models into a coherent final response.
 \end{itemize}
-
-
-% TODO: FUTURE WORK MAYBE
-%\subsection{Integration with Other Pipeline Components}\label{subsec:integration-with-other-pipeline-components}
-%
-%The LLMs interact closely with other components of the pipeline:
-%
-%Input from Embedding and Retrieval: The LLMs receive contextualized, relevant information chunks from the embedding and retrieval stages, ensuring they have access to the most pertinent data for response generation.
-%Feedback to Information Retrieval: The LLMs may potentially provide feedback to refine or guide further information retrieval based on initial processing results.
-%Interface with Final Judge: As indicated in the diagram, the output from the LLM majority voting system feeds into a "final judge" component, suggesting an additional layer of quality control or decision-making.
-%
-%3.6.5 Challenges and Considerations
-%
-%Several challenges and ethical considerations are associated with the use of LLMs in the pipeline:
-%
-%Bias Mitigation: Addressing and mitigating potential biases inherent in the training data of LLMs.
-%Explainability: Developing methods to provide transparency and explanations for the reasoning behind generated responses, especially crucial in a multi-model voting system.
-%Consistency: Ensuring consistency in responses across multiple queries and different combinations of activated LLMs.
-%Computational Resources: Managing the significant computational requirements of running multiple LLMs concurrently.
-%Privacy and Data Handling: Ensuring that sensitive information is handled appropriately and that the LLMs do not inadvertently reveal private data.
-%Ethical Use: Implementing safeguards to prevent the generation of harmful, false, or misleading content.
-%
-%3.6.6 Future Directions
-%
-%The integration of LLMs in the pipeline opens up several avenues for future enhancements:
-%
-%Dynamic Model Selection: Implementing systems that can dynamically select the most appropriate combination of LLMs based on the specific query and context.
-%Continuous Learning: Exploring methods for ongoing fine-tuning or adaptation of the LLMs based on user interactions and feedback, while maintaining ethical boundaries.
-%Multi-modal Integration: Expanding the capabilities of the pipeline to incorporate LLMs that can process and generate multi-modal content (text, images, audio).
-%Enhanced Reasoning Capabilities: Developing techniques to improve the logical reasoning and inference capabilities of the LLMs, potentially through integration with symbolic AI approaches.
-%
-%In conclusion, the incorporation of multiple Large Language Models into the pipeline represents a sophisticated approach to natural language processing and question answering. By leveraging the strengths of diverse models and implementing a majority voting system, the pipeline aims to generate more accurate, nuanced, and reliable responses. This approach, while powerful, also necessitates careful consideration of ethical implications and ongoing efforts to address challenges related to bias, consistency, and explainability. The central role of LLMs in this pipeline underscores their transformative potential in advancing the field of artificial intelligence and natural language understanding.
-%
-
-\section{Model Diversity and Conflict Resolution}\label{sec:model-diversity-and-conflict-resolution}
-Our state-of-the-art pipeline for natural language processing relies heavily on the integration of many models and the deployment of procedures to resolve conflicts.
-To ensure robust and trustworthy outcomes, this section covers the ways adopted to resolve disputes and harness model diversity.
-
-\subsection{Model Diversity}\label{subsec:model-diversity}
-As illustrated in the pipeline diagram, the system incorporates a variety of models, including both paid models and large parameter models.
-
-This diversity serves several critical functions:
-Complementary Strengths: Different model architectures and training paradigms often excel in distinct areas, allowing the system to leverage specialized capabilities for various tasks.
-Bias Mitigation: By incorporating diverse models, the system can potentially offset individual model biases, leading to more balanced outputs.
-Robustness: Model diversity enhances the system's ability to handle a wide range of queries and scenarios, improving overall performance and reliability.
-Innovation Integration: The inclusion of different model types allows for the rapid integration of state-of-the-art innovations in the field of NLP.
-
-Key aspects of model diversity in the pipeline:
-a) Paid Models:
-
-Potentially include proprietary or subscription-based models with specific optimizations or capabilities.
-May offer enhanced performance in certain domains or tasks.
-Could provide additional layers of quality assurance or specialized features.
-
-b) Large Parameter Models:
-
-Likely refer to models with billions of parameters, such as GPT-3, PaLM, or similar architectures.
-Offer broad knowledge coverage and sophisticated language understanding capabilities.
-Excel in tasks requiring generalization and handling of diverse contexts.
-
-Implementation considerations:
-
-Model Selection Criteria: Developing a framework for selecting and integrating models based on their complementary strengths and overall contribution to system performance.
-Resource Management: Balancing the computational demands of running multiple, potentially resource-intensive models.
-Versioning and Updates: Establishing protocols for managing model versions and incorporating updates or new models into the existing ecosystem.
-
-3.7.2 Conflict Resolution Strategies
 The pipeline incorporates several mechanisms for resolving conflicts that may arise from divergent model outputs:
 
-Majority Voting System:
-As previously discussed, the system employs a majority voting approach among LLMs to determine the most appropriate response. This serves as a primary conflict resolution mechanism, leveraging the wisdom of the collective to mitigate individual model errors or biases.
-Final Judge Implementation:
-A crucial component in the conflict resolution process is the "final judge" module, as indicated in the pipeline diagram. This element plays a pivotal role in resolving conflicts and ensuring coherence in the system's outputs.
+\subsection{Conflict Resolution Strategies}\label{subsec:conflict-resolution-strategies}
+As previously discussed~\ref{subsec:majority-voting-system}, the system employs a majority voting approach among LLMs to determine the most appropriate response.
+This serves as a primary conflict resolution mechanism, leveraging the wisdom of the collective to mitigate individual model errors or biases.
+\subsubsection{Final Judge Implementation:}
+A crucial component in the conflict resolution process is the "final judge" module, as indicated in the pipeline diagram.
+This element plays a pivotal role in resolving conflicts and ensuring coherence in the system's outputs.
 
 Key aspects of the final judge implementation:
-a) Conflict Identification:
+\begin{itemize}
+    \item \textbf{Conflict Identification:} Detecting discrepancies or contradictions in outputs from different models.
+    \item \textbf{Resolution Mechanisms:} Using predefined rules or algorithms to determine the final output based on the majority voting results.
+    \item \textbf{Tie-Breaking:}Implementing strategies for scenarios where the majority voting system results in a tie or lacks a clear consensus.
+    \item \textbf{Consistency Enforcement:} Ensuring that the final output maintains logical consistency and aligns with established knowledge bases.
+\end{itemize}
 
-Detecting discrepancies or contradictions in outputs from different models.
-Assessing the degree of disagreement and determining when intervention is necessary.
+The final judge module used a system named \textit{Adaptive Conflict Resolution}, which is an adaptive approach to conflict resolution based on the specified settings.
 
-b) Resolution Mechanisms:
-
-Employing heuristics or learned strategies to reconcile conflicting information.
-Potentially utilizing confidence scores or uncertainty estimates from individual models to inform decision-making.
-
-c) Tie-Breaking:
-
-Implementing strategies for scenarios where the majority voting system results in a tie or lacks a clear consensus.
-
-d) Consistency Enforcement:
-
-Ensuring that the final output maintains logical consistency and aligns with established knowledge bases.
-
-e) Explanation Generation:
-
-Potentially providing rationales for conflict resolution decisions, enhancing the explainability of the system.
-
-3.7.3 Adaptive Conflict Resolution
+\subsubsection{Adaptive Conflict Resolution}
 The pipeline demonstrates an adaptive approach to conflict resolution, as evidenced by the following feature:
 "When two of the language models believe the answer is correct, and two believe it is wrong, we switch to a more advanced model, such as a commercial one or a model with more parameters."
-This adaptive strategy offers several advantages:
+There are two ways to apply this adaptive method: 1) Directly selecting paid models (e.g., GPT-4), or 2) Using a more advanced, open-source model with more parameters (e.g., Gemma2:27b).
+For the second option, we use the algorithm shown in Algorithm~\ref{alg:model-selection}.
+This algorithm uses the mapping between the already used and final models to select the final model.
+It utilizes parameters to identify either the most stable model or the least stable model to choose based on a majority vote across the entire system.
 
-Escalation Mechanism: Provides a structured approach for handling ambiguous cases where simpler resolution methods are insufficient.
-Resource Optimization: Reserves the use of more advanced (and potentially more computationally expensive) models for cases that truly require their capabilities.
-Accuracy Enhancement: Leverages more sophisticated models to resolve complex conflicts, potentially leading to higher-quality outputs in challenging scenarios.
-Flexibility: Allows for the integration of specialized or proprietary models in a targeted manner, enhancing the system's overall capabilities without relying on these models for every query.
+This adaptive strategy offers several advantages:
+\begin{itemize}
+    \item \textbf{Escalation Mechanism:} Provides a structured approach for handling ambiguous cases where simpler resolution methods are insufficient.
+    \item \textbf{Resource Optimization:} Reserves the use of more advanced (and potentially more computationally expensive) models for cases that truly require their capabilities.
+    \item \textbf{Accuracy Enhancement:} Leverages more sophisticated models to resolve complex conflicts, potentially leading to higher-quality outputs in challenging scenarios.
+    \item \textbf{Flexibility:} Allows for the integration of specialized or proprietary models in a targeted manner, enhancing the system's overall capabilities without relying on these models for every query.
+\end{itemize}
 
 Implementation challenges:
-
-Threshold Definition: Determining the exact criteria for when to invoke the more advanced models.
-Model Selection: Choosing which advanced model to use based on the nature of the conflict and the query context.
-Integration: Ensuring smooth handover and result incorporation from the advanced models back into the main pipeline.
-
-3.7.4 Ethical Considerations and Challenges
-The implementation of diverse models and conflict resolution mechanisms raises several ethical considerations and challenges:
-
-Transparency: Ensuring that the conflict resolution process, especially when involving proprietary models, maintains a degree of transparency and explainability.
-Bias Amplification: Monitoring and mitigating potential scenarios where the conflict resolution process might inadvertently amplify certain biases present in multiple models.
-Accountability: Establishing clear lines of accountability for decisions made by the final judge, especially in sensitive or high-stakes scenarios.
-Data Privacy: Ensuring that the conflict resolution process, particularly when escalating to more advanced models, adheres to data privacy regulations and ethical guidelines.
-Model Disagreement Handling: Developing strategies for scenarios where persistent disagreements between models might indicate underlying issues in the knowledge base or query interpretation.
-Continuous Evaluation: Implementing mechanisms for ongoing assessment of the conflict resolution strategies to ensure they remain effective and unbiased over time.
-
-In conclusion, the Model Diversity and Conflict Resolution components of the pipeline represent a sophisticated approach to leveraging the strengths of various AI models while mitigating their individual weaknesses. By employing a combination of majority voting, a dedicated final judge, and adaptive escalation to more advanced models, the system aims to produce reliable, consistent, and high-quality outputs. This approach not only enhances the robustness of the question-answering system but also paves the way for the integration of increasingly advanced AI models in a controlled and effective manner. However, it also necessitates ongoing attention to ethical considerations and the development of transparent, accountable processes for managing the complexities introduced by model diversity and conflict resolution.
-
-
-For our pipeline we use the \textit{Majority Voting System} to select the final response, the system selects the response with the highest score from the LLMs, and if there is a tie, the system selects the response with two different approaches:
 \begin{itemize}
-    \item \textbf{Adaptive models:} The system uses algorithm~\ref{alg:model-selection} to select model based on the user specified settings.
-    \item \textbf{Commercial models:} The system selects the response from the commercial models, as they are more accurate and reliable (e.g., GPT-4).
+    \item \textbf{Threshold Definition:} Determining the exact criteria for when to invoke the more advanced models.
+    \item \textbf{Model Selection:} Choosing which advanced model to use based on the nature of the conflict and the query context.
+    \item \textbf{Integration:} Ensuring smooth handover and result incorporation from the advanced models back into the main pipeline.
 \end{itemize}
 
 \begin{algorithm}
@@ -580,8 +495,8 @@ For our pipeline we use the \textit{Majority Voting System} to select the final 
         \Statex $data$ - A list of dictionaries, each representing a model's response
         \Statex $finalJudger$ - A dictionary mapping file indices to final model
         \Statex $atLeast$ - A boolean flag:
-        \Statex \hspace{1em} True: select file(s) with highest agreement score
-        \Statex \hspace{1em} False: select file(s) with lowest agreement score
+        \Statex \hspace{1em} True: select model with the highest agreement score
+        \Statex \hspace{1em} False: select model with the lowest agreement score
 
         \Procedure{ProcessFiles}{$data, finalJudger, atLeast$}
             \State $majorityValues \gets \emptyset$
@@ -622,9 +537,11 @@ For our pipeline we use the \textit{Majority Voting System} to select the final 
         \EndProcedure
     \end{algorithmic}\label{alg:model-selection}
 \end{algorithm}
-%
+
 \section{Pipeline Flow and Decision Points}\label{sec:pipeline-flow-and-decision-points}
-The architecture of our natural language processing pipeline is characterized by a sophisticated flow of information and a series of critical decision points. This structure enables the system to process complex queries, retrieve and synthesize relevant information, and generate accurate responses. This section provides a comprehensive analysis of the pipeline's flow and the key decision points that guide the processing of information.
+The architecture of our pipeline is characterized by a sophisticated flow of information and a series of critical decision points.
+This structure enables the system to process complex queries, retrieve and synthesize relevant information, and generate accurate responses.
+This section provides a comprehensive analysis of the pipeline's flow and the key decision points that guide the processing of information.
 
 The pipeline flow can be broadly categorized into several main stages, each with its own set of processes and decision points:
 \begin{itemize}
@@ -634,11 +551,11 @@ The pipeline flow can be broadly categorized into several main stages, each with
     \item Multi-Model Processing and Synthesis
     \item Conflict Resolution and Final Output Generation
 \end{itemize}
-Let's examine each of these stages in detail, focusing on the flow of information and the critical decision points within each.
-\begin{table}[h!]
+Let's examine each of these stages in detail in table~\ref{tab:pipeline-decision-points}, focusing on the flow of information and the critical decision points within each.
+\begin{table}[ht!]
     \noindent
     \resizebox{\textwidth}{!}{
-        \begin{tabular}{lp{9cm}}
+        \begin{tabular}{lp{11cm}}
             \toprule
             \textbf{Component} & \textbf{Decision Point} \\
             \midrule
@@ -649,6 +566,7 @@ Let's examine each of these stages in detail, focusing on the flow of informatio
             Cross-Encoder for Query Relevance & Determination of whether the top question score exceeds the upper threshold. \\
             \hdashline
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Information Retrieval and Enrichment}}}  \\
+            Information Source Selection & Determining the most relevant and reliable sources for information retrieval. \\
             Google Search Integration & Balancing between the breadth of search (number of questions submitted) and depth (number of results retrieved). \\
             Process and Extract Links & Determining the relevance and quality of extracted information for inclusion in the data pool. \\
             Data Pool Creation & Structuring the data pool for optimal accessibility in subsequent stages. \\
@@ -666,6 +584,7 @@ Let's examine each of these stages in detail, focusing on the flow of informatio
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Conflict Resolution and Final Output Generation}}} \\
             Conflict Identification & Determination of the threshold for what constitutes a significant conflict requiring resolution. \\
             Adaptive Model Selection & When two models believe the answer is correct and two believe it's wrong, switching to a more advanced model. \\
+            Selection of Commercial Models & Choose the commercial model based on the user specified settings. \\
             Final Judge Implementation & Determination of the final response based on aggregated model outputs and conflict resolution results. \\
             Response Generation & Selection of the most appropriate format and level of detail for the response. \\
             \bottomrule
@@ -687,237 +606,132 @@ By implementing a series of carefully designed stages and critical decision poin
 The adaptive nature of the pipeline, particularly in its approach to conflict resolution and model selection, demonstrates a commitment to handling a wide range of query complexities and scenarios.
 However, the intricate nature of this flow also underscores the importance of ongoing optimization, monitoring, and refinement to ensure that the system continues to perform effectively and ethically in the face of evolving challenges and requirements in the field of AI and natural language processing.
 
-
 \section{Performance Metrics and Evaluation}\label{sec:performance-metrics-and-evaluation}
-A crucial aspect of any advanced natural language processing pipeline is the rigorous evaluation of its performance. This section explores the various metrics, methodologies, and considerations involved in assessing the effectiveness and reliability of our question-answering system.
+Performance metrics are essential in assessing the efficacy, efficiency, and reliability of a system or model.
+The selection of metrics mostly depends on the characteristics of the task, the data, and the objectives.
+This section emphasizes the principal performance metrics typically employed in systems utilizing LLMs, information retrieval, and various machine learning tasks.
 
-\subsection{PASSED and FAILED Criteria}\label{subsec:passed-and-failed-criteria}
-
-As depicted in the pipeline diagram, the system incorporates explicit PASSED and FAILED states, indicating a binary evaluation mechanism for overall performance. This fundamental assessment provides a clear, high-level indication of the system's success in handling queries.
-
-Key aspects of this evaluation approach:
-
-Definition of Success Criteria:
-Establishing clear, quantifiable benchmarks for what constitutes a "PASSED" state.
-Potentially incorporating multiple factors such as relevance, accuracy, and coherence of responses.
-Failure Analysis:
-Detailed examination of cases resulting in a "FAILED" state to identify patterns or systemic issues.
-Utilization of failure instances for continuous improvement and refinement of the pipeline.
-Threshold Setting:
-Determining appropriate thresholds for PASSED/FAILED states, balancing between stringency and practical usability.
-Potential implementation of graduated levels of success/failure for more nuanced evaluation.
+\subsection{Correct and Incorrect Criteria}\label{subsec:passed-and-failed-criteria}
+The system incorporates explicit CORRECT and INCORRECT states, indicating a binary evaluation mechanism for overall performance.
+This fundamental assessment provides a clear, high-level indication of the system's success in handling queries.
 
 \subsection{Relevance and Accuracy Metrics}\label{subsec:relevance-and-accuracy-metrics}
-
-While not explicitly shown in the image, the evaluation of a question-answering system typically involves assessing both the relevance and accuracy of responses.
+The evaluation of a fact-checking system typically involves assessing both the correctness and relevance of responses.
 
 Potential metrics include:
-
-Precision: The proportion of relevant and correct information in the response.
-Recall: The proportion of relevant information from the source material included in the response.
-F1 Score: The harmonic mean of precision and recall, providing a balanced measure of accuracy.
-Mean Reciprocal Rank (MRR): For systems providing ranked answers, MRR assesses how high the correct answer appears in the ranking.
-
-Implementation considerations:
-
-Automated Scoring: Developing algorithms for automated assessment of relevance and accuracy.
-Human Evaluation: Incorporating expert human judgment for a subset of responses to validate automated metrics.
+\begin{itemize}
+    \item \textbf{Recall:} The proportion of relevant responses generated by the system among all possible relevant responses.
+    \item \textbf{Precision:} The proportion of correct responses among all generated responses.
+    \item \textbf{F1 Score:} The harmonic mean of precision and recall, providing a balanced measure of accuracy.
+    \item \textbf{Accuracy:} The proportion of correct responses generated by the system.
+\end{itemize}
 
 \subsection{Latency and Efficiency Measures}\label{subsec:latency-and-efficiency-measures}
-
 Given the complexity of the pipeline, evaluating its operational efficiency is crucial:
+\begin{itemize}
+    \item \textbf{Response Time:} Measuring the end-to-end time from query input to response generation.
+    \item \textbf{Component-wise Latency:} Assessing the processing time of individual pipeline components (e.g., embedding generation, LLM processing).
+    \item \textbf{Resource Utilization:} Monitoring computational resource usage, particularly important given the use of multiple LLMs.
+    \item \textbf{Cost Efficiency:} Evaluating the cost-effectiveness of the pipeline in terms of computational resources and infrastructure.
+\end{itemize}
 
-Response Time: Measuring the end-to-end time from query input to response generation.
-Component-wise Latency: Assessing the processing time of individual pipeline components (e.g., embedding generation, LLM processing).
-Resource Utilization: Monitoring computational resource usage, particularly important given the use of multiple LLMs.
-
-\subsection{Consistency and Coherence Evaluation}\label{subsec:consistency-and-coherence-evaluation}
-
+\subsection{Consistency Evaluation}\label{subsec:consistency-and-coherence-evaluation}
 The use of multiple models and a conflict resolution mechanism necessitates specific evaluation of output consistency:
 
-Inter-model Agreement Rate: Measuring the frequency of consensus among different LLMs.
-Coherence Scoring: Assessing the logical flow and internal consistency of generated responses.
-Stability Across Queries: Evaluating the consistency of responses to similar or related queries over time.
+\begin{itemize}
+    \item \textbf{Stability Across Models:} Assessing the consistency of responses generated by different LLMs for the same query, refer to algorithm~\ref{alg:stability-across-queries}.
+\end{itemize}
 
-\subsection{Robustness and Edge Case Handling}\label{subsec:robustness-and-edge-case-handling}
+\begin{algorithm}
+    \caption{Stability Across Queries}
+    \begin{algorithmic}[1]
+        \Procedure{StabilityAcrossQueries}{$queryResponses$}
+            \State $stabilityScores \gets$ empty list
+            \For{each $responses$ in $queryResponses$}
+                \State $uniqueResponses \gets$ set of unique elements in $responses$
+                \State $stability \gets$ size of $uniqueResponses$
+                \State $stabilityScore \gets (1 - \frac{stability - 1}{|responses|}) \times 100$
+                \State Append $stabilityScore$ to $stabilityScores$
+                \If{$stabilityScores$ is not empty}
+                    \State \Return mean of $stabilityScores$
+                \Else
+                    \State \Return 0
+                \EndIf
+                \EndFor
+        \EndProcedure
+    \end{algorithmic}\label{alg:stability-across-queries}
+\end{algorithm}
 
-Assessing the pipeline's performance under various conditions:
+\section{Ethical Considerations and Limitations}\label{sec:ethical-considerations-and-limitations}
+The development and deployment of advanced pipelines, such as the one described in this thesis, necessitate a thorough examination of ethical considerations and an acknowledgment of system limitations.
+This section explores the ethical implications of our fact-checking system and discusses its inherent constraints.
 
-Stress Testing: Evaluating performance under high query volumes or with particularly complex inputs.
-Adversarial Inputs: Testing the system's resilience to intentionally challenging or malformed queries.
-Domain Adaptation: Assessing how well the system performs across different subject areas or specialized domains.
-%
-%\section{Ethical Considerations and Limitations}\label{sec:ethical-considerations-and-limitations}
-%The development and deployment of advanced natural language processing pipelines, such as the one described in this thesis, necessitate a thorough examination of ethical considerations and an acknowledgment of system limitations. This section explores the ethical implications of our question-answering system and discusses its inherent constraints.
-%3.10.1 Ethical Considerations
-%While the pipeline diagram does not explicitly highlight ethical components, several aspects of the system raise important ethical considerations:
-%
-%Bias in Knowledge Representation and Model Outputs
-%
-%The pipeline's reliance on a Knowledge Graph Dataset and multiple Large Language Models (LLMs) introduces potential sources of bias:
-%a) Knowledge Graph Biases:
-%
-%Potential under- or over-representation of certain topics, cultures, or perspectives in the knowledge base.
-%Risk of perpetuating historical biases present in the source data.
-%
-%b) Model Biases:
-%
-%LLMs may reflect biases present in their training data, potentially leading to skewed or unfair outputs.
-%The use of multiple models, while potentially mitigating individual biases, may also amplify shared biases.
-%
+\subsection{Ethical Considerations}\label{subsec:ethical-considerations}
+While the pipeline diagram does not explicitly highlight ethical components, several aspects of the system raise important ethical considerations:
+
+\subsubsection{Misinformation and Harmful Content}\label{subsubsec:misinformation-and-harmful-content}
+The system's ability to synthesize information from various sources poses risks related to misinformation:
+\begin{itemize}
+    \item \textbf{Propagation of False Information:} Potential for the system to inadvertently spread misinformation present in retrieved data.
+    \item \textbf{Generation of Harmful Content:} Risk of producing responses that could be considered harmful, offensive, or inappropriate.
+\end{itemize}
+
 %Mitigation Strategies:
-%
-%Regular audits of the Knowledge Graph Dataset for representational fairness.
-%Implementation of bias detection and mitigation techniques in model outputs.
-%Diverse representation in the team developing and maintaining the system.
-%
-%
-%Privacy and Data Handling
-%
-%The pipeline's information retrieval mechanisms, particularly the integration with Google Search, raise privacy concerns:
-%a) User Query Privacy:
-%
-%Ensuring that user queries are not stored or used in ways that could compromise individual privacy.
-%
-%b) Data Retention Policies:
-%
-%Establishing clear guidelines for how long retrieved information is stored and how it is used.
-%
-%c) Handling of Sensitive Information:
-%
-%Implementing safeguards to prevent the system from exposing or mishandling sensitive personal information that may be encountered during information retrieval.
-%
+%\begin{itemize}
+%    \item Implementation of fact-checking mechanisms and reliable source prioritization.
+%    \item Content filtering systems to detect and prevent the generation of harmful or inappropriate responses.
+%    \item Regular updates to the system to address emerging misinformation trends.
+%\end{itemize}
+
+\subsubsection{Environmental Considerations}\label{subsubsec:environmental-considerations}
+The computational resources required to run multiple LLMs and process large volumes of data raise environmental concerns:
+\begin{itemize}
+    \item \textbf{Energy Consumption:} High energy usage associated with running complex AI models and large-scale data processing.
+    \item \textbf{Carbon Footprint:} Environmental impact of the infrastructure required to support the pipeline.
+\end{itemize}
+
 %Mitigation Strategies:
-%
-%Implementation of robust data anonymization techniques.
-%Clear and transparent data handling policies.
-%Regular security audits and compliance checks with data protection regulations.
-%
-%
-%Transparency and Explainability
-%
-%The complexity of the pipeline, particularly the use of multiple LLMs and a "final judge" for conflict resolution, presents challenges in terms of transparency:
-%a) Black Box Decision-Making:
-%
-%Difficulty in explaining how specific responses are generated, especially when advanced models are invoked for conflict resolution.
-%
-%b) Accountability:
-%
-%Challenges in attributing responsibility for erroneous or biased outputs in a multi-model system.
-%
-%Mitigation Strategies:
-%
-%Development of interpretable AI techniques to provide insights into decision-making processes.
-%Implementation of logging systems to track the contribution of different components to the final output.
-%Clear communication to users about the system's capabilities and limitations.
-%
-%
-%Misinformation and Harmful Content
-%
-%The system's ability to synthesize information from various sources poses risks related to misinformation:
-%a) Propagation of False Information:
-%
-%Potential for the system to inadvertently spread misinformation present in retrieved data.
-%
-%b) Generation of Harmful Content:
-%
-%Risk of producing responses that could be considered harmful, offensive, or inappropriate.
-%
-%Mitigation Strategies:
-%
-%Implementation of fact-checking mechanisms and reliable source prioritization.
-%Content filtering systems to detect and prevent the generation of harmful or inappropriate responses.
-%Regular updates to the system to address emerging misinformation trends.
-%
-%
-%Environmental Considerations
-%
-%The computational resources required to run multiple LLMs and process large volumes of data raise environmental concerns:
-%a) Energy Consumption:
-%
-%High energy usage associated with running complex AI models and large-scale data processing.
-%
-%b) Carbon Footprint:
-%
-%Environmental impact of the infrastructure required to support the pipeline.
-%
-%Mitigation Strategies:
-%
-%Optimization of model efficiency and resource utilization.
-%Exploration of more energy-efficient hardware and green computing practices.
-%Consideration of the trade-offs between model complexity and environmental impact.
-%
-%3.10.2 Limitations
-%Understanding and acknowledging the limitations of the system is crucial for ethical deployment and user trust:
-%
-%Scope of Knowledge
-%
-%a) Temporal Limitations:
-%
-%The Knowledge Graph Dataset and pre-trained models have a cutoff date for their information.
-%Challenges in providing up-to-date information on rapidly evolving topics.
-%
-%b) Domain Specificity:
-%
-%Potential gaps in specialized or niche areas of knowledge.
-%Variability in performance across different subject domains.
-%
-%
-%Language and Cultural Limitations
-%
-%a) Language Coverage:
-%
-%Potential biases towards languages well-represented in training data.
-%Challenges in handling nuances of less common languages or dialects.
-%
-%b) Cultural Context:
-%
-%Limitations in understanding and appropriately responding to culturally specific queries or contexts.
-%
-%
-%Reasoning and Inference Capabilities
-%
-%a) Complex Reasoning:
-%
-%Limitations in handling queries requiring advanced logical reasoning or domain-specific expertise.
-%
-%b) Causal Understanding:
-%
-%Challenges in inferring causal relationships beyond correlations present in the training data.
-%
-%
-%Handling of Ambiguity and Context
-%
-%a) Contextual Nuances:
-%
-%Difficulties in capturing subtle contextual cues that humans naturally understand.
-%
-%b) Disambiguation:
-%
-%Challenges in resolving ambiguities in queries without additional user input.
-%
-%
-%Real-time Adaptation
-%
-%a) Static Knowledge Base:
-%
-%Limitations in adapting to real-time changes in the world without system updates.
-%
-%b) Learning from Interactions:
-%
-%The system's inability to learn and improve from individual user interactions due to privacy and architectural constraints.
-%
-%
-%Emotional and Social Intelligence
-%
-%a) Empathy and Emotional Understanding:
-%
-%Limitations in recognizing and appropriately responding to emotional cues in user queries.
-%
-%b) Social Norms:
-%
-%Challenges in adhering to complex and evolving social norms across different cultures and contexts.
-%
+%\begin{itemize}
+%    \item Optimization of model efficiency and resource utilization.
+%    \item Exploration of more energy-efficient hardware and green computing practices.
+%    \item Consideration of the trade-offs between model complexity and environmental impact.
+%\end{itemize}
+
+\subsection{Limitations}\label{subsec:limitations}
+Understanding and acknowledging the limitations of the system is crucial for ethical deployment and user trust:
+
+\begin{table}[h!]
+    \noindent
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{lp{11cm}}
+            \toprule
+            \textbf{Limitation} & \textbf{Description} \\
+            \midrule
+            \multicolumn{2}{c}{\colorbox{pink}{\textit{Scope of Knowledge}}} \\
+            Temporal Limitations & The system's knowledge base and models have a cutoff date, potentially leading to outdated information. \\
+            Domain Specificity & Gaps in specialized or niche areas of knowledge may limit performance. \\
+            \hdashline
+            \multicolumn{2}{c}{\colorbox{pink}{\textit{Language and Cultural Limitations}}} \\
+            Language Coverage & Biases towards languages well-represented in training data, challenges in handling less common languages. \\
+            Cultural Context & Limitations in understanding and responding to culturally specific queries or contexts. \\
+            \hdashline
+            \multicolumn{2}{c}{\colorbox{pink}{\textit{Reasoning and Inference Capabilities}}} \\
+            Complex Reasoning & Challenges in handling queries requiring advanced logical reasoning or domain-specific expertise. \\
+            Causal Understanding & Difficulties in inferring causal relationships. \\
+            \hdashline
+            \multicolumn{2}{c}{\colorbox{pink}{\textit{Handling of Ambiguity and Context}}} \\
+            Contextual Nuances & Difficulties in capturing subtle contextual cues that humans naturally understand. \\
+            Disambiguation & Challenges in resolving ambiguities in queries without additional user input. \\
+            \hdashline
+            \multicolumn{2}{c}{\colorbox{pink}{\textit{Real-time Adaptation}}} \\
+            Static Knowledge Base & Limitations in adapting to real-time changes without system updates. \\
+            Learning from Interactions & Inability to learn and improve from individual user interactions due to privacy and architectural constraints. \\
+            \bottomrule
+            \end{tabular}}\caption{Limitions of the pipeline.}
+    \label{tab:pipeline-limitations}
+\end{table}
+
+% TODO: MAYBE FUTURE WORK
 %3.10.3 Addressing Ethical Concerns and Limitations
 %To address these ethical considerations and limitations, several approaches can be implemented:
 %
@@ -952,3 +766,36 @@ Domain Adaptation: Assessing how well the system performs across different subje
 %
 %
 %In conclusion, while the advanced natural language processing pipeline presented in this thesis offers powerful capabilities for information retrieval and question answering, it also comes with significant ethical considerations and inherent limitations. Acknowledging these challenges is crucial for responsible development and deployment. By actively addressing ethical concerns, transparently communicating limitations, and continuously striving for improvement, we can work towards a system that not only advances the field of AI but also aligns with societal values and ethical standards. The complexity of these considerations underscores the need for ongoing dialogue and collaboration between technologists, ethicists, policymakers, and the broader public to ensure that AI systems like this pipeline contribute positively to society while minimizing potential harms.
+
+
+% TODO: FUTURE WORK MAYBE
+%\subsection{Integration with Other Pipeline Components}\label{subsec:integration-with-other-pipeline-components}
+%
+%The LLMs interact closely with other components of the pipeline:
+%
+%Input from Embedding and Retrieval: The LLMs receive contextualized, relevant information chunks from the embedding and retrieval stages, ensuring they have access to the most pertinent data for response generation.
+%Feedback to Information Retrieval: The LLMs may potentially provide feedback to refine or guide further information retrieval based on initial processing results.
+%Interface with Final Judge: As indicated in the diagram, the output from the LLM majority voting system feeds into a "final judge" component, suggesting an additional layer of quality control or decision-making.
+%
+%3.6.5 Challenges and Considerations
+%
+%Several challenges and ethical considerations are associated with the use of LLMs in the pipeline:
+%
+%Bias Mitigation: Addressing and mitigating potential biases inherent in the training data of LLMs.
+%Explainability: Developing methods to provide transparency and explanations for the reasoning behind generated responses, especially crucial in a multi-model voting system.
+%Consistency: Ensuring consistency in responses across multiple queries and different combinations of activated LLMs.
+%Computational Resources: Managing the significant computational requirements of running multiple LLMs concurrently.
+%Privacy and Data Handling: Ensuring that sensitive information is handled appropriately and that the LLMs do not inadvertently reveal private data.
+%Ethical Use: Implementing safeguards to prevent the generation of harmful, false, or misleading content.
+%
+%3.6.6 Future Directions
+%
+%The integration of LLMs in the pipeline opens up several avenues for future enhancements:
+%
+%Dynamic Model Selection: Implementing systems that can dynamically select the most appropriate combination of LLMs based on the specific query and context.
+%Continuous Learning: Exploring methods for ongoing fine-tuning or adaptation of the LLMs based on user interactions and feedback, while maintaining ethical boundaries.
+%Multi-modal Integration: Expanding the capabilities of the pipeline to incorporate LLMs that can process and generate multi-modal content (text, images, audio).
+%Enhanced Reasoning Capabilities: Developing techniques to improve the logical reasoning and inference capabilities of the LLMs, potentially through integration with symbolic AI approaches.
+%
+%In conclusion, the incorporation of multiple Large Language Models into the pipeline represents a sophisticated approach to natural language processing and question answering. By leveraging the strengths of diverse models and implementing a majority voting system, the pipeline aims to generate more accurate, nuanced, and reliable responses. This approach, while powerful, also necessitates careful consideration of ethical implications and ongoing efforts to address challenges related to bias, consistency, and explainability. The central role of LLMs in this pipeline underscores their transformative potential in advancing the field of artificial intelligence and natural language understanding.
+%

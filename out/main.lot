@@ -3,8 +3,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Generation of Human-Understandable Text}}{19}{table.caption.25}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Question Generation and Scoring Procedure}}{21}{table.caption.29}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Comprenhensive list of decision points in the pipeline flow.}}{37}{table.caption.34}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Question Generation and Scoring Procedure}}{21}{table.caption.28}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Comprenhensive list of decision points in the pipeline flow.}}{35}{table.caption.33}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Limitions of the pipeline.}}{39}{table.caption.34}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces Performance of Pre-trained Cross-Encoders}}{49}{table.caption.36}%

@@ -33,21 +33,27 @@
 \contentsline {subsection}{\numberline {3.3.4}Data filtering}{26}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Embedding and Retrieval Tasks}{26}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Embedding Techniques for Smaller Chunks}{27}{subsection.3.4.1}%
-\contentsline {subsubsection}{Challenges and Considerations}{28}{figure.caption.33}%
+\contentsline {subsubsection}{Challenges and Considerations}{28}{figure.caption.32}%
 \contentsline {subsection}{\numberline {3.4.2}Similarity Cutoff Strategy}{28}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}LLMs}{29}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Integration of Multiple LLMs}{29}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Roles of LLMs in the Pipeline}{30}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Majority Voting System}{31}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Model Diversity and Conflict Resolution}{31}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Model Diversity}{32}{subsection.3.6.1}%
-\contentsline {section}{\numberline {3.7}Pipeline Flow and Decision Points}{35}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Performance Metrics and Evaluation}{38}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}PASSED and FAILED Criteria}{38}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}Relevance and Accuracy Metrics}{39}{subsection.3.8.2}%
-\contentsline {subsection}{\numberline {3.8.3}Latency and Efficiency Measures}{39}{subsection.3.8.3}%
-\contentsline {subsection}{\numberline {3.8.4}Consistency and Coherence Evaluation}{39}{subsection.3.8.4}%
-\contentsline {subsection}{\numberline {3.8.5}Robustness and Edge Case Handling}{40}{subsection.3.8.5}%
+\contentsline {section}{\numberline {3.6}Voting System and Conflict Resolution}{31}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Majority Voting System}{31}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Conflict Resolution Strategies}{32}{subsection.3.6.2}%
+\contentsline {subsubsection}{Final Judge Implementation:}{32}{subsection.3.6.2}%
+\contentsline {subsubsection}{Adaptive Conflict Resolution}{32}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Pipeline Flow and Decision Points}{33}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Performance Metrics and Evaluation}{36}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Correct and Incorrect Criteria}{36}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Relevance and Accuracy Metrics}{37}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}Latency and Efficiency Measures}{37}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.4}Consistency Evaluation}{37}{subsection.3.8.4}%
+\contentsline {section}{\numberline {3.9}Ethical Considerations and Limitations}{38}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Ethical Considerations}{38}{subsection.3.9.1}%
+\contentsline {subsubsection}{Misinformation and Harmful Content}{38}{subsection.3.9.1}%
+\contentsline {subsubsection}{Environmental Considerations}{39}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Limitations}{39}{subsection.3.9.2}%
 \contentsline {chapter}{\numberline {4}Analysis}{41}{chapter.4}%
 \contentsline {section}{\numberline {4.1}A section}{41}{section.4.1}%
 \contentsline {paragraph}{}{41}{figure.caption.35}%
@@ -57,10 +63,10 @@
 \contentsline {subsection}{\numberline {5.1.2}Sampling Methods Evaluation}{44}{subsection.5.1.2}%
 \contentsline {subsection}{\numberline {5.1.3}Evaluation Metrics}{45}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}Significance of the Methodology}{45}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}D}{46}{section.5.2}%
+\contentsline {section}{\numberline {5.2}Document Selection}{46}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Unsupervised Methods}{46}{subsection.5.2.1}%
 \contentsline {subsubsection}{BM25}{46}{subsection.5.2.1}%
-\contentsline {subsubsection}{Contriever}{46}{algorithm.2}%
+\contentsline {subsubsection}{Contriever}{46}{algorithm.3}%
 \contentsline {subsection}{\numberline {5.2.2}Supervised Methods}{48}{subsection.5.2.2}%
 \contentsline {subsubsection}{Jina.ai Reranker}{48}{subsection.5.2.2}%
 \contentsline {subsubsection}{MS MARCO MiniLM}{49}{subsection.5.2.2}%
