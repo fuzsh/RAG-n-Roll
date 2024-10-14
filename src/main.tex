@@ -1,0 +1,56 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+% Load Thesis Class
+\documentclass{DEIThesis}
+\usepackage{multirow}
+\usepackage[toc]{appendix}
+\usepackage{xcolor}
+
+\title{Knowledge Graph Fact Verification using Retrieval-Augmented Generation}
+
+\author{Farzad Shami}
+\studentId{2090160}
+
+% Advisor
+\advisor{Prof. Gianmaria Silvello}
+
+% If you are co-advised
+\coadvisor{Prof. Stefano Marchesin}
+\coadvisorsUniversity{University of Padova}
+
+\university{University of Padova}
+\departmentname{Department of Information Engineering}
+\mastername{Computer Engineering}
+
+
+\academicYear{2024/2025}
+\gradutionDate{nth March 2025}
+
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+    \Title{Knowledge Graph Fact Verification using Retrieval-Augmented Generation}
+    \Author{Farzad Shmai}
+    \Language{en-EN}
+    \Keywords{Computer Engineering\sep LaTeX}
+\end{filecontents*}
+
+% Document
+
+\begin{document}
+    % The front matter (Cover, ToC, Abstract, etc...)
+    \frontmatter
+
+    % The main content
+    \mainmatter
+    
+    \include{chapters/01_introduction}
+    \include{chapters/02_related_works}
+    \include{chapters/03_pipeline}
+    \include{chapters/04_analysis}
+    \include{chapters/05_ablation}
+    \include{chapters/98_conclusions}
+    \include{chapters/99_appendix}
+    
+    % Bibliography, appendix, acknowledges, etc...
+    \backmatter
+\end{document}
