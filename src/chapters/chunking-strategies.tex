@@ -1,0 +1,58 @@
+\chapter{Chunking Strategies}\label{ch:chunking}
+As discussed in Section~\ref{sec:chunking-strategies}, the method used to chunk input text is a critical decision in the design of a \ac{RAG} system.
+Here, we present concrete examples of how different chunking strategies affect the segmentation of text, using the \textit{correct\_award\_00000} entry from the FactBench dataset.
+The text is as follows:
+\begin{quote}
+    Henry Dunant award Nobel Peace Prize
+\end{quote}
+The model used for these examples is \textit{Gemma2} with \textit{similarity\_top\_k} set to 3, and \textit{BAAI/bge-small-en-v1.5} as embedding model.
+The documents are selected using \textit{ms-marco-MiniLM-L-6-v2} discussed in~\ref{subsec:supervised-methods}.
+We report the best node found by through our pipeline for each chunking strategy.
+
+
+\section{Text Splitter - Chuck Size 512}\label{sec:chunking:text-splitter}
+\begin{table}[h!]
+    \footnotesize
+    \begin{xltabular}{\linewidth}{X|c}
+        \toprule
+        \textbf{Chunk} & \textbf{Score} \\
+        \midrule
+        Abstract When Jean Henry Dunant received the first Nobel Peace Prize in 1900, he was praised for “the supreme humanitarian achievement of the nineteenth century.” This praise was merited, for Dunant had led the creation of both the international Red Cross and the First Geneva Convention. The Red Cross has since saved countless lives and relieved human suffering around the world. The Geneva Convention established that those treating war wounded, wearing a red cross, would not be attacked. With this Convention, Dunant began the creation of international humanitarian law to reduce the suffering caused by war. Despite Dunant’s vital contributions, he has been largely forgotten. This article briefly tells the story of this dedicated humanitarian leader and of his great achievements. Recommended Citation McFarland, Sam (2017) "A Brief History of An Unsung Hero and Leader – Jean Henry Dunant and the Founding of the Red Cross at the Geneva Convention," International Journal of Leadership and Change: Vol. 5: Iss. 1, Article 5. Available at: https://digitalcommons.wku.edu/ijlc/vol5/iss1/5 & 90.5791\\ \hline
+        In 1901, Henry Dunant was co-awarded the first Nobel Peace Prize in recognition of his devotion to the humanitarian cause. (Español): Henry Dunant, Premio Nobel de la Paz - En 1901, Henry Dunant fue co-galardonado con el primer Premio Nobel de la Paz en reconocimiento a su devisión por la causa humanitaria. Credit: ICRC / Vincent Varin / www.icrc.org & 90.5830\\ \hline
+        To celebrate the memory and work of Henry Dunant, on the centenary of the presentation of the first Nobel Peace Prize, rightly awarded to Dunant for his having founded the institution of the International Red Cross, this paper presents the reader with some insights into his activities and sufferings, his trials and tribulations, and the hope and strength of his character. The ceaseless efforts made by Dunant to bring about the Institution which today represents Hope for so many suffering people who are silent victims of wars and atrocities, are fleetingly presented. The authors' intention is to give due recognition to Dunant for his work, and to highlight the humanity and the moral and social worth of the face behind the International Red Cross. & 90.6017 \\
+        \bottomrule
+    \end{xltabular}
+    \caption{Text Splitter - Chuck Size 512}
+    \label{tab:table-text-splitter}
+\end{table}
+
+
+\section{Small2Big}\label{sec:chunking:small2big}
+\begin{table}[h!]
+    \footnotesize
+    \begin{xltabular}{\linewidth}{X|c}
+        \toprule
+        \textbf{Chunk}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       & \textbf{Score} \\
+        \midrule
+        Henry Dunant The Nobel Peace Prize 1901 Nobel co-recipient: Frédéric Passy Role: Founder of the International Committee of the Red Cross, Geneva, Originator Geneva Convention (Convention de Genève) Nobel Prize Cash and Philanthropy Jean Henry Dunant, though poor, donated his Nobel Prize money to charity. Hans Daae, a military physician, managed to get the money deposited in a bank in Norway. Thus Dunant’s creditors could not claim the money. When Dunant was alive the money remained untouched in the bank. He lived frugally in a Swiss nursing home.  Dunant’s will bequeathed one half of the money to the Norwegian Red Cross and the Norwegian Women’s Public Health Association. The will bequeathed the other half of the money to charities in Switzerland.  Daae was also responsible for Dunant being awarded the Noble Prize. & 90.6243\\
+        \bottomrule
+    \end{xltabular}
+    \caption{Small to Big (base retriver chunk size set to 1024)}
+    \label{tab:table-small2big}
+\end{table}
+
+\section{Sliding Window - Window Size 3}\label{sec:chunking:sliding-window}
+\begin{table}[h!]
+    \footnotesize
+    \begin{xltabular}{\linewidth}{X}
+        \toprule
+        \textbf{Window} - Highlighted Text is Original Text \\
+        \midrule
+        You can read more about that here: From the first Nobel Prize award ceremony, 1901 The announcement that the founder of the Red Cross had been chosen as Peace Prize laureate met with mixed reactions. Dunant had been awarded the prize for ameliorating the suffering of wounded soldiers, not for organising peace congresses or reducing standing forces, as stipulated in Alfred Nobel’s will. The Nobel Committee had chosen a broad interpretation of the provision that a laureate should “further fraternity  between nations”. \colorbox{pink}{The Red Cross: three-time recipient of the Peace Prize Henry Dunant (1828–1910).}  Switzerland, “for his humanitarian efforts to help wounded soldiers and create international understanding” Frédéric Passy (1822–1912). France, “for his lifelong work for international peace conferences, diplomacy and arbitration.” \\ \hline
+        On 10th of December 1901 the first Nobel Peace Prize was awarded. It went to Henry Dunant, founder of the International Committee of the Red Cross, who shared the first Nobel Peace Prize with Frédéric Passy, a leading international pacifist of the time. \colorbox{pink}{Since then, the Red Cross has been awarded the Peace Prize three times.} The Red Cross: Three-time recipient of the Peace Prize Four of them given out in Stockholm and one, the Peace Prize, in Christiania, as Oslo was then called. You can read more about that here: From the first Nobel Prize award ceremony, 1901 The announcement that the founder of the Red Cross had been chosen as Peace Prize laureate met with mixed reactions.  Dunant had been awarded the prize for ameliorating the suffering of wounded soldiers, not for  organising peace congresses or reducing standing forces, as stipulated in Alfred Nobel’s will. \\ \hline
+        Henry Dunant The Nobel Peace Prize 1901 Nobel co-recipient: Frédéric Passy Role: Founder of the International Committee of the Red Cross, Geneva, Originator Geneva  Convention (Convention de Genève) Nobel Prize Cash and Philanthropy Jean Henry Dunant, though poor, donated his Nobel Prize money to charity. Hans Daae, a military physician, managed to get the money deposited in a bank in Norway. \colorbox{pink}{Thus Dunant’s creditors could not claim the money.} When Dunant was alive the money remained untouched in the bank. He lived frugally in a Swiss nursing home. Dunant’s will bequeathed one half of the money to the Norwegian Red Cross and the Norwegian Women’s Public Health Association. \\
+        \bottomrule
+    \end{xltabular}
+    \caption{Sliding Window - Window Size 3}
+    \label{tab:table-sliding-window}
+\end{table}

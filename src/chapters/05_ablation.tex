@@ -1,6 +1,5 @@
 \chapter{Ablation Study}
 \label{ch:ablation}
-
 Our proposed framework for knowledge graph fact verification utilizes a unique combination of web search and language model processing.
 However, to ensure the robustness and effectiveness of our approach, it is crucial to compare our methods with state-of-the-art RAG techniques, particularly in the critical areas of chunking, embedding, and retrieval.
 
@@ -10,8 +9,6 @@ By analyzing these components in light of RAG recommendations, we aim to identif
 
 Through this comparison, we seek to situate our work within the broader context of retrieval-augmented fact verification systems and provide insights into the trade-offs and benefits of our methodological choices.
 This analysis will not only contribute to the refinement of our framework but also offer valuable perspectives on the application of RAG principles to knowledge graph fact verification tasks.
-
-
 \section{Evaluation Methodology}\label{sec:evaluation-methodology}
 This study employs a systematic approach to evaluate and optimize various components of our framework, with the ultimate goal of determining the best methods for each section.
 Our methodology is designed to isolate and assess the impact of different techniques and parameters on overall system performance, while also considering the efficacy of sampling methods compared to full data runs.
@@ -169,7 +166,7 @@ This approach addresses limitations of vector similarity-based methods by captur
 
 For our project, we use \textit{jina-reranker-v2-base-multilingual}\footnote{\url{https://huggingface.co/jinaai/jina-reranker-v2-base-multilingual}}.
 This model has demonstrated exceptional performance across various benchmarks and practical applications.
-In multilingual tasks, it achieved state-of-the-art recall@10 scores on the MKQA dataset~\cite{mkqa} spanning 26 languages, while also exhibiting superior NDCG@10 scores on English-language tasks in the BEIR benchmark \cite{thakur2021beirheterogenousbenchmarkzeroshot}.
+In multilingual tasks, it achieved state-of-the-art recall@10 scores on the MKQA dataset~\cite{mkqa} spanning 26 languages, while also exhibiting superior NDCG@10 scores on English-language tasks in the BEIR benchmark~\cite{thakur2021beirheterogenousbenchmarkzeroshot}.
 Notably, it secured the top position on the AirBench leaderboard upon its release \footnote{\url{https://huggingface.co/spaces/AIR-Bench/leaderboard}}.
 
 These capabilities make the model particularly valuable for multilingual information retrieval, agentic Retrieval-Augmented Generation (RAG) systems, and even in programming and software development support.
@@ -261,7 +258,7 @@ This decision is predicated on its superior F1 score relative to the other model
 
 \section{Embedding Models}\label{sec:embedding-models}
 Text embeddings are dense vector representations that capture the semantic meaning and relationships between words, sentences, or documents in a low-dimensional space.
-By mapping text to a continuous vector space, embeddings enable efficient similarity computations and have become a fundamental building block for many natural language processing (NLP) applications, such as information retrieval, text classification, clustering, and semantic search.
+By mapping text to a continuous vector space, embeddings enable efficient similarity computations and have become a fundamental building block for many NLP applications, such as information retrieval, text classification, clustering, and semantic search.
 This section provides an in-depth analysis and comparison of five state-of-the-art text embedding models:
 
 \begin{itemize}
@@ -276,100 +273,100 @@ These models leverage recent advancements in transformer architectures, contrast
 We examine their model architectures, training methodologies, supported features, and empirical performance on standard benchmarks.
 Through this comparative study, we aim to provide insights and guidance for practitioners to select the most suitable embedding model based on their specific use case and computational constraints.
 
-\subsection{Alibaba-NLP/gte-large-en-v1.5}\label{subsec:alibaba-nlp}
+\subsection{Gte-large-en-v1.5}\label{subsec:alibaba-nlp}
+The Alibaba-NLP model \textit{gte-large-en-v1.5} is text embedding model designed for general text representation and retrieval tasks.
+It is built upon a Transformer++ encoder architecture, combining the strengths of BERT~\cite{devlin2019bertpretrainingdeepbidirectional} with advanced techniques such as \ac{RoPE}~\cite{su2023roformerenhancedtransformerrotary} and Gated Linear Units (GLU).
+This combination allows for highly efficient text encoding over long sequences, with a maximum context length of 8192 tokens, significantly surpassing previous models restricted to shorter context lengths (up to 512 tokens)~\cite{zhang2024mgtegeneralizedlongcontexttext}.
 
-\subsubsection{Model Overview}
-The gte-large-en-v1.5 model is part of the gte-vl.5 series released by the Institute for Intelligent Computing at Alibaba Group [Zhang et al., 2023].
-It is built upon a transformer++ encoder backbone, which enhances the standard BERT architecture [Devlin et al., 2018] with rotary position embeddings (RoPE) [Su et al., 2021] and gated linear units (GLU) [Dauphin et al., 2017].
-The model supports input sequences up to 8192 tokens, a significant improvement over previous multilingual encoders limited to 512 tokens.
+One of the major improvements in the gte-v1.5 series is its ability to process long-context text inputs, making it ideal for complex text retrieval and re-ranking tasks, especially in multilingual settings~\cite{li2023generaltextembeddingsmultistage}.
+This series of models has demonstrated superior performance in multiple benchmarks, including the \ac{MTEB}~\cite{muennighoff-etal-2023-mteb} and the LoCo long-context retrieval benchmark~\cite{saadfalcon2024benchmarkingbuildinglongcontextretrieval}.
+In particular, the model ranked second on the MTEB leaderboard and first in the Chinese version of MTEB (C-MTEB).
 
-\subsubsection{Training Methodology}
-gte-large-en-v1.5 undergoes a three-stage training pipeline:
+The model achieves these results by employing a hybrid architecture, including both a text representation model (TRM) and a cross-encoder reranker.
+The TRM generates dense text embeddings for retrieval tasks, while the reranker refines results through more precise scoring of candidate texts.
+This architecture is optimized for efficiency, allowing faster inference while maintaining high accuracy during both pretraining and fine-tuning stages.
+
+The \textit{gte-large-en-v1.5} also includes instruction-tuned variants, such as \textit{gte-Qwen1.5-7B-instruct}, which is particularly effective for multilingual text embeddings, leveraging a wide range of unsupervised and supervised contrastive learning techniques.
+These instruction-tuned models have outperformed various other large embedding models, making them highly suitable for industrial applications that require efficient, accurate text representation across diverse languages.
+
+In summary, the \textit{gte-large-en-v1.5} model stands out in its category due to its ability to handle large context lengths, its efficient encoding techniques, and its strong performance across multilingual and long-context benchmarks.
+This makes it an invaluable tool for a variety of text retrieval, classification, and representation tasks in both academic research and real-world applications.
+
+\subsection{Jina-embeddings-v3}\label{subsec:jinaai}
+The \textit{Jina-embeddings-v3} model is a cutting-edge multilingual text embedding solution, developed by Jina AI, aimed at addressing a wide range of \ac{NLP} tasks.
+Based on the \textit{Jina-XLM-RoBERTa} architecture, this model supports long-context inputs, handling sequences of up to 8192 tokens thanks to its integration of \ac{RoPE}~\cite{su2023roformerenhancedtransformerrotary,sturua2024jinaembeddingsv3multilingualembeddingstask}.
+
+This ability to process extended sequences makes the model well-suited for tasks such as text retrieval, clustering, classification, and text matching across multiple languages.
+One of the key innovations of \textit{Jina-embeddings-v3} is the introduction of task-specific \ac{LoRA}~\cite{hu2022lora} adapters.
+These adapters are used to tailor the model's embeddings to specific tasks, such as query-document retrieval, clustering, re-ranking, and classification.
+This task-specific optimization is achieved without significantly increasing the model's parameter size.
+
+The model excels in multilingual environments, supporting over 30 languages, and is optimized for performance in long-context retrieval tasks.
+Compared to LLMs like \textit{e5-mistral-7b-instruct}, \textit{jina-embeddings-v3} offers a more efficient solution with fewer parameters (570 million vs. 7.1 billion), while still achieving competitive or superior performance on several benchmarks.
+For example, it surpasses proprietary models like OpenAI~\footnote{\url{https://openai.com/}} and Cohere~\footnote{\url{https://cohere.com/}} on English tasks and achieves high scores on multilingual benchmarks.
+
+\textit{Jina-embeddings-v3} also features flexible \ac{MRL}~\cite{kusupati2024matryoshkarepresentationlearning}, allowing users to reduce the embedding size from 1024 to as low as 32 dimensions, making it adaptable to different resource constraints without significant loss of performance.
+
+\subsection{Stella\_en\_1.5B\_v5}\label{subsec:dunzhang}
+The Dunzhang \textit{Stella\_en\_1.5B\_v5}\footnote{\url{https://huggingface.co/dunzhang/stella_en_1.5B_v5}} is a powerful multilingual text embedding model, built upon the foundations of \textit{Alibaba-NLP/gte-large-en-v1.5}~\ref{subsec:alibaba-nlp} and \textit{gte-Qwen2-1.5B-instruct}.
+This model supports two main prompts for diverse tasks: "s2p" (sentence-to-passage) for information retrieval, and "s2s" (sentence-to-sentence) for semantic textual similarity. 
+These prompts simplify its application in NLP tasks, such as retrieving relevant passages or finding semantically similar text based on a given query.
+
+One of the standout features of \textit{Stella\_en\_1.5B\_v5} is its implementation of \ac{MRL}~\cite{kusupati2024matryoshkarepresentationlearning}, allowing the model to output embeddings in multiple dimensions ranging from 512 to 8192, depending on user needs. 
+Typically, a 1024-dimensional output offers an optimal balance between performance and efficiency. 
+In benchmark tests, the model achieves highly competitive results, with only a minor performance difference between 1024-dimensional and 8192-dimensional embeddings.
+The model can be employed using both SentenceTransformers and transformers libraries, supporting flexible input formats. 
+It is trained on shorter sequences (up to 512 tokens), making it most effective for short-to-medium-length text tasks. 
+
+\subsection{Multilingual-e5-large-instruct}\label{subsec:nextcloud-ai}
+The Multilingual E5-Large-Instruct model is an advanced multilingual text embedding model introduced as part of the E5 model family, which aims to improve the quality and utility of multilingual text embeddings~\cite{wang2024multilinguale5textembeddings}.
+It is specifically designed to support a wide range of languages and to deliver robust performance across various tasks such as text retrieval, semantic similarity, and multilingual retrieval.
+
+The E5-Large-Instruct model contains 24 layers and features an embedding size of 1024.
+It builds on the \textit{XLM-RoBERTa-large}~\cite{DBLP:journals/corr/abs-1911-02116} architecture, which supports 100 languages, albeit with varying performance depending on the resource richness of the language in question.
+The model was initialized from XLM-RoBERTa-large and underwent two key stages of training:
 \begin{itemize}
-    \item Masked language modeling (MLM) pre-training on the C4 dataset
-    \item Weakly-supervised contrastive pre-training on GTE pre-training data
-    \item Supervised contrastive fine-tuning on GTE fine-tuning data
+    \item \textbf{Contrastive Pre-training:} The model was pre-trained on approximately 1 billion weakly supervised multilingual text pairs using a contrastive loss function with a temperature of 0.01. This stage aimed to align similar texts in a shared embedding space.
+    \item \textbf{Fine-tuning:} Following pre-training, the model was fine-tuned using high-quality labeled datasets from the E5-mistral paper. This second stage involved a more supervised approach, optimizing performance across specific tasks. During this phase, instruction-tuning was incorporated, where the model learned to generate better embeddings by using natural language task instructions.
 \end{itemize}
+The E5-Large-Instruct model was evaluated on BEIR and MTEB benchmarks, and its performance is on par with state-of-the-art English-only models.
+Evaluation on the MIRACL~\cite{zhang-etal-2023-miracl} multilingual retrieval benchmark across 16 languages and on Bitext mining tasks across over 100 languages demonstrated its capability to handle diverse languages effectively.
+Despite the excellent performance on high-resource languages, the model shows degradation in performance for low-resource languages, a common limitation of multilingual models.
+The use of contrastive learning and instruction tuning enables the model to generate highly effective embeddings for information retrieval tasks.
+However, the absolute cosine similarity values generated by the model are less critical than the relative order of these values, which is more relevant for retrieval and similarity ranking tasks.
 
-The MLM pre-training follows a two-stage curriculum to efficiently handle long sequences.
-It first trains on shorter 512 token inputs, then resamples the data to include more long sequences and continues MLM on 8192 token inputs.
-The contrastive pre-training and fine-tuning stages utilize diverse text pair datasets to learn general-purpose text representations.
+%TODO: NEED TO BE UPDATED
+\subsection{bge-small-en-v1.5}\label{subsec:baai}
+The \textit{\textit{bge-small-en-v1.5}} model is part of the BGE (BAAI General Embeddings) series developed by the Beijing Academy of Artificial Intelligence~\cite{bge_embedding}.
+It is a compact English-specific model with just 25M parameters, making it highly efficient for deployment in resource-constrained environments.
+The model architecture is based on RoBERTa~\cite{liu2019robertarobustlyoptimizedbert} with optimizations like dynamic token pruning and embedding factorization to reduce computational costs.
 
-\subsubsection{Evaluation}
-\textit{gte-large-en-v1.5} demonstrates strong performance on the MTEB multilingual benchmark, achieving state-of-the-art results in its model size category.
-It also shows competitive results on the LoCo long-context retrieval benchmark.
-The model strikes a good balance between embedding quality and computational efficiency.
-
-\subsection{jinaai/jina-embeddings-v3}\label{subsec:jinaai}
-
-\subsubsection{Model Overview}
-jina-embeddings-v3 is a multilingual multi-task text embedding model developed by Jina AI [Sturm et al., 2023].
-Based on the XLM-RoBERTa architecture [Conneau et al., 2019], it incorporates rotary position embeddings (RoPE) to handle input sequences up to 8192 tokens.
-A key feature is the inclusion of 5 LoRA (low-rank adaptation) [Hu et al., 2021] adapters to efficiently generate task-specific embeddings for retrieval, clustering, classification, and text matching.
-
-\subsubsection{Training Methodology}
-jina-embeddings-v3 is first pre-trained using masked language modeling on a large multilingual corpus.
-It then undergoes contrastive pre-training on weakly-supervised text pairs mined from web data.
-inally, the model is fine-tuned using supervised contrastive learning on annotated datasets for specific tasks.
-The training leverages recent techniques like Matryoshka embeddings [Kusupati et al., 2022] which allow flexibly truncating the embedding size to reduce storage costs.
-
-\subsubsection{Evaluation}
-On the MTEB benchmark, jina-embeddings-v3 outperforms other multilingual models like XLMR and achieves state-of-the-art results on several English tasks, surpassing large models from OpenAI and Cohere.
-Its strong cross-lingual transfer and flexible embedding size options make it highly practical for real-world applications.
-
-\subsection{dunzhang/stella\_en\_1.5B\_v5}\label{subsec:dunzhang}
-
-\subsubsection{Model Overview}
-stella\_en\_1.5B\_v5 is an English-specific embedding model built by Baai based on Alibaba's gte-large-en-vl.5 [Dunzhang, 2023]. It simplifies the usage of prompts, providing two general templates (one for sentence-to-passage and one for sentence-to-sentence tasks). Through Matryoshka representation learning, the model supports elastic embeddings with dimensions ranging from 32 to 8192, allowing users to easily trade off between embedding size and quality.
-
-\subsubsection{Training Methodology}
-stella\_en\_1.5B\_v5 follows a similar training pipeline as gte-large-en-v1.5, with masked language modeling pre-training, followed by weakly-supervised contrastive learning on large-scale web data. The contrastive fine-tuning stage incorporates supervision from diverse high-quality English datasets. Reversed RoPE scaling is employed during pre-training to handle longer sequences more efficiently.
-
-\subsubsection{Evaluation}
-stella\_en\_1.5B\_v5 achieves strong results on the SentEval and BEIR benchmarks, often outperforming larger models. The elastic embeddings provide significant flexibility - the 1024d and 512d options perform comparably to the full 8192d embeddings in most cases, while being much more efficient.
-
-\subsection{Nextcloud-AI/multilingual-e5-large-instruct}\label{subsec:nextcloud-ai}
-
-\subsubsection{Model Overview}
-multilingual-e5-large-instruct is a multilingual extension of the E5 text embedding model [Wang et al., 2023].
-It has 24 transformer layers and produces 1024-dimensional embeddings.
-The model is initialized from XLM-RoBERTa-large and trained on a mixture of multilingual datasets with a focus on 30 languages.
-
-\subsubsection{Training Methodology}
-The training of multilingual-e5-large-instruct involves two main stages:
-Contrastive pre-training on 1 billion weakly-supervised text pairs
-Fine-tuning on datasets from the E5-mistral paper [Wang et al., 2023]
-For the fine-tuning stage, each text pair is prepended with a one-sentence instruction describing the task (e.g. "Given a web search query, retrieve relevant passages that answer the query"). This instruction tuning setup allows the model to adapt its representations for different use cases.
-
-\subsubsection{Evaluation}
-multilingual-e5-large-instruct demonstrates strong performance on both monolingual and cross-lingual benchmarks like MKQA, MLDR, and BEIR. On several non-English datasets, it outperforms much larger models like mDPR and E5-mistral-7b. The instruction tuning proves highly effective in aligning the embeddings for specific tasks.
-
-\subsection{BAAI/bge-small-en-v1.5}\label{subsec:baai}
-
-\subsubsection{Model Overview}
-The bge-small-en-v1.5 model is part of the BGE (BAAI General Embeddings) series developed by the Beijing Academy of Artificial Intelligence [Xiao et al., 2023]. It is a compact English-specific model with just 25M parameters, making it highly efficient for deployment in resource-constrained environments. The model architecture is based on RoBERTa [Liu et al., 2019] with optimizations like dynamic token pruning and embedding factorization to reduce computational costs.
-
-\subsubsection{Training Methodology}
-bge-small-en-v1.5 follows a two-stage training pipeline similar to other BGE models:
-
-Weakly-supervised contrastive pre-training on large-scale web data
-Supervised fine-tuning on a curated set of high-quality English NLP datasets
+\textit{\textit{bge-small-en-v1.5}} follows a two-stage training pipeline similar to other BGE models:
+\begin{itemize}
+    \item \textbf{Pre-training:} Weakly-supervised contrastive pre-training on large-scale web data
+    \item \textbf{Fine-tuning:} Supervised fine-tuning on a curated set of high-quality English NLP datasets
+\end{itemize}
 
 The pre-training stage leverages diverse data sources like Wikipedia, Reddit, and CommonCrawl to learn general-purpose text representations. The fine-tuning stage incorporates datasets spanning retrieval, classification, paraphrase detection, and semantic textual similarity tasks to instill task-specific knowledge.
 
-\subsubsection{Evaluation}
-Despite its small size, bge-small-en-v1.5 punches above its weight on several English benchmarks.
-On the SentEval suite, it outperforms the base-sized BERT and RoBERTa models on most tasks while being 4x more compact.
+Despite its small size, \textit{\textit{bge-small-en-v1.5}} punches above its weight on several English benchmarks.
+On the SentEval suite~\cite{conneau2018senteval}, it outperforms the base-sized BERT and RoBERTa models on most tasks while being 4x more compact.
 On retrieval challenges like BEIR, it achieves competitive results, often surpassing larger models like MPNet and the original DPR.
 The model's strong performance can be attributed to the efficient architecture design and the use of high-quality fine-tuning data.
 It presents an attractive option for applications requiring low-latency inference or deployment on edge devices.
 
 \subsection{Comparative Analysis}\label{subsec:comparative-analysis}
+We examine their model size and efficiency, language coverage, supported features, and overall performance to provide insights for selecting the most suitable model based on specific requirements.
 
 \subsubsection{Model Size and Efficiency}
-The six models cover a broad spectrum of sizes, from the 25M parameter bge-small-en-v1.5 to the 7B parameter e5-multilingual-7b-instruct-v2. The smaller models (bge-small-en-v1.5, stella\_en\_1.5B\_v5) excel in scenarios with strict latency or memory constraints, while the larger models (e5-multilingual-7b-instruct-v2, gte-large-en-v1.5) provide maximum accuracy for offline processing or applications demanding the highest quality embeddings.
-The base-scale models (jina-embeddings-v3, multilingual-e5-large-instruct) strike a good balance for most use cases, delivering strong performance with reasonable computational requirements. Notably, bge-small-en-v1.5 achieves impressive results despite its tiny size, making it a top choice for efficiency-focused applications.
-
+Table~\ref{tab:comparison-embeddings} compares the model size, memory usage, embedding dimensions, and maximum token length of the five models. 
+The \textit{stella\_en\_1.5B\_v5} model has the largest size with 1,543 million parameters, while \textit{bge-small-en-v1.5} is the smallest with only 33 million parameters.
+Larger models generally require more memory and computational resources, which may be a consideration for resource-constrained environments.
+In terms of memory usage, \textit{stella\_en\_1.5B\_v5} requires 5.75 GB in fp32 precision, while \textit{bge-small-en-v1.5} only needs 0.12 GB.
+This substantial difference in memory footprint can be a decisive factor when deploying models on edge devices or serving them in real-time applications with limited resources.
+The embedding dimensions also vary among the models, ranging from 384 for \textit{bge-small-en-v1.5} to 8192 for \textit{stella\_en\_1.5B\_v5}.
+Higher-dimensional embeddings can capture more fine-grained semantic information but may increase storage requirements and similarity computation costs.
+Practitioners should consider the trade-off between embedding quality and efficiency based on their specific use case.
 
 \begin{table}[ht!]
     \centering
@@ -391,41 +388,54 @@ The base-scale models (jina-embeddings-v3, multilingual-e5-large-instruct) strik
 \end{table}
 
 \subsubsection{Language Coverage}
-Three models (gte-large-en-v1.5, stella\_en\_1.5B\_v5, bge-small-en-v1.5) are designed specifically for English, while the others offer multilingual support. jina-embeddings-v3 covers 100+ languages with a focus on 30 major ones, and the E5 models support 100 languages but may see degraded performance on low-resource languages.
-For English-only applications, the specialized models are recommended, with bge-small-en-v1.5 being the most efficient and gte-large-en-v1.5 providing the highest quality. jina-embeddings-v3 is a strong choice when both English performance and broad language coverage are desired.
+Language coverage is a crucial aspect when selecting an embedding model for multilingual applications. The \textit{Multilingual-e5-large-instruct} model stands out in this regard, as it supports a wide range of languages. This model leverages instruction fine-tuning on multilingual data, enabling it to generate high-quality embeddings for various languages.
+The \textit{Jina-embeddings-v3} model also offers multilingual support, although the exact language coverage is not specified in the provided context. On the other hand, the \textit{Bge-small-en-v1.5}, \textit{Stella\_en\_1.5B\_v5}, and \textit{Gte-large-en-v1.5} models primarily focus on English embeddings, making them more suitable for monolingual English applications.
 
 \subsubsection{Supported Features}
-All models handle long input sequences (≥2048 tokens), which is important for document-level tasks. jina-embeddings-v3 includes dedicated task-specific adapters for fine-grained control, while the E5 models leverage instruction prompts for easy task adaptation.
-stella\_en\_1.5B\_v5 and jina-embeddings-v3 support Matryoshka embeddings for flexibly adjusting embedding sizes, and bge-small-en-v1.5 employs embedding factorization for better efficiency-quality trade-offs at low dimensions.
-
-\subsubsection{Empirical Performance}
-On English benchmarks, gte-large-en-v1.5 and stella\_en\_1.5B\_v5 generally lead the pack, followed closely by bge-small-en-v1.5 which punches far above its weight class. jina-embeddings-v3 also shows strong English results while supporting many more languages.
-For multilingual tasks, e5-multilingual-7b-instruct-v2 achieves the highest absolute scores, while jina-embeddings-v3 and multilingual-e5-large-instruct offer the best performance-efficiency trade-offs.
-On long-context understanding, the E5 models and gte-large-en-v1.5 are top choices, with bge-small-en-v1.5 and stella\_en\_1.5B\_v5 being less suitable due to their more limited sequence lengths.
+The embedding models offer various features that cater to different use cases. The \textit{Stella\_en\_1.5B\_v5} model supports two main prompts for diverse tasks: "s2p" (sentence-to-passage) for information retrieval and "s2s" (sentence-to-sentence) for semantic textual similarity. This flexibility allows users to adapt the model for specific NLP tasks with minimal effort.
+The \textit{Jina-embeddings-v3} model incorporates task-specific LoRA adapters, enabling it to generate high-quality embeddings for query-document retrieval, clustering, classification, and text matching. This feature eliminates the need for manual prompt engineering and provides a more streamlined approach for task-specific embeddings.
+Additionally, the \textit{Stella\_en\_1.5B\_v5} and \textit{Jina-embeddings-v3} models implement MRL, allowing users to generate embeddings with different dimensions based on their needs. This adaptability is particularly useful when balancing between embedding quality and storage or computational efficiency.
 
 \subsubsection{Conclusion}
-In this extended comparative study, we analyzed five state-of-the-art text embedding models: gte-large-en-v1.5, jina-embeddings-v3, stella\_en\_1.5B\_v5, multilingual-e5-large-instruct, and bge-small-en-v1.5.
-Key insights:
+The choice of text embedding model depends on various factors, including the specific application, language coverage requirements, available computational resources, and desired features. For monolingual English applications, the \textit{Gte-large-en-v1.5} and \textit{Stella\_en\_1.5B\_v5} models offer high-quality embeddings with support for longer input sequences.
+The \textit{Stella\_en\_1.5B\_v5} model, in particular, provides prompt-based adaptability for information retrieval and semantic similarity tasks.
+For multilingual applications, the \textit{Multilingual-e5-large-instruct} and \textit{Jina-embeddings-v3} models are strong contenders.
+The \textit{Multilingual-e5-large-instruct} model supports a wide range of languages, while \textit{Jina-embeddings-v3} offers task-specific LoRA adapters for enhanced performance across various NLP tasks.
+When computational resources are limited, the \textit{Bge-small-en-v1.5} model presents a lightweight option with competitive performance.
+Its small size and low memory footprint make it suitable for deployment on edge devices or real-time applications.
+Ultimately, practitioners should carefully evaluate their specific requirements and constraints before selecting an embedding model.
+The comparative analysis provided in this section aims to assist in this decision-making process by highlighting the key differences and strengths of each model.
 
-Model size presents a key trade-off: larger models offer maximum quality but at steep computational costs, while smaller models prioritize efficiency, with bge-small-en-v1.5 showing impressive performance-size ratio.
-For English-only applications, the specialized gte-large-en-v1.5, stella\_en\_1.5B\_v5 and bge-small-en-v1.5 are top picks, while jina-embeddings-v3 and the E5 models are best for multilingual use cases.
-Models with flexible embedding sizes (stella\_en\_1.5B\_v5, jina-embeddings-v3, bge-small-en-v1.5) enable powerful yet efficient representations for real-world applications.
-Instruction prompts (E5 models) and dedicated task adapters (jina-embeddings-v3) offer convenient mechanisms for adapting embeddings to specific downstream tasks.
-Empirically, all models show strong results on a wide range of benchmarks, with e5-multilingual-7b-instruct-v2 leading in absolute scores, gte-large-en-v1.5 and stella\_en\_1.5B\_v5 excelling at English understanding, and jina-embeddings-v3 providing an excellent balance for multilingual applications.
+Now we will test these models through the pipeline and evaluate their performance.
 
-Selecting the right embedding model requires careful consideration of the target use case, available computational resources, and deployment constraints.
-For English-centric applications prioritizing efficiency, bge-small-en-v1.5 is a top choice, while gte-large-en-v1.5 and stella\_en\_1.5B\_v5 deliver maximum quality.
-jina-embeddings-v3 and the E5 models are recommended for scenarios requiring broad language coverage and task flexibility.
-As text embedding techniques continue to advance at a rapid pace, this comparative analysis aims to provide a snapshot of the current state-of-the-art and offer practical insights for practitioners.
-By understanding the strengths and trade-offs of each model, researchers and developers can make informed decisions when building embedding-powered applications.
-Looking ahead, we expect to see further innovations in model efficiency, task adaptation, and cross-lingual transfer, unlocking even more powerful and versatile text representations.
+\begin{table}[h!]
+\noindent
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cccccc||ccc}
+\multicolumn{9}{c}{\fbox{\textit{Retrieval Method}}, BAAI/\textit{bge-small-en-v1.5}, Sliding Window - 6 , With Similarity Cut-off} \\ \\
+\multirow{2}{*}{\textbf{Method}} & \multicolumn{2}{c}{\textbf{Random Sampling}} & \textbf{Over Sampling} & \multicolumn{2}{c||}{\textbf{Avg.}} & \multicolumn{3}{c}{\textbf{Complete Run}} \\
+\cmidrule(lr){2-3}  \cmidrule(lr){4-4} \cmidrule(lr){5-6} \cmidrule(lr){7-9} \
+& Acc & F1 & Acc & Acc & \multicolumn{1}{c||}{F1} & Acc & F1 & Latency \\
+\midrule
+\multicolumn{1}{l}{\textit{Unsupervised}} & & & & & & & & \\
+\multicolumn{1}{l}{Bm25} & 0.719 & 0.505  & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & 0.8882 & 0.8940 & 0.353\\
+\multicolumn{1}{l}{contriever-msmarco} & 0.505 & \textbf{0.450} & \textbf{0.212}  & \textbf{0.528} & \multicolumn{1}{c||}{0.255} & 0.8932 & 0.8988 & 0.353 \\
+\hdashline
+\multicolumn{1}{l}{\textit{supervised}} & & & & & & & & \\
+\multicolumn{1}{l}{jina-reranker-v2-base-multilingual} & 0.719  & \textbf{0.450} & \textbf{0.212} & 0.255  & \multicolumn{1}{c||}{0.255} & 0.9004 & 0.9065 & 0.9065\\
+\multicolumn{1}{l}{ms-marco-MiniLM-L-6-v2} & 0.719 & 0.505 & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & \textbf{0.9014} & \textbf{0.9077} & 0.353\\
+\bottomrule
+\end{tabular}}\caption{Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}
+\label{tab:evaluation_emb_results}
+\end{table}
 
+Based on the Table~\ref{tab:evaluation_emb_results}, we use the \textit{Stella\_en\_1.5B\_v5} model for the subsequent evaluations and analyses due to its superior performance across various metrics.
 
 \section{Chunking Strategies}\label{sec:chunking-strategies}
 A critical component of \ac{RAG} systems is the chunking strategy employed to divide documents into smaller, manageable pieces for efficient retrieval and processing.
 This chapter examines three distinct chunking methods for \ac{RAG} systems, each with its unique characteristics and potential advantages.
 
-\subsection{Parsing Documents into Text Chunks (Nodes)}\label{subsec:parsing-documents-into-text-chunks}
+\subsection{Parsing Documents into Text Chunks}\label{subsec:parsing-documents-into-text-chunks}
 The first method we will explore involves parsing documents into text chunks, also referred to as nodes, of fixed sizes.
 This approach is straightforward and widely used in many RAG implementations.
 We will investigate three different chunk sizes: 256, 512, and 1024 tokens.
@@ -434,9 +444,9 @@ In this method, documents are sequentially divided into chunks of the specified 
 If the final chunk is smaller than the designated size, it is typically padded or left as is, depending on the implementation.
 \subsubsection{Chunk Sizes}
 \begin{itemize}
-    \item 256-token chunks: This size offers fine granularity, potentially allowing for more precise retrieval of relevant information. However, it may result in a loss of context for more complex topics that require broader context.
-    \item 512-token chunks: This medium-sized chunk strikes a balance between granularity and context preservation. It is often considered a good default choice for many applications.
-    \item 1024-token chunks: Larger chunks preserve more context but may retrieve more irrelevant information and increase computational overhead during retrieval and processing.
+    \item \textbf{256-token chunks:} This size offers fine granularity, potentially allowing for more precise retrieval of relevant information. However, it may result in a loss of context for more complex topics that require broader context.
+    \item \textbf{512-token chunks:} This medium-sized chunk strikes a balance between granularity and context preservation. It is often considered a good default choice for many applications.
+    \item \textbf{1024-token chunks:} Larger chunks preserve more context but may retrieve more irrelevant information and increase computational overhead during retrieval and processing.
 \end{itemize}
 \subsubsection{Advantages and Limitations}
 Advantages:
@@ -453,13 +463,35 @@ Limitations:
 The second method, which we will refer to as \textit{Small2Big}, involves creating a hierarchical structure of chunks, where smaller child chunks refer to larger parent chunks.
 This approach aims to combine the benefits of fine-grained retrieval with the context preservation of larger chunks.
 \subsubsection{Methodology}
-In this method, documents are parsed into three levels of chunks:
+In this method, we parsed documents into three levels of chunks with appending the original text chunk of size 1024:
 \begin{itemize}
     \item Smallest children: 128-token chunks
     \item Intermediate parents: 256-token chunks
     \item Largest parents: 512-token chunks
 \end{itemize}
 Each smaller chunk maintains a reference to its parent chunks, allowing the system to retrieve additional context when needed.
+
+
+\begin{lstlisting}[language=Python, caption=Small2Big Chunking Method, label=lst:small2big_chunking]
+# ...previous code
+sub_chunk_sizes = [128, 256, 512]
+sub_node_parsers = [SimpleNodeParser.from_defaults(chunk_size=c) for c in sub_chunk_sizes]
+
+all_nodes = []
+for base_node in base_nodes:
+    for n in sub_node_parsers:
+        sub_nodes = n.get_nodes_from_documents([base_node])
+        sub_inodes = [
+            IndexNode.from_text_node(sn, base_node.node_id) for sn in sub_nodes
+        ]
+        all_nodes.extend(sub_inodes)
+
+    original_node = IndexNode.from_text_node(base_node, base_node.node_id) # also add original node to node
+    all_nodes.append(original_node)
+all_nodes_dict = {n.node_id: n for n in all_nodes}
+# ... continue processing
+\end{lstlisting}
+
 \subsubsection{Advantages and Limitations}
 Advantages:
 \begin{enumerate}
@@ -477,11 +509,8 @@ The third method, Sentence Window Retrieval, focuses on maintaining semantic coh
 In this approach, documents are first split into individual sentences.
 For each sentence, a \textit{window} of surrounding sentences is included to provide context.
 We will examine two window sizes: 3 and 6.
-\subsubsection{Window Sizes}
-\begin{itemize}
-    \item Window Size 3: For each sentence, the chunk includes the sentence itself, one preceding sentence, and one following sentence.
-    \item Window Size 6: For each sentence, the chunk includes the sentence itself, two preceding sentences, and three following sentences.
-\end{itemize}
+For each sentence, the chunk includes the sentence itself, one preceding sentence, and one following sentence.
+
 \subsubsection{Advantages and Limitations}
 Advantages:
 \begin{enumerate}

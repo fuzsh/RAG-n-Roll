@@ -8,12 +8,15 @@
 \contentsline {table}{\numberline {3.4}{\ignorespaces Limitions of the pipeline.}}{39}{table.caption.34}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Performance of Pre-trained Cross-Encoders}}{50}{table.caption.36}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}}{51}{table.caption.38}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of Embedding Models}}{57}{table.caption.39}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Evaluation Results for Different Embeddings Models through the Pipeline (just with the Gemma2 model)}}{62}{table.caption.40}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Performance of Pre-trained Cross-Encoders}}{49}{table.caption.36}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}}{50}{table.caption.38}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of Embedding Models}}{56}{table.caption.43}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}}{58}{table.caption.44}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Evaluation Results for Different Embeddings Models through the Pipeline (just with the Gemma2 model)}}{62}{table.caption.45}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Table example }}{65}{table.caption.41}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Table example }}{65}{table.caption.46}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {B.1}{\ignorespaces Sliding Window - Window Size 3}}{72}{table.caption.43}%
+\contentsline {table}{\numberline {B.1}{\ignorespaces Text Splitter - Chuck Size 512}}{72}{table.caption.48}%
+\contentsline {table}{\numberline {B.2}{\ignorespaces Small to Big (base retriver chunk size set to 1024)}}{72}{table.caption.49}%
+\contentsline {table}{\numberline {B.3}{\ignorespaces Sliding Window - Window Size 3}}{73}{table.caption.50}%
