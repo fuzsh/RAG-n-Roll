@@ -42,7 +42,6 @@ and grammatically correct. The subject, predicate, and object
 can be any valid string without having extra information.
 \end{Verbatim}
 
-
 \section{Question Generation Prompt}\label{sec:prompt-templates:10-question}
 \begin{Verbatim}[fontsize=\small, frame=single, label={Prompt template for generating 10 questions for each triple}]
 You are an intelligent system with access to a vast amount of
@@ -87,4 +86,23 @@ Considering the above information, please respond to this kg: {query}
 The output should be in JSON format with each question having a unique
 identifier and question doesn't contain term knowledge graph, without
 any additional information
+\end{Verbatim}
+
+\section{RAG Prompt}\label{sec:prompt-templates:rag}
+\begin{Verbatim}[fontsize=\small, frame=single, label={Prompt template for RAG}]
+Context information is below.
+---------------------
+{context_str}
+---------------------
+Given the context information and without prior knowledge,
+Evaluate whether the information in the documents supports the triple.
+Please provide your answer in the form of a structured JSON
+format containing a key "output" with the value as "yes" or "no".
+If the triple is correct according to the documents, the value
+should be "yes". If the triple is incorrect, the value should be "no".
+
+{few_shot_examples}
+
+Query: {query_str}
+Answer:
 \end{Verbatim}

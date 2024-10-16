@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  15 OCT 2024 15:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  16 OCT 2024 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1757,17 +1757,17 @@ LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 42.
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
 (Font)              scaled to size 10.95pt on input line 42.
-<res/unipdbg.pdf, id=363, 153.57375pt x 153.57375pt>
+<res/unipdbg.pdf, id=383, 153.57375pt x 153.57375pt>
 File: res/unipdbg.pdf Graphic file (type pdf)
 <use res/unipdbg.pdf>
 Package pdftex.def Info: res/unipdbg.pdf  used on input line 42.
 (pdftex.def)             Requested size: 677.17265pt x 677.21925pt.
-<res/ltunipd.pdf, id=364, 335.2525pt x 153.57375pt>
+<res/ltunipd.pdf, id=384, 335.2525pt x 153.57375pt>
 File: res/ltunipd.pdf Graphic file (type pdf)
 <use res/ltunipd.pdf>
 Package pdftex.def Info: res/ltunipd.pdf  used on input line 42.
 (pdftex.def)             Requested size: 186.33846pt x 85.35826pt.
-<res/dei.pdf, id=365, 98.3675pt x 63.23625pt>
+<res/dei.pdf, id=385, 98.3675pt x 63.23625pt>
 File: res/dei.pdf Graphic file (type pdf)
 <use res/dei.pdf>
 Package pdftex.def Info: res/dei.pdf  used on input line 42.
@@ -1837,7 +1837,7 @@ the-siz-ing Con-trastive
 
 [7]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 63.
+(Font)              scaled to size 10.0pt on input line 68.
  [8] [9])
 \tf@toc=\write8
 \openout8 = `main.toc'.
@@ -1855,15 +1855,47 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 ] [12
 
 
-] (/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot)
+] (/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot
+Runaway argument?
+{\numberline {3.4}{\ignorespaces Performance of our LLM applications \ETC.
+/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot:8: Paragraph ended befor
+e \contentsline was complete.
+<to be read again> 
+                   \par 
+l.8 ...ted by Openlit~\let \reserved@d =[\def \par
+                                                   }}{36}{table.caption.34}%
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot:8: Extra }, or forgotten
+ \endgroup.
+l.8 ...d by Openlit~\let \reserved@d =[\def \par }
+                                                  }{36}{table.caption.34}%
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot:8: Extra }, or forgotten
+ \endgroup.
+l.8 ... by Openlit~\let \reserved@d =[\def \par }}
+                                                  {36}{table.caption.34}%
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+)
 \tf@lot=\write10
 \openout10 = `main.lot'.
 
  [13
 
 
-]
-[14
+] [14
 
 
 ] (/Users/farzad/Documents/Thesis/msc-thesis/out/main.loa)
@@ -1873,11 +1905,11 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
  [17
 
 
-] [18
-
-
 ]
-(/Users/farzad/Documents/Thesis/msc-thesis/out/main.lol)
+[18
+
+
+] (/Users/farzad/Documents/Thesis/msc-thesis/out/main.lol)
 \tf@lol=\write12
 \openout12 = `main.lol'.
 
@@ -1948,6 +1980,10 @@ LaTeX Font Info:    Font shape `TS1/zpltlf/m/n' will be
 Package acronym Info: Label `acro:LLM' newly defined as it shall be overridden
 although it is yet undefined on input line 40.
  [3]
+
+LaTeX Warning: Reference `ch:analysis' on page 4 undefined on input line 63.
+
+
 Overfull \hbox (0.42429pt too wide) in paragraph at lines 74--75
 \T1/zpltlf/m/n/12 judg-ments fre-quently de-pend on fac-tual in-for-ma-tion, ou
 r tech-nol-ogy could
@@ -1970,7 +2006,7 @@ Package acronym Info: Label `acro:NLI' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
 Package acronym Info: Label `acro:QA' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
-<res/rel-human-llm-inference.png, id=763, 599.23875pt x 703.62875pt>
+<res/rel-human-llm-inference.png, id=788, 599.23875pt x 703.62875pt>
 File: res/rel-human-llm-inference.png Graphic file (type png)
 <use res/rel-human-llm-inference.png>
 Package pdftex.def Info: res/rel-human-llm-inference.png  used on input line 16
@@ -1991,7 +2027,7 @@ Overfull \hbox (3.24234pt too wide) in paragraph at lines 46--47
  LLM-based ap-proaches
  []
 
-<res/rel-claim-verification.png, id=788, 402.50375pt x 444.66125pt>
+<res/rel-claim-verification.png, id=812, 402.50375pt x 444.66125pt>
 File: res/rel-claim-verification.png Graphic file (type png)
 <use res/rel-claim-verification.png>
 Package pdftex.def Info: res/rel-claim-verification.png  used on input line 58.
@@ -2003,13 +2039,13 @@ Overfull \hbox (1.57443pt too wide) in paragraph at lines 78--82
 -the-siz-ing Con-trastive
  []
 
-<res/rel-rafts.png, id=811, 787.94376pt x 367.3725pt>
+<res/rel-rafts.png, id=835, 787.94376pt x 367.3725pt>
 File: res/rel-rafts.png Graphic file (type png)
 <use res/rel-rafts.png>
 Package pdftex.def Info: res/rel-rafts.png  used on input line 91.
 (pdftex.def)             Requested size: 418.25368pt x 195.00359pt.
 [11] [12 <./res/rel-rafts.png>]
-<res/rel-ragar.png, id=825, 465.74pt x 599.23875pt>
+<res/rel-ragar.png, id=849, 465.74pt x 599.23875pt>
 File: res/rel-ragar.png Graphic file (type png)
 <use res/rel-ragar.png>
 Package pdftex.def Info: res/rel-ragar.png  used on input line 118.
@@ -2191,7 +2227,7 @@ readable, whereas
  []
 
 [18] [19]
-<res/Cross-Encoder.png, id=873, 7831.2575pt x 1920.17375pt>
+<res/Cross-Encoder.png, id=898, 7831.2575pt x 1920.17375pt>
 File: res/Cross-Encoder.png Graphic file (type png)
 <use res/Cross-Encoder.png>
 Package pdftex.def Info: res/Cross-Encoder.png  used on input line 122.
@@ -2213,7 +2249,7 @@ File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 (Font)              scaled to size 10.0pt on input line 140.
-<res/knowledge-distill.png, id=878, 3573.35pt x 1159.33125pt>
+<res/knowledge-distill.png, id=903, 3573.35pt x 1159.33125pt>
 File: res/knowledge-distill.png Graphic file (type png)
 <use res/knowledge-distill.png>
 Package pdftex.def Info: res/knowledge-distill.png  used on input line 149.
@@ -2226,7 +2262,7 @@ al el-e-ment of our pipeline,
  []
 
 [21 <./res/knowledge-distill.png>]
-<res/Google-Search-Result.png, id=893, 9867.86626pt x 4028.04875pt>
+<res/Google-Search-Result.png, id=917, 9867.86626pt x 4028.04875pt>
 File: res/Google-Search-Result.png Graphic file (type png)
 <use res/Google-Search-Result.png>
 Package pdftex.def Info: res/Google-Search-Result.png  used on input line 206.
@@ -2252,7 +2288,7 @@ ave pro-tec-tion mech-a-nisms against
  []
 
 [24]
-<res/Google-Search-Result-Content.png, id=942, 9995.3425pt x 2480.26625pt>
+<res/Google-Search-Result-Content.png, id=966, 9995.3425pt x 2480.26625pt>
 File: res/Google-Search-Result-Content.png Graphic file (type png)
 <use res/Google-Search-Result-Content.png>
 Package pdftex.def Info: res/Google-Search-Result-Content.png  used on input li
@@ -2264,11 +2300,16 @@ LaTeX Warning: Reference `sec:document-selction' on page 26 undefined on input
 line 309.
 
 [26]
-<res/window-ret.png, id=953, 2848.6425pt x 1128.215pt>
+<res/window-ret.png, id=977, 2848.6425pt x 1128.215pt>
 File: res/window-ret.png Graphic file (type png)
 <use res/window-ret.png>
 Package pdftex.def Info: res/window-ret.png  used on input line 342.
 (pdftex.def)             Requested size: 418.25368pt x 165.6442pt.
+
+
+LaTeX Warning: Reference `sec:chunking:sliding-window' on page 27 undefined on 
+input line 348.
+
 
 Overfull \hbox (3.3385pt too wide) in paragraph at lines 348--349
 []\T1/zpltlf/m/n/12 There is ex-am-ple of the \T1/zpltlf/m/it/12 Sen-tenceWin-d
@@ -2280,12 +2321,12 @@ LaTeX Font Info:    Font shape `T1/zpltlf/b/sc' will be
 (Font)              scaled to size 12.0pt on input line 350.
 [27 <./res/window-ret.png>] [28] [29] [30] [31] [32]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 492.
+put line 493.
 
-./chapters/03_pipeline.tex:591: Undefined control sequence.
+./chapters/03_pipeline.tex:592: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.591         \end{tabular}}
+l.592         \end{tabular}}
                             \caption{Comprenhensive list of decision points ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2293,10 +2334,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:591: Undefined control sequence.
+./chapters/03_pipeline.tex:592: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.591         \end{tabular}}
+l.592         \end{tabular}}
                             \caption{Comprenhensive list of decision points ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2304,10 +2345,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:591: Undefined control sequence.
+./chapters/03_pipeline.tex:592: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.591         \end{tabular}}
+l.592         \end{tabular}}
                             \caption{Comprenhensive list of decision points ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2315,10 +2356,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:591: Undefined control sequence.
+./chapters/03_pipeline.tex:592: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.591         \end{tabular}}
+l.592         \end{tabular}}
                             \caption{Comprenhensive list of decision points ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2327,14 +2368,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 591--591
+Underfull \hbox (badness 1924) in paragraph at lines 592--592
 []|\T1/zpltlf/m/n/12 Determining the op-ti-mal chunk size and pro-cess-ing
  []
 
-./chapters/03_pipeline.tex:591: Undefined control sequence.
+./chapters/03_pipeline.tex:592: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.591         \end{tabular}}
+l.592         \end{tabular}}
                             \caption{Comprenhensive list of decision points ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2342,10 +2383,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:591: Undefined control sequence.
+./chapters/03_pipeline.tex:592: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.591         \end{tabular}}
+l.592         \end{tabular}}
                             \caption{Comprenhensive list of decision points ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2353,10 +2394,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:591: Undefined control sequence.
+./chapters/03_pipeline.tex:592: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.591         \end{tabular}}
+l.592         \end{tabular}}
                             \caption{Comprenhensive list of decision points ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2364,10 +2405,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:591: Undefined control sequence.
+./chapters/03_pipeline.tex:592: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.591         \end{tabular}}
+l.592         \end{tabular}}
                             \caption{Comprenhensive list of decision points ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2377,11 +2418,36 @@ and I'll forget about whatever was undefined.
 
 [33] [34{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}{/
 usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
-[35] [36] [37] [38]
-./chapters/03_pipeline.tex:730: Undefined control sequence.
+[35]
+./chapters/03_pipeline.tex:623: Argument of \caption@ydblarg has an extra }.
+<inserted text> 
+                \par 
+l.623 ...penlit.io/}} with \textit{Gemma2} model.}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+{\@caption \@captype }{\@xfootnote }\def \reserved@b {\stepcounter \@mpfn \ETC.
+./chapters/03_pipeline.tex:623: Paragraph ended before \caption@ydblarg was com
+plete.
+<to be read again> 
+                   \par 
+l.623 ...penlit.io/}} with \textit{Gemma2} model.}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+[36]
+./chapters/03_pipeline.tex:710: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.730             \end{tabular}}
+l.710             \end{tabular}}
                                 \caption{Limitions of the pipeline.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2389,10 +2455,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:730: Undefined control sequence.
+./chapters/03_pipeline.tex:710: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.730             \end{tabular}}
+l.710             \end{tabular}}
                                 \caption{Limitions of the pipeline.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2400,10 +2466,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:730: Undefined control sequence.
+./chapters/03_pipeline.tex:710: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.730             \end{tabular}}
+l.710             \end{tabular}}
                                 \caption{Limitions of the pipeline.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2411,10 +2477,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:730: Undefined control sequence.
+./chapters/03_pipeline.tex:710: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.730             \end{tabular}}
+l.710             \end{tabular}}
                                 \caption{Limitions of the pipeline.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2422,10 +2488,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:730: Undefined control sequence.
+./chapters/03_pipeline.tex:710: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.730             \end{tabular}}
+l.710             \end{tabular}}
                                 \caption{Limitions of the pipeline.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2433,10 +2499,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:730: Undefined control sequence.
+./chapters/03_pipeline.tex:710: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.730             \end{tabular}}
+l.710             \end{tabular}}
                                 \caption{Limitions of the pipeline.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2444,10 +2510,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:730: Undefined control sequence.
+./chapters/03_pipeline.tex:710: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.730             \end{tabular}}
+l.710             \end{tabular}}
                                 \caption{Limitions of the pipeline.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2455,10 +2521,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/03_pipeline.tex:730: Undefined control sequence.
+./chapters/03_pipeline.tex:710: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.730             \end{tabular}}
+l.710             \end{tabular}}
                                 \caption{Limitions of the pipeline.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2466,52 +2532,56 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) [39]
+[37]) [38]
 \openout2 = `chapters/04_analysis.aux'.
 
- (./chapters/04_analysis.tex [40
+ (./chapters/04_analysis.tex
+Chapter 4.
+
+Underfull \vbox (badness 5245) has occurred while \output is active []
+
+ [39
 
 
 
 
 
 ]
-Chapter 4.
-[41]) [42]
+[40] [41] [42] [43]) [44] [45]
 \openout2 = `chapters/05_ablation.aux'.
 
- (./chapters/05_ablation.tex
+ (./chapters/05_ablation.tex [46
+
+
+
+
+
+]
 Chapter 5.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43
-
-
-
-
-
-]
-[44]
+ [47]
+[48]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 6.6pt on input line 48.
- [45]
+ [49]
 Underfull \vbox (badness 4229) has occurred while \output is active []
 
- [46]
-[47]
+ [50]
+[51]
 Overfull \hbox (1.48035pt too wide) in paragraph at lines 154--155
 \T1/zpltlf/m/n/12 Con-triever's per-for-mance on var-i-ous re-trieval bench-mar
 ks, es-pe-cially those
  []
 
-[48]
+[52]
 
-LaTeX Warning: Reference `fig:document_retrieval_confusion_matrix' on page 49 u
+LaTeX Warning: Reference `fig:document_retrieval_confusion_matrix' on page 53 u
 ndefined on input line 202.
 
-[49]
-<res/ret_result_sim_1.png, id=1141, 722.7pt x 578.16pt>
+[53]
+<res/ret_result_sim_1.png, id=1192, 722.7pt x 578.16pt>
 File: res/ret_result_sim_1.png Graphic file (type png)
 <use res/ret_result_sim_1.png>
 Package pdftex.def Info: res/ret_result_sim_1.png  used on input line 212.
@@ -2521,7 +2591,7 @@ Underfull \hbox (badness 1320) in paragraph at lines 213--213
 []\T1/zpltlf/m/n/12 Figure 5.1: |Doc-u-ment Re-trieval
  []
 
-<res/ret_result_sim_2.png, id=1142, 722.7pt x 578.16pt>
+<res/ret_result_sim_2.png, id=1193, 722.7pt x 578.16pt>
 File: res/ret_result_sim_2.png Graphic file (type png)
 <use res/ret_result_sim_2.png>
 Package pdftex.def Info: res/ret_result_sim_2.png  used on input line 219.
@@ -2554,7 +2624,7 @@ Overfull \hbox (10.34647pt too wide) in paragraph at lines 248--250
 tlf/m/it/12 ms-marco-MiniLM-L-6-v2 \T1/zpltlf/m/n/12 achieved
  []
 
-[50 <./res/ret_result_sim_1.png> <./res/ret_result_sim_2.png>]
+[54 <./res/ret_result_sim_1.png> <./res/ret_result_sim_2.png>]
 Overfull \hbox (3.70161pt too wide) in paragraph at lines 272--275
 \T1/zpltlf/m/n/12 con-trastive learn-ing, and in-struc-tion fine-tuning to pro-
 duce high-quality, general-
@@ -2563,27 +2633,27 @@ duce high-quality, general-
 Package acronym Info: Label `acro:RoPE' newly defined as it shall be overridden
 
 although it is yet undefined on input line 278.
-[51]
+[55]
 Package acronym Info: Label `acro:MTEB' newly defined as it shall be overridden
 
 although it is yet undefined on input line 282.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52]
+ [56]
 Package acronym Info: Label `acro:LoRA' newly defined as it shall be overridden
 
 although it is yet undefined on input line 300.
 Package acronym Info: Label `acro:MRL' newly defined as it shall be overridden
 although it is yet undefined on input line 308.
 
-[53]
+[57]
 Overfull \hbox (4.09348pt too wide) in paragraph at lines 315--320
 \T1/zpltlf/m/n/12 rang-ing from 512 to 8192, de-pend-ing on user needs. Typ-i-c
 ally, a 1024-dimensional
  []
 
-[54] [55] [56] [57]
+[58] [59] [60] [61]
 ./chapters/05_ablation.tex:428: Undefined control sequence.
 <argument> \adl@connect 
                         
@@ -2606,7 +2676,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[58] [59] [60]
+[62] [63] [64]
 ./chapters/05_ablation.tex:549: Undefined control sequence.
 <argument> \adl@connect 
                         
@@ -2651,10 +2721,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[61]) [62] [63]
+[65]) [66] [67]
 \openout2 = `chapters/98_conclusions.aux'.
 
- (./chapters/98_conclusions.tex [64
+ (./chapters/98_conclusions.tex [68
 
 
 
@@ -2772,10 +2842,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) [65]
+) [69]
 \openout2 = `chapters/99_appendix.aux'.
 
- (./chapters/99_appendix.tex [66
+ (./chapters/99_appendix.tex [70
 
 
 
@@ -2785,209 +2855,209 @@ and I'll forget about whatever was undefined.
 Appendix A.
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 (Font)              scaled to size 10.95pt on input line 4.
-[67
+[71
 
 
-] [68]) (./chapters/chunking-strategies.tex [69] [70
+] [72] [73]) (./chapters/chunking-strategies.tex [74]
+Appendix B.
+./chapters/chunking-strategies.tex:22: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.22     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:22: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.22     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:22: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.22     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:22: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.22     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:22: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.22     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:22: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.22     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:22: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.22     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:22: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.22     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+./chapters/chunking-strategies.tex:50: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.50     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:50: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.50     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:50: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.50     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:50: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.50     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:50: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.50     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:50: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.50     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:50: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.50     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/chunking-strategies.tex:50: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.50     \end{xltabular}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+)) [75
 
 
 ]
-Appendix B.
-./chapters/chunking-strategies.tex:24: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.24     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-./chapters/chunking-strategies.tex:24: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.24     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+LaTeX Warning: Text page 76 contains only floats.
 
-./chapters/chunking-strategies.tex:24: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.24     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:24: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.24     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:24: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.24     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:24: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.24     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:24: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.24     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:24: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.24     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-./chapters/chunking-strategies.tex:55: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.55     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:55: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.55     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:55: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.55     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:55: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.55     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:55: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.55     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:55: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.55     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:55: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.55     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/chunking-strategies.tex:55: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.55     \end{xltabular}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-)) [71]
-
-LaTeX Warning: Text page 72 contains only floats.
-
-[72] [73] [74
+[76] [77] [78
 
 
 
 
-] [75
+] [79
 
 
 ]
@@ -2997,7 +3067,7 @@ t/m/n/12 https : / / twitter . com / jerryjliu0 / status / 1708147687084986504$
 [][]\T1/zpltlf/m/n/12 . 
  []
 
-[76] [77] [78] (./frontmatter/thanks.tex) [79
+[80] [81] [82] (./frontmatter/thanks.tex) [83
 
 
 
@@ -3020,19 +3090,51 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D242DDA6B21087D7B8016944D83A937C;7018.
+(rerunfilecheck)             Checksum: 4E0A6E4C7F3900B10D6127058A481D65;7273.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49145 strings out of 474116
- 895971 string characters out of 5743682
- 2151187 words of memory out of 5000000
- 70260 multiletter control sequences out of 15000+600000
+ 49059 strings out of 474116
+ 895312 string characters out of 5743682
+ 2046187 words of memory out of 5000000
+ 70183 multiletter control sequences out of 15000+600000
  660849 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,16n,131p,1654b,4010s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.22} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exis
+t, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
 t, replaced by a fixed one
@@ -3055,10 +3157,6 @@ t, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
 , replaced by a fixed one
 
 
@@ -3099,11 +3197,11 @@ onts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/
 newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zpl
 ri.pfb>
-Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (99 pa
-ges, 8858462 bytes).
+Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (103 p
+ages, 8869681 bytes).
 PDF statistics:
- 1582 PDF objects out of 1728 (max. 8388607)
- 1409 compressed objects within 15 object streams
- 401 named destinations out of 1000 (max. 500000)
- 799 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1641 PDF objects out of 1728 (max. 8388607)
+ 1462 compressed objects within 15 object streams
+ 392 named destinations out of 1000 (max. 500000)
+ 839 words of extra memory for PDF output out of 10000 (max. 10000000)
 

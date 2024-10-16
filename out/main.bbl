@@ -19,6 +19,54 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{10.1145/2484028.2484165}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=bb706bacb251c39d000c0da6d6bd67f7}{%
+           family={Balog},
+           familyi={B\bibinitperiod},
+           given={Krisztian},
+           giveni={K\bibinitperiod}}}%
+        {{hash=86379b8ad17e9649b10341f9d0b56e7e}{%
+           family={Neumayer},
+           familyi={N\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dublin, Ireland}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{883bd8cd20b12a036d29e9ae8f2238a7}
+      \strng{fullhash}{883bd8cd20b12a036d29e9ae8f2238a7}
+      \strng{bibnamehash}{883bd8cd20b12a036d29e9ae8f2238a7}
+      \strng{authorbibnamehash}{883bd8cd20b12a036d29e9ae8f2238a7}
+      \strng{authornamehash}{883bd8cd20b12a036d29e9ae8f2238a7}
+      \strng{authorfullhash}{883bd8cd20b12a036d29e9ae8f2238a7}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We develop and make publicly available an entity search test collection based on the DBpedia knowledge base. This includes a large number of queries and corresponding relevance judgments from previous benchmarking campaigns, covering a broad range of information needs, ranging from short keyword queries to natural language questions. Further, we present baseline results for this collection with a set of retrieval models based on language modeling and BM25. Finally, we perform an initial analysis to shed light on certain characteristics that make this data set particularly challenging.}
+      \field{booktitle}{Proceedings of the 36th International ACM SIGIR Conference on Research and Development in Information Retrieval}
+      \field{isbn}{9781450320344}
+      \field{series}{SIGIR '13}
+      \field{title}{A test collection for entity search in DBpedia}
+      \field{year}{2013}
+      \field{pages}{737\bibrangedash 740}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1145/2484028.2484165
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2484028.2484165
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2484028.2484165
+      \endverb
+      \keyw{test collections,semantic search,entity retrieval,dbpedia}
+    \endentry
     \entry{https://doi.org/10.48550/arxiv.2210.11416}{misc}{}
       \name{author}{31}{}{%
         {{hash=10118dd89bd210596b82c1b6feb26faf}{%
@@ -3107,6 +3155,49 @@
       \verb https://arxiv.org/abs/2407.21783
       \endverb
     \endentry
+    \entry{Yago_AMIE}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=37684d86bd145fd2fb544c3944a76464}{%
+           family={Galárraga},
+           familyi={G\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod}}}%
+        {{hash=04816795c9877feddae45c038e2508f3}{%
+           family={Teflioudi},
+           familyi={T\bibinitperiod},
+           given={Christina},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1b753e139c8ab7af870d74e326b796ad}{%
+           family={Hose},
+           familyi={H\bibinitperiod},
+           given={Katja},
+           giveni={K\bibinitperiod}}}%
+        {{hash=55d7f682b85e1f9066365cc900f8331c}{%
+           family={Suchanek},
+           familyi={S\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{d7bf95951951000152c5e46d124e7beb}
+      \strng{fullhash}{557d367cdfe6429caa836dc433221721}
+      \strng{bibnamehash}{d7bf95951951000152c5e46d124e7beb}
+      \strng{authorbibnamehash}{d7bf95951951000152c5e46d124e7beb}
+      \strng{authornamehash}{d7bf95951951000152c5e46d124e7beb}
+      \strng{authorfullhash}{557d367cdfe6429caa836dc433221721}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{WWW 2013 - Proceedings of the 22nd International Conference on World Wide Web}
+      \field{month}{05}
+      \field{title}{AMIE: Association rule mining under incomplete evidence in ontological knowledge bases}
+      \field{year}{2013}
+      \field{pages}{413\bibrangedash 422}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/2488388.2488425
+      \endverb
+    \endentry
     \entry{GERBER201585}{article}{}
       \name{author}{7}{}{%
         {{hash=8f3c8c3270d339bfa6ac801929eb38c9}{%
@@ -3266,6 +3357,59 @@
       \verb{url}
       \verb https://arxiv.org/abs/2310.19923
       \endverb
+    \endentry
+    \entry{10.1145/3077136.3080810}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=d70f4da27e21cee9820a3e3cf6d90d50}{%
+           family={Hasibi},
+           familyi={H\bibinitperiod},
+           given={Faegheh},
+           giveni={F\bibinitperiod}}}%
+        {{hash=bb706bacb251c39d000c0da6d6bd67f7}{%
+           family={Balog},
+           familyi={B\bibinitperiod},
+           given={Krisztian},
+           giveni={K\bibinitperiod}}}%
+        {{hash=83407ea481921ffd956e47ec2d4ed882}{%
+           family={Bratsberg},
+           familyi={B\bibinitperiod},
+           given={Svein\bibnamedelima Erik},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Shinjuku, Tokyo, Japan}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{eec67fa5422ad65a890119b6a13d4c7b}
+      \strng{fullhash}{eec67fa5422ad65a890119b6a13d4c7b}
+      \strng{bibnamehash}{eec67fa5422ad65a890119b6a13d4c7b}
+      \strng{authorbibnamehash}{eec67fa5422ad65a890119b6a13d4c7b}
+      \strng{authornamehash}{eec67fa5422ad65a890119b6a13d4c7b}
+      \strng{authorfullhash}{eec67fa5422ad65a890119b6a13d4c7b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Entity cards are being used frequently in modern web search engines to offer a concise overview of an entity directly on the results page. These cards are composed of various elements, one of them being the entity summary: a selection of facts describing the entity from an underlying knowledge base. These summaries, while presenting a synopsis of the entity, can also directly address users' information needs. In this paper, we make the first effort towards generating and evaluating such factual summaries. We introduce and address the novel problem of dynamic entity summarization for entity cards, and break it down to two specific subtasks: fact ranking and summary generation. We perform an extensive evaluation of our method using crowdsourcing. Our results show the effectiveness of our fact ranking approach and validate that users prefer dynamic summaries over static ones.}
+      \field{booktitle}{Proceedings of the 40th International ACM SIGIR Conference on Research and Development in Information Retrieval}
+      \field{isbn}{9781450350228}
+      \field{series}{SIGIR '17}
+      \field{title}{Dynamic Factual Summaries for Entity Cards}
+      \field{year}{2017}
+      \field{pages}{773\bibrangedash 782}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3077136.3080810
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3077136.3080810
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3077136.3080810
+      \endverb
+      \keyw{entity cards,entity summarization,user interfaces}
     \endentry
     \entry{hu2022lora}{inproceedings}{}
       \name{author}{8}{}{%
@@ -3787,6 +3931,44 @@
       \verb https://arxiv.org/pdf/2007.15207.pdf
       \endverb
     \endentry
+    \entry{marchesin_etal-cikm2024}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=bc9442cf5bf10f51b3ee95a10c4c9506}{%
+           family={Marchesin},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dad41c51f88ef904c9c515db7de80df8}{%
+           family={Silvello},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=596ec63dac38fc2c81c38547f9afd5b8}{%
+           family={Alonso},
+           familyi={A\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{f0f5473bf013eb754ba2c8fa3550e933}
+      \strng{fullhash}{f0f5473bf013eb754ba2c8fa3550e933}
+      \strng{bibnamehash}{f0f5473bf013eb754ba2c8fa3550e933}
+      \strng{authorbibnamehash}{f0f5473bf013eb754ba2c8fa3550e933}
+      \strng{authornamehash}{f0f5473bf013eb754ba2c8fa3550e933}
+      \strng{authorfullhash}{f0f5473bf013eb754ba2c8fa3550e933}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 33rd ACM International Conference on Information and Knowledge Management (CIKM '24), October 21--25, 2024, Boise, ID, USA}
+      \field{title}{Veracity Estimation for Entity-Oriented Search with Knowledge Graphs}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1145/3627673.3679561
+      \endverb
+    \endentry
     \entry{muennighoff-etal-2023-mteb}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=a2deb8466aa6f0edfe3cc805f9d776d8}{%
@@ -3856,6 +4038,72 @@
       \endverb
       \verb{url}
       \verb https://aclanthology.org/2023.eacl-main.148
+      \endverb
+    \endentry
+    \entry{ojha-talukdar-2017-kgeval}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=b1f257731d3e98dccd8b5fab6651650e}{%
+           family={Ojha},
+           familyi={O\bibinitperiod},
+           given={Prakhar},
+           giveni={P\bibinitperiod}}}%
+        {{hash=730b74b2d69e63b6bc2691e60d1b0ea8}{%
+           family={Talukdar},
+           familyi={T\bibinitperiod},
+           given={Partha},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=8c92d21f9aded31210d396bfc368310b}{%
+           family={Palmer},
+           familyi={P\bibinitperiod},
+           given={Martha},
+           giveni={M\bibinitperiod}}}%
+        {{hash=69852b0bcc808d7fc562da5a377c8c80}{%
+           family={Hwa},
+           familyi={H\bibinitperiod},
+           given={Rebecca},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6cd024b217f3f2f8126e253b8c84d24d}{%
+           family={Riedel},
+           familyi={R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Copenhagen, Denmark}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{5a53cf30d6cfa7355f7fc5563e7c1554}
+      \strng{fullhash}{5a53cf30d6cfa7355f7fc5563e7c1554}
+      \strng{bibnamehash}{5a53cf30d6cfa7355f7fc5563e7c1554}
+      \strng{authorbibnamehash}{5a53cf30d6cfa7355f7fc5563e7c1554}
+      \strng{authornamehash}{5a53cf30d6cfa7355f7fc5563e7c1554}
+      \strng{authorfullhash}{5a53cf30d6cfa7355f7fc5563e7c1554}
+      \strng{editorbibnamehash}{b10f6987733cd181c811f260421be0c4}
+      \strng{editornamehash}{b10f6987733cd181c811f260421be0c4}
+      \strng{editorfullhash}{b10f6987733cd181c811f260421be0c4}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Automatic construction of large knowledge graphs (KG) by mining web-scale text datasets has received considerable attention recently. Estimating accuracy of such automatically constructed KGs is a challenging problem due to their size and diversity. This important problem has largely been ignored in prior research {--} we fill this gap and propose KGEval. KGEval uses coupling constraints to bind facts and crowdsources those few that can infer large parts of the graph. We demonstrate that the objective optimized by KGEval is submodular and NP-hard, allowing guarantees for our approximation algorithm. Through experiments on real-world datasets, we demonstrate that KGEval best estimates KG accuracy compared to other baselines, while requiring significantly lesser number of human evaluations.}
+      \field{booktitle}{Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing}
+      \field{month}{9}
+      \field{title}{{KGE}val: Accuracy Estimation of Automatically Constructed Knowledge Graphs}
+      \field{year}{2017}
+      \field{pages}{1741\bibrangedash 1750}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.18653/v1/D17-1183
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/D17-1183
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/D17-1183
       \endverb
     \endentry
     \entry{reimers-2019-sentence-bert}{inproceedings}{}
