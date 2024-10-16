@@ -109,11 +109,11 @@
 \contentsline {section}{\numberline {5.6}Evaluation}{66}{section.5.6}%
 \contentsline {section}{\numberline {5.7}Failure Analysis}{66}{section.5.7}%
 \contentsline {chapter}{\numberline {6}Conclusions and Future Works}{69}{chapter.6}%
-\contentsline {chapter}{Appendices}{71}{section*.49}%
+\contentsline {chapter}{Appendices}{71}{section*.51}%
 \contentsline {chapter}{\numberline {A}Prompt Templates}{71}{appendix.1.A}%
 \contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{71}{section.1.A.1}%
 \contentsline {section}{\numberline {A.2}Question Generation Prompt}{72}{section.1.A.2}%
 \contentsline {section}{\numberline {A.3}RAG Prompt}{73}{section.1.A.3}%
 \contentsline {chapter}{\numberline {B}Chunking Strategies}{75}{appendix.1.B}%
-\contentsline {chapter}{References}{79}{section*.53}%
-\contentsline {chapter}{Acknowledgments}{83}{section*.55}%
+\contentsline {chapter}{References}{79}{section*.55}%
+\contentsline {chapter}{Acknowledgments}{83}{section*.57}%

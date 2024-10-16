@@ -89,6 +89,7 @@
 \RequirePackage{booktabs}
 \RequirePackage{pifont}  % For checkmark and cross symbols}
 \RequirePackage{fancyvrb}  % For better verbatim environments}
+\RequirePackage{rotating} % For rotating tables
 % -- DEFINITIONS --
 
 % university

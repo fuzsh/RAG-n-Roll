@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  16 OCT 2024 14:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  16 OCT 2024 15:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1370,29 +1370,37 @@ Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
 \FV@StepNumber=\count491
 \FV@OutFile=\write6
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 132.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count492
+\rotFPtop=\skip79
+\rotFPbot=\skip80
+\rot@float@box=\box72
+\rot@mess@toks=\toks52
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 133.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip79
-\f@nch@O@elh=\skip80
-\f@nch@O@erh=\skip81
-\f@nch@O@olh=\skip82
-\f@nch@O@orh=\skip83
-\f@nch@O@elf=\skip84
-\f@nch@O@erf=\skip85
-\f@nch@O@olf=\skip86
-\f@nch@O@orf=\skip87
+\f@nch@headwidth=\skip81
+\f@nch@O@elh=\skip82
+\f@nch@O@erh=\skip83
+\f@nch@O@olh=\skip84
+\f@nch@O@orh=\skip85
+\f@nch@O@elf=\skip86
+\f@nch@O@erf=\skip87
+\f@nch@O@olf=\skip88
+\f@nch@O@orf=\skip89
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box72
-\beforetitleunit=\skip88
-\aftertitleunit=\skip89
+\ttl@box=\box73
+\beforetitleunit=\skip90
+\aftertitleunit=\skip91
 \ttl@plus=\dimen325
 \ttl@minus=\dimen326
-\ttl@toksa=\toks52
+\ttl@toksa=\toks53
 \titlewidth=\dimen327
 \titlewidthlast=\dimen328
 \titlewidthfirst=\dimen329
@@ -1439,7 +1447,7 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
-\collectedbox=\box73
+\collectedbox=\box74
 )
 \tc@llx=\dimen330
 \tc@lly=\dimen331
@@ -1461,12 +1469,12 @@ File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count492
+\c@checkoddpage=\count493
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box74
-\sift@deathcycles=\count493
+\@vwid@box=\box75
+\sift@deathcycles=\count494
 \@vwid@loff=\dimen342
 \@vwid@roff=\dimen343
 ))
@@ -1479,20 +1487,20 @@ Package: acronym 2020/04/17 v1.47 Support for acronyms (Tobias Oetiker)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/bigfoot/suffix.sty
 Package: suffix 2006/07/15 1.5a Variant command support
 )
-\AC@clearlist=\toks53
+\AC@clearlist=\toks54
 ))
 (/usr/local/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip90
-\multirow@cntb=\count494
-\multirow@dima=\skip91
+\multirow@colwidth=\skip92
+\multirow@cntb=\count495
+\multirow@dima=\skip93
 \bigstrutjot=\dimen344
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count495
-\c@@ppsavesec=\count496
-\c@@ppsaveapp=\count497
+\c@@pps=\count496
+\c@@ppsavesec=\count497
+\c@@ppsaveapp=\count498
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/xltabular/xltabular.sty
 Package: xltabular 2020/11/04 v0.2e `xltabular' package (hv,RN)
@@ -1503,42 +1511,42 @@ Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen345
-\ar@mcellbox=\box75
+\ar@mcellbox=\box76
 \extrarowheight=\dimen346
-\NC@list=\toks54
-\extratabsurround=\skip92
-\backup@length=\skip93
-\ar@cellbox=\box76
+\NC@list=\toks55
+\extratabsurround=\skip94
+\backup@length=\skip95
+\ar@cellbox=\box77
 )
 \TX@col@width=\dimen347
 \TX@old@table=\dimen348
 \TX@old@col=\dimen349
 \TX@target=\dimen350
 \TX@delta=\dimen351
-\TX@cols=\count498
-\TX@ftn=\toks55
+\TX@cols=\count499
+\TX@ftn=\toks56
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/ltablex/ltablex.sty
 Package: ltablex 2014/08/13 v1.1 Modified tabularx
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
-\LTleft=\skip94
-\LTright=\skip95
-\LTpre=\skip96
-\LTpost=\skip97
-\LTchunksize=\count499
+\LTleft=\skip96
+\LTright=\skip97
+\LTpre=\skip98
+\LTpost=\skip99
+\LTchunksize=\count500
 \LTcapwidth=\dimen352
-\LT@head=\box77
-\LT@firsthead=\box78
-\LT@foot=\box79
-\LT@lastfoot=\box80
-\LT@gbox=\box81
-\LT@cols=\count500
-\LT@rows=\count501
-\c@LT@tables=\count502
-\c@LT@chunks=\count503
-\LT@p@ftn=\toks56
+\LT@head=\box78
+\LT@firsthead=\box79
+\LT@foot=\box80
+\LT@lastfoot=\box81
+\LT@gbox=\box82
+\LT@cols=\count501
+\LT@rows=\count502
+\c@LT@tables=\count503
+\c@LT@chunks=\count504
+\LT@p@ftn=\toks57
 )))
 
 LaTeX Warning: Writing or overwriting file `main.xmpdata'.
@@ -1641,17 +1649,17 @@ LaTeX Font Info:    ... okay on input line 40.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count504
+\scratchcounter=\count505
 \scratchdimen=\dimen353
-\scratchbox=\box82
-\nofMPsegments=\count505
-\nofMParguments=\count506
-\everyMPshowfont=\toks57
-\MPscratchCnt=\count507
+\scratchbox=\box83
+\nofMPsegments=\count506
+\nofMParguments=\count507
+\everyMPshowfont=\toks58
+\MPscratchCnt=\count508
 \MPscratchDim=\dimen354
-\MPnumerator=\count508
-\makeMPintoPDFobject=\count509
-\everyMPtoPDFconversion=\toks58
+\MPnumerator=\count509
+\makeMPintoPDFobject=\count510
+\everyMPtoPDFconversion=\toks59
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1668,8 +1676,8 @@ Package hyperref Info: Link coloring ON on input line 40.
 \@outlinefile=\write7
 \openout7 = `main.out'.
 
-\c@mv@tabular=\count510
-\c@mv@boldtabular=\count511
+\c@mv@tabular=\count511
+\c@mv@boldtabular=\count512
 LaTeX Info: Command `\dddot' is already robust on input line 40.
 LaTeX Info: Command `\ddddot' is already robust on input line 40.
 Package caption Info: Begin \AtBeginDocument code.
@@ -1680,11 +1688,12 @@ Package caption Info: longtable package is loaded.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
+Package caption Info: rotating package is loaded.
 Package caption Info: scrextend package is loaded.
 \caption@addmargin@hsize=\dimen355
 \caption@addmargin@linewidth=\dimen356
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count512
+\c@lstlisting=\count513
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -2006,7 +2015,7 @@ Package acronym Info: Label `acro:NLI' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
 Package acronym Info: Label `acro:QA' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
-<res/rel-human-llm-inference.png, id=788, 599.23875pt x 703.62875pt>
+<res/rel-human-llm-inference.png, id=794, 599.23875pt x 703.62875pt>
 File: res/rel-human-llm-inference.png Graphic file (type png)
 <use res/rel-human-llm-inference.png>
 Package pdftex.def Info: res/rel-human-llm-inference.png  used on input line 16
@@ -2027,7 +2036,7 @@ Overfull \hbox (3.24234pt too wide) in paragraph at lines 46--47
  LLM-based ap-proaches
  []
 
-<res/rel-claim-verification.png, id=812, 402.50375pt x 444.66125pt>
+<res/rel-claim-verification.png, id=818, 402.50375pt x 444.66125pt>
 File: res/rel-claim-verification.png Graphic file (type png)
 <use res/rel-claim-verification.png>
 Package pdftex.def Info: res/rel-claim-verification.png  used on input line 58.
@@ -2039,13 +2048,13 @@ Overfull \hbox (1.57443pt too wide) in paragraph at lines 78--82
 -the-siz-ing Con-trastive
  []
 
-<res/rel-rafts.png, id=835, 787.94376pt x 367.3725pt>
+<res/rel-rafts.png, id=841, 787.94376pt x 367.3725pt>
 File: res/rel-rafts.png Graphic file (type png)
 <use res/rel-rafts.png>
 Package pdftex.def Info: res/rel-rafts.png  used on input line 91.
 (pdftex.def)             Requested size: 418.25368pt x 195.00359pt.
 [11] [12 <./res/rel-rafts.png>]
-<res/rel-ragar.png, id=849, 465.74pt x 599.23875pt>
+<res/rel-ragar.png, id=855, 465.74pt x 599.23875pt>
 File: res/rel-ragar.png Graphic file (type png)
 <use res/rel-ragar.png>
 Package pdftex.def Info: res/rel-ragar.png  used on input line 118.
@@ -2227,7 +2236,7 @@ readable, whereas
  []
 
 [18] [19]
-<res/Cross-Encoder.png, id=898, 7831.2575pt x 1920.17375pt>
+<res/Cross-Encoder.png, id=904, 7831.2575pt x 1920.17375pt>
 File: res/Cross-Encoder.png Graphic file (type png)
 <use res/Cross-Encoder.png>
 Package pdftex.def Info: res/Cross-Encoder.png  used on input line 122.
@@ -2249,7 +2258,7 @@ File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 (Font)              scaled to size 10.0pt on input line 140.
-<res/knowledge-distill.png, id=903, 3573.35pt x 1159.33125pt>
+<res/knowledge-distill.png, id=909, 3573.35pt x 1159.33125pt>
 File: res/knowledge-distill.png Graphic file (type png)
 <use res/knowledge-distill.png>
 Package pdftex.def Info: res/knowledge-distill.png  used on input line 149.
@@ -2262,7 +2271,7 @@ al el-e-ment of our pipeline,
  []
 
 [21 <./res/knowledge-distill.png>]
-<res/Google-Search-Result.png, id=917, 9867.86626pt x 4028.04875pt>
+<res/Google-Search-Result.png, id=923, 9867.86626pt x 4028.04875pt>
 File: res/Google-Search-Result.png Graphic file (type png)
 <use res/Google-Search-Result.png>
 Package pdftex.def Info: res/Google-Search-Result.png  used on input line 206.
@@ -2288,7 +2297,7 @@ ave pro-tec-tion mech-a-nisms against
  []
 
 [24]
-<res/Google-Search-Result-Content.png, id=966, 9995.3425pt x 2480.26625pt>
+<res/Google-Search-Result-Content.png, id=972, 9995.3425pt x 2480.26625pt>
 File: res/Google-Search-Result-Content.png Graphic file (type png)
 <use res/Google-Search-Result-Content.png>
 Package pdftex.def Info: res/Google-Search-Result-Content.png  used on input li
@@ -2300,7 +2309,7 @@ LaTeX Warning: Reference `sec:document-selction' on page 26 undefined on input
 line 309.
 
 [26]
-<res/window-ret.png, id=977, 2848.6425pt x 1128.215pt>
+<res/window-ret.png, id=983, 2848.6425pt x 1128.215pt>
 File: res/window-ret.png Graphic file (type png)
 <use res/window-ret.png>
 Package pdftex.def Info: res/window-ret.png  used on input line 342.
@@ -2581,7 +2590,7 @@ LaTeX Warning: Reference `fig:document_retrieval_confusion_matrix' on page 53 u
 ndefined on input line 202.
 
 [53]
-<res/ret_result_sim_1.png, id=1192, 722.7pt x 578.16pt>
+<res/ret_result_sim_1.png, id=1198, 722.7pt x 578.16pt>
 File: res/ret_result_sim_1.png Graphic file (type png)
 <use res/ret_result_sim_1.png>
 Package pdftex.def Info: res/ret_result_sim_1.png  used on input line 212.
@@ -2591,7 +2600,7 @@ Underfull \hbox (badness 1320) in paragraph at lines 213--213
 []\T1/zpltlf/m/n/12 Figure 5.1: |Doc-u-ment Re-trieval
  []
 
-<res/ret_result_sim_2.png, id=1193, 722.7pt x 578.16pt>
+<res/ret_result_sim_2.png, id=1199, 722.7pt x 578.16pt>
 File: res/ret_result_sim_2.png Graphic file (type png)
 <use res/ret_result_sim_2.png>
 Package pdftex.def Info: res/ret_result_sim_2.png  used on input line 219.
@@ -2721,16 +2730,33 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[65]) [66] [67]
+[65]
+./chapters/05_ablation.tex:603: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.603         \end{tabular}}
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/05_ablation.tex:603: Undefined control sequence.
+<argument> \adl@connect 
+                        
+l.603         \end{tabular}}
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+) [66] [67] [68]
 \openout2 = `chapters/98_conclusions.aux'.
 
- (./chapters/98_conclusions.tex [68
-
-
-
-
-
-]
+ (./chapters/98_conclusions.tex
 Chapter 6.
 ./chapters/98_conclusions.tex:8: Undefined control sequence.
 <argument> \adl@connect 
@@ -2842,7 +2868,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) [69]
+) [69
+
+
+
+
+
+]
 \openout2 = `chapters/99_appendix.aux'.
 
  (./chapters/99_appendix.tex [70
@@ -3089,17 +3121,20 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4E0A6E4C7F3900B10D6127058A481D65;7273.
+(rerunfilecheck)             Checksum: 8902A5CE4BE9BDFDAF26FBDDF492264C;7273.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49059 strings out of 474116
- 895312 string characters out of 5743682
+ 49139 strings out of 474116
+ 896717 string characters out of 5743682
  2046187 words of memory out of 5000000
- 70183 multiletter control sequences out of 15000+600000
+ 70258 multiletter control sequences out of 15000+600000
  660849 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,16n,131p,1654b,4010s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3198,10 +3233,10 @@ onts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
 newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zpl
 ri.pfb>
 Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (103 p
-ages, 8869681 bytes).
+ages, 8871965 bytes).
 PDF statistics:
- 1641 PDF objects out of 1728 (max. 8388607)
- 1462 compressed objects within 15 object streams
- 392 named destinations out of 1000 (max. 500000)
+ 1647 PDF objects out of 1728 (max. 8388607)
+ 1468 compressed objects within 15 object streams
+ 394 named destinations out of 1000 (max. 500000)
  839 words of extra memory for PDF output out of 10000 (max. 10000000)
 
