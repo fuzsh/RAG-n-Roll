@@ -146,6 +146,51 @@ To conclude, our empirical evaluation utilizes three distinct datasets: FactBenc
 The \textit{DBpedia} subset, curated specifically for entity-oriented search tasks, allows us to evaluate our framework in the context of query-dependent fact ranking and summarization.
 This diverse selection of datasets enables a comprehensive evaluation of our veracity estimation framework.
 
+\section{Candidate Models}\label{sec:empirical-evaluation:candidate-models}
+\subsection{Gemma2}\label{subsec:empirical-evaluation:candidate-models:gemma2}
+Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models~\footnote{\url{https://deepmind.google/technologies/gemini/#introduction}}.
+They are text-to-text, decoder-only large language models, available in English, with open weights for both pre-trained variants and instruction-tuned variants.
+Gemma 2 implements a novel approach to attention mechanisms:
+\begin{itemize}
+    \item Every other layer uses a sliding window attention with a local context of 4096 tokens.
+    \item Alternating layers employ full quadratic global attention across the entire 8192 token context.
+\end{itemize}
+This hybrid approach aims to balance efficiency with the ability to capture long-range dependencies in the input.
+
+We selected the \textit{Gemma2-9B} model for our evaluation, which has 9 billion parameters.
+The 9B model learns from a larger teacher model during initial training in pre-training and use on-policy distillation to refine its performance post-training.
+This approach allows Gemma2-9B to capture the knowledge and capabilities of the larger model while maintaining a more compact size.
+As a result, \textit{Gemma2-9B} delivers competitive performance relative to models 2-3 times its size, making it an attractive choice for applications with computational constraints.
+
+\subsection{Qwen2.5}\label{subsec:empirical-evaluation:candidate-models:qwen2.5}
+\textit{Qwen2.5} is the latest series of Qwen LLMs~\cite{qwen2}.
+For \textit{Qwen2.5}, Alibaba Cloud~\footnote{\url{https://www.alibabacloud.com/en?_p_lc=7}} release a number of base language models and instruction-tuned language models ranging from 0.5 to 72 billion parameters.
+All models are pre-trained on our latest large-scale dataset, encompassing up to 18 trillion tokens.
+Compared to Qwen2, Qwen2.5 has acquired significantly more knowledge and has greatly improved capabilities in coding and mathematics.
+Additionally, the new models achieve significant improvements in instruction following, generating long texts (over 8K tokens), understanding structured data (e.g, tables), and generating structured outputs especially JSON.
+\textit{Qwen2.5} models are generally more resilient to the diversity of system prompts, enhancing role-play implementation and condition-setting for chatbots.
+Like Qwen2, the \textit{Qwen2.5} language models support up to 128K tokens and can generate up to 8K tokens.
+They also maintain multilingual support for over 29 languages~\cite{qwen2.5}.
+
+We selected the \textit{Qwen2.5-7b} model for our evaluation, which has 7 billion parameters.
+
+\subsection{Llama3.1}\label{subsec:empirical-evaluation:candidate-models:llama3.1}
+The Meta \textit{Llama3.1} collection of multilingual LLMs is a collection of pre-trained and instruction tuned generative models in 8B, 70B and 405B sizes (text in/text out).
+The \textit{Llama3.1} instruction tuned text only models (8B, 70B, 405B) are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.
+
+\textit{Llama3.1} is an auto-regressive language model that uses an optimized transformer architecture.
+The tuned versions use \ac{SFT} and \ac{RLHF} to align with human preferences for helpfulness and safety.
+All model versions use \ac{GQA} for improved inference scalability.
+\textit{Llama3.1} was pre-trained on ~15 trillion tokens of data from publicly available sources.
+The fine-tuning data includes publicly available instruction datasets, as well as over 25M synthetically generated examples~\cite{dubey2024llama3herdmodels,meta2023llama3}.
+
+We selected the \textit{Llama3.1-8b} model for our evaluation, which has 8 billion parameters.
+
+\subsection{Mistral}\label{subsec:empirical-evaluation:candidate-models:mistral}
+The \textit{Mistral} model, released by Mistral AI~\footnote{\url{https://mistral.ai/}}, is a high-performance LLM, designed to outperform larger models in efficiency and effectiveness.
+With innovations such as \ac{GQA} and \ac{SWA}, Mistral offers faster inference and better handling of long sequences, reducing computation costs while maintaining high performance~\cite{jiang2023mistral7b,mistral7b_2023}.
+
+We selected the \textit{Mistral-7b} model for our evaluation, which has 7.3 billion parameters, its structure allows it to be both cost-effective and memory efficient, making it suitable for a wide variety of real-world applications
 \section{Comparative Analysis}\label{sec:empirical-evaluation:comparative-analysis}
 
 \section{Discussion of Results}\label{sec:empirical-evaluation:discussion-of-results}

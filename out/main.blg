@@ -1,17 +1,18 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[28] biber-darwin:340> INFO - === Wed Oct 16, 2024, 13:54:21
-[36] Biber.pm:419> INFO - Reading 'main.bcf'
-[68] Biber.pm:979> INFO - Found 38 citekeys in bib section 0
-[74] Biber.pm:4419> INFO - Processing section 0
-[78] Biber.pm:4610> INFO - Looking for bibtex file 'references.bib' for section 0
-[81] bibtex.pm:1713> INFO - LaTeX decoding ...
-[98] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/farzad/Documents/Thesis/msc-thesis/src/references.bib'
-[634] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[634] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[634] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[634] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[664] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[998] bbl.pm:763> INFO - Output to main.bbl
-[998] Biber.pm:131> WARN - Range field 'pages' in entry 'bm25' is malformed, falling back to literal
-[998] Biber.pm:133> INFO - WARNINGS: 1
+[29] biber-darwin:340> INFO - === Thu Oct 17, 2024, 15:28:14
+[37] Biber.pm:419> INFO - Reading 'main.bcf'
+[71] Biber.pm:979> INFO - Found 43 citekeys in bib section 0
+[77] Biber.pm:4419> INFO - Processing section 0
+[82] Biber.pm:4610> INFO - Looking for bibtex file 'references.bib' for section 0
+[85] bibtex.pm:1713> INFO - LaTeX decoding ...
+[103] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/farzad/Documents/Thesis/msc-thesis/src/references.bib'
+[701] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[701] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[701] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[701] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[735] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1062] bbl.pm:763> INFO - Output to main.bbl
+[1062] Biber.pm:131> WARN - legacy month field 'September' in entry 'qwen2.5' is not an integer - this will probably not sort properly.
+[1062] Biber.pm:131> WARN - Range field 'pages' in entry 'bm25' is malformed, falling back to literal
+[1063] Biber.pm:133> INFO - WARNINGS: 2

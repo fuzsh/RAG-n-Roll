@@ -64,56 +64,62 @@
 \contentsline {subsection}{\numberline {4.2.2}YAGO Dataset}{42}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}DBpedia Dataset}{43}{subsection.4.2.3}%
 \contentsline {subsubsection}{Dataset Summary}{44}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Comparative Analysis}{45}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Discussion of Results}{45}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Key Findings}{45}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Error Analysis}{45}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Ablation Study}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Evaluation Methodology}{48}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Iterative Optimization Process}{48}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Sampling Methods Evaluation}{48}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Evaluation Metrics}{49}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Significance of the Methodology}{49}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}Document Selection}{50}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Unsupervised Methods}{50}{subsection.5.2.1}%
-\contentsline {subsubsection}{BM25}{50}{subsection.5.2.1}%
-\contentsline {subsubsection}{Contriever}{51}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Supervised Methods}{52}{subsection.5.2.2}%
-\contentsline {subsubsection}{Jina.ai Reranker}{52}{subsection.5.2.2}%
-\contentsline {subsubsection}{MS MARCO MiniLM}{53}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Evaluation with Large Language Models}{53}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Embedding Models}{55}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Gte-large-en-v1.5}{56}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Jina-embeddings-v3}{57}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Stella\_en\_1.5B\_v5}{57}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Multilingual-e5-large-instruct}{58}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}bge-small-en-v1.5}{59}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Comparative Analysis}{60}{subsection.5.3.6}%
-\contentsline {subsubsection}{Model Size and Efficiency}{60}{subsection.5.3.6}%
-\contentsline {subsubsection}{Language Coverage}{61}{table.caption.45}%
-\contentsline {subsubsection}{Supported Features}{61}{table.caption.45}%
-\contentsline {subsubsection}{Conclusion}{61}{table.caption.45}%
-\contentsline {section}{\numberline {5.4}Chunking Strategies}{62}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Parsing Documents into Text Chunks}{62}{subsection.5.4.1}%
-\contentsline {subsubsection}{Methodology}{63}{subsection.5.4.1}%
-\contentsline {subsubsection}{Chunk Sizes}{63}{subsection.5.4.1}%
-\contentsline {subsubsection}{Advantages and Limitations}{63}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}{63}{subsection.5.4.2}%
-\contentsline {subsubsection}{Methodology}{64}{subsection.5.4.2}%
-\contentsline {subsubsection}{Advantages and Limitations}{64}{lstnumber.5.1.17}%
-\contentsline {subsection}{\numberline {5.4.3}Sentence Window Retrieval}{65}{subsection.5.4.3}%
-\contentsline {subsubsection}{Methodology}{65}{subsection.5.4.3}%
-\contentsline {subsubsection}{Advantages and Limitations}{65}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Evaluation}{65}{subsection.5.4.4}%
-\contentsline {section}{\numberline {5.5}Similarity Cut-off}{66}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Evaluation}{66}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Failure Analysis}{66}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Works}{69}{chapter.6}%
-\contentsline {chapter}{Appendices}{71}{section*.51}%
-\contentsline {chapter}{\numberline {A}Prompt Templates}{71}{appendix.1.A}%
-\contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{71}{section.1.A.1}%
-\contentsline {section}{\numberline {A.2}Question Generation Prompt}{72}{section.1.A.2}%
-\contentsline {section}{\numberline {A.3}RAG Prompt}{73}{section.1.A.3}%
-\contentsline {chapter}{\numberline {B}Chunking Strategies}{75}{appendix.1.B}%
-\contentsline {chapter}{References}{79}{section*.55}%
-\contentsline {chapter}{Acknowledgments}{83}{section*.57}%
+\contentsline {section}{\numberline {4.3}Candidate Models}{45}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Gemma2}{45}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Qwen2.5}{45}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Llama3.1}{46}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Mistral}{46}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Comparative Analysis}{47}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Discussion of Results}{47}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Key Findings}{47}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Error Analysis}{47}{subsection.4.5.2}%
+\contentsline {chapter}{\numberline {5}Ablation Study}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Evaluation Methodology}{50}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Iterative Optimization Process}{50}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Sampling Methods Evaluation}{50}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Evaluation Metrics}{51}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Significance of the Methodology}{51}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}Document Selection}{52}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Unsupervised Methods}{52}{subsection.5.2.1}%
+\contentsline {subsubsection}{BM25}{52}{subsection.5.2.1}%
+\contentsline {subsubsection}{Contriever}{53}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Supervised Methods}{54}{subsection.5.2.2}%
+\contentsline {subsubsection}{Jina.ai Reranker}{54}{subsection.5.2.2}%
+\contentsline {subsubsection}{MS MARCO MiniLM}{55}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Evaluation with Large Language Models}{55}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Embedding Models}{57}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Gte-large-en-v1.5}{58}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Jina-embeddings-v3}{59}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Stella\_en\_1.5B\_v5}{59}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Multilingual-e5-large-instruct}{60}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}bge-small-en-v1.5}{61}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Comparative Analysis}{62}{subsection.5.3.6}%
+\contentsline {subsubsection}{Model Size and Efficiency}{62}{subsection.5.3.6}%
+\contentsline {subsubsection}{Language Coverage}{63}{table.caption.49}%
+\contentsline {subsubsection}{Supported Features}{63}{table.caption.49}%
+\contentsline {subsubsection}{Conclusion}{63}{table.caption.49}%
+\contentsline {section}{\numberline {5.4}Chunking Strategies}{64}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Parsing Documents into Text Chunks}{64}{subsection.5.4.1}%
+\contentsline {subsubsection}{Methodology}{65}{subsection.5.4.1}%
+\contentsline {subsubsection}{Chunk Sizes}{65}{subsection.5.4.1}%
+\contentsline {subsubsection}{Advantages and Limitations}{65}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}{65}{subsection.5.4.2}%
+\contentsline {subsubsection}{Methodology}{66}{subsection.5.4.2}%
+\contentsline {subsubsection}{Advantages and Limitations}{66}{lstnumber.5.1.17}%
+\contentsline {subsection}{\numberline {5.4.3}Sentence Window Retrieval}{67}{subsection.5.4.3}%
+\contentsline {subsubsection}{Methodology}{67}{subsection.5.4.3}%
+\contentsline {subsubsection}{Advantages and Limitations}{67}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Evaluation}{67}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Similarity Cut-off}{68}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Evaluation}{70}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Failure Analysis}{70}{section.5.7}%
+\contentsline {subsubsection}{Error Type Categorization}{70}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Works}{73}{chapter.6}%
+\contentsline {chapter}{Appendices}{75}{section*.57}%
+\contentsline {chapter}{\numberline {A}Prompt Templates}{75}{appendix.1.A}%
+\contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{75}{section.1.A.1}%
+\contentsline {section}{\numberline {A.2}Question Generation Prompt}{76}{section.1.A.2}%
+\contentsline {section}{\numberline {A.3}RAG Prompt}{77}{section.1.A.3}%
+\contentsline {chapter}{\numberline {B}Chunking Strategies}{79}{appendix.1.B}%
+\contentsline {chapter}{References}{83}{section*.61}%
+\contentsline {chapter}{Acknowledgments}{89}{section*.63}%

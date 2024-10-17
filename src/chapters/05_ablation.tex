@@ -199,7 +199,7 @@ In this paradigm, an initial retrieval phase employs either lexical search metho
 Subsequently, the Cross-Encoder refines this candidate set through a simultaneous processing of the query and each retrieved document, generating a relevance score on a scale of 0 to 1.
 
 \subsection{Evaluation with Large Language Models}\label{subsec:evaluation-with-large-language-models}
-With checking the similarity between the retrieved documents and the query in different methods, based on figure \ref{fig:document_retrieval_confusion_matrix} we can figured out that Bm25-Okapi stands out as the most distinct model, with low similarity scores (0.16-0.19) to the others, suggesting it employs fundamentally different retrieval mechanisms.
+With checking the similarity between the retrieved documents and the query in different methods, based on figure~\ref{fig:document_retrieval_confusion_matrix} we can figured out that Bm25-Okapi stands out as the most distinct model, with low similarity scores (0.16-0.19) to the others, suggesting it employs fundamentally different retrieval mechanisms.
 In contrast, the neural models show higher inter-model similarities (0.29-0.43), indicating shared approaches or architectures.
 The strongest relationship (0.43) is between contriever-msmarco and re-ranker-msmarco, likely due to shared training data or similar optimizations.
 The two re-ranker models also show high similarity (0.41), suggesting comparable re-ranking strategies.
@@ -549,7 +549,9 @@ Sentence Window Retrieval preserves semantic units and adapts to text structure 
         \end{tabular}}\caption{Evaluation Results for Different Embeddings Models through the Pipeline (just with the Gemma2 model)}
     \label{tab:table_chunking}
 \end{table}
-Examples of the three chunking methods are available in the appendix~\ref{ch:chunking} for further reference.
+
+Examples of the three chunking methods are available in the Appendix~\ref{ch:chunking} for further reference.
+
 
 \section{Similarity Cut-off}\label{sec:similar-cut-off}
 In this section we will discuss how similarity cut-off can be used to filter out irrelevant nodes and improve the efficiency of the retrieval process.
@@ -591,9 +593,9 @@ For our experiments, we set the similarity cut-off threshold to 0.3, meaning tha
             Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
             Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
             Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            Proposed                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
+            Proposed                           & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
             \hdashline
-            \textit{Negative Labels}           &                                                         &                                                         &                                                         &                                                                   &                                                          &                                                           &                                                                   &                                                          &                                        &                                          &       \\
+            \textit{Negative Labels}           &                                                &                                                         &                                                         &                                                                   &                                                          &                                                           &                                                                   &                                                          &                                        &                                          &       \\
             Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
             Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
             Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
@@ -628,3 +630,62 @@ For our experiments, we set the similarity cut-off threshold to 0.3, meaning tha
 % TODO: RADARCHART TO HAVE BETTER INSIGHTS WITH CATEGORIES, MOSTLY STABILITY CAN SHOWN HERE
 
 \section{Failure Analysis}\label{sec:faiure-analysis}
+To gain a deeper understanding of the limitations and challenges faced by our fact-checking system, we conducted a comprehensive failure analysis using the \textit{FactBench} dataset.
+By examining the instances where our system, based on the majority vote, failed to correctly verify the facts, we aimed to identify the main error types and provide insights into the reasons behind these failures.
+\subsubsection{Error Type Categorization}
+After analyzing the failure cases, we categorized the errors into five main types:
+\begin{itemize}
+    \item \textbf{Insufficient or Irrelevant Context:} In some cases, the provided context information does not directly support or refute the given triple. The LLMs struggle to make accurate judgments when the necessary facts are missing or the available information is tangentially related to the claim.
+    \item \textbf{Misinterpretation of Relationships:} The LLMs sometimes misinterpret the relationships between entities mentioned in the context. They may confuse family relations, professional associations, or the nature of events.
+    \item \textbf{Over reliance on Keyword Matching:} In some instances, the LLMs rely too heavily on surface-level keyword matching rather than understanding the underlying semantics. The presence of certain words or phrases can lead to incorrect assumptions.
+    \item \textbf{Lack of Common Sense Reasoning:} The LLMs can struggle with applying common sense knowledge or reasoning about the plausibility of claims. They may fail to consider the unlikelihood of certain scenarios or relationships.
+    \item \textbf{Difficulty with Negation and Contradiction:} The LLMs sometimes struggle with handling negation or identifying contradictions between the triple and the context information. They may overlook explicit denials or fail to recognize inconsistencies.
+\end{itemize}
+
+To quantify the distribution of error types, we classified each error instance into one or more of five categories, allowing for overlaps when errors fit multiple categories.
+\begin{table}[h!]
+    \footnotesize
+    \begin{xltabular}{\linewidth}{p{3cm}p{3cm}X}
+        \toprule
+        \textbf{Error Type} & \textbf{Triple} & \textbf{Description} \\
+        \midrule
+        Insufficient or Irrelevant Context & Ai Sugiyama birth place Yokohama & Since there's no information in any of the documents about Ai Sugiyama being born in Yokohama, and one document explicitly states her birthplace as Tokyo. So LLms infer that Ai Sugiyama was born in Tokyo, Japan and not Yokohama, Japan. \\
+        Mis Interpretation of Relationships & Mitt Romney office Dallas & LLMs mistakenly infer that Romney has an office in Dallas based on his attendance at a fundraiser there. Attending an event doesn't imply having a permanent office. \\
+        Over reliance on Keyword Matching & Robbie Williams office Los Angeles & LLMs wrongly assume Robbie Williams has an office in Los Angeles due to text discussing his purchase or sell of a property there, not an office. \\
+        Lack of Common Sense Reasoning & Saul Bellow starring Nobel Prize in Literature & LLMs fail to recognize "starring" is inappropriate for receiving a Nobel Prize. Common sense suggests terms like "awarded" or "received." \\
+        Difficulty with Negation and Contradiction & John William Strutt team Nobel Prize in Physics & LLMs confirm the presence of a team, despite no evidence suggesting Strutt was part of one. The context mentions Strutt’s Nobel Prize but lacks information about team involvement. \\
+        \bottomrule
+    \end{xltabular}
+    \caption{Examples of Failure Cases and Error Analysis}
+    \label{tab:factbench-failure-analysis}
+\end{table}
+
+Based on Figures~\ref{fig:wrong_prediction_distribution_0} and~\ref{fig:wong_prediction_distribution_1}, The "foundationPlace" relation shows the highest number of total instances and errors in both charts.
+This suggests that the model struggles most with verifying facts about the locations where organizations or institutions were founded.
+The large discrepancy between correct and incorrect predictions for this relation indicates a significant challenge in accurately processing location-based information.
+
+Relations such as "birth", "death", and "spouse" show varying levels of difficulty.
+While "birth" and "death" have relatively few instances, "spouse" has a moderate number of cases with a notable error rate.
+This suggests that verifying personal information, especially relationships, poses challenges for the model, and mostly related to having multiple marriages or relationships during a lifetime.
+
+The "nbateam" and "subsidiary" relations, which involve organizational affiliations, show moderate error rates.
+This indicates that the model has some difficulty in correctly identifying professional associations and corporate structures.
+
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/radar-error-0}
+        \caption{Distribution of Fully Incorrect Predictions 4/4}
+        \label{fig:wrong_prediction_distribution_0}
+    \end{minipage}
+    \hspace{0.05\textwidth} % Space between the images
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/radar-error-1}
+        \caption{Distribution of Partially Incorrect Predictions 3/4}
+        \label{fig:wong_prediction_distribution_1}
+    \end{minipage}
+\end{figure}
+
+In general, by comparing Figures~\ref{fig:wrong_prediction_distribution_0} and~\ref{fig:wong_prediction_distribution_1}, we can observe that the overall shape of the error distribution is similar, indicating consistency in the model's performance across different voting thresholds
