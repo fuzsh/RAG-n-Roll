@@ -3,8 +3,8 @@
 Our proposed framework for knowledge graph fact verification utilizes a unique combination of web search and language model processing.
 However, to ensure the robustness and effectiveness of our approach, it is crucial to compare our methods with state-of-the-art RAG techniques, particularly in the critical areas of chunking, embedding, and retrieval.
 
-This section aims to provide a comprehensive comparison between our approach and the RAG-based methods proposed in recent literature.
-We will focus on three key components of our framework: 1) the chunking strategies used to segment information, 2) the embedding models employed for representation, and 3) the retrieval mechanisms utilized to fetch relevant information.
+This section aims to provide a comprehensive comparison between our approach and the RAG-based methods.
+We will focus on three key components of our framework: 1) the retrieval mechanisms utilized to fetch relevant information, 2) the chunking strategies used to segment information, 3) the embedding models employed for representation, and 4) different hyper parameters and configurations.
 By analyzing these components in light of RAG recommendations, we aim to identify potential areas for improvement and validate the strengths of our current approach.
 
 Through this comparison, we seek to situate our work within the broader context of retrieval-augmented fact verification systems and provide insights into the trade-offs and benefits of our methodological choices.
@@ -21,26 +21,24 @@ The evaluation process follows an iterative strategy, focusing on specific secti
     This \("\)enclosed box\("\) approach allows for a controlled examination of individual elements.
     \item \textbf{Parameter Variation:} Within the isolated section, we systematically vary relevant parameters or methods.
     This includes, but is not limited to, testing different sampling methods against full data runs.
-    \item \textbf{Performance Evaluation:} For each configuration, we assess the system's performance using predefined metrics (detailed in Section \ref{sec:metrics}).
+    \item \textbf{Performance Evaluation:} For each configuration, we assess the system's performance using predefined metrics (detailed in Sections~\ref{subsec:ablation-metrics} and~\ref{subsec:empirical-evaluation:experimental-setup:performance-metrics-and-evaluation}).
     \item \textbf{Best Method Selection:} Based on the evaluation results, we identify the best-performing method or configuration for the section under investigation.
     \item \textbf{Incremental Optimization:} The optimal configuration from each iteration is incorporated into the framework for subsequent iterations, gradually refining the entire system.
 \end{enumerate}
 
-\subsection{Sampling Methods Evaluation}\label{subsec:sampling-methods-evaluation}
+%\subsection{Sampling Methods Evaluation}\label{subsec:sampling-methods-evaluation}
+%
+%As one of the parameters under investigation, we compare various sampling methods to full data runs:
+%
+%\begin{itemize}
+%    \item \textbf{Full Data Runs:} Establish a baseline using the entire dataset.
+%    \item \textbf{Simple Random Sampling:} Randomly select a subset of $n$ data points from a population of size $N$.
+%    \item \textbf{Unique Over Sampling:} Evenly distributes a specified number of samples across different categories in a dataset. It ensures minimal duplication by prioritizing unique samples and filling the remainder slots using random sampling when necessary.
+%\end{itemize}
+%This comparison aims to determine if sampling can reduce computational costs and accelerate results without significant loss in accuracy.
 
-As one of the parameters under investigation, we compare various sampling methods to full data runs:
-
-\begin{itemize}
-    \item \textbf{Full Data Runs:} Establish a baseline using the entire dataset.
-    \item \textbf{Simple Random Sampling:} Randomly select a subset of $n$ data points from a population of size $N$.
-    \item \textbf{Unique Over Sampling:} Evenly distributes a specified number of samples across different categories in a dataset. It ensures minimal duplication by prioritizing unique samples and filling the remainder slots using random sampling when necessary.
-\end{itemize}
-This comparison aims to determine if sampling can reduce computational costs and accelerate results without significant loss in accuracy.
-
-\subsection{Evaluation Metrics}
-\label{sec:metrics}
-
-The performance of each configuration is assessed using the following metrics:
+\subsection{Evaluation Metrics}\label{subsec:ablation-metrics}
+The performance of each configuration is assessed using the following metrics, it's same as the metrics in the empirical evaluation section~\ref{subsec:empirical-evaluation:experimental-setup:performance-metrics-and-evaluation}:
 
 \begin{itemize}
     \item \textbf{Accuracy (Acc):} Measures the overall correctness of predictions:
@@ -54,11 +52,11 @@ The performance of each configuration is assessed using the following metrics:
         \text{F1} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
     \end{equation}
 
-    \item \textbf{Average Score (Avg):} Calculated based on accuracy across multiple runs:
-    \begin{equation}
-        \text{Avg} = \frac{1}{m} \sum_{i=1}^m \text{Acc}_i
-    \end{equation}
-    where $m$ is the number of runs.
+%    \item \textbf{Average Score (Avg):} Calculated based on accuracy across multiple runs:
+%    \begin{equation}
+%        \text{Avg} = \frac{1}{m} \sum_{i=1}^m \text{Acc}_i
+%    \end{equation}
+%    where $m$ is the number of runs.
 
     \item \textbf{Average Latency:} Measured in seconds per query to assess computational efficiency:
     \begin{equation}
@@ -66,8 +64,7 @@ The performance of each configuration is assessed using the following metrics:
     \end{equation}
 \end{itemize}
 
-\subsection{Significance of the Methodology}
-
+\subsection{Significance of the Methodology}\label{subsec:significance-of-the-methodology}
 This methodical approach serves several key purposes:
 
 \begin{enumerate}
@@ -80,21 +77,16 @@ This methodical approach serves several key purposes:
 By employing this rigorous evaluation methodology, we aim to identify the best methods for each section of our framework, potentially enabling more efficient and accurate data processing.
 The inclusion of sampling method comparisons adds an extra dimension to our optimization efforts, potentially offering insights into cost-effective alternatives to full data processing where applicable.
 
-
-
 \section{Document Selection}\label{sec:document-selection}
 We explore various techniques for retrieving relevant documents from search engine results, with a specific focus on Google search engine.
 The goal is to identify the most effective methods for finding documents that perfectly match the information need expressed in the query.
 We consider both unsupervised and supervised approaches.
-
 \subsection{Unsupervised Methods}\label{subsec:unsupervised-methods}
-
 \subsubsection{BM25}
 BM25~\cite{bm25} is a widely used unsupervised retrieval method that relies on term frequency and inverse document frequency (TF-IDF) weighting.
 It estimates the relevance of documents to a query based on the frequency of query terms in each document, offset by the rarity of those terms across the full document collection.
 BM25 has proven to be a robust baseline for many retrieval tasks.
 However, it relies on lexical matching between query and document terms, which can limit its effectiveness for queries and documents that use different vocabulary to express similar concepts.
-
 \begin{align*}
     \text{BM25}(D,Q) &= \sum_{i=1}^n \text{IDF}(q_i) \cdot \frac{f(q_i, D) \cdot (k_1 + 1)}{f(q_i, D) + k_1 \cdot (1 - b + b \cdot \frac{|D|}{\text{avgdl}})} \\[2ex]
     \text{where:} \\
@@ -156,7 +148,6 @@ Here's why:
 \end{itemize}
 
 \subsection{Supervised Methods}\label{subsec:supervised-methods}
-
 \subsubsection{Jina.ai Reranker}
 The Jina.ai Reranker is a supervised neural ranking model.
 Jina Reranker employs a cross-encoder architecture, which represents a paradigm shift from traditional bi-encoder models used in embedding-based search.
@@ -170,10 +161,8 @@ In multilingual tasks, it achieved state-of-the-art recall@10 scores on the MKQA
 Notably, it secured the top position on the AirBench leaderboard upon its release \footnote{\url{https://huggingface.co/spaces/AIR-Bench/leaderboard}}.
 
 These capabilities make the model particularly valuable for multilingual information retrieval, agentic Retrieval-Augmented Generation (RAG) systems, and even in programming and software development support.
-
 \subsubsection{MS MARCO MiniLM}
 The MS MARCO MiniLM is another supervised neural model, based on the popular BERT architecture but distilled to a smaller size for efficiency.
-
 \begin{table}[ht!]
     \centering
     \noindent
@@ -192,56 +181,55 @@ The MS MARCO MiniLM is another supervised neural model, based on the popular BER
     \caption{Performance of Pre-trained Cross-Encoders}
     \label{tab:table2}
 \end{table}
-
 For our project, we use \textit{ms-marco-MiniLM-L-6-v2}\footnote{\url{https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2}} Cross-Encoder model.
 This model, trained on the extensive MS MARCO dataset comprising approximately 500,000 authentic search queries from the Bing search engine \cite{reimers-2019-sentence-bert}, demonstrates superior performance within a two-stage Retrieve \& Re-rank framework.
 In this paradigm, an initial retrieval phase employs either lexical search methods or dense retrieval techniques utilizing a bi-encoder to identify a broad set of potentially relevant documents.
 Subsequently, the Cross-Encoder refines this candidate set through a simultaneous processing of the query and each retrieved document, generating a relevance score on a scale of 0 to 1.
-
 \subsection{Evaluation with Large Language Models}\label{subsec:evaluation-with-large-language-models}
-With checking the similarity between the retrieved documents and the query in different methods, based on figure~\ref{fig:document_retrieval_confusion_matrix} we can figured out that Bm25-Okapi stands out as the most distinct model, with low similarity scores (0.16-0.19) to the others, suggesting it employs fundamentally different retrieval mechanisms.
-In contrast, the neural models show higher inter-model similarities (0.29-0.43), indicating shared approaches or architectures.
-The strongest relationship (0.43) is between contriever-msmarco and re-ranker-msmarco, likely due to shared training data or similar optimizations.
-The two re-ranker models also show high similarity (0.41), suggesting comparable re-ranking strategies.
+With checking the similarity between the retrieved documents and the query in different methods, based on figure~\ref{fig:document_retrieval_confusion_matrix_1} we can figured out that Bm25-Okapi stands out as the most distinct model, with low similarity scores (0.20-0.24) to the others, suggesting it employs fundamentally different retrieval mechanisms.
+In contrast, the neural models show higher inter-model similarities (0.43-0.44), indicating shared approaches or architectures.
+The strong relationship (0.43) between contriever-msmarco and re-ranker-msmarco, likely due to shared training data or similar optimizations.
+The two re-ranker models gain the highest similarity (0.44) but suggest distinctiveness in their retrieval mechanisms and architectures.
 In general, we can find out with different methods we have different result over the same query.
 
 \begin{figure}[ht!]
     \centering
     \begin{minipage}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{res/ret_result_sim_1.png}
+        \includegraphics[width=\textwidth]{res/ret_result_sim_1}
         \caption{Document Retrieval Confusion Matrix}
         \label{fig:document_retrieval_confusion_matrix_1}
     \end{minipage}
-    \hspace{0.05\textwidth} % Space between the images
-    \begin{minipage}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{res/ret_result_sim_2.png}
-        \caption{Document Retrieval Performance}
-        \label{fig:document_retrieval_confusion_matrix_2}
-    \end{minipage}
+%    \hspace{0.05\textwidth} % Space between the images
+%    \begin{minipage}[b]{0.45\textwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{res/ret_result_sim_2}
+%        \caption{Document Retrieval Performance}
+%        \label{fig:document_retrieval_confusion_matrix_2}
+%    \end{minipage}
 \end{figure}
 
 To assess the quality of the retrieved documents from each of the above methods, we are passing them through one of our models and evaluating the outputs.
 
 \begin{table}[h!]
+    \centering
     \noindent
-    \resizebox{\textwidth}{!}{
-        \begin{tabular}{cccccc||ccc}
-            \multicolumn{9}{c}{\fbox{\textit{Retrieval Method}}, BAAI/bge-small-en-v1.5, Sliding Window - 6 , With Similarity Cut-off} \\ \\
-            \multirow{2}{*}{\textbf{Method}} & \multicolumn{2}{c}{\textbf{Random Sampling}} & \textbf{Over Sampling} & \multicolumn{2}{c||}{\textbf{Avg.}} & \multicolumn{3}{c}{\textbf{Complete Run}} \\
-            \cmidrule(lr){2-3}  \cmidrule(lr){4-4} \cmidrule(lr){5-6} \cmidrule(lr){7-9} \
-            & Acc & F1 & Acc & Acc & \multicolumn{1}{c||}{F1} & Acc & F1 & Latency \\
+    {\scriptsize \fbox{\textit{Retrieval Method}}, BAAI/bge-small-en-v1.5, Sliding Window (ws 6) , Similarity Cut-off (Re-rank), Top\_k 3}
+    \resizebox{0.7\textwidth}{!}{
+        \begin{tabular}{lccc}
+            \toprule
+            \textbf{Method} & Acc & F1 & Latency \\
             \midrule
-            \multicolumn{1}{l}{\textit{Unsupervised}} & & & & & & & & \\
-            \multicolumn{1}{l}{Bm25} & 0.719 & 0.505  & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & 0.8882 & 0.8940 & 0.353\\
-            \multicolumn{1}{l}{contriever-msmarco} & 0.505 & \textbf{0.450} & \textbf{0.212}  & \textbf{0.528} & \multicolumn{1}{c||}{0.255} & 0.8932 & 0.8988 & 0.353 \\
-            \hdashline
-            \multicolumn{1}{l}{\textit{supervised}} & & & & & & & & \\
-            \multicolumn{1}{l}{jina-reranker-v2-base-multilingual} & 0.719  & \textbf{0.450} & \textbf{0.212} & 0.255  & \multicolumn{1}{c||}{0.255} & 0.9004 & 0.9065 & 0.9065\\
-            \multicolumn{1}{l}{ms-marco-MiniLM-L-6-v2} & 0.719 & 0.505 & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & \textbf{0.9014} & \textbf{0.9077} & 0.353\\
+            \textit{Unsupervised}               & & & \\
+            Bm25                                & 0.8882          & 0.8940          & N/A \\
+            contriever-msmarco                  & 0.8932          & 0.8988          & N/A \\
+            \hline
+            \textit{supervised}                 & & & \\
+            jina-reranker-v2-base-multilingual  & 0.9004          & 0.9065          & N/A \\
+            ms-marco-MiniLM-L-6-v2              & \textbf{0.9014} & \textbf{0.9077} & N/A \\
             \bottomrule
-        \end{tabular}}\caption{Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}
+        \end{tabular}}
+    \caption{Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}
     \label{tab:evaluation_results}
 \end{table}
 
@@ -409,27 +397,31 @@ The comparative analysis provided in this section aims to assist in this decisio
 Now we will test these models through the pipeline and evaluate their performance.
 
 \begin{table}[h!]
-\noindent
-\resizebox{\textwidth}{!}{
-\begin{tabular}{cccccc||ccc}
-\multicolumn{9}{c}{\fbox{\textit{Retrieval Method}}, BAAI/\textit{bge-small-en-v1.5}, Sliding Window - 6 , With Similarity Cut-off} \\ \\
-\multirow{2}{*}{\textbf{Method}} & \multicolumn{2}{c}{\textbf{Random Sampling}} & \textbf{Over Sampling} & \multicolumn{2}{c||}{\textbf{Avg.}} & \multicolumn{3}{c}{\textbf{Complete Run}} \\
-\cmidrule(lr){2-3}  \cmidrule(lr){4-4} \cmidrule(lr){5-6} \cmidrule(lr){7-9} \
-& Acc & F1 & Acc & Acc & \multicolumn{1}{c||}{F1} & Acc & F1 & Latency \\
-\midrule
-\multicolumn{1}{l}{\textit{Unsupervised}} & & & & & & & & \\
-\multicolumn{1}{l}{Bm25} & 0.719 & 0.505  & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & 0.8882 & 0.8940 & 0.353\\
-\multicolumn{1}{l}{contriever-msmarco} & 0.505 & \textbf{0.450} & \textbf{0.212}  & \textbf{0.528} & \multicolumn{1}{c||}{0.255} & 0.8932 & 0.8988 & 0.353 \\
-\hdashline
-\multicolumn{1}{l}{\textit{supervised}} & & & & & & & & \\
-\multicolumn{1}{l}{jina-reranker-v2-base-multilingual} & 0.719  & \textbf{0.450} & \textbf{0.212} & 0.255  & \multicolumn{1}{c||}{0.255} & 0.9004 & 0.9065 & 0.9065\\
-\multicolumn{1}{l}{ms-marco-MiniLM-L-6-v2} & 0.719 & 0.505 & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & \textbf{0.9014} & \textbf{0.9077} & 0.353\\
-\bottomrule
-\end{tabular}}\caption{Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}
-\label{tab:evaluation_emb_results}
+    \centering
+    \noindent
+    {\scriptsize ms-marco-MiniLM-L-6-v2,\fbox{\textit{Embedding Model}}, Sliding Window (ws 6) , Similarity Cut-off (Re-rank), Top\_k 3}
+    \resizebox{0.7\textwidth}{!}{
+        \begin{threeparttable}
+        \begin{tabular}{lccc}
+            \toprule
+            \textbf{Model} & Acc & F1 & Latency \\
+            \midrule
+            stella\_en\_1.5B\_v5                  & 0.8961          & 0.9028          & N/A \\
+            jina-embeddings-v3\tnote{*}           & 0.8852          & 0.9097          & N/A \\
+            gte-large-en-v1.5\tnote{*}            & 0.8971          & \textbf{0.9174} & N/A \\
+            multilingual-e5-large-instruct        & 0.8954          & 0.9018          & N/A \\
+            bge-small-en-v1.5                     & \textbf{0.9014} & 0.9077          & N/A \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}
+            \item[*] The models were not able to complete the evaluation due to memory constraints, Jina evaluated on the 2238/2800 and Gte-large evaluated on the 2322/2800.
+        \end{tablenotes}
+    \end{threeparttable}}
+    \caption{Evaluation Results for Different Embedding Models through the Pipeline (just with the Gemma2 model)}
+    \label{tab:evaluation_results_embedding}
 \end{table}
 
-Based on the Table~\ref{tab:evaluation_emb_results}, we use the \textit{Stella\_en\_1.5B\_v5} model for the subsequent evaluations and analyses due to its superior performance across various metrics.
+Based on the Table~\ref{tab:evaluation_results_embedding}, we use the \textit{bge-small-en-v1.5} model for the subsequent evaluations and analyses due to its superior performance across Acc metric, the F1 score of \textit{gte-large-en-v1.5} is slightly higher, but the model is not able to complete the evaluation due to memory limitations in the same pipeline.
 
 \section{Chunking Strategies}\label{sec:chunking-strategies}
 A critical component of \ac{RAG} systems is the chunking strategy employed to divide documents into smaller, manageable pieces for efficient retrieval and processing.
@@ -470,7 +462,6 @@ In this method, we parsed documents into three levels of chunks with appending t
     \item Largest parents: 512-token chunks
 \end{itemize}
 Each smaller chunk maintains a reference to its parent chunks, allowing the system to retrieve additional context when needed.
-
 
 \begin{lstlisting}[language=Python, caption=Small2Big Chunking Method, label=lst:small2big_chunking]
 # ...previous code
@@ -528,36 +519,37 @@ The choice of method depends on factors such as the nature of the documents, the
 The fixed-size chunking method provides simplicity and consistency but may sacrifice semantic coherence. 
 The Small2Big hierarchical approach offers flexibility in retrieval granularity but introduces complexity in implementation and storage. 
 Sentence Window Retrieval preserves semantic units and adapts to text structure but may result in variable chunk sizes.
+
 \begin{table}[h!]
+    \centering
     \noindent
-    \resizebox{\textwidth}{!}{
-        \begin{tabular}{ll|ccccc||ccc}
-            \multicolumn{10}{c}{\fbox{\textit{Retrieval Method}}, fdsjnfkdsn, jfiewdf ,fjneirufj} \\ \\
-            \multirow{2}{*}{\textbf{Method}} & \multirow{2}{*}{\textbf{Parameters}} & \multicolumn{2}{c}{\textbf{Random Sampling}} & \textbf{Over Sampling} & \multicolumn{2}{c||}{\textbf{Avg.}} & \multicolumn{3}{c}{\textbf{Complete Run}} \\
-            \cmidrule(lr){3-4} \cmidrule(lr){5-5} \cmidrule(lr){6-7} \cmidrule(lr){8-10}\
-            & & Acc & F1 & Acc & Acc & \multicolumn{1}{c||}{F1} & Acc & F1 & Latency \\
+    {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5,\fbox{\textit{Chunking Strategy}}, Similarity Cut-off (Re-rank), Top\_k 3}
+    \resizebox{0.75\textwidth}{!}{
+        \begin{tabular}{llccc}
+            \toprule
+            \textbf{Method} & \textbf{Parameters} & Acc & F1 & Latency \\
             \midrule
-            \multirow{3}{*}{Original} & Chuck Size: 1024 &  0.719  & 0.391 & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & \textbf{0.528} & 0.353 & 0.353 \\
-            & Chuck Size: 512 & 0.719 & 0.391 & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & \textbf{0.528} & 0.353 & 0.353\\
-            & Chuck Size: 256 & 0.719 & 0.505 & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & \textbf{0.528} & 0.353 & 0.353\\
-            \hdashline
-            small2big & Text Chunks: 8 * 128, 4 * 256, 2 * 512 & 0.505 & 0.391 & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & \textbf{0.528} & 0.353 & 0.353 \\
-            \hdashline
-            \multirow{2}{*}{Sliding Window} & Window Size: 6 &  0.719 & 0.505  & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & \textbf{0.528} & 0.353 & 0.353 \\
-            & Window Size: 3 & 0.719 & 0.505 & \textbf{0.450} & \textbf{0.212} & \multicolumn{1}{c||}{0.255} & \textbf{0.528} & 0.353 & 0.353 \\
+            \multirow{3}{*}{Original}           & Chuck Size: 256       & 0.8914          & 0.8914          & N/A \\
+                                                & Chuck Size: 512       & 0.8932          & 0.8993          & N/A \\
+                                                & Chuck Size: 1024      & 0.8946          & 0.8993          & N/A \\ \hline
+            small2big                           & Chuck Size: 1024      & 0.8889          & 0.8953          & N/A \\ \hline
+            \multirow{2}{*}{Sliding Window}     & Window Size: 6        & \textbf{0.9014} & 0.9077          & N/A \\
+                                                & Window Size: 3        & \textbf{0.9014} & \textbf{0.9080} & N/A \\
             \bottomrule
-        \end{tabular}}\caption{Evaluation Results for Different Embeddings Models through the Pipeline (just with the Gemma2 model)}
+        \end{tabular}}
+    \caption{Evaluation Results for Different Chunking Strategies through the Pipeline (just with the Gemma2 model)}
     \label{tab:table_chunking}
 \end{table}
-
 Examples of the three chunking methods are available in the Appendix~\ref{ch:chunking} for further reference.
 
+The high baseline accuracy and F1 scores across chunking strategies indicate that the model’s performance is largely unaffected by these variations, suggesting that factors other than chunk size, may have a more significant impact on the retrieval process.
+The Sliding Window method with a window size of 3 achieves the highest accuracy and F1 score, so we will use this method for subsequent evaluations and analyses due to its F1, accuracy scores and having surrounding context.
 
 \section{Similarity Cut-off}\label{sec:similar-cut-off}
 In this section we will discuss how similarity cut-off can be used to filter out irrelevant nodes and improve the efficiency of the retrieval process.
 We use Node postprocessors to apply a similarity cut-off to the retrieved nodes, discarding those with a similarity score below a certain threshold.
 Node postprocessors are a set of modules that take a set of nodes, and apply some kind of transformation or filtering before returning them.
-For our experiments, we set the similarity cut-off threshold to 0.3, meaning that nodes with a similarity score below 0.3 are discarded, and also we re-rank the nodes based on their similarity score with re-ranker models (\textit{ms-marco-MiniLM-L-6-v2} and \textit{jina-reranker-v2-base-multilingual}) and not their original score.
+For our experiments, we set the similarity cut-off threshold to 0.3, meaning that nodes with a similarity score below 0.3 are discarded, we use the naive score and the re-ranker score to compare the results.
 
 \begin{algorithm}
     \begin{algorithmic}[1]
@@ -580,54 +572,131 @@ For our experiments, we set the similarity cut-off threshold to 0.3, meaning tha
     \caption{Similarity Cutoff Postprocessor}\label{alg:algorithm}
 \end{algorithm}
 
-\section{Evaluation}\label{sec:evaluation-and-discussion}
-\begin{table}
+\begin{table}[h!]
+    \centering
     \noindent
-    \resizebox{\textwidth}{!}{
-        \begin{tabular}{l|cccccccccc||c}
-            \multicolumn{12}{c}{\fbox{\textit{Retrieval Method}}, fdsjnfkdsn, jfiewdf ,fjneirufj} \\ \\
-            \multicolumn{1}{c}{\textbf{Model}} & \multicolumn{1}{l}{\begin{sideways}award\end{sideways}} & \multicolumn{1}{l}{\begin{sideways}birth\end{sideways}} & \multicolumn{1}{l}{\begin{sideways}death\end{sideways}} & \multicolumn{1}{l}{\begin{sideways}foundationPlace\end{sideways}} & \multicolumn{1}{l}{\begin{sideways}leader\end{sideways}} & \multicolumn{1}{l}{\begin{sideways}nbateam\end{sideways}} & \multicolumn{1}{l}{\begin{sideways}publicationDate\end{sideways}} & \multicolumn{1}{l}{\begin{sideways}spouse\end{sideways}} & \begin{sideways}starring\end{sideways} & \begin{sideways}subsidiary\end{sideways} & \multicolumn{1}{l}{\begin{sideways}Total\end{sideways}}  \\
+    {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), \fbox{\textit{Similarity Cut-off}}, Top\_k 3}
+    \resizebox{0.7\textwidth}{!}{
+        \begin{tabular}{lccc}
+            \toprule
+            \textbf{Method} & Acc & F1 & Latency \\
             \midrule
-            \textit{Positive Labels}           &                                                         &                                                         &                                                         &                                                                   &                                                          &                                                           &                                                                   &                                                          &                                        &                                          &       \\
-            Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            Proposed                           & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            \hdashline
-            \textit{Negative Labels}           &                                                &                                                         &                                                         &                                                                   &                                                          &                                                           &                                                                   &                                                          &                                        &                                          &       \\
-            Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            Gemma2                             & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
-            Proposed                           & 0.719                                                   & 0.505                                                   & \textbf{0.450}                                          & \textbf{0.212}                                                    & 0.255                                                    & 0.8882                                                    & 0.8940                                                            & 0.353                                                    & 0.353                                  & 0.353                                    & 0.353 \\
+            w/o similarity cut-off                                  & 0.8971          & 0.9036                  & N/A \\
+            similarity cut-off (original score)                     & \textbf{0.9018} & \textbf{0.9080}         & N/A \\
+            similarity cut-off (re-ranked score)                    & 0.9014          & \textbf{0.9080}         & N/A \\
             \bottomrule
         \end{tabular}}
-    \caption{Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}
-    \label{tab:evaluation_results-kossher}
+    \caption{Evaluation Results for Different Similarity Cut through the Pipeline (just with the Gemma2 model)}
+    \label{tab:table_similarity_cut}
 \end{table}
 
-% TODO: BARCHART Model Accuracy by category for all categories
+Based on the results in Table~\ref{tab:table_similarity_cut}, we apply a similarity cut-off on the original score to provide the model with higher-quality data for further evaluations.
+This approach yields the highest accuracy and F1 score, and it is faster than using the re-ranked score.
+Please note that in separate evaluations (not reported in Table~\ref{tab:table_similarity_cut}), we tested a similarity cut-off using a normalized version of the re-ranked score, where re-ranked values were scaled between the minimum and maximum of the original scores.
+However, this normalized re-ranked score did not perform as well as the original scores.
+
+\section{Top K}\label{sec:top-k}
+Top\_k mentions how many top embeddings to take into context.
+Considering a large top\_k might go beyond the max\_tokens of the model, we will evaluate the performance of the pipeline with the top\_k set to 3 and 6, and compare the results to determine the optimal value for this parameter.
+\begin{table}[h!]
+    \centering
+    \noindent
+    {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original),\fbox{\textit{Top\_k}}}
+    \resizebox{0.5\textwidth}{!}{
+        \begin{tabular}{lccc}
+            \toprule
+            \textbf{Method} & Acc & F1 & Latency \\
+            \midrule
+            Top\_k 3                     & 0.9018               & 0.9080                    & N/A \\
+            Top\_k 6                     & \textbf{0.9032}      & \textbf{0.9101}           & N/A \\
+            \bottomrule
+        \end{tabular}}
+    \caption{Evaluation Results for Different Top\_k through the Pipeline (just with the Gemma2 model)}
+    \label{tab:table_top_k}
+\end{table}
+
+As we decided to set the similarity cut-off with 0.3 threshold, it's good to use the top\_k 6 to have more high-quality embeddings in the context, and based on results it outperforms the top\_k 3, so we will use top\_k 6 for subsequent evaluations.
+
+\section{Evaluation}\label{sec:evaluation-and-discussion}
+In this ablation study, we evaluate the performance of the merging method, which leverages a novel ensemble approach by combining multiple models (Gemma2, Qwen2.5, Llama3.1, and Mistral) to show the robustness and accuracy of the pipeline.
+As presented in Tables~\ref{tab:evaluation_results-full-category} and~\ref{tab:evaluation_results-full-wo-category}, along with Figures~\ref{fig:correct-radar-chart}, ~\ref{fig:wrong-radar-chart}, and ~\ref{fig:all-radar-chart}, the proposed ensemble method consistently outperforms individual models across both positive and negative labels, achieving a more balanced and comprehensive performance.
+
+Note that the ensemble method is based on the tie-breaking strategy discussed in Section~\ref{subsec:conflict-resolution-strategies}, with \textit{At\_Most} as the merging method.
+Based on provided configurations, the model selected for \textit{At\_Most} is the \textit{Gemma2:21B} model.
 
 \begin{table}
     \noindent
+    {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original), Top\_k 6}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{lcccccccccc||c}
+            \toprule
+            \textbf{Model}                     & \begin{sideways}award\end{sideways}                     & \begin{sideways}birth\end{sideways}                     & \begin{sideways}death\end{sideways}                     & \begin{sideways}foundationPlace\end{sideways}                     & \begin{sideways}leader\end{sideways}                    & \begin{sideways}nbateam\end{sideways}                     & \begin{sideways}publicationDate\end{sideways}                     & \begin{sideways}spouse\end{sideways}                    & \begin{sideways}starring\end{sideways} & \begin{sideways}subsidiary\end{sideways} & \begin{sideways}Total\end{sideways} \\
+            \midrule
+            \textit{Positive Labels}           &                                                         &                                                         &                                                         &                                                                   &                                                         &                                                           &                                                                   &                                                         &                                        &                                          &       \\
+            Gemma2                             & 1.0000                                                  & 0.9733                                                  & 0.9200                                                  & 0.5667                                                            & 0.9933                                                  & 1.0000                                                    & 0.9733                                                            & 0.8000                                                  & 0.9733                                 & 0.9467                                   & 0.9147 \\
+            Qwen2.5                            & 1.0000                                                  & 0.9667                                                  & 0.9600                                                  & 0.7800                                                            & 0.9933                                                  & 1.0000                                                    & 0.9600                                                            & 0.9400                                                  & 0.9800                                 & 0.9067                                   & 0.9487 \\
+            Llama3.1                           & 0.9800                                                  & 0.8933                                                  & 0.8267                                                  & 0.5067                                                            & 0.9333                                                  & 0.8467                                                    & 0.9267                                                            & 0.7867                                                  & 0.8667                                 & 0.8400                                   & 0.8407 \\
+            Mistral                            & 1.0000                                                  & 0.9867                                                  & 0.9667                                                  & 0.7333                                                            & 0.9933                                                  & 0.9867                                                    & 0.9867                                                            & 0.9867                                                  & 0.9867                                 & 0.9533                                   & 0.9580 \\
+            Proposed (At\_Most)                & 1.0000                                                  & 0.9867                                                  & 0.9467                                                  & 0.7067                                                            & 0.9933                                                  & 1.0000                                                    & 0.9667                                                            & 0.9200                                                  & 0.9867                                 & 0.9333                                   & 0.9440 \\
+            \hline
+            \textit{Negative Labels}           &                                                         &                                                         &                                                         &                                                                   &                                                          &                                                           &                                                                  &                                                         &                                        &                                          &       \\
+            Gemma2                             & 0.9923                                                  & 0.9538                                                  & 0.9615                                                  & 0.8154                                                            & 0.9308                                                  & 0.6846                                                    & 0.9308                                                            & 0.9462                                                  & 0.9077                                 & 0.7769                                   & 0.8900 \\
+            Qwen2.5                            & 0.8000                                                  & 0.9000                                                  & 0.9000                                                  & 0.6769                                                            & 0.8769                                                  & 0.5462                                                    & 0.7923                                                            & 0.8538                                                  & 0.7462                                 & 0.7615                                   & 0.7854 \\
+            LLama3.1                           & 0.7462                                                  & 0.8615                                                  & 0.8462                                                  & 0.7615                                                            & 0.8692                                                  & 0.6385                                                    & 0.8538                                                            & 0.7538                                                  & 0.8231                                 & 0.7077                                   & 0.7862 \\
+            Mistral                            & 0.6538                                                  & 0.8692                                                  & 0.8462                                                  & 0.7000                                                            & 0.8077                                                  & 0.6077                                                    & 0.6769                                                            & 0.7846                                                  & 0.6846                                 & 0.6462                                   & 0.7277 \\
+            Proposed (At\_Most)                & 0.8846                                                  & 0.9308                                                  & 0.9077                                                  & 0.7692                                                            & 0.8923                                                  & 0.6615                                                    & 0.9000                                                            & 0.8846                                                  & 0.8385                                 & 0.7462                                   & 0.8415 \\
+            \bottomrule
+        \end{tabular}}
+    \caption{Evaluation Results for Whole Pipeline by Category}
+    \label{tab:evaluation_results-full-category}
+\end{table}
+
+\begin{table}
+    \noindent
+    {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original), Top\_k 6}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lccc||cc}
-            \multicolumn{6}{c}{\fbox{\textit{Retrieval Method}}, fdsjnfkdsn, jfiewdf ,fjneirufj} \\ \\
-            \multicolumn{1}{c}{\textbf{Model}} & \multicolumn{1}{l}{Stability} & \multicolumn{1}{l}{Avg. Request Duration} & \multicolumn{1}{l}{Avg. tokens per request} & ACC & F1 \\
+            \toprule
+            \textbf{Model}                     & \textbf{Stability}             & \textbf{Avg. Request Duration} & \textbf{Avg. tokens per request}          & \textbf{ACC} & \textbf{F1} \\
             \midrule
-            Gemma2                             & \textbf{0.450}                & \textbf{0.212}                            & 0.255                                       & 0.222    & 0.222   \\
-            Gemma2                             & \textbf{0.450}                & \textbf{0.212}                            & 0.255                                       & 0.222    & 0.222   \\
-            Gemma2                             & \textbf{0.450}                & \textbf{0.212}                            & 0.255                                       & 0.222    & 0.222   \\
-            Gemma2                             & \textbf{0.450}                & \textbf{0.212}                            & 0.255                                       & 0.222    & 0.222   \\ \hline
-            Proposed                           & \textbf{0.450}                & \textbf{0.212}                            & 0.255                                       & 0.222    & 0.222   \\
+            Gemma2                             & 0.8720                         & N/A                            & N/A                                       & \textbf{0.9032}    & \textbf{0.9101}   \\
+            Qwen2.5                            & 0.8685                         & N/A                            & N/A                                       & 0.8729    & 0.8888   \\
+            LLama3.1                           & 0.8291                         & N/A                            & N/A                                       & 0.8154    & 0.8299   \\
+            Mistral                            & 0.8650                         & N/A                            & N/A                                       & 0.8511    & 0.8733   \\ \hline
+            Proposed (At\_Most)                & \textbf{0.9176}                & N/A                            & N/A                                       & 0.8964    & 0.9071   \\
             \bottomrule
         \end{tabular}}
-    \caption{Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}
-    \label{tab:evaluation_results-kossher3}
+    \caption{Evaluation Results for Whole Pipeline}
+    \label{tab:evaluation_results-full-wo-category}
 \end{table}
 
-% TODO: RADARCHART TO HAVE BETTER INSIGHTS WITH CATEGORIES, MOSTLY STABILITY CAN SHOWN HERE
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/combined_correct_radar_chart}
+        \caption{Positive Labels}
+        \label{fig:correct-radar-chart}
+    \end{minipage}
+    \hspace{0.05\textwidth} % Space between the images
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/combined_wrong_radar_chart}
+        \caption{Negative Labels}
+        \label{fig:wrong-radar-chart}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/combined_radar_chart}
+        \caption{All Labels}
+        \label{fig:all-radar-chart}
+    \end{minipage}
+\end{figure}
+
 
 \section{Failure Analysis}\label{sec:faiure-analysis}
 To gain a deeper understanding of the limitations and challenges faced by our fact-checking system, we conducted a comprehensive failure analysis using the \textit{FactBench} dataset.

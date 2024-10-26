@@ -13,10 +13,12 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Node sentence window replacement~\blx@tocontentsinit {0}\cite {liu2023tweet}}}{27}{figure.caption.32}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Document Retrieval Confusion Matrix}}{56}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Document Retrieval Performance}}{56}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Distribution of Fully Incorrect Predictions 4/4}}{72}{figure.caption.55}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Distribution of Partially Incorrect Predictions 3/4}}{72}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Document Retrieval Confusion Matrix}}{55}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Positive Labels}}{71}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Negative Labels}}{71}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces All Labels}}{71}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Distribution of Fully Incorrect Predictions 4/4}}{73}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Distribution of Partially Incorrect Predictions 3/4}}{73}{figure.caption.60}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
