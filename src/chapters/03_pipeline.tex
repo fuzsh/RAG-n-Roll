@@ -86,13 +86,13 @@ Be aware that certain knowledge graph datasets are human-readable, whereas other
             \midrule
             \textit{Albert Einstein} & \textit{Birth Place} & \textit{Ulm, Germany} & FactBench~\cite{GERBER201585} & \ding{55} & \textit{Albert Einstein birth place Ulm, Germany} \\
             \textit{Chris Benoit} & \textit{deathPlace} & \textit{Fayetteville, Georgia} & FactBench~\cite{GERBER201585} & \ding{55} & \textit{Chris Benoit death place Fayetteville, Georgia} \\
-            \hdashline
+            \hline
             \textit{Alexander\_III \_of\_Russia} & \textit{isMarriedTo} &\textit{Maria\_Feodorovna \_\_Dagmar\_of\_Denmark\_} & YAGO~\cite{suchanek2024yago45largeclean} & \ding{51} & \textit{Alexander III of Russia is married to Maria Feodorovna, also known as Dagmar of Denmark.} \\
-            \hdashline
+            \hline
             \textit{Shock\_to\_the \_System \_(Gemma\_Hayes \_song)} & \textit{length} & \textit{221.0} & DBpedia & \ding{51} & \textit{The length of Shock to the System (Gemma Hayes song) is 221.0.} \\
             \textit{Paora\_Winitana} & \textit{years} & \textit{2011} & DBpedia & \ding{51} & \textit{Paora Winitana was active in 2011.} \\
             \bottomrule
-        \end{tabular}}\caption{Generation of Human-Understandable Text}
+        \end{tabular}}\caption{Examples of Generation of Human-Understandable Text}
     \label{tab:Text-Generation}
 \end{table}
 
@@ -326,7 +326,7 @@ The pipeline employs advanced embedding techniques to transform textual data int
 
 Key aspects of this embedding process include:
 \begin{itemize}
-    \item \textbf{Granularity:} The focus on \"Smaller Chunks\" suggests a fine-grained approach to embedding, where text is broken down into manageable units. This granularity allows for more precise retrieval and relevance assessment.
+    \item \textbf{Granularity:} The focus on "Smaller Chunks" suggests a fine-grained approach to embedding, where text is broken down into manageable units. This granularity allows for more precise retrieval and relevance assessment.
     \item \textbf{Dimensionality Reduction:} Transforming high-dimensional textual data into lower-dimensional vector spaces while preserving semantic relationships.
 \end{itemize}
 
@@ -565,23 +565,23 @@ Let's examine each of these stages in detail in table~\ref{tab:pipeline-decision
             Human-Understandable Text Generation & Selection of the most appropriate natural language generation technique based on input and context. \\
             Question Generation & Assessment of the quality and relevance of generated questions. \\
             Cross-Encoder for Query Relevance & Determination of whether the top question score exceeds the upper threshold. \\
-            \hdashline
+            \hline
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Information Retrieval and Enrichment}}}  \\
             Information Source Selection & Determining the most relevant and reliable sources for information retrieval. \\
             Google Search Integration & Balancing between the breadth of search (number of questions submitted) and depth (number of results retrieved). \\
             Process and Extract Links & Determining the relevance and quality of extracted information for inclusion in the data pool. \\
             Data Pool Creation & Structuring the data pool for optimal accessibility in subsequent stages. \\
-            \hdashline
+            \hline
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Embedding and Relevance Assessment}}} \\
             Embedding for Retrieval Tasks & Selection of the most appropriate embedding technique based on the nature of the data. \\
             Similarity Cutoff Strategy & Determination of the similarity cutoff threshold. \\
             Context Processing & Determining the optimal chunk size and processing method. \\
-            \hdashline
+            \hline
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Multi-Model Processing and Synthesis}}} \\
             Parallel LLM Processing & Allocation of specific tasks or aspects of the query to different models based on their strengths. \\
             Synthesis of Information & Determination of the method of synthesis (e.g., concatenation, abstraction, or hybrid approaches). \\
             Majority Voting System & Assessment of the level of agreement among models. \\
-            \hdashline
+            \hline
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Conflict Resolution and Final Output Generation}}} \\
             Conflict Identification & Determination of the threshold for what constitutes a significant conflict requiring resolution. \\
             Adaptive Model Selection & When two models believe the answer is correct and two believe it's wrong, switching to a more advanced model. \\
@@ -690,19 +690,19 @@ Understanding and acknowledging the limitations of the system is crucial for eth
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Scope of Knowledge}}} \\
             Temporal Limitations & The system's knowledge base and models have a cutoff date, potentially leading to outdated information. \\
             Domain Specificity & Gaps in specialized or niche areas of knowledge may limit performance. \\
-            \hdashline
+            \hline
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Language and Cultural Limitations}}} \\
             Language Coverage & Biases towards languages well-represented in training data, challenges in handling less common languages. \\
             Cultural Context & Limitations in understanding and responding to culturally specific queries or contexts. \\
-            \hdashline
+            \hline
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Reasoning and Inference Capabilities}}} \\
             Complex Reasoning & Challenges in handling queries requiring advanced logical reasoning or domain-specific expertise. \\
             Causal Understanding & Difficulties in inferring causal relationships. \\
-            \hdashline
+            \hline
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Handling of Ambiguity and Context}}} \\
             Contextual Nuances & Difficulties in capturing subtle contextual cues that humans naturally understand. \\
             Disambiguation & Challenges in resolving ambiguities in queries without additional user input. \\
-            \hdashline
+            \hline
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Real-time Adaptation}}} \\
             Static Knowledge Base & Limitations in adapting to real-time changes without system updates. \\
             Learning from Interactions & Inability to learn and improve from individual user interactions due to privacy and architectural constraints. \\

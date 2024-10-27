@@ -91,6 +91,7 @@
 \RequirePackage{fancyvrb}  % For better verbatim environments}
 \RequirePackage{rotating} % For rotating tables
 \RequirePackage[flushleft]{threeparttable} % For table footnotes
+\RequirePackage{ltablex}
 % -- DEFINITIONS --
 
 % university

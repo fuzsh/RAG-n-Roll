@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="feat(Analysis|Ablation): Add Model Selection &amp; Failure Analysis">
-      <change afterPath="$PROJECT_DIR$/src/res/combined_correct_radar_chart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/combined_radar_chart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/combined_wrong_radar_chart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/04_analysis.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/04_analysis.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/05_ablation.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/05_ablation.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/99_appendix.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/99_appendix.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.blg" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.blg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.loa" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.loa" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.lof" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lof" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.lol" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.lot" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.out" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/pdfa.xmpi" beforeDir="false" afterPath="$PROJECT_DIR$/out/pdfa.xmpi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DEIThesis.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/DEIThesis.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapters/05_ablation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/05_ablation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/04_analysis.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/04_analysis.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +296,7 @@
       <workItem from="1728308298918" duration="73730000" />
       <workItem from="1728912467475" duration="50412000" />
       <workItem from="1729254502942" duration="572000" />
-      <workItem from="1729928046964" duration="15186000" />
+      <workItem from="1729928046964" duration="15713000" />
     </task>
     <task id="LOCAL-00001" summary="feat(pipeline): Add the sections related to LLMs &amp; Voting Systems &amp; ..">
       <option name="closed" value="true" />
