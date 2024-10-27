@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  27 OCT 2024 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  27 OCT 2024 17:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1969,17 +1969,17 @@ l.42     \frontmatter
 Chapter 1.
 Package acronym Info: Label `acro:IR' newly defined as it shall be overridden
 although it is yet undefined on input line 5.
-LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 7.
-LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 17.28pt on input line 7.
-Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
-although it is yet undefined on input line 15.
 Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
-although it is yet undefined on input line 15.
+although it is yet undefined on input line 5.
+Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
+although it is yet undefined on input line 5.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 17.28pt on input line 6.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
+(Font)              scaled to size 17.28pt on input line 6.
 Package acronym Info: Label `acro:LLMs' newly defined as it shall be overridden
 
-although it is yet undefined on input line 16.
+although it is yet undefined on input line 15.
 [1
 
 
@@ -1988,21 +1988,21 @@ although it is yet undefined on input line 16.
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+zpltlf on input lin
-e 27.
+e 26.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/newpx/ts1zpltlf.fd
 File: ts1zpltlf.fd 2021/11/24 v1.0 fd file for TS1/zpltlf
 )
 LaTeX Font Info:    Font shape `TS1/zpltlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 27.
+(Font)              scaled to size 12.0pt on input line 26.
  [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}]
 Package acronym Info: Label `acro:LLM' newly defined as it shall be overridden
-although it is yet undefined on input line 40.
+although it is yet undefined on input line 39.
  [3]
 
-LaTeX Warning: Reference `ch:analysis' on page 4 undefined on input line 63.
+LaTeX Warning: Reference `ch:analysis' on page 4 undefined on input line 62.
 
 
-Overfull \hbox (0.42429pt too wide) in paragraph at lines 74--75
+Overfull \hbox (0.42429pt too wide) in paragraph at lines 73--74
 \T1/zpltlf/m/n/12 judg-ments fre-quently de-pend on fac-tual in-for-ma-tion, ou
 r tech-nol-ogy could
  []
@@ -2024,7 +2024,7 @@ Package acronym Info: Label `acro:NLI' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
 Package acronym Info: Label `acro:QA' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
-<res/rel-human-llm-inference.png, id=853, 599.23875pt x 703.62875pt>
+<res/rel-human-llm-inference.png, id=855, 599.23875pt x 703.62875pt>
 File: res/rel-human-llm-inference.png Graphic file (type png)
 <use res/rel-human-llm-inference.png>
 Package pdftex.def Info: res/rel-human-llm-inference.png  used on input line 16
@@ -2045,7 +2045,7 @@ Overfull \hbox (3.24234pt too wide) in paragraph at lines 46--47
  LLM-based ap-proaches
  []
 
-<res/rel-claim-verification.png, id=877, 402.50375pt x 444.66125pt>
+<res/rel-claim-verification.png, id=879, 402.50375pt x 444.66125pt>
 File: res/rel-claim-verification.png Graphic file (type png)
 <use res/rel-claim-verification.png>
 Package pdftex.def Info: res/rel-claim-verification.png  used on input line 58.
@@ -2057,13 +2057,13 @@ Overfull \hbox (1.57443pt too wide) in paragraph at lines 78--82
 -the-siz-ing Con-trastive
  []
 
-<res/rel-rafts.png, id=901, 787.94376pt x 367.3725pt>
+<res/rel-rafts.png, id=903, 787.94376pt x 367.3725pt>
 File: res/rel-rafts.png Graphic file (type png)
 <use res/rel-rafts.png>
 Package pdftex.def Info: res/rel-rafts.png  used on input line 91.
 (pdftex.def)             Requested size: 418.25368pt x 195.00359pt.
 [11] [12 <./res/rel-rafts.png>]
-<res/rel-ragar.png, id=915, 465.74pt x 599.23875pt>
+<res/rel-ragar.png, id=917, 465.74pt x 599.23875pt>
 File: res/rel-ragar.png Graphic file (type png)
 <use res/rel-ragar.png>
 Package pdftex.def Info: res/rel-ragar.png  used on input line 118.
@@ -2245,7 +2245,7 @@ readable, whereas
  []
 
 [18] [19]
-<res/Cross-Encoder.png, id=963, 7831.2575pt x 1920.17375pt>
+<res/Cross-Encoder.png, id=965, 7831.2575pt x 1920.17375pt>
 File: res/Cross-Encoder.png Graphic file (type png)
 <use res/Cross-Encoder.png>
 Package pdftex.def Info: res/Cross-Encoder.png  used on input line 122.
@@ -2267,7 +2267,7 @@ File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 (Font)              scaled to size 10.0pt on input line 140.
-<res/knowledge-distill.png, id=968, 3573.35pt x 1159.33125pt>
+<res/knowledge-distill.png, id=970, 3573.35pt x 1159.33125pt>
 File: res/knowledge-distill.png Graphic file (type png)
 <use res/knowledge-distill.png>
 Package pdftex.def Info: res/knowledge-distill.png  used on input line 149.
@@ -2280,7 +2280,7 @@ al el-e-ment of our pipeline,
  []
 
 [21 <./res/knowledge-distill.png>]
-<res/Google-Search-Result.png, id=982, 9867.86626pt x 4028.04875pt>
+<res/Google-Search-Result.png, id=984, 9867.86626pt x 4028.04875pt>
 File: res/Google-Search-Result.png Graphic file (type png)
 <use res/Google-Search-Result.png>
 Package pdftex.def Info: res/Google-Search-Result.png  used on input line 206.
@@ -2306,7 +2306,7 @@ ave pro-tec-tion mech-a-nisms against
  []
 
 [24]
-<res/Google-Search-Result-Content.png, id=1032, 9995.3425pt x 2480.26625pt>
+<res/Google-Search-Result-Content.png, id=1034, 9995.3425pt x 2480.26625pt>
 File: res/Google-Search-Result-Content.png Graphic file (type png)
 <use res/Google-Search-Result-Content.png>
 Package pdftex.def Info: res/Google-Search-Result-Content.png  used on input li
@@ -2318,7 +2318,7 @@ LaTeX Warning: Reference `sec:document-selction' on page 26 undefined on input
 line 309.
 
 [26]
-<res/window-ret.png, id=1043, 2848.6425pt x 1128.215pt>
+<res/window-ret.png, id=1045, 2848.6425pt x 1128.215pt>
 File: res/window-ret.png Graphic file (type png)
 <use res/window-ret.png>
 Package pdftex.def Info: res/window-ret.png  used on input line 342.
@@ -3382,7 +3382,7 @@ ks, es-pe-cially those
  []
 
 [55] [56]
-<res/ret_result_sim_1.png, id=1304, 722.7pt x 578.16pt>
+<res/ret_result_sim_1.png, id=1306, 722.7pt x 578.16pt>
 File: res/ret_result_sim_1.png Graphic file (type png)
 <use res/ret_result_sim_1.png>
 Package pdftex.def Info: res/ret_result_sim_1.png  used on input line 199.
@@ -3544,19 +3544,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<res/combined_correct_radar_chart.png, id=1462, 578.16pt x 578.16pt>
+<res/combined_correct_radar_chart.png, id=1465, 578.16pt x 578.16pt>
 File: res/combined_correct_radar_chart.png Graphic file (type png)
 <use res/combined_correct_radar_chart.png>
 Package pdftex.def Info: res/combined_correct_radar_chart.png  used on input li
 ne 677.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
-<res/combined_wrong_radar_chart.png, id=1463, 578.16pt x 578.16pt>
+<res/combined_wrong_radar_chart.png, id=1466, 578.16pt x 578.16pt>
 File: res/combined_wrong_radar_chart.png Graphic file (type png)
 <use res/combined_wrong_radar_chart.png>
 Package pdftex.def Info: res/combined_wrong_radar_chart.png  used on input line
  684.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
-<res/combined_radar_chart.png, id=1464, 578.16pt x 578.16pt>
+<res/combined_radar_chart.png, id=1467, 578.16pt x 578.16pt>
 File: res/combined_radar_chart.png Graphic file (type png)
 <use res/combined_radar_chart.png>
 Package pdftex.def Info: res/combined_radar_chart.png  used on input line 694.
@@ -3593,12 +3593,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 727--727
  []
 
 [74]
-<res/radar-error-0.png, id=1483, 414.1071pt x 386.6445pt>
+<res/radar-error-0.png, id=1485, 414.1071pt x 386.6445pt>
 File: res/radar-error-0.png Graphic file (type png)
 <use res/radar-error-0.png>
 Package pdftex.def Info: res/radar-error-0.png  used on input line 747.
 (pdftex.def)             Requested size: 167.2989pt x 156.20668pt.
-<res/radar-error-1.png, id=1484, 414.1071pt x 386.6445pt>
+<res/radar-error-1.png, id=1486, 414.1071pt x 386.6445pt>
 File: res/radar-error-1.png Graphic file (type png)
 <use res/radar-error-1.png>
 Package pdftex.def Info: res/radar-error-1.png  used on input line 754.
@@ -3979,6 +3979,9 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 736A625A5A2F45EA5FE373B385F34602;7558.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -3988,7 +3991,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  49362 strings out of 474116
  901976 string characters out of 5743682
- 2028187 words of memory out of 5000000
+ 2029187 words of memory out of 5000000
  70438 multiletter control sequences out of 15000+600000
  669786 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -4100,10 +4103,10 @@ onts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
 newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zpl
 ri.pfb>
 Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (113 p
-ages, 9416369 bytes).
+ages, 9416361 bytes).
 PDF statistics:
- 1822 PDF objects out of 2073 (max. 8388607)
- 1621 compressed objects within 17 object streams
+ 1824 PDF objects out of 2073 (max. 8388607)
+ 1623 compressed objects within 17 object streams
  434 named destinations out of 1000 (max. 500000)
  899 words of extra memory for PDF output out of 10000 (max. 10000000)
 

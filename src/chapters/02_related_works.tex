@@ -8,7 +8,6 @@ Their study spans three categories: \ac{NLI}, contextual \ac{QA}, and rationales
 
 The authors found that LLMs generally excel in multi-hop reasoning tasks, particularly those requiring inference over extended contexts, while humans outperform \ac{LLMs} in simpler deductive reasoning tasks involving substitutions or negations.
 
-
 \begin{figure}[ht!]
     \centering
     \begin{minipage}[b]{\textwidth}
@@ -31,7 +30,7 @@ This distinction is significant in terms of application: while their fine-tuned 
 My work, by integrating retrieval, potentially overcomes this limitation by dynamically accessing external data, thus offering a complementary perspective to entailment verification focused on enhancing factuality.
 
 \section{Claim Verification in the Age of Large Language Models}\label{subsec:claim-verification-in-the-age-of-large-language-models}
-Dmonte et al.~\cite{dmonte2024claimverificationagelarge} provide a comprehensive survey ofc\ac{LLM}-based approaches to claim verification, highlighting the shift from traditional \ac{NLP} methods to more sophisticated LLM-driven techniques.
+Dmonte et al.~\cite{dmonte2024claimverificationagelarge} provide a comprehensive survey of \ac{LLM}-based approaches to claim verification, highlighting the shift from traditional \ac{NLP} methods to more sophisticated LLM-driven techniques.
 
 The typical LLM-based claim verification pipeline, as described by Dmonte et al., consists of several key components:
 \begin{enumerate}
@@ -130,5 +129,3 @@ RAGAR's ability to synthesize multimodal evidence into a coherent verification r
 
 RAGAR focuses on political fact-checking using multimodal data, whereas my work targets the factualization of knowledge graphs with a primary focus on textual information.
 In contrast to RAGAR’s multimodal pipeline, my system emphasizes multi-query strategies and document chunking techniques to retrieve highly relevant textual evidence for verification.
-
-% TODO: ADD FUTURE WORK
