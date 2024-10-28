@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  27 OCT 2024 17:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  28 OCT 2024 13:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1998,10 +1998,6 @@ LaTeX Font Info:    Font shape `TS1/zpltlf/m/n' will be
 Package acronym Info: Label `acro:LLM' newly defined as it shall be overridden
 although it is yet undefined on input line 39.
  [3]
-
-LaTeX Warning: Reference `ch:analysis' on page 4 undefined on input line 62.
-
-
 Overfull \hbox (0.42429pt too wide) in paragraph at lines 73--74
 \T1/zpltlf/m/n/12 judg-ments fre-quently de-pend on fac-tual in-for-ma-tion, ou
 r tech-nol-ogy could
@@ -2024,49 +2020,49 @@ Package acronym Info: Label `acro:NLI' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
 Package acronym Info: Label `acro:QA' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
-<res/rel-human-llm-inference.png, id=855, 599.23875pt x 703.62875pt>
+<res/rel-human-llm-inference.png, id=854, 599.23875pt x 703.62875pt>
 File: res/rel-human-llm-inference.png Graphic file (type png)
 <use res/rel-human-llm-inference.png>
-Package pdftex.def Info: res/rel-human-llm-inference.png  used on input line 16
+Package pdftex.def Info: res/rel-human-llm-inference.png  used on input line 15
 .
 (pdftex.def)             Requested size: 250.95476pt x 294.66313pt.
 [7]
 Underfull \vbox (badness 4096) has occurred while \output is active []
 
  [8 <./res/rel-human-llm-inference.png>]
-Overfull \hbox (9.54247pt too wide) in paragraph at lines 44--45
+Overfull \hbox (9.54247pt too wide) in paragraph at lines 43--44
 []\T1/zpltlf/m/n/12 This pipeline rep-re-sents a de-par-ture from tra-di-tional
  fact-checking ap-proaches,
  []
 
 
-Overfull \hbox (3.24234pt too wide) in paragraph at lines 46--47
+Overfull \hbox (3.24234pt too wide) in paragraph at lines 45--46
 []\T1/zpltlf/m/n/12 Several stud-ies have demon-strated the ef-fec-tive-ness of
  LLM-based ap-proaches
  []
 
-<res/rel-claim-verification.png, id=879, 402.50375pt x 444.66125pt>
+<res/rel-claim-verification.png, id=878, 402.50375pt x 444.66125pt>
 File: res/rel-claim-verification.png Graphic file (type png)
 <use res/rel-claim-verification.png>
-Package pdftex.def Info: res/rel-claim-verification.png  used on input line 58.
+Package pdftex.def Info: res/rel-claim-verification.png  used on input line 57.
 
 (pdftex.def)             Requested size: 250.95476pt x 277.24088pt.
 [9] [10 <./res/rel-claim-verification.png>]
-Overfull \hbox (1.57443pt too wide) in paragraph at lines 78--82
+Overfull \hbox (1.57443pt too wide) in paragraph at lines 77--81
 []\T1/zpltlf/m/n/12 The pa-per Retrieval-Augmented Fact Ver-i-fi-ca-tion by Syn
 -the-siz-ing Con-trastive
  []
 
-<res/rel-rafts.png, id=903, 787.94376pt x 367.3725pt>
+<res/rel-rafts.png, id=902, 787.94376pt x 367.3725pt>
 File: res/rel-rafts.png Graphic file (type png)
 <use res/rel-rafts.png>
-Package pdftex.def Info: res/rel-rafts.png  used on input line 91.
+Package pdftex.def Info: res/rel-rafts.png  used on input line 90.
 (pdftex.def)             Requested size: 418.25368pt x 195.00359pt.
 [11] [12 <./res/rel-rafts.png>]
-<res/rel-ragar.png, id=917, 465.74pt x 599.23875pt>
+<res/rel-ragar.png, id=916, 465.74pt x 599.23875pt>
 File: res/rel-ragar.png Graphic file (type png)
 <use res/rel-ragar.png>
-Package pdftex.def Info: res/rel-ragar.png  used on input line 118.
+Package pdftex.def Info: res/rel-ragar.png  used on input line 117.
 (pdftex.def)             Requested size: 250.95476pt x 322.88919pt.
  [13 <./res/rel-ragar.png>]) [14]
 \openout2 = `chapters/03_pipeline.aux'.
@@ -2245,7 +2241,7 @@ readable, whereas
  []
 
 [18] [19]
-<res/Cross-Encoder.png, id=965, 7831.2575pt x 1920.17375pt>
+<res/Cross-Encoder.png, id=964, 7831.2575pt x 1920.17375pt>
 File: res/Cross-Encoder.png Graphic file (type png)
 <use res/Cross-Encoder.png>
 Package pdftex.def Info: res/Cross-Encoder.png  used on input line 122.
@@ -2267,7 +2263,7 @@ File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 (Font)              scaled to size 10.0pt on input line 140.
-<res/knowledge-distill.png, id=970, 3573.35pt x 1159.33125pt>
+<res/knowledge-distill.png, id=969, 3573.35pt x 1159.33125pt>
 File: res/knowledge-distill.png Graphic file (type png)
 <use res/knowledge-distill.png>
 Package pdftex.def Info: res/knowledge-distill.png  used on input line 149.
@@ -2280,7 +2276,7 @@ al el-e-ment of our pipeline,
  []
 
 [21 <./res/knowledge-distill.png>]
-<res/Google-Search-Result.png, id=984, 9867.86626pt x 4028.04875pt>
+<res/Google-Search-Result.png, id=983, 9867.86626pt x 4028.04875pt>
 File: res/Google-Search-Result.png Graphic file (type png)
 <use res/Google-Search-Result.png>
 Package pdftex.def Info: res/Google-Search-Result.png  used on input line 206.
@@ -2306,7 +2302,7 @@ ave pro-tec-tion mech-a-nisms against
  []
 
 [24]
-<res/Google-Search-Result-Content.png, id=1034, 9995.3425pt x 2480.26625pt>
+<res/Google-Search-Result-Content.png, id=1033, 9995.3425pt x 2480.26625pt>
 File: res/Google-Search-Result-Content.png Graphic file (type png)
 <use res/Google-Search-Result-Content.png>
 Package pdftex.def Info: res/Google-Search-Result-Content.png  used on input li
@@ -2318,7 +2314,7 @@ LaTeX Warning: Reference `sec:document-selction' on page 26 undefined on input
 line 309.
 
 [26]
-<res/window-ret.png, id=1045, 2848.6425pt x 1128.215pt>
+<res/window-ret.png, id=1044, 2848.6425pt x 1128.215pt>
 File: res/window-ret.png Graphic file (type png)
 <use res/window-ret.png>
 Package pdftex.def Info: res/window-ret.png  used on input line 342.
@@ -3382,7 +3378,7 @@ ks, es-pe-cially those
  []
 
 [55] [56]
-<res/ret_result_sim_1.png, id=1306, 722.7pt x 578.16pt>
+<res/ret_result_sim_1.png, id=1305, 722.7pt x 578.16pt>
 File: res/ret_result_sim_1.png Graphic file (type png)
 <use res/ret_result_sim_1.png>
 Package pdftex.def Info: res/ret_result_sim_1.png  used on input line 199.
@@ -3394,22 +3390,22 @@ Underfull \hbox (badness 1320) in paragraph at lines 200--200
 
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
 (Font)              scaled to size 8.0pt on input line 217.
-./chapters/05_ablation.tex:231: Undefined control sequence.
+./chapters/05_ablation.tex:236: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.231         \end{tabular}}
-                            
+l.236         \end{threeparttable}}
+                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:231: Undefined control sequence.
+./chapters/05_ablation.tex:236: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.231         \end{tabular}}
-                            
+l.236         \end{threeparttable}}
+                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3420,41 +3416,44 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (10.34647pt too wide) in paragraph at lines 236--238
+Overfull \hbox (10.34647pt too wide) in paragraph at lines 241--243
 []\T1/zpltlf/m/n/12 The em-pir-i-cal re-sults in-di-cate that the model \T1/zpl
 tlf/m/it/12 ms-marco-MiniLM-L-6-v2 \T1/zpltlf/m/n/12 achieved
  []
 
-[57 <./res/ret_result_sim_1.png>]
-Overfull \hbox (3.70161pt too wide) in paragraph at lines 260--263
+[57 <./res/ret_result_sim_1.png>] [58]
+Overfull \hbox (3.70161pt too wide) in paragraph at lines 265--268
 \T1/zpltlf/m/n/12 con-trastive learn-ing, and in-struc-tion fine-tuning to pro-
 duce high-quality, general-
  []
 
-[58]
 Package acronym Info: Label `acro:RoPE' newly defined as it shall be overridden
 
-although it is yet undefined on input line 266.
+although it is yet undefined on input line 271.
 Package acronym Info: Label `acro:MTEB' newly defined as it shall be overridden
 
-although it is yet undefined on input line 270.
- [59]
+although it is yet undefined on input line 275.
+[59]
 Package acronym Info: Label `acro:LoRA' newly defined as it shall be overridden
 
-although it is yet undefined on input line 288.
+although it is yet undefined on input line 293.
 Package acronym Info: Label `acro:MRL' newly defined as it shall be overridden
-although it is yet undefined on input line 296.
+although it is yet undefined on input line 301.
  [60]
-Overfull \hbox (4.09348pt too wide) in paragraph at lines 303--308
+Overfull \hbox (4.09348pt too wide) in paragraph at lines 308--313
 \T1/zpltlf/m/n/12 rang-ing from 512 to 8192, de-pend-ing on user needs. Typ-i-c
 ally, a 1024-dimensional
  []
 
-[61] [62] [63] [64] [65] [66] [67] [68]
-./chapters/05_ablation.tex:539: Undefined control sequence.
+[61] [62] [63] [64]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[65] [66] [67] [68]
+./chapters/05_ablation.tex:545: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.539         \end{tabular}}
+l.545         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3462,10 +3461,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:539: Undefined control sequence.
+./chapters/05_ablation.tex:545: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.539         \end{tabular}}
+l.545         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3473,10 +3472,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:539: Undefined control sequence.
+./chapters/05_ablation.tex:545: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.539         \end{tabular}}
+l.545         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3484,10 +3483,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:539: Undefined control sequence.
+./chapters/05_ablation.tex:545: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.539         \end{tabular}}
+l.545         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3500,10 +3499,10 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [70] [71]
-./chapters/05_ablation.tex:649: Undefined control sequence.
+./chapters/05_ablation.tex:667: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.649         \end{tabular}}
+l.667         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3511,10 +3510,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:649: Undefined control sequence.
+./chapters/05_ablation.tex:667: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.649         \end{tabular}}
+l.667         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3522,10 +3521,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:668: Undefined control sequence.
+./chapters/05_ablation.tex:686: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.668         \end{tabular}}
+l.686         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3533,10 +3532,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:668: Undefined control sequence.
+./chapters/05_ablation.tex:686: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.668         \end{tabular}}
+l.686         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3544,66 +3543,72 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<res/combined_correct_radar_chart.png, id=1465, 578.16pt x 578.16pt>
+<res/combined_correct_radar_chart.png, id=1467, 578.16pt x 578.16pt>
 File: res/combined_correct_radar_chart.png Graphic file (type png)
 <use res/combined_correct_radar_chart.png>
 Package pdftex.def Info: res/combined_correct_radar_chart.png  used on input li
-ne 677.
+ne 695.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
-<res/combined_wrong_radar_chart.png, id=1466, 578.16pt x 578.16pt>
+<res/combined_wrong_radar_chart.png, id=1468, 578.16pt x 578.16pt>
 File: res/combined_wrong_radar_chart.png Graphic file (type png)
 <use res/combined_wrong_radar_chart.png>
 Package pdftex.def Info: res/combined_wrong_radar_chart.png  used on input line
- 684.
+ 702.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
-<res/combined_radar_chart.png, id=1467, 578.16pt x 578.16pt>
+<res/combined_radar_chart.png, id=1469, 578.16pt x 578.16pt>
 File: res/combined_radar_chart.png Graphic file (type png)
 <use res/combined_radar_chart.png>
-Package pdftex.def Info: res/combined_radar_chart.png  used on input line 694.
+Package pdftex.def Info: res/combined_radar_chart.png  used on input line 712.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
-[72] [73 <./res/combined_correct_radar_chart.png> <./res/combined_wrong_radar_c
-hart.png> <./res/combined_radar_chart.png>]
-Underfull \hbox (badness 1097) in paragraph at lines 727--727
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [72]
+[73 <./res/combined_correct_radar_chart.png> <./res/combined_wrong_radar_chart.
+png> <./res/combined_radar_chart.png>]
+Underfull \hbox (badness 1097) in paragraph at lines 745--745
 []|\T1/zpltlf/m/n/10 Mis In-ter-pre-ta-tion
  []
 
 
-Underfull \hbox (badness 3128) in paragraph at lines 727--727
+Underfull \hbox (badness 3128) in paragraph at lines 745--745
 []|\T1/zpltlf/m/n/10 Over re-liance on
  []
 
 
-Underfull \hbox (badness 1122) in paragraph at lines 727--727
+Underfull \hbox (badness 1122) in paragraph at lines 745--745
 []|\T1/zpltlf/m/n/10 Lack of Com-mon
  []
 
 
-Underfull \hbox (badness 2409) in paragraph at lines 727--727
+Underfull \hbox (badness 2409) in paragraph at lines 745--745
 []|\T1/zpltlf/m/n/10 Saul Bel-low star-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--727
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
 []|\T1/zpltlf/m/n/10 Difficulty with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--727
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
 \T1/zpltlf/m/n/10 Nega-tion and
  []
 
-[74]
-<res/radar-error-0.png, id=1485, 414.1071pt x 386.6445pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<res/radar-error-0.png, id=1483, 414.1071pt x 386.6445pt>
 File: res/radar-error-0.png Graphic file (type png)
 <use res/radar-error-0.png>
-Package pdftex.def Info: res/radar-error-0.png  used on input line 747.
+Package pdftex.def Info: res/radar-error-0.png  used on input line 765.
 (pdftex.def)             Requested size: 167.2989pt x 156.20668pt.
-<res/radar-error-1.png, id=1486, 414.1071pt x 386.6445pt>
+<res/radar-error-1.png, id=1484, 414.1071pt x 386.6445pt>
 File: res/radar-error-1.png Graphic file (type png)
 <use res/radar-error-1.png>
-Package pdftex.def Info: res/radar-error-1.png  used on input line 754.
+Package pdftex.def Info: res/radar-error-1.png  used on input line 772.
 (pdftex.def)             Requested size: 167.2989pt x 156.20668pt.
-) [75 <./res/radar-error-0.png> <./res/radar-error-1.png>]
+) [74] [75 <./res/radar-error-0.png> <./res/radar-error-1.png>]
 \openout2 = `chapters/98_conclusions.aux'.
 
 
@@ -3615,130 +3620,25 @@ Package pdftex.def Info: res/radar-error-1.png  used on input line 754.
 
 ]
 Chapter 6.
-./chapters/98_conclusions.tex:8: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.8     \hline
-              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-./chapters/98_conclusions.tex:8: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.8     \hline
-              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Overfull \hbox (2.8481pt too wide) in paragraph at lines 6--7
+\T1/zpltlf/m/n/12 mod-els through ma-jor-ity vot-ing and adap-tive dis-pute res
+-o-lu-tion has proven
+ []
 
-./chapters/98_conclusions.tex:9: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.9     \textbf{A} & \textbf{B} \\ \hline
-                                         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/98_conclusions.tex:9: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.9     \textbf{A} & \textbf{B} \\ \hline
-                                         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/98_conclusions.tex:10: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.10     C          & D          \\ \hline
-                                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/98_conclusions.tex:10: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.10     C          & D          \\ \hline
-                                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/98_conclusions.tex:11: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.11     E          & F          \\ \hline
-                                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/98_conclusions.tex:11: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.11     E          & F          \\ \hline
-                                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/98_conclusions.tex:12: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.12     G          & H          \\ \hline
-                                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./chapters/98_conclusions.tex:12: Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.12     G          & H          \\ \hline
-                                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-) [77]
+[77]) [78]
 \openout2 = `chapters/99_appendix.aux'.
 
- (./chapters/99_appendix.tex [78
-
-
-
-
-
-] (./chapters/prompt-templates.tex
+ (./chapters/99_appendix.tex (./chapters/prompt-templates.tex
 Appendix A.
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 (Font)              scaled to size 10.95pt on input line 4.
 [79
+
+
+
+
+
 
 
 ] [80] [81]) (./chapters/chunking-strategies.tex [82]
@@ -3979,23 +3879,20 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 736A625A5A2F45EA5FE373B385F34602;7558.
+(rerunfilecheck)             Checksum: 3A043DF578C4908062F24C69F4D13680;7558.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49362 strings out of 474116
- 901976 string characters out of 5743682
+ 49368 strings out of 474116
+ 902021 string characters out of 5743682
  2029187 words of memory out of 5000000
- 70438 multiletter control sequences out of 15000+600000
+ 70436 multiletter control sequences out of 15000+600000
  669786 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,16n,131p,1654b,4010s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,17n,131p,1654b,4010s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.25} has been referenced but does not exis
 t, replaced by a fixed one
@@ -4103,10 +4000,10 @@ onts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
 newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zpl
 ri.pfb>
 Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (113 p
-ages, 9416361 bytes).
+ages, 9419513 bytes).
 PDF statistics:
- 1824 PDF objects out of 2073 (max. 8388607)
- 1623 compressed objects within 17 object streams
- 434 named destinations out of 1000 (max. 500000)
+ 1833 PDF objects out of 2073 (max. 8388607)
+ 1632 compressed objects within 17 object streams
+ 442 named destinations out of 1000 (max. 500000)
  899 words of extra memory for PDF output out of 10000 (max. 10000000)
 

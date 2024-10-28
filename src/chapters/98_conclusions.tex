@@ -1,15 +1,19 @@
-%!TEX root = ../main.tex
-
 \chapter{Conclusions and Future Works}\label{ch:conclusions}
+This thesis has presented a novel approach to knowledge graph fact verification using RAG. Through extensive experimentation and analysis, we have demonstrated the effectiveness of combining multiple large language models with sophisticated information retrieval techniques to verify facts in knowledge graphs.
+The key findings and contributions of this work can be summarized as follows:
+\begin{itemize}
+    \item \textbf{Pipeline Architecture:} We have developed a comprehensive pipeline that integrates web search, document processing, and multiple language models to verify knowledge graph facts. The pipeline's modular design allows for flexibility and future improvements in individual components.
+    \item \textbf{Multi-Model Integration:} Our approach of combining multiple language models through majority voting and adaptive dispute resolution has proven effective in improving the overall accuracy and reliability of fact verification. The system achieved an acceptable accuracy and F1 score on the FactBench and Yago datasets, demonstrating its capability to handle diverse fact types.
+    \item \textbf{Processing Optimization:} Through ablation studies, we identified optimal configurations for document selection, embedding models, and chunking strategies.
+    \item \textbf{Error Analysis:} Our detailed analysis of failure cases has provided valuable insights into the system's limitations and areas requiring improvement, particularly in handling complex relationships and insufficient context scenarios.
+\end{itemize}
 
-\begin{table}[ht]
-    \centering
-    \begin{tabular}{|l|l|}
-    \hline
-    \textbf{A} & \textbf{B} \\ \hline
-    C          & D          \\ \hline
-    E          & F          \\ \hline
-    G          & H          \\ \hline
-    \end{tabular}
-    \caption{Table example \label{tab:table-name}}
-\end{table}
+Based on our findings and identified limitations, several promising directions for future research emerge:
+\begin{enumerate}
+    \item \textbf{Enhanced Context Processing:} Develop more sophisticated methods for handling cases with insufficient or irrelevant context. Implement better techniques for identifying and resolving contradictions in retrieved information.
+    \item \textbf{Model Integration:} Explore additional strategies for combining model outputs beyond majority voting. Investigate dynamic model selection based on query characteristics. Implement more sophisticated tie-breaking mechanisms.
+    \item \textbf{Retrieval Optimization:} Improve query generation for better coverage of fact verification requirements. Develop more effective filtering mechanisms for irrelevant information. Enhance the similarity cut-off strategy for more precise document selection.
+    \item \textbf{Scalability Improvements:} Optimize computational resource usage for handling larger knowledge graphs. Develop more efficient document processing and embedding techniques. Implement parallel processing capabilities for faster verification.
+    \item \textbf{Explainability and Transparency:} Develop better methods for explaining verification decisions. Implement confidence scoring mechanisms. Create visualization tools for the verification process.
+    \item \textbf{Domain Adaptation:} Create specialized verification strategies for different types of facts. Develop domain-specific knowledge integration mechanisms. Implement adaptive learning capabilities for new domains.
+\end{enumerate}

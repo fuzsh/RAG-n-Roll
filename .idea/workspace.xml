@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="feat(Analysis|Ablation): Add Model Selection &amp; Failure Analysis">
-      <change beforePath="$PROJECT_DIR$/src/chapters/04_analysis.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/04_analysis.tex" afterDir="false" />
+    <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="feat(Results): Add Results">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/chapters/05_ablation.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/05_ablation.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/chapters/99_appendix.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/99_appendix.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.lof" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lof" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.lot" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.out" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/pdfa.xmpi" beforeDir="false" afterPath="$PROJECT_DIR$/out/pdfa.xmpi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/05_ablation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/05_ablation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/98_conclusions.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/98_conclusions.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,6 +311,8 @@
       <workItem from="1728912467475" duration="50412000" />
       <workItem from="1729254502942" duration="572000" />
       <workItem from="1729928046964" duration="15713000" />
+      <workItem from="1730017565316" duration="18623000" />
+      <workItem from="1730101859022" duration="9685000" />
     </task>
     <task id="LOCAL-00001" summary="feat(pipeline): Add the sections related to LLMs &amp; Voting Systems &amp; ..">
       <option name="closed" value="true" />
@@ -338,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729172845409</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat(Results): Add Results">
+      <option name="closed" value="true" />
+      <created>1730042046809</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730042046809</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +375,7 @@
     <MESSAGE value="feat(Analysis): Add the Empirical Evaluation section" />
     <MESSAGE value="feat(Ablation): Add draft tables" />
     <MESSAGE value="feat(Analysis|Ablation): Add Model Selection &amp; Failure Analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Analysis|Ablation): Add Model Selection &amp; Failure Analysis" />
+    <MESSAGE value="feat(Results): Add Results" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Results): Add Results" />
   </component>
 </project>

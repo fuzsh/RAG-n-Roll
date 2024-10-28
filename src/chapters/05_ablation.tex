@@ -214,22 +214,27 @@ To assess the quality of the retrieved documents from each of the above methods,
 \begin{table}[h!]
     \centering
     \noindent
-    {\scriptsize \fbox{\textit{Retrieval Method}}, BAAI/bge-small-en-v1.5, Sliding Window (ws 6) , Similarity Cut-off (Re-rank), Top\_k 3}
+    {\scriptsize \fbox{\textit{Retrieval Method}}}\\
     \resizebox{0.7\textwidth}{!}{
+        \begin{threeparttable}
         \begin{tabular}{lccc}
             \toprule
-            \textbf{Method} & Acc & F1 & Latency \\
+            \textbf{Method} & Acc & F1 & Latency\tnote{*} \\
             \midrule
             \textit{Unsupervised}               & & & \\
-            Bm25                                & 0.8882          & 0.8940          & N/A \\
-            contriever-msmarco                  & 0.8932          & 0.8988          & N/A \\
+            Bm25                                & 0.8882          & 0.8940          & \textbf{0.4614s} \\
+            contriever-msmarco                  & 0.8932          & 0.8988          & 25.903s \\
             \hline
             \textit{supervised}                 & & & \\
-            jina-reranker-v2-base-multilingual  & 0.9004          & 0.9065          & N/A \\
-            ms-marco-MiniLM-L-6-v2              & \textbf{0.9014} & \textbf{0.9077} & N/A \\
+            jina-reranker-v2-base-multilingual  & 0.9004          & 0.9065          & 9.8958s \\
+            ms-marco-MiniLM-L-6-v2              & \textbf{0.9014} & \textbf{0.9077} & 0.8172s \\
             \bottomrule
-        \end{tabular}}
-    \caption{Evaluation Results for Different Methods through the Pipeline (just with the Gemma2 model)}
+        \end{tabular}
+        \begin{tablenotes}
+            \item[*] It is measured in seconds on average per query.
+        \end{tablenotes}
+        \end{threeparttable}}
+    \caption{Evaluation Results for Different Retrieval Methods through the Pipeline (just with the Gemma2 model)}
     \label{tab:evaluation_results}
 \end{table}
 
@@ -241,7 +246,7 @@ To validate the factual accuracy of the knowledge graph, we employed a multi-que
 This approach provides a reasonable degree of verification for the facts contained within the knowledge graph.
 
 For subsequent evaluations and analyzes, we will designate the model \textit{ms-marco-MiniLM-L-6-v2} as our baseline for retrieval tasks.
-This decision is predicated on its superior F1 score relative to the other models under consideration.
+This decision is predicated on its superior accuracy and F1 score relative to the other models under consideration with acceptable latency.
 
 
 \section{Embedding Models}\label{sec:embedding-models}
@@ -399,18 +404,18 @@ Now we will test these models through the pipeline and evaluate their performanc
 \begin{table}[h!]
     \centering
     \noindent
-    {\scriptsize ms-marco-MiniLM-L-6-v2,\fbox{\textit{Embedding Model}}, Sliding Window (ws 6) , Similarity Cut-off (Re-rank), Top\_k 3}
+    {\scriptsize ms-marco-MiniLM-L-6-v2,\fbox{\textit{Embedding Model}}}\\
     \resizebox{0.7\textwidth}{!}{
         \begin{threeparttable}
         \begin{tabular}{lccc}
             \toprule
             \textbf{Model} & Acc & F1 & Latency \\
             \midrule
-            stella\_en\_1.5B\_v5                  & 0.8961          & 0.9028          & N/A \\
-            jina-embeddings-v3\tnote{*}           & 0.8852          & 0.9097          & N/A \\
-            gte-large-en-v1.5\tnote{*}            & 0.8971          & \textbf{0.9174} & N/A \\
-            multilingual-e5-large-instruct        & 0.8954          & 0.9018          & N/A \\
-            bge-small-en-v1.5                     & \textbf{0.9014} & 0.9077          & N/A \\
+            stella\_en\_1.5B\_v5                  & 0.8961          & 0.9028          & 17.692s \\
+            jina-embeddings-v3\tnote{*}           & 0.8852          & 0.9097          & 4.8745s \\
+            gte-large-en-v1.5\tnote{*}            & 0.8971          & \textbf{0.9174} & 5.8571s \\
+            multilingual-e5-large-instruct        & 0.8954          & 0.9018          & 5.0038s \\
+            bge-small-en-v1.5                     & \textbf{0.9014} & 0.9077          & \textbf{1.6958s} \\
             \bottomrule
         \end{tabular}
         \begin{tablenotes}
@@ -523,18 +528,19 @@ Sentence Window Retrieval preserves semantic units and adapts to text structure 
 \begin{table}[h!]
     \centering
     \noindent
-    {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5,\fbox{\textit{Chunking Strategy}}, Similarity Cut-off (Re-rank), Top\_k 3}
+    {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5,\fbox{\textit{Chunking Strategy}}}\\
     \resizebox{0.75\textwidth}{!}{
         \begin{tabular}{llccc}
             \toprule
             \textbf{Method} & \textbf{Parameters} & Acc & F1 & Latency \\
             \midrule
-            \multirow{3}{*}{Original}           & Chuck Size: 256       & 0.8914          & 0.8914          & N/A \\
-                                                & Chuck Size: 512       & 0.8932          & 0.8993          & N/A \\
-                                                & Chuck Size: 1024      & 0.8946          & 0.8993          & N/A \\ \hline
-            small2big                           & Chuck Size: 1024      & 0.8889          & 0.8953          & N/A \\ \hline
-            \multirow{2}{*}{Sliding Window}     & Window Size: 6        & \textbf{0.9014} & 0.9077          & N/A \\
-                                                & Window Size: 3        & \textbf{0.9014} & \textbf{0.9080} & N/A \\
+            \multirow{3}{*}{Original}           & Chuck Size: 256       & 0.8914          & 0.8914          & 0.04473s \\
+                                                & Chuck Size: 512       & 0.8932          & 0.8993          & 0.02670s \\
+                                                & Chuck Size: 1024      & 0.8946          & 0.8993          & \textbf{0.02378s} \\ \hline
+            small2big                           & Chuck Size: 1024      & 0.8889          & 0.8953          & 0.19188s \\ \hline
+
+            \multirow{2}{*}{Sliding Window}     & Window Size: 3        & \textbf{0.9014} & \textbf{0.9080} & 0.03076s \\
+                                                & Window Size: 6        & \textbf{0.9014} & 0.9077          & 0.03534s \\
             \bottomrule
         \end{tabular}}
     \caption{Evaluation Results for Different Chunking Strategies through the Pipeline (just with the Gemma2 model)}
@@ -575,26 +581,31 @@ For our experiments, we set the similarity cut-off threshold to 0.3, meaning tha
 \begin{table}[h!]
     \centering
     \noindent
-    {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), \fbox{\textit{Similarity Cut-off}}, Top\_k 3}
+    {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), \fbox{\textit{Similarity Cut-off}}}\\
     \resizebox{0.7\textwidth}{!}{
+        \begin{threeparttable}
         \begin{tabular}{lccc}
             \toprule
-            \textbf{Method} & Acc & F1 & Latency \\
+            \textbf{Method} & Acc & F1 & Latency\tnote{*} \\
             \midrule
-            w/o similarity cut-off                                  & 0.8971          & 0.9036                  & N/A \\
-            similarity cut-off (original score)                     & \textbf{0.9018} & \textbf{0.9080}         & N/A \\
-            similarity cut-off (re-ranked score)                    & 0.9014          & \textbf{0.9080}         & N/A \\
+            w/o similarity cut-off                                  & 0.8971          & 0.9036                  &  N/A \\
+            similarity cut-off (original score)                     & \textbf{0.9018} & \textbf{0.9080}         & -0.22237s \\
+            similarity cut-off (re-ranked score)                    & 0.9014          & \textbf{0.9080}         & -0.350783 \\
             \bottomrule
-        \end{tabular}}
+        \end{tabular}
+        \begin{tablenotes}
+            \item[*] The latency is compared to the baseline without the similarity cut-off on average per query.
+        \end{tablenotes}
+    \end{threeparttable}}
     \caption{Evaluation Results for Different Similarity Cut through the Pipeline (just with the Gemma2 model)}
     \label{tab:table_similarity_cut}
 \end{table}
 
 Based on the results in Table~\ref{tab:table_similarity_cut}, we apply a similarity cut-off on the original score to provide the model with higher-quality data for further evaluations.
-This approach yields the highest accuracy and F1 score, and it is faster than using the re-ranked score.
-Please note that in separate evaluations (not reported in Table~\ref{tab:table_similarity_cut}), we tested a similarity cut-off using a normalized version of the re-ranked score, where re-ranked values were scaled between the minimum and maximum of the original scores.
-However, this normalized re-ranked score did not perform as well as the original scores.
-
+This approach yields the highest accuracy and F1 score, though it is slightly slower than the re-ranker mode because it removes more irrelevant nodes.
+A drawback of re-ranking is that it may eliminate all relevant nodes with low similarity scores, requiring a re-run without the similarity cut-off, which increases processing time (not shown in the table).
+Additionally, in separate evaluations (not reported in Table~\ref{tab:table_similarity_cut}), we tested a normalized similarity cut-off using re-ranked scores scaled between the original minimum and maximum values.
+However, this normalized approach did not perform as well as the original scores.
 \section{Top K}\label{sec:top-k}
 Top\_k mentions how many top embeddings to take into context.
 Considering a large top\_k might go beyond the max\_tokens of the model, we will evaluate the performance of the pipeline with the top\_k set to 3 and 6, and compare the results to determine the optimal value for this parameter.
@@ -602,20 +613,27 @@ Considering a large top\_k might go beyond the max\_tokens of the model, we will
     \centering
     \noindent
     {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original),\fbox{\textit{Top\_k}}}
-    \resizebox{0.5\textwidth}{!}{
+    \resizebox{0.4\textwidth}{!}{
+        \begin{threeparttable}
         \begin{tabular}{lccc}
             \toprule
-            \textbf{Method} & Acc & F1 & Latency \\
+            \textbf{Method} & Acc & F1 & Latency\tnote{*} \\
             \midrule
-            Top\_k 3                     & 0.9018               & 0.9080                    & N/A \\
-            Top\_k 6                     & \textbf{0.9032}      & \textbf{0.9101}           & N/A \\
+            Top\_k 3                     & 0.9018               & 0.9080                    & \textbf{5.21177s} \\
+            Top\_k 6                     & \textbf{0.9032}      & \textbf{0.9101}           & 7.02713s \\
             \bottomrule
-        \end{tabular}}
+        \end{tabular}
+        \begin{tablenotes}
+            \item[*] The latency represents the average time per query for a complete run.
+        \end{tablenotes}
+        \end{threeparttable}}
     \caption{Evaluation Results for Different Top\_k through the Pipeline (just with the Gemma2 model)}
     \label{tab:table_top_k}
 \end{table}
 
 As we decided to set the similarity cut-off with 0.3 threshold, it's good to use the top\_k 6 to have more high-quality embeddings in the context, and based on results it outperforms the top\_k 3, so we will use top\_k 6 for subsequent evaluations.
+The difference in latency is significant, presenting a trade-off between accuracy and processing time.
+Since the quality of data for additional facts is uncertain, we aim to include more data in the context.
 
 \section{Evaluation}\label{sec:evaluation-and-discussion}
 In this ablation study, we evaluate the performance of the merging method, which leverages a novel ensemble approach by combining multiple models (Gemma2, Qwen2.5, Llama3.1, and Mistral) to show the robustness and accuracy of the pipeline.
@@ -647,7 +665,7 @@ Based on provided configurations, the model selected for \textit{At\_Most} is th
             Proposed (At\_Most)                & 0.8846                                                  & 0.9308                                                  & 0.9077                                                  & 0.7692                                                            & 0.8923                                                  & 0.6615                                                    & 0.9000                                                            & 0.8846                                                  & 0.8385                                 & 0.7462                                   & 0.8415 \\
             \bottomrule
         \end{tabular}}
-    \caption{Evaluation Results for Whole Pipeline by Category}
+    \caption{Pipeline Evaluation Results - Category-wise}
     \label{tab:evaluation_results-full-category}
 \end{table}
 
@@ -659,14 +677,14 @@ Based on provided configurations, the model selected for \textit{At\_Most} is th
             \toprule
             \textbf{Model}                     & \textbf{Stability}             & \textbf{Avg. Request Duration} & \textbf{Avg. tokens per request}          & \textbf{ACC} & \textbf{F1} \\
             \midrule
-            Gemma2                             & 0.8720                         & N/A                            & N/A                                       & \textbf{0.9032}    & \textbf{0.9101}   \\
-            Qwen2.5                            & 0.8685                         & N/A                            & N/A                                       & 0.8729    & 0.8888   \\
-            LLama3.1                           & 0.8291                         & N/A                            & N/A                                       & 0.8154    & 0.8299   \\
-            Mistral                            & 0.8650                         & N/A                            & N/A                                       & 0.8511    & 0.8733   \\ \hline
-            Proposed (At\_Most)                & \textbf{0.9176}                & N/A                            & N/A                                       & 0.8964    & 0.9071   \\
+            Gemma2                             & 0.8720                         & 5.6826s                            & 1605.29                                       & \textbf{0.9032}    & \textbf{0.9101}   \\
+            Qwen2.5                            & 0.8685                         & 6.3094s                            & 1652.66                                       & 0.8729    & 0.8888   \\
+            LLama3.1                           & 0.8291                         & 6.5270s                            & 1679.04                                       & 0.8154    & 0.8299   \\
+            Mistral                            & 0.8650                         & 4.6692s                            & 1594.76                                       & 0.8511    & 0.8733   \\ \hline
+            Proposed (At\_Most)                & \textbf{0.9176}                & 16.815s                            & 1604.196                                      & 0.8964    & 0.9071   \\
             \bottomrule
         \end{tabular}}
-    \caption{Evaluation Results for Whole Pipeline}
+    \caption{Pipeline Evaluation Results}
     \label{tab:evaluation_results-full-wo-category}
 \end{table}
 
