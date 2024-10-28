@@ -4,7 +4,7 @@ Our proposed framework for knowledge graph fact verification utilizes a unique c
 However, to ensure the robustness and effectiveness of our approach, it is crucial to compare our methods with state-of-the-art RAG techniques, particularly in the critical areas of chunking, embedding, and retrieval.
 
 This section aims to provide a comprehensive comparison between our approach and the RAG-based methods.
-We will focus on three key components of our framework: 1) the retrieval mechanisms utilized to fetch relevant information, 2) the chunking strategies used to segment information, 3) the embedding models employed for representation, and 4) different hyper parameters and configurations.
+We will focus on four key components of our framework: 1) the retrieval mechanisms utilized to fetch relevant information, 2) the chunking strategies used to segment information, 3) the embedding models employed for representation, and 4) different hyper parameters and configurations.
 By analyzing these components in light of RAG recommendations, we aim to identify potential areas for improvement and validate the strengths of our current approach.
 
 Through this comparison, we seek to situate our work within the broader context of retrieval-augmented fact verification systems and provide insights into the trade-offs and benefits of our methodological choices.
@@ -20,7 +20,6 @@ The evaluation process follows an iterative strategy, focusing on specific secti
     \item \textbf{Section Isolation:} In each iteration, we isolate a particular section of the framework for investigation, keeping other components constant.
     This \("\)enclosed box\("\) approach allows for a controlled examination of individual elements.
     \item \textbf{Parameter Variation:} Within the isolated section, we systematically vary relevant parameters or methods.
-    This includes, but is not limited to, testing different sampling methods against full data runs.
     \item \textbf{Performance Evaluation:} For each configuration, we assess the system's performance using predefined metrics (detailed in Sections~\ref{subsec:ablation-metrics} and~\ref{subsec:empirical-evaluation:experimental-setup:performance-metrics-and-evaluation}).
     \item \textbf{Best Method Selection:} Based on the evaluation results, we identify the best-performing method or configuration for the section under investigation.
     \item \textbf{Incremental Optimization:} The optimal configuration from each iteration is incorporated into the framework for subsequent iterations, gradually refining the entire system.
@@ -81,6 +80,7 @@ The inclusion of sampling method comparisons adds an extra dimension to our opti
 We explore various techniques for retrieving relevant documents from search engine results, with a specific focus on Google search engine.
 The goal is to identify the most effective methods for finding documents that perfectly match the information need expressed in the query.
 We consider both unsupervised and supervised approaches.
+Using these methods, we aim to find the most relevant documents from the data pool we have collected through web scraping~\ref{subsec:data-pool-creation}.
 \subsection{Unsupervised Methods}\label{subsec:unsupervised-methods}
 \subsubsection{BM25}
 BM25~\cite{bm25} is a widely used unsupervised retrieval method that relies on term frequency and inverse document frequency (TF-IDF) weighting.
@@ -160,7 +160,7 @@ This model has demonstrated exceptional performance across various benchmarks an
 In multilingual tasks, it achieved state-of-the-art recall@10 scores on the MKQA dataset~\cite{mkqa} spanning 26 languages, while also exhibiting superior NDCG@10 scores on English-language tasks in the BEIR benchmark~\cite{thakur2021beirheterogenousbenchmarkzeroshot}.
 Notably, it secured the top position on the AirBench leaderboard upon its release \footnote{\url{https://huggingface.co/spaces/AIR-Bench/leaderboard}}.
 
-These capabilities make the model particularly valuable for multilingual information retrieval, agentic Retrieval-Augmented Generation (RAG) systems, and even in programming and software development support.
+These capabilities make the model particularly valuable for multilingual information retrieval, agentic RAG systems, and even in programming and software development support.
 \subsubsection{MS MARCO MiniLM}
 The MS MARCO MiniLM is another supervised neural model, based on the popular BERT architecture but distilled to a smaller size for efficiency.
 \begin{table}[ht!]
@@ -187,7 +187,7 @@ In this paradigm, an initial retrieval phase employs either lexical search metho
 Subsequently, the Cross-Encoder refines this candidate set through a simultaneous processing of the query and each retrieved document, generating a relevance score on a scale of 0 to 1.
 \subsection{Evaluation with Large Language Models}\label{subsec:evaluation-with-large-language-models}
 With checking the similarity between the retrieved documents and the query in different methods, based on figure~\ref{fig:document_retrieval_confusion_matrix_1} we can figured out that Bm25-Okapi stands out as the most distinct model, with low similarity scores (0.20-0.24) to the others, suggesting it employs fundamentally different retrieval mechanisms.
-In contrast, the neural models show higher inter-model similarities (0.43-0.44), indicating shared approaches or architectures.
+In contrast, the neural models show higher inter-model similarities, indicating shared approaches or architectures.
 The strong relationship (0.43) between contriever-msmarco and re-ranker-msmarco, likely due to shared training data or similar optimizations.
 The two re-ranker models gain the highest similarity (0.44) but suggest distinctiveness in their retrieval mechanisms and architectures.
 In general, we can find out with different methods we have different result over the same query.
@@ -426,11 +426,12 @@ Now we will test these models through the pipeline and evaluate their performanc
     \label{tab:evaluation_results_embedding}
 \end{table}
 
-Based on the Table~\ref{tab:evaluation_results_embedding}, we use the \textit{bge-small-en-v1.5} model for the subsequent evaluations and analyses due to its superior performance across Acc metric, the F1 score of \textit{gte-large-en-v1.5} is slightly higher, but the model is not able to complete the evaluation due to memory limitations in the same pipeline.
+Based on the Table~\ref{tab:evaluation_results_embedding}, we use the \textit{bge-small-en-v1.5} model for the subsequent evaluations and analyses due to its superior performance across accuracy metric.
+The F1 score of \textit{gte-large-en-v1.5} is slightly higher, but the model is not able to complete the evaluation due to memory limitations in the same pipeline.
 
 \section{Chunking Strategies}\label{sec:chunking-strategies}
 A critical component of \ac{RAG} systems is the chunking strategy employed to divide documents into smaller, manageable pieces for efficient retrieval and processing.
-This chapter examines three distinct chunking methods for \ac{RAG} systems, each with its unique characteristics and potential advantages.
+This section examines three distinct chunking methods for \ac{RAG} systems, each with its unique characteristics and potential advantages.
 
 \subsection{Parsing Documents into Text Chunks}\label{subsec:parsing-documents-into-text-chunks}
 The first method we will explore involves parsing documents into text chunks, also referred to as nodes, of fixed sizes.
@@ -519,7 +520,7 @@ Limitations:
     \item Optimal window size may vary depending on the document type and content
 \end{enumerate}
 \subsection{Evaluation}\label{subsec:evaluation}
-Each of the three chunking methods presented in this chapter offers distinct advantages and limitations for RAG systems. 
+Each of the three chunking methods presented in this section offers distinct advantages and limitations for RAG systems.
 The choice of method depends on factors such as the nature of the documents, the specific requirements of the application, and the computational resources available.
 The fixed-size chunking method provides simplicity and consistency but may sacrifice semantic coherence. 
 The Small2Big hierarchical approach offers flexibility in retrieval granularity but introduces complexity in implementation and storage. 
@@ -549,7 +550,7 @@ Sentence Window Retrieval preserves semantic units and adapts to text structure 
 Examples of the three chunking methods are available in the Appendix~\ref{ch:chunking} for further reference.
 
 The high baseline accuracy and F1 scores across chunking strategies indicate that the model’s performance is largely unaffected by these variations, suggesting that factors other than chunk size, may have a more significant impact on the retrieval process.
-The Sliding Window method with a window size of 3 achieves the highest accuracy and F1 score, so we will use this method for subsequent evaluations and analyses due to its F1, accuracy scores and having surrounding context.
+We choose the Sliding Window method as it provides the surrounding context of the text and for the window size, we select 3 as it has the highest F1 score and accuracy.
 
 \section{Similarity Cut-off}\label{sec:similar-cut-off}
 In this section we will discuss how similarity cut-off can be used to filter out irrelevant nodes and improve the efficiency of the retrieval process.
@@ -601,10 +602,10 @@ For our experiments, we set the similarity cut-off threshold to 0.3, meaning tha
     \label{tab:table_similarity_cut}
 \end{table}
 
-Based on the results in Table~\ref{tab:table_similarity_cut}, we apply a similarity cut-off on the original score to provide the model with higher-quality data for further evaluations.
-This approach yields the highest accuracy and F1 score, though it is slightly slower than the re-ranker mode because it removes more irrelevant nodes.
-A drawback of re-ranking is that it may eliminate all relevant nodes with low similarity scores, requiring a re-run without the similarity cut-off, which increases processing time (not shown in the table).
-Additionally, in separate evaluations (not reported in Table~\ref{tab:table_similarity_cut}), we tested a normalized similarity cut-off using re-ranked scores scaled between the original minimum and maximum values.
+Based on the results in Table~\ref{tab:table_similarity_cut}, we decided to apply a similarity cut-off with the original score to provide the model with higher-quality data for further evaluations.
+This approach yields the highest accuracy and F1 score, though it is slightly slower than the re-ranker mode because it removes fewer irrelevant nodes.
+A drawback of re-ranking is that it may eliminate all relevant nodes based on low similarity score, requiring a re-run without the similarity cut-off, which increases processing time (not shown in the Table~\ref{tab:table_similarity_cut}).
+In separate evaluations (not reported in Table~\ref{tab:table_similarity_cut}), we also tested a normalized similarity cut-off using re-ranked scores scaled between the original minimum and maximum values.
 However, this normalized approach did not perform as well as the original scores.
 \section{Top K}\label{sec:top-k}
 Top\_k mentions how many top embeddings to take into context.
@@ -632,15 +633,15 @@ Considering a large top\_k might go beyond the max\_tokens of the model, we will
 \end{table}
 
 As we decided to set the similarity cut-off with 0.3 threshold, it's good to use the top\_k 6 to have more high-quality embeddings in the context, and based on results it outperforms the top\_k 3, so we will use top\_k 6 for subsequent evaluations.
-The difference in latency is significant, presenting a trade-off between accuracy and processing time.
+The difference in latency is significant, presenting a trade-off between more data and response time.
 Since the quality of data for additional facts is uncertain, we aim to include more data in the context.
 
 \section{Evaluation}\label{sec:evaluation-and-discussion}
-In this ablation study, we evaluate the performance of the merging method, which leverages a novel ensemble approach by combining multiple models (Gemma2, Qwen2.5, Llama3.1, and Mistral) to show the robustness and accuracy of the pipeline.
+In this ablation study, we evaluate the performance of the merging method, which leverages a novel ensemble approach by combining multiple models (\textit{Gemma2}, \textit{Qwen2.5}, \textit{Llama3.1}, and \textit{Mistral}) to show the robustness and accuracy of the pipeline.
 As presented in Tables~\ref{tab:evaluation_results-full-category} and~\ref{tab:evaluation_results-full-wo-category}, along with Figures~\ref{fig:correct-radar-chart}, ~\ref{fig:wrong-radar-chart}, and ~\ref{fig:all-radar-chart}, the proposed ensemble method consistently outperforms individual models across both positive and negative labels, achieving a more balanced and comprehensive performance.
 
 Note that the ensemble method is based on the tie-breaking strategy discussed in Section~\ref{subsec:conflict-resolution-strategies}, with \textit{At\_Most} as the merging method.
-Based on provided configurations, the model selected for \textit{At\_Most} is the \textit{Gemma2:21B} model.
+Based on the provided configurations the model selected for \textit{At\_Most} methodology is the \textit{Gemma2:21B}.
 
 \begin{table}
     \noindent

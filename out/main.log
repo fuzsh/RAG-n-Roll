@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  28 OCT 2024 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  28 OCT 2024 17:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2720,10 +2720,10 @@ Underfull \vbox (badness 7832) has occurred while \output is active []
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 6.6pt on input line 209.
  [49]
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2731,10 +2731,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2742,10 +2742,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2753,10 +2753,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2764,10 +2764,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2775,10 +2775,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2786,10 +2786,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2797,10 +2797,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2808,10 +2808,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2819,10 +2819,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2830,10 +2830,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2841,10 +2841,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2852,10 +2852,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2863,10 +2863,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2874,10 +2874,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2885,10 +2885,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2896,10 +2896,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2907,10 +2907,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2918,10 +2918,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2929,10 +2929,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2940,10 +2940,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2951,10 +2951,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2962,10 +2962,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2973,10 +2973,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2984,10 +2984,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2995,10 +2995,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3006,10 +3006,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3017,10 +3017,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3028,10 +3028,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3039,10 +3039,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3050,10 +3050,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3061,10 +3061,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3072,10 +3072,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3083,10 +3083,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3094,10 +3094,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3105,10 +3105,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3116,10 +3116,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3127,10 +3127,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3138,10 +3138,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3149,10 +3149,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3160,10 +3160,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3171,10 +3171,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3182,10 +3182,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3193,10 +3193,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3204,10 +3204,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3215,10 +3215,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3226,10 +3226,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3237,10 +3237,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3248,10 +3248,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3259,10 +3259,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3270,10 +3270,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3281,10 +3281,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:300: Undefined control sequence.
+./chapters/04_analysis.tex:282: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.300     \end{tabularx}
+l.282     \end{tabularx}
                         
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3293,113 +3293,113 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 7012) in paragraph at lines 300--300
+Underfull \hbox (badness 7012) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 mod-els is rec-om-mended.
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 300--300
+Underfull \hbox (badness 3168) in paragraph at lines 282--282
 []|\T1/zpltlf/m/n/10 Cross-encoder mod-els are
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 dia.org", "wikipedia.org",
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 "wiki-me-dia.org", "wiki-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 data.org", "quora.com",
  []
 
 
-Underfull \hbox (badness 7540) in paragraph at lines 300--300
+Underfull \hbox (badness 7540) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 "bri-tan-nica.com", "schol-ar-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 pe-dia.org", "new-worlden-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 cy-clo-pe-dia.org", "ev-eri-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 pedia.org", "en-cy-clo-pe-
  []
 
 
-Underfull \hbox (badness 6575) in paragraph at lines 300--300
+Underfull \hbox (badness 6575) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 dia.com", "wik-i-books.org",
  []
 
 
-Underfull \hbox (badness 4899) in paragraph at lines 300--300
+Underfull \hbox (badness 4899) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 "wik-tionary.org", "wikiver-
  []
 
 
-Underfull \hbox (badness 7081) in paragraph at lines 300--300
+Underfull \hbox (badness 7081) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 sity.org", "wik-isource.org",
  []
 
 
-Underfull \hbox (badness 7273) in paragraph at lines 300--300
+Underfull \hbox (badness 7273) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 "wik-iquote.org", "wikivoy-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 age.org", "academia.edu",
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 []|\T1/zpltlf/m/n/10 Based on the mod-els
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 we se-lected, we use
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 model with higher-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 param for each model,
  []
 
 
-Underfull \hbox (badness 7595) in paragraph at lines 300--300
+Underfull \hbox (badness 7595) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 for Gemma2:9b $\LMS/npxsy/m/n/10 !$ \T1/zpltlf/m/n/10 27b,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 Qwen2.5:7b $\LMS/npxsy/m/n/10 !$ \T1/zpltlf/m/n/10 14b,
  []
 
 [50] [51]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 346.
+(Font)              scaled to size 8.0pt on input line 328.
 
-./chapters/04_analysis.tex:377: Undefined control sequence.
+./chapters/04_analysis.tex:359: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.377         \end{threeparttable}}
+l.359         \end{threeparttable}}
                                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3407,10 +3407,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:377: Undefined control sequence.
+./chapters/04_analysis.tex:359: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.377         \end{threeparttable}}
+l.359         \end{threeparttable}}
                                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3418,10 +3418,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:377: Undefined control sequence.
+./chapters/04_analysis.tex:359: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.377         \end{threeparttable}}
+l.359         \end{threeparttable}}
                                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3429,10 +3429,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:377: Undefined control sequence.
+./chapters/04_analysis.tex:359: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.377         \end{threeparttable}}
+l.359         \end{threeparttable}}
                                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3440,10 +3440,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:377: Undefined control sequence.
+./chapters/04_analysis.tex:359: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.377         \end{threeparttable}}
+l.359         \end{threeparttable}}
                                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3451,10 +3451,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:377: Undefined control sequence.
+./chapters/04_analysis.tex:359: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.377         \end{threeparttable}}
+l.359         \end{threeparttable}}
                                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3462,10 +3462,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:377: Undefined control sequence.
+./chapters/04_analysis.tex:359: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.377         \end{threeparttable}}
+l.359         \end{threeparttable}}
                                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3473,10 +3473,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/04_analysis.tex:377: Undefined control sequence.
+./chapters/04_analysis.tex:359: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.377         \end{threeparttable}}
+l.359         \end{threeparttable}}
                                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3506,7 +3506,7 @@ ks, es-pe-cially those
  []
 
 [59] [60]
-<res/ret_result_sim_1.png, id=1324, 722.7pt x 578.16pt>
+<res/ret_result_sim_1.png, id=1325, 722.7pt x 578.16pt>
 File: res/ret_result_sim_1.png Graphic file (type png)
 <use res/ret_result_sim_1.png>
 Package pdftex.def Info: res/ret_result_sim_1.png  used on input line 199.
@@ -3578,10 +3578,10 @@ ally, a 1024-dimensional
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [69] [70] [71] [72]
-./chapters/05_ablation.tex:545: Undefined control sequence.
+./chapters/05_ablation.tex:546: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.545         \end{tabular}}
+l.546         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3589,10 +3589,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:545: Undefined control sequence.
+./chapters/05_ablation.tex:546: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.545         \end{tabular}}
+l.546         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3600,10 +3600,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:545: Undefined control sequence.
+./chapters/05_ablation.tex:546: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.545         \end{tabular}}
+l.546         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3611,10 +3611,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:545: Undefined control sequence.
+./chapters/05_ablation.tex:546: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.545         \end{tabular}}
+l.546         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3627,10 +3627,10 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [74] [75]
-./chapters/05_ablation.tex:667: Undefined control sequence.
+./chapters/05_ablation.tex:668: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.667         \end{tabular}}
+l.668         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3638,10 +3638,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:667: Undefined control sequence.
+./chapters/05_ablation.tex:668: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.667         \end{tabular}}
+l.668         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3649,10 +3649,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:686: Undefined control sequence.
+./chapters/05_ablation.tex:687: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.686         \end{tabular}}
+l.687         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3660,10 +3660,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/05_ablation.tex:686: Undefined control sequence.
+./chapters/05_ablation.tex:687: Undefined control sequence.
 <argument> \adl@connect 
                         
-l.686         \end{tabular}}
+l.687         \end{tabular}}
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3671,22 +3671,22 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<res/combined_correct_radar_chart.png, id=1485, 578.16pt x 578.16pt>
+<res/combined_correct_radar_chart.png, id=1487, 578.16pt x 578.16pt>
 File: res/combined_correct_radar_chart.png Graphic file (type png)
 <use res/combined_correct_radar_chart.png>
 Package pdftex.def Info: res/combined_correct_radar_chart.png  used on input li
-ne 695.
+ne 696.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
-<res/combined_wrong_radar_chart.png, id=1486, 578.16pt x 578.16pt>
+<res/combined_wrong_radar_chart.png, id=1488, 578.16pt x 578.16pt>
 File: res/combined_wrong_radar_chart.png Graphic file (type png)
 <use res/combined_wrong_radar_chart.png>
 Package pdftex.def Info: res/combined_wrong_radar_chart.png  used on input line
- 702.
+ 703.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
-<res/combined_radar_chart.png, id=1487, 578.16pt x 578.16pt>
+<res/combined_radar_chart.png, id=1489, 578.16pt x 578.16pt>
 File: res/combined_radar_chart.png Graphic file (type png)
 <use res/combined_radar_chart.png>
-Package pdftex.def Info: res/combined_radar_chart.png  used on input line 712.
+Package pdftex.def Info: res/combined_radar_chart.png  used on input line 713.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3694,47 +3694,47 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [76]
 [77 <./res/combined_correct_radar_chart.png> <./res/combined_wrong_radar_chart.
 png> <./res/combined_radar_chart.png>]
-Underfull \hbox (badness 1097) in paragraph at lines 745--745
+Underfull \hbox (badness 1097) in paragraph at lines 746--746
 []|\T1/zpltlf/m/n/10 Mis In-ter-pre-ta-tion
  []
 
 
-Underfull \hbox (badness 3128) in paragraph at lines 745--745
+Underfull \hbox (badness 3128) in paragraph at lines 746--746
 []|\T1/zpltlf/m/n/10 Over re-liance on
  []
 
 
-Underfull \hbox (badness 1122) in paragraph at lines 745--745
+Underfull \hbox (badness 1122) in paragraph at lines 746--746
 []|\T1/zpltlf/m/n/10 Lack of Com-mon
  []
 
 
-Underfull \hbox (badness 2409) in paragraph at lines 745--745
+Underfull \hbox (badness 2409) in paragraph at lines 746--746
 []|\T1/zpltlf/m/n/10 Saul Bel-low star-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--745
+Underfull \hbox (badness 10000) in paragraph at lines 746--746
 []|\T1/zpltlf/m/n/10 Difficulty with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--745
+Underfull \hbox (badness 10000) in paragraph at lines 746--746
 \T1/zpltlf/m/n/10 Nega-tion and
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<res/radar-error-0.png, id=1502, 414.1071pt x 386.6445pt>
+<res/radar-error-0.png, id=1504, 414.1071pt x 386.6445pt>
 File: res/radar-error-0.png Graphic file (type png)
 <use res/radar-error-0.png>
-Package pdftex.def Info: res/radar-error-0.png  used on input line 765.
+Package pdftex.def Info: res/radar-error-0.png  used on input line 766.
 (pdftex.def)             Requested size: 167.2989pt x 156.20668pt.
-<res/radar-error-1.png, id=1503, 414.1071pt x 386.6445pt>
+<res/radar-error-1.png, id=1505, 414.1071pt x 386.6445pt>
 File: res/radar-error-1.png Graphic file (type png)
 <use res/radar-error-1.png>
-Package pdftex.def Info: res/radar-error-1.png  used on input line 772.
+Package pdftex.def Info: res/radar-error-1.png  used on input line 773.
 (pdftex.def)             Requested size: 167.2989pt x 156.20668pt.
 ) [78] [79 <./res/radar-error-0.png> <./res/radar-error-1.png>]
 \openout2 = `chapters/98_conclusions.aux'.
@@ -4133,10 +4133,10 @@ onts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
 newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zpl
 ri.pfb>
 Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (115 p
-ages, 9843016 bytes).
+ages, 9843089 bytes).
 PDF statistics:
- 1841 PDF objects out of 2073 (max. 8388607)
- 1636 compressed objects within 17 object streams
+ 1843 PDF objects out of 2073 (max. 8388607)
+ 1638 compressed objects within 17 object streams
  443 named destinations out of 1000 (max. 500000)
  896 words of extra memory for PDF output out of 10000 (max. 10000000)
 

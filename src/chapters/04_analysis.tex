@@ -236,25 +236,7 @@ The use of multiple models and a conflict resolution mechanism necessitates spec
         \EndProcedure
     \end{algorithmic}\label{alg:stability-across-queries}
 \end{algorithm}
-%\begin{algorithm}
-%    \caption{Stability Across Queries}
-%    \begin{algorithmic}[1]
-%        \Procedure{StabilityAcrossQueries}{$queryResponses$}
-%            \State $stabilityScores \gets$ empty list
-%            \For{each $responses$ in $queryResponses$}
-%                \State $uniqueResponses \gets$ set of unique elements in $responses$
-%                \State $stability \gets$ size of $uniqueResponses$
-%                \State $stabilityScore \gets (1 - \frac{stability - 1}{|responses|}) \times 100$
-%                \State Append $stabilityScore$ to $stabilityScores$
-%                \If{$stabilityScores$ is not empty}
-%                    \State \Return mean of $stabilityScores$
-%                \Else
-%                    \State \Return 0
-%                \EndIf
-%            \EndFor
-%        \EndProcedure
-%    \end{algorithmic}\label{alg:stability-across-queries}
-%\end{algorithm}
+
 \subsection{System Configurations}\label{subsec:empirical-evaluation:experimental-setup:system-configurations}
 The system configurations are selected based on the best results obtained from black-box testing the pipeline through a series of experiments, detailed in section~\ref{ch:ablation}.
 Table~\ref{tab:system-configurations} summarizes the key system configurations used in our empirical evaluation.

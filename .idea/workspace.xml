@@ -4,30 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="feat(Ablation): Add Results on Ablation Study &amp; Add Conclusions and Future Works">
+    <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="fix(Analysis|Pipeline): Fix the DBpedia dataset description + Stability over models Algorithm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/04_analysis.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/04_analysis.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/05_ablation.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/05_ablation.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/chapters/99_appendix.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/99_appendix.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.bbl" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.bbl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.bcf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.bcf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.blg" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.blg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.loa" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.loa" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.lof" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lof" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.lol" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.lot" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.out" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.toc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/pdfa.xmpi" beforeDir="false" afterPath="$PROJECT_DIR$/out/pdfa.xmpi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapters/03_pipeline.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/03_pipeline.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chapters/04_analysis.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/04_analysis.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/references.bib" beforeDir="false" afterPath="$PROJECT_DIR$/src/references.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/05_ablation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/05_ablation.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +304,7 @@
       <workItem from="1729254502942" duration="572000" />
       <workItem from="1729928046964" duration="15713000" />
       <workItem from="1730017565316" duration="18623000" />
-      <workItem from="1730101859022" duration="14767000" />
+      <workItem from="1730101859022" duration="17989000" />
     </task>
     <task id="LOCAL-00001" summary="feat(pipeline): Add the sections related to LLMs &amp; Voting Systems &amp; ..">
       <option name="closed" value="true" />
@@ -378,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730120255002</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix(Analysis|Pipeline): Fix the DBpedia dataset description + Stability over models Algorithm">
+      <option name="closed" value="true" />
+      <created>1730129578953</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1730129578953</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,6 +385,7 @@
     <MESSAGE value="feat(Analysis|Ablation): Add Model Selection &amp; Failure Analysis" />
     <MESSAGE value="feat(Results): Add Results" />
     <MESSAGE value="feat(Ablation): Add Results on Ablation Study &amp; Add Conclusions and Future Works" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Ablation): Add Results on Ablation Study &amp; Add Conclusions and Future Works" />
+    <MESSAGE value="fix(Analysis|Pipeline): Fix the DBpedia dataset description + Stability over models Algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(Analysis|Pipeline): Fix the DBpedia dataset description + Stability over models Algorithm" />
   </component>
 </project>
