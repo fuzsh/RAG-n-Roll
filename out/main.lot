@@ -10,22 +10,23 @@
 \contentsline {table}{\numberline {3.6}{\ignorespaces Limitions of the pipeline.}}{39}{table.caption.37}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Summary of Datasets Used in Empirical Evaluation}}{44}{table.caption.38}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces System Configurations for Empirical Evaluation}}{50}{table.4.2}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Empirical Evaluation Results of the Proposed System and Candidate Models over the Datasets}}{51}{table.caption.43}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Summary of Candidate LLM Models for Knowledge Graph Fact Verification}}{47}{table.caption.43}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces System Configurations for Empirical Evaluation}}{51}{table.4.3}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Empirical Evaluation Results of the Proposed System and Candidate Models over the Datasets}}{52}{table.caption.44}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Performance of Pre-trained Cross-Encoders}}{58}{table.caption.45}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Evaluation Results for Different Retrieval Methods through the Pipeline (just with the Gemma2 model)}}{60}{table.caption.47}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of Embedding Models}}{66}{table.caption.53}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Evaluation Results for Different Embedding Models through the Pipeline (just with the Gemma2 model)}}{68}{table.caption.54}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Evaluation Results for Different Chunking Strategies through the Pipeline (just with the Gemma2 model)}}{71}{table.caption.56}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Evaluation Results for Different Similarity Cut through the Pipeline (just with the Gemma2 model)}}{73}{table.caption.57}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Evaluation Results for Different Top\_k through the Pipeline (just with the Gemma2 model)}}{73}{table.caption.59}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Pipeline Evaluation Results - Category-wise}}{74}{table.caption.61}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Pipeline Evaluation Results}}{74}{table.caption.62}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Examples of Failure Cases and Error Analysis}}{77}{table.caption.65}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Performance of Pre-trained Cross-Encoders}}{60}{table.caption.46}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Evaluation Results for Different Retrieval Methods through the Pipeline (just with the Gemma2 model)}}{62}{table.caption.48}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of Embedding Models}}{68}{table.caption.54}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Evaluation Results for Different Embedding Models through the Pipeline (just with the Gemma2 model)}}{70}{table.caption.55}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Evaluation Results for Different Chunking Strategies through the Pipeline (just with the Gemma2 model)}}{73}{table.caption.57}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Evaluation Results for Different Similarity Cut through the Pipeline (just with the Gemma2 model)}}{75}{table.caption.58}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Evaluation Results for Different Top\_k through the Pipeline (just with the Gemma2 model)}}{75}{table.caption.60}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Pipeline Evaluation Results - Category-wise}}{76}{table.caption.62}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Pipeline Evaluation Results}}{76}{table.caption.63}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Examples of Failure Cases and Error Analysis}}{79}{table.caption.66}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {B.1}{\ignorespaces Text Splitter - Chuck Size 512}}{86}{table.caption.68}%
-\contentsline {table}{\numberline {B.2}{\ignorespaces Small to Big (base retriver chunk size set to 1024)}}{86}{table.caption.69}%
-\contentsline {table}{\numberline {B.3}{\ignorespaces Sliding Window - Window Size 3}}{87}{table.caption.70}%
+\contentsline {table}{\numberline {B.1}{\ignorespaces Text Splitter - Chuck Size 512}}{88}{table.caption.69}%
+\contentsline {table}{\numberline {B.2}{\ignorespaces Small to Big (base retriver chunk size set to 1024)}}{88}{table.caption.70}%
+\contentsline {table}{\numberline {B.3}{\ignorespaces Sliding Window - Window Size 3}}{89}{table.caption.71}%

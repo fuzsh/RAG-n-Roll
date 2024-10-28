@@ -46,29 +46,34 @@ Key characteristics of the \textit{YAGO} dataset in our evaluation include:
 The high accuracy of the \textit{YAGO2-sample} presents a unique challenge for our evaluation system.
 \subsection{DBpedia Dataset}\label{subsec:empirical-evaluation:dataset-analysis:dbpedia}
 \textit{DBpedia} serves as a comprehensive, large-scale knowledge base derived from Wikipedia, offering structured information about millions of entities.
-For our evaluation, we utilize \textit{DBpedia} version 2015-10 as provided by Hasibi et al.~\cite{10.1145/3077136.3080810}.
+For our evaluation, we utilize \textit{DBpedia} version 2015-10 which contains approximately 6.2M entities and 1.1B triplets.
+Following Marchesin et al.'s approach~\cite{Marchesin_Silvello_Alonso_2024} to entity-oriented research, several filtering criteria were applied to ensure high-quality data for evaluation.
+
+The analysis was restricted to subject entities that include both: 1) rdfs:label predicate and 2) rdfs:comment predicate
+
+Additionally, they focused exclusively on A-Box triplets (assertional knowledge) while excluding T-Box triplets (terminological knowledge).
+The T-Box encompasses ontological entities and relationships, while A-Box contains the actual assertions that need verification.
+After applying these filters, their working dataset consisted 4.6M entities with 170M triplets.
+
+From this filtered dataset, they conducted a comprehensive annotation study on 9,930 facts, which were carefully selected to represent diverse types of relationships and knowledge domains within DBpedia.
 This subset serves as the underlying knowledge graph for our experiments.
+
+To ensure annotation quality, Marchesin et al. implemented several measures:
+\begin{itemize}
+    \item Multiple annotators per fact (minimum of three annotations per triplet)
+    \item Expert consensus requirement for final labels
+    \item Binary validation approach treating all incorrect facts equally regardless of error type
+    \item Documented agreement rates between expert annotators (77\% agreement with Cohen's κ score of 0.51)
+    \item Third-party resolution for 82\% of initial disagreements
+\end{itemize}
+
 The dataset was carefully curated to ensure a manageable yet representative evaluation set, derived from the vast scale of \textit{DBpedia}.
-
-The dataset was constructed using the following criteria:
-\begin{itemize}
-    \item Entity Selection: The dataset is restricted to entities with essential attributes, including a title (rdfs:label) and a short abstract (rdfs:comment). This ensures that each entity has sufficient information for meaningful evaluation.
-    \item Query Diversity: The dataset leverages the DBpedia-Entity collection~\cite{10.1145/2484028.2484165}, a standard test collection for entity retrieval encompassing a wide range of query types. This includes named entity queries, list queries, natural language questions, and keyword queries, providing a comprehensive evaluation landscape.
-    \item Query-Entity Pairing: For each query in the DBpedia-Entity collection, a single relevant entity was selected. This selection process employed a voting mechanism across multiple entity retrieval approaches, ensuring that the chosen entity is both relevant and readily retrievable.
-    \item Fact Extraction: For each selected entity, the corresponding facts (triples) were extracted from DBpedia. These facts form the basis of our evaluation set for tasks such as fact ranking and entity summarization.
-\end{itemize}
-
-Key characteristics of this DBpedia-based evaluation set include:
-\begin{itemize}
-    \item Scale: The dataset comprises 100 query-entity pairs and 4,069 corresponding facts, with an average of 41 facts per query-entity pair.
-    \item Diversity: The dataset captures a wide range of relationship types and entity attributes across various domains.
-    \item Quality Assurance: Manual annotation has been performed to assess the relevance and correctness of facts in relation to their corresponding queries and entities. These annotations serve as the gold standard for our evaluation tasks provided by Marchesin et al.~\cite{marchesin_etal-cikm2024}.
-    \item Task Suitability: The dataset is specifically designed to support various entity-oriented search tasks, including but not limited to entity summarization, fact ranking, and query-dependent fact selection.
-\end{itemize}
-By utilizing this curated subset of DBpedia, we benefit from a balance between the richness of a real-world knowledge graph and the practicality required for thorough empirical evaluation.
+By utilizing this curated subset of \textit{DBpedia}, we benefit from a balance between the richness of a real-world knowledge graph and the practicality required for thorough empirical evaluation.
 
 \subsubsection{Dataset Summary}\label{subsubsec:empirical-evaluation:dataset-analysis:dbpedia:summary}
-To conclude, our empirical evaluation utilizes three distinct datasets: FactBench, YAGO, and DBpedia. Each dataset offers unique characteristics that allow us to assess our knowledge graph veracity framework across diverse scenarios. Table 2 summarizes the key features of these datasets:
+To conclude, our empirical evaluation utilizes three distinct datasets: \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia}.
+Each dataset offers unique characteristics that allow us to assess our knowledge graph veracity framework across diverse scenarios.
+Table~\ref{tab:dataset-summary} summarizes the key features of these datasets:
 
 \begin{table}[h!]
     \centering
@@ -76,12 +81,11 @@ To conclude, our empirical evaluation utilizes three distinct datasets: FactBenc
         \toprule
         \textbf{Feature} & \textbf{FactBench} & \textbf{YAGO} & \textbf{DBpedia} \\
         \midrule
-        Number of Facts & 1,860 & 1,386 & 4,069 \\
-        Number of Predicates & 18 & 16 & Varied \\
+        Number of Facts & 2,800 & 1,386 & 9,930 \\
+        Number of Predicates & 10 & 16 & 1,092 \\
         Gold Accuracy & 91.34\% & 99.20\% & N/A \\
-        Number of Constraints & 130 & 28 & N/A \\
-        Query-Entity Pairs & N/A & N/A & 100 \\
-        Avg. Facts per Entity & N/A & N/A & 41 \\
+%        Query-Entity Pairs & N/A & N/A & N/A \\
+        Avg. Facts per Entity & 2.42 & 1.68 & 3.18 \\
         \bottomrule
     \end{tabular}
     \caption{Summary of Datasets Used in Empirical Evaluation}
@@ -90,7 +94,7 @@ To conclude, our empirical evaluation utilizes three distinct datasets: FactBenc
 
 \textit{FactBench} provides a good distribution of true and false statements across multiple domains, offering a robust testbed for fact verification.
 \textit{YAGO}, with its high accuracy, challenges our framework to detect subtle inaccuracies in an otherwise highly reliable knowledge graph.
-The \textit{DBpedia} subset, curated specifically for entity-oriented search tasks, allows us to evaluate our framework in the context of query-dependent fact ranking and summarization.
+The \textit{DBpedia} subset, curated specifically for entity-oriented search tasks, allows us to evaluate our framework in the context of query-dependent fact checking.
 This diverse selection of datasets enables a comprehensive evaluation of our veracity estimation framework.
 
 \section{Candidate Models}\label{sec:empirical-evaluation:candidate-models}
@@ -138,9 +142,35 @@ The \textit{Mistral} model, released by Mistral AI~\footnote{\url{https://mistra
 With innovations such as \ac{GQA} and \ac{SWA}, Mistral offers faster inference and better handling of long sequences, reducing computation costs while maintaining high performance~\cite{jiang2023mistral7b,mistral7b_2023}.
 
 We selected the \textit{Mistral-7b} model for our evaluation, which has 7.3 billion parameters, its structure allows it to be both cost-effective and memory efficient, making it suitable for a wide variety of real-world applications
-\section{Experimental Setup}\label{sec:empirical-evaluation:experimental-setup}
-\subsection{Datasets}\label{subsec:empirical-evaluation:experimental-setup:datasets}
 
+\subsubsection{Candidate Model Summary}\label{subsubsec:empirical-evaluation:candidate-models:summary}
+The selection of candidate models for our system was guided by the need for diversity, efficiency, and reliability in processing fact verification tasks within knowledge graphs.
+We chose \textit{Gemma2}, \textit{Qwen2.5}, \textit{Llama3.1}, and \textit{Mistral} for their specific strengths in handling diverse linguistic queries, reasoning capabilities, and compatibility with RAG pipelines.
+Each of these models brings unique advantages to our verification framework, as summarized in Table~\ref{tab:candidate_models}.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|p{4cm}|p{8cm}}
+        \toprule
+        \textbf{Model} & \textbf{Key Strengths} & \textbf{Description} \\
+        \midrule
+        \textbf{Gemma2} & Dense Retrieval and Query Processing & Optimized for dense retrieval tasks, Gemma2 processes complex linguistic structures, making it well-suited for entity-rich query generation and document ranking. \\
+        \hline
+        \textbf{Qwen2.5} & Logical Reasoning and Prompt Efficiency & Excels in reasoning tasks with minimal prompting. Its accuracy in logical inference supports consistent veracity assessments, especially for ambiguous or conflicting evidence. \\
+        \hline
+        \textbf{Llama3.1} & Efficiency and Versatility & Offers a balance of efficiency and accuracy, with robust performance across fact-checking benchmarks. Llama3.1's lower computational demands ensure responsive processing without compromising output quality. \\
+        \hline
+        \textbf{Mistral} & Context Sensitivity and Interpretability & Known for nuanced, context-driven outputs and interpretability. Mistral’s language generation capabilities provide clear, human-like explanations, critical for user-friendly veracity decisions. \\
+        \bottomrule
+    \end{tabular}
+    \caption{Summary of Candidate LLM Models for Knowledge Graph Fact Verification}
+    \label{tab:candidate_models}
+\end{table}
+
+These models, when used in ensemble, offer a balanced approach to handling complex fact verification tasks across knowledge graphs.
+The multi-model architecture ensures high adaptability and reliability, allowing the system to respond accurately to diverse verification scenarios.
+
+\section{Experimental Setup}\label{sec:empirical-evaluation:experimental-setup}
 \subsection{Performance Metrics and Evaluation}\label{subsec:empirical-evaluation:experimental-setup:performance-metrics-and-evaluation}
 Performance metrics are essential in assessing the efficacy, efficiency, and reliability of a system or model.
 The selection of metrics mostly depends on the characteristics of the task, the data, and the objectives.
@@ -170,27 +200,61 @@ Given the complexity of the pipeline, evaluating its operational efficiency is c
 The use of multiple models and a conflict resolution mechanism necessitates specific evaluation of output consistency:
 
 \begin{itemize}
-    \item \textbf{Stability Across Models:} Assessing the consistency of responses generated by different LLMs for the same query, refer to algorithm~\ref{alg:stability-across-queries}.
+    \item \textbf{Stability Across Models:} Assessing the consistency of responses generated by different LLMs for the same query, refer to Algorithm~\ref{alg:stability-across-queries}.
 \end{itemize}
 \begin{algorithm}
-    \caption{Stability Across Queries}
+    \caption{Calculate Model Stability Per Model}
     \begin{algorithmic}[1]
-        \Procedure{StabilityAcrossQueries}{$queryResponses$}
-            \State $stabilityScores \gets$ empty list
-            \For{each $responses$ in $queryResponses$}
-                \State $uniqueResponses \gets$ set of unique elements in $responses$
-                \State $stability \gets$ size of $uniqueResponses$
-                \State $stabilityScore \gets (1 - \frac{stability - 1}{|responses|}) \times 100$
-                \State Append $stabilityScore$ to $stabilityScores$
-                \If{$stabilityScores$ is not empty}
-                    \State \Return mean of $stabilityScores$
-                \Else
-                    \State \Return 0
-                \EndIf
+        \Procedure{ModelStabilityCal}{$models$} \Comment{Containing binary results}
+            \State $numModels \gets \text{length}(models)$
+            \State Initialize empty dictionary $stabilityScores$
+
+            \For{$i \gets 0$ to $numModels - 1$}
+                \State $model1 \gets models[i]$
+                \State Initialize empty list $modelStabilities$
+
+                \For{$j \gets 0$ to $numModels - 1$}
+                    \If{$i \neq j$}
+                        \State $model2 \gets models[j]$
+                        \State $matchCount \gets 0$
+                        \State $totalPredictions \gets \text{length}(model1)$
+
+                        \For{$k \gets 0$ to $totalPredictions - 1$}
+                            \If{$model1[k] = model2[k]$}
+                                \State $matchCount \gets matchCount + 1$
+                            \EndIf
+                        \EndFor
+
+                        \State Append $matchCount / totalPredictions$ to $modelStabilities$
+                    \EndIf
+                \EndFor
+
+                \State $stabilityScores[i] \gets \text{mean}(modelStabilities)$
             \EndFor
+
+            \State \Return $stabilityScores$ \Comment{Dictionary with model stability scores}
         \EndProcedure
     \end{algorithmic}\label{alg:stability-across-queries}
 \end{algorithm}
+%\begin{algorithm}
+%    \caption{Stability Across Queries}
+%    \begin{algorithmic}[1]
+%        \Procedure{StabilityAcrossQueries}{$queryResponses$}
+%            \State $stabilityScores \gets$ empty list
+%            \For{each $responses$ in $queryResponses$}
+%                \State $uniqueResponses \gets$ set of unique elements in $responses$
+%                \State $stability \gets$ size of $uniqueResponses$
+%                \State $stabilityScore \gets (1 - \frac{stability - 1}{|responses|}) \times 100$
+%                \State Append $stabilityScore$ to $stabilityScores$
+%                \If{$stabilityScores$ is not empty}
+%                    \State \Return mean of $stabilityScores$
+%                \Else
+%                    \State \Return 0
+%                \EndIf
+%            \EndFor
+%        \EndProcedure
+%    \end{algorithmic}\label{alg:stability-across-queries}
+%\end{algorithm}
 \subsection{System Configurations}\label{subsec:empirical-evaluation:experimental-setup:system-configurations}
 The system configurations are selected based on the best results obtained from black-box testing the pipeline through a series of experiments, detailed in section~\ref{ch:ablation}.
 Table~\ref{tab:system-configurations} summarizes the key system configurations used in our empirical evaluation.

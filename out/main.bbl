@@ -42,54 +42,6 @@
       \field{title}{Introducing LLaMA 3: Advancing Open Foundation Models}
       \field{year}{2023}
     \endentry
-    \entry{10.1145/2484028.2484165}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=bb706bacb251c39d000c0da6d6bd67f7}{%
-           family={Balog},
-           familyi={B\bibinitperiod},
-           given={Krisztian},
-           giveni={K\bibinitperiod}}}%
-        {{hash=86379b8ad17e9649b10341f9d0b56e7e}{%
-           family={Neumayer},
-           familyi={N\bibinitperiod},
-           given={Robert},
-           giveni={R\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Dublin, Ireland}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery}%
-      }
-      \strng{namehash}{883bd8cd20b12a036d29e9ae8f2238a7}
-      \strng{fullhash}{883bd8cd20b12a036d29e9ae8f2238a7}
-      \strng{bibnamehash}{883bd8cd20b12a036d29e9ae8f2238a7}
-      \strng{authorbibnamehash}{883bd8cd20b12a036d29e9ae8f2238a7}
-      \strng{authornamehash}{883bd8cd20b12a036d29e9ae8f2238a7}
-      \strng{authorfullhash}{883bd8cd20b12a036d29e9ae8f2238a7}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{We develop and make publicly available an entity search test collection based on the DBpedia knowledge base. This includes a large number of queries and corresponding relevance judgments from previous benchmarking campaigns, covering a broad range of information needs, ranging from short keyword queries to natural language questions. Further, we present baseline results for this collection with a set of retrieval models based on language modeling and BM25. Finally, we perform an initial analysis to shed light on certain characteristics that make this data set particularly challenging.}
-      \field{booktitle}{Proceedings of the 36th International ACM SIGIR Conference on Research and Development in Information Retrieval}
-      \field{isbn}{9781450320344}
-      \field{series}{SIGIR '13}
-      \field{title}{A test collection for entity search in DBpedia}
-      \field{year}{2013}
-      \field{pages}{737\bibrangedash 740}
-      \range{pages}{4}
-      \verb{doi}
-      \verb 10.1145/2484028.2484165
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1145/2484028.2484165
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1145/2484028.2484165
-      \endverb
-      \keyw{test collections,semantic search,entity retrieval,dbpedia}
-    \endentry
     \entry{https://doi.org/10.48550/arxiv.2210.11416}{misc}{}
       \name{author}{31}{}{%
         {{hash=10118dd89bd210596b82c1b6feb26faf}{%
@@ -3381,59 +3333,6 @@
       \verb https://arxiv.org/abs/2310.19923
       \endverb
     \endentry
-    \entry{10.1145/3077136.3080810}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{hash=d70f4da27e21cee9820a3e3cf6d90d50}{%
-           family={Hasibi},
-           familyi={H\bibinitperiod},
-           given={Faegheh},
-           giveni={F\bibinitperiod}}}%
-        {{hash=bb706bacb251c39d000c0da6d6bd67f7}{%
-           family={Balog},
-           familyi={B\bibinitperiod},
-           given={Krisztian},
-           giveni={K\bibinitperiod}}}%
-        {{hash=83407ea481921ffd956e47ec2d4ed882}{%
-           family={Bratsberg},
-           familyi={B\bibinitperiod},
-           given={Svein\bibnamedelima Erik},
-           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Shinjuku, Tokyo, Japan}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computing Machinery}%
-      }
-      \strng{namehash}{eec67fa5422ad65a890119b6a13d4c7b}
-      \strng{fullhash}{eec67fa5422ad65a890119b6a13d4c7b}
-      \strng{bibnamehash}{eec67fa5422ad65a890119b6a13d4c7b}
-      \strng{authorbibnamehash}{eec67fa5422ad65a890119b6a13d4c7b}
-      \strng{authornamehash}{eec67fa5422ad65a890119b6a13d4c7b}
-      \strng{authorfullhash}{eec67fa5422ad65a890119b6a13d4c7b}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Entity cards are being used frequently in modern web search engines to offer a concise overview of an entity directly on the results page. These cards are composed of various elements, one of them being the entity summary: a selection of facts describing the entity from an underlying knowledge base. These summaries, while presenting a synopsis of the entity, can also directly address users' information needs. In this paper, we make the first effort towards generating and evaluating such factual summaries. We introduce and address the novel problem of dynamic entity summarization for entity cards, and break it down to two specific subtasks: fact ranking and summary generation. We perform an extensive evaluation of our method using crowdsourcing. Our results show the effectiveness of our fact ranking approach and validate that users prefer dynamic summaries over static ones.}
-      \field{booktitle}{Proceedings of the 40th International ACM SIGIR Conference on Research and Development in Information Retrieval}
-      \field{isbn}{9781450350228}
-      \field{series}{SIGIR '17}
-      \field{title}{Dynamic Factual Summaries for Entity Cards}
-      \field{year}{2017}
-      \field{pages}{773\bibrangedash 782}
-      \range{pages}{10}
-      \verb{doi}
-      \verb 10.1145/3077136.3080810
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1145/3077136.3080810
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1145/3077136.3080810
-      \endverb
-      \keyw{entity cards,entity summarization,user interfaces}
-    \endentry
     \entry{hu2022lora}{inproceedings}{}
       \name{author}{8}{}{%
         {{hash=e6a95d07b8ae7f14e4eb777c6980a059}{%
@@ -4073,42 +3972,50 @@
       \verb https://arxiv.org/pdf/2007.15207.pdf
       \endverb
     \endentry
-    \entry{marchesin_etal-cikm2024}{inproceedings}{}
+    \entry{Marchesin_Silvello_Alonso_2024}{article}{}
       \name{author}{3}{}{%
-        {{hash=bc9442cf5bf10f51b3ee95a10c4c9506}{%
+        {{hash=3a3255c23589457fdc226381755e98ab}{%
            family={Marchesin},
            familyi={M\bibinitperiod},
-           given={S.},
+           given={Stefano},
            giveni={S\bibinitperiod}}}%
-        {{hash=dad41c51f88ef904c9c515db7de80df8}{%
+        {{hash=07ba092df73e59c7b57619e719e881a6}{%
            family={Silvello},
            familyi={S\bibinitperiod},
-           given={G.},
+           given={Gianmaria},
            giveni={G\bibinitperiod}}}%
-        {{hash=596ec63dac38fc2c81c38547f9afd5b8}{%
+        {{hash=dd38adc7141fcf40f6171977de87d1b9}{%
            family={Alonso},
            familyi={A\bibinitperiod},
-           given={O.},
+           given={Omar},
            giveni={O\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {ACM}%
-      }
-      \strng{namehash}{f0f5473bf013eb754ba2c8fa3550e933}
-      \strng{fullhash}{f0f5473bf013eb754ba2c8fa3550e933}
-      \strng{bibnamehash}{f0f5473bf013eb754ba2c8fa3550e933}
-      \strng{authorbibnamehash}{f0f5473bf013eb754ba2c8fa3550e933}
-      \strng{authornamehash}{f0f5473bf013eb754ba2c8fa3550e933}
-      \strng{authorfullhash}{f0f5473bf013eb754ba2c8fa3550e933}
+      \strng{namehash}{09034f3c767ae2195cab486205699d03}
+      \strng{fullhash}{09034f3c767ae2195cab486205699d03}
+      \strng{bibnamehash}{09034f3c767ae2195cab486205699d03}
+      \strng{authorbibnamehash}{09034f3c767ae2195cab486205699d03}
+      \strng{authornamehash}{09034f3c767ae2195cab486205699d03}
+      \strng{authorfullhash}{09034f3c767ae2195cab486205699d03}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 33rd ACM International Conference on Information and Knowledge Management (CIKM '24), October 21--25, 2024, Boise, ID, USA}
-      \field{title}{Veracity Estimation for Entity-Oriented Search with Knowledge Graphs}
+      \field{journaltitle}{Proceedings of the AAAI Conference on Human Computation and Crowdsourcing}
+      \field{month}{10}
+      \field{number}{1}
+      \field{title}{Utility-Oriented Knowledge Graph Accuracy Estimation with Limited Annotations: A Case Study on DBpedia}
+      \field{volume}{12}
       \field{year}{2024}
+      \field{pages}{105\bibrangedash 114}
+      \range{pages}{10}
       \verb{doi}
-      \verb 10.1145/3627673.3679561
+      \verb 10.1609/hcomp.v12i1.31605
+      \endverb
+      \verb{urlraw}
+      \verb https://ojs.aaai.org/index.php/HCOMP/article/view/31605
+      \endverb
+      \verb{url}
+      \verb https://ojs.aaai.org/index.php/HCOMP/article/view/31605
       \endverb
     \endentry
     \entry{mistral7b_2023}{misc}{}
