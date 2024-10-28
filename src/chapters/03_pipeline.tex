@@ -22,11 +22,20 @@ This approach not only enhances the accuracy and reliability of the generated re
 As we delve deeper into each component of this pipeline, it is crucial to maintain a critical perspective on both its capabilities and limitations.
 While the system represents a significant advancement in NLP and information retrieval technologies, it also raises important questions about the ethical implications of AI-driven information processing, the potential for bias in knowledge representation and model training, and the broader societal impacts of increasingly sophisticated question-answering systems.
 
-This chapter aims to provide a comprehensive analysis of each stage of the pipeline, examining not only the technical aspects of its implementation but also the theoretical underpinnings and practical implications of its design choices.
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/pipeline}
+        \caption{RAG-Based Fact Verification Pipeline}
+        \label{fig:pipeline}
+    \end{minipage}
+\end{figure}
+
+This chapter aims to provide a comprehensive analysis of each stage of the pipeline as showed on Figure~\ref{fig:pipeline}, examining not only the technical aspects of its implementation but also the theoretical underpinnings and practical implications of its design choices.
 By understanding the intricacies of this system, we can gain valuable insights into the current state of NLP technologies and the potential future directions for research and development in this rapidly advancing field.
 As we proceed, we will explore each component in detail, starting with the foundational knowledge graph dataset and progressing through the various stages of query processing, information retrieval, context analysis, and response generation.
 This exploration will shed light on the complex interplay between different AI technologies and methodologies, offering a holistic view of how modern NLP systems can be architected to tackle some of the most challenging problems in information processing and human-computer interaction.
-
 
 \section{Knowledge Graph Dataset}\label{sec:knowledge-graph-dataset}
 The foundation of our multi-stage RAG pipeline is the Knowledge Graph Dataset, which acts as the primary source of factual information for the ensuing processing stages.
