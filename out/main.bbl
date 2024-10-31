@@ -226,33 +226,6 @@
       \endverb
       \keyw{Machine Learning (cs.LG),Computation and Language (cs.CL),FOS: Computer and information sciences,FOS: Computer and information sciences}
     \endentry
-    \entry{conneau2018senteval}{article}{}
-      \name{author}{2}{}{%
-        {{hash=7cf7ac6a9456559cc67ee138c7f21cec}{%
-           family={Conneau},
-           familyi={C\bibinitperiod},
-           given={Alexis},
-           giveni={A\bibinitperiod}}}%
-        {{hash=ca01c762f4a52dd8a8548508f8d727c9}{%
-           family={Kiela},
-           familyi={K\bibinitperiod},
-           given={Douwe},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{33b19009aa57fb66740eafccc3e1cf27}
-      \strng{fullhash}{33b19009aa57fb66740eafccc3e1cf27}
-      \strng{bibnamehash}{33b19009aa57fb66740eafccc3e1cf27}
-      \strng{authorbibnamehash}{33b19009aa57fb66740eafccc3e1cf27}
-      \strng{authornamehash}{33b19009aa57fb66740eafccc3e1cf27}
-      \strng{authorfullhash}{33b19009aa57fb66740eafccc3e1cf27}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{arXiv preprint arXiv:1803.05449}
-      \field{title}{SentEval: An Evaluation Toolkit for Universal Sentence Representations}
-      \field{year}{2018}
-    \endentry
     \entry{DBLP:journals/corr/abs-1911-02116}{article}{}
       \name{author}{10}{}{%
         {{hash=7cf7ac6a9456559cc67ee138c7f21cec}{%
@@ -3858,83 +3831,6 @@
       \verb https://twitter.com/jerryjliu0/status/1708147687084986504
       \endverb
     \endentry
-    \entry{liu2019robertarobustlyoptimizedbert}{misc}{}
-      \name{author}{10}{}{%
-        {{hash=94530daf7a9db4abe89cfb22935373eb}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Yinhan},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=b13aa2bad5258fa5ef7a733f2d305a49}{%
-           family={Ott},
-           familyi={O\bibinitperiod},
-           given={Myle},
-           giveni={M\bibinitperiod}}}%
-        {{hash=78a420900f50a8470ad085fb05231bf6}{%
-           family={Goyal},
-           familyi={G\bibinitperiod},
-           given={Naman},
-           giveni={N\bibinitperiod}}}%
-        {{hash=e483b52ce2cd3ba2fd08e7bf4fef4ff0}{%
-           family={Du},
-           familyi={D\bibinitperiod},
-           given={Jingfei},
-           giveni={J\bibinitperiod}}}%
-        {{hash=e5bfa941bcdbfecb5f3e42bb6ac9eb5f}{%
-           family={Joshi},
-           familyi={J\bibinitperiod},
-           given={Mandar},
-           giveni={M\bibinitperiod}}}%
-        {{hash=aed188db3fc6855ac5666aa14e04a3bb}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={Danqi},
-           giveni={D\bibinitperiod}}}%
-        {{hash=038965e189161e03f6255a4278c280a1}{%
-           family={Levy},
-           familyi={L\bibinitperiod},
-           given={Omer},
-           giveni={O\bibinitperiod}}}%
-        {{hash=c97f53fdeeb04c28de19e3324cb4bc0a}{%
-           family={Lewis},
-           familyi={L\bibinitperiod},
-           given={Mike},
-           giveni={M\bibinitperiod}}}%
-        {{hash=1dbd3a5b42828fb2cebd7786488ba425}{%
-           family={Zettlemoyer},
-           familyi={Z\bibinitperiod},
-           given={Luke},
-           giveni={L\bibinitperiod}}}%
-        {{hash=9b97236dd2d1a104fc5cf9660dd5582e}{%
-           family={Stoyanov},
-           familyi={S\bibinitperiod},
-           given={Veselin},
-           giveni={V\bibinitperiod}}}%
-      }
-      \strng{namehash}{bbac34a28b7aba5cd543f7c72e0d987d}
-      \strng{fullhash}{7579c765ce38b2c34c8f9768ec3bc342}
-      \strng{bibnamehash}{bbac34a28b7aba5cd543f7c72e0d987d}
-      \strng{authorbibnamehash}{bbac34a28b7aba5cd543f7c72e0d987d}
-      \strng{authornamehash}{bbac34a28b7aba5cd543f7c72e0d987d}
-      \strng{authorfullhash}{7579c765ce38b2c34c8f9768ec3bc342}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.CL}
-      \field{eprinttype}{arXiv}
-      \field{title}{RoBERTa: A Robustly Optimized BERT Pretraining Approach}
-      \field{year}{2019}
-      \verb{eprint}
-      \verb 1907.11692
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/1907.11692
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/1907.11692
-      \endverb
-    \endentry
     \entry{mkqa}{misc}{}
       \name{author}{3}{}{%
         {{hash=2e8c6baaa8411d8bda3b277ca6ff2db5}{%
@@ -5662,6 +5558,64 @@
       \verb https://arxiv.org/abs/2104.08663
       \endverb
     \endentry
+    \entry{wang2024improvingtextembeddingslarge}{misc}{}
+      \name{author}{6}{}{%
+        {{hash=cce05cab2c437e9c128f853684ee3137}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Liang},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a44174a97a52d8b64289ef831cb1ac37}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Nan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=026d1f57876191243f47c0ec47352891}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Xiaolong},
+           giveni={X\bibinitperiod}}}%
+        {{hash=312f531e29a4681ac2abc9a6ebcde92a}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Linjun},
+           giveni={L\bibinitperiod}}}%
+        {{hash=91d8356734700015f7c8f8a7303609f3}{%
+           family={Majumder},
+           familyi={M\bibinitperiod},
+           given={Rangan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e5bfd490d91c5d1b935092ce3132a083}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Furu},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{e9012e3e3adcfce14161e542a312bb44}
+      \strng{fullhash}{5a81cbb424928b29f66fe3aae6c72d9e}
+      \strng{bibnamehash}{e9012e3e3adcfce14161e542a312bb44}
+      \strng{authorbibnamehash}{e9012e3e3adcfce14161e542a312bb44}
+      \strng{authornamehash}{e9012e3e3adcfce14161e542a312bb44}
+      \strng{authorfullhash}{5a81cbb424928b29f66fe3aae6c72d9e}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{Improving Text Embeddings with Large Language Models}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2401.00368
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2401.00368
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2401.00368
+      \endverb
+    \endentry
     \entry{wang2024multilinguale5textembeddings}{misc}{}
       \name{author}{6}{}{%
         {{hash=cce05cab2c437e9c128f853684ee3137}{%
@@ -5701,6 +5655,7 @@
       \strng{authorbibnamehash}{e9012e3e3adcfce14161e542a312bb44}
       \strng{authornamehash}{e9012e3e3adcfce14161e542a312bb44}
       \strng{authorfullhash}{5a81cbb424928b29f66fe3aae6c72d9e}
+      \field{extraname}{2}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}

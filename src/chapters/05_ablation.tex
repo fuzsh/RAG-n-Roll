@@ -11,7 +11,8 @@ Through this comparison, we seek to situate our work within the broader context 
 This analysis will not only contribute to the refinement of our framework but also offer valuable perspectives on the application of RAG principles to knowledge graph fact verification tasks.
 \section{Evaluation Methodology}\label{sec:evaluation-methodology}
 This study employs a systematic approach to evaluate and optimize various components of our framework, with the ultimate goal of determining the best methods for each section.
-Our methodology is designed to isolate and assess the impact of different techniques and parameters on overall system performance, while also considering the efficacy of sampling methods compared to full data runs.
+Our methodology is designed to isolate and assess the impact of different techniques and parameters on overall system performance.
+For our ablation study, we focus specifically on the \textit{FactBench} dataset.
 
 \subsection{Iterative Optimization Process}\label{subsec:iterative-optimization-process}
 The evaluation process follows an iterative strategy, focusing on specific sections of the framework in each iteration:
@@ -25,17 +26,6 @@ The evaluation process follows an iterative strategy, focusing on specific secti
     \item \textbf{Incremental Optimization:} The optimal configuration from each iteration is incorporated into the framework for subsequent iterations, gradually refining the entire system.
 \end{enumerate}
 
-%\subsection{Sampling Methods Evaluation}\label{subsec:sampling-methods-evaluation}
-%
-%As one of the parameters under investigation, we compare various sampling methods to full data runs:
-%
-%\begin{itemize}
-%    \item \textbf{Full Data Runs:} Establish a baseline using the entire dataset.
-%    \item \textbf{Simple Random Sampling:} Randomly select a subset of $n$ data points from a population of size $N$.
-%    \item \textbf{Unique Over Sampling:} Evenly distributes a specified number of samples across different categories in a dataset. It ensures minimal duplication by prioritizing unique samples and filling the remainder slots using random sampling when necessary.
-%\end{itemize}
-%This comparison aims to determine if sampling can reduce computational costs and accelerate results without significant loss in accuracy.
-
 \subsection{Evaluation Metrics}\label{subsec:ablation-metrics}
 The performance of each configuration is assessed using the following metrics, it's same as the metrics in the empirical evaluation section~\ref{subsec:empirical-evaluation:experimental-setup:performance-metrics-and-evaluation}:
 
@@ -45,18 +35,10 @@ The performance of each configuration is assessed using the following metrics, i
         \text{Acc} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}
     \end{equation}
     where TP, TN, FP, and FN are True Positives, True Negatives, False Positives, and False Negatives, respectively.
-
     \item \textbf{F1 Score:} Provides a balanced measure of precision and recall:
     \begin{equation}
         \text{F1} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
     \end{equation}
-
-%    \item \textbf{Average Score (Avg):} Calculated based on accuracy across multiple runs:
-%    \begin{equation}
-%        \text{Avg} = \frac{1}{m} \sum_{i=1}^m \text{Acc}_i
-%    \end{equation}
-%    where $m$ is the number of runs.
-
     \item \textbf{Average Latency:} Measured in seconds per query to assess computational efficiency:
     \begin{equation}
         \text{Avg Latency} = \frac{\text{Total Processing Time}}{\text{Number of Queries}}
@@ -101,45 +83,16 @@ However, it relies on lexical matching between query and document terms, which c
     N &: \text{total number of documents in the corpus} \\
     n(q_i) &: \text{number of documents containing } q_i
 \end{align*}
-%
-%\begin{algorithm}
-%    \caption{BM25-based Sentence Retrieval}
-%    \begin{algorithmic}[1]
-%        \Procedure{Preprocess}{sentence}
-%            \State Convert sentence to lowercase
-%            \State Remove punctuation
-%            \State Tokenize sentence into words
-%            \State Remove stopwords
-%            \State \Return preprocessed tokens
-%        \EndProcedure
-%
-%        \Procedure{FetchSimilarSentences}{sentences, top\_n}
-%            \For{each sentence in sentences}
-%                \State preprocessed $\gets$ Preprocess(sentence)
-%                \State Add preprocessed to tokenized\_sentences
-%            \EndFor
-%
-%            \State bm25 $\gets$ CreateBM25Object(tokenized\_sentences)
-%            \State query $\gets$ tokenized\_sentences[0]
-%
-%            \State scores $\gets$ bm25.GetScores(query)
-%            \State Sort scored\_sentences by score in descending order
-%
-%            \State result $\gets$ Top top\_n sentences from result
-%
-%        \EndProcedure
-%    \end{algorithmic}
-%\end{algorithm}
 
 \subsubsection{Contriever}
-Contriever is a more recently proposed unsupervised method by Izacard et al.\cite{izacard2022unsuperviseddenseinformationretrieval} that leverages contrastive learning to train dense retrieval models.
+\textit{Contriever} is a more recently proposed unsupervised method by Izacard et al.\cite{izacard2022unsuperviseddenseinformationretrieval} that leverages contrastive learning to train dense retrieval models.
 Rather than relying on term matching, Contriever learns to map semantically similar text pairs to nearby embeddings in a continuous vector space.
 At query time, Contriever embeds the query and retrieves the documents whose embeddings are nearest to the query under cosine similarity.
 By operating in this learned semantic space, Contriever can potentially identify relevant documents that use different surface forms than the query.
 Contriever has shown promising results, outperforming BM25 on a range of benchmarks when large unsupervised pretraining datasets are available.
 However, details on its performance in this specific multi-query retrieval setup are needed to fully assess its capabilities here.
 
-While Contriever can be used as an unsupervised retriever, for our thesis project focusing on search-related data, we opt to use the MS-MARCO fine-tuned version. \footnote{\url{https://huggingface.co/facebook/contriever-msmarco}}
+While Contriever can be used as an unsupervised retriever, for our thesis project focusing on search-related data, we opt to use the \textit{MS-MARCO} fine-tuned version. \footnote{\url{https://huggingface.co/facebook/contriever-msmarco}}
 Here's why:
 \begin{itemize}
     \item \textbf{Relevance to Search Tasks:} MS-MARCO (Microsoft Machine Reading Comprehension) is a large-scale dataset specifically designed for search and question-answering tasks. It contains real queries from Bing search engine and human-annotated relevant passages. By fine-tuning Contriever on MS-MARCO, the model becomes particularly adept at understanding and representing search-like queries and documents.
@@ -162,10 +115,11 @@ Notably, it secured the top position on the AirBench leaderboard upon its releas
 
 These capabilities make the model particularly valuable for multilingual information retrieval, agentic RAG systems, and even in programming and software development support.
 \subsubsection{MS MARCO MiniLM}
-The MS MARCO MiniLM is another supervised neural model, based on the popular BERT architecture but distilled to a smaller size for efficiency.
+The \textit{MS MARCO MiniLM} is another supervised neural model, based on the popular BERT architecture trained on the MS MARCO dataset but distilled to a smaller size for efficiency.
 \begin{table}[ht!]
     \centering
     \noindent
+    \caption{Performance comparison of various distilled MS MARCO models based on BERT architecture, measured across NDCG@10 on TREC DL 2019 and MRR@10 on MS MARCO Dev benchmarks.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lccc}
             \toprule
@@ -178,42 +132,39 @@ The MS MARCO MiniLM is another supervised neural model, based on the popular BER
             ms-marco-MiniLM-L-12-v2  & 74.31                         & 39.02                          & 960                 \\
             \bottomrule
         \end{tabular}}
-    \caption{Performance of Pre-trained Cross-Encoders}
-    \label{tab:table2}
+    \label{tab:ms-marco-model-comparison}
 \end{table}
+This comparison in Table~\ref{tab:ms-marco-model-comparison} highlights the trade-offs between model size, retrieval effectiveness, and processing speed (documents per second).
+As model size increases from \textit{TinyBERT-L-2-v2} to \textit{MiniLM-L-12-v2}, there is a noticeable improvement in retrieval metrics (NDCG@10 and MRR@10), indicating higher relevance in retrieved documents.
+However, this comes at the cost of reduced inference speed, with larger models processing fewer documents per second.
 For our project, we use \textit{ms-marco-MiniLM-L-6-v2}\footnote{\url{https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2}} Cross-Encoder model.
-This model, trained on the extensive MS MARCO dataset comprising approximately 500,000 authentic search queries from the Bing search engine \cite{reimers-2019-sentence-bert}, demonstrates superior performance within a two-stage Retrieve \& Re-rank framework.
+This model, trained on the extensive MS MARCO dataset comprising approximately 500,000 authentic search queries from the Bing search engine~\cite{reimers-2019-sentence-bert}, demonstrates superior performance within a two-stage Retrieve \& Re-rank framework.
 In this paradigm, an initial retrieval phase employs either lexical search methods or dense retrieval techniques utilizing a bi-encoder to identify a broad set of potentially relevant documents.
 Subsequently, the Cross-Encoder refines this candidate set through a simultaneous processing of the query and each retrieved document, generating a relevance score on a scale of 0 to 1.
 \subsection{Evaluation with Large Language Models}\label{subsec:evaluation-with-large-language-models}
-With checking the similarity between the retrieved documents and the query in different methods, based on figure~\ref{fig:document_retrieval_confusion_matrix_1} we can figured out that Bm25-Okapi stands out as the most distinct model, with low similarity scores (0.20-0.24) to the others, suggesting it employs fundamentally different retrieval mechanisms.
-In contrast, the neural models show higher inter-model similarities, indicating shared approaches or architectures.
-The strong relationship (0.43) between contriever-msmarco and re-ranker-msmarco, likely due to shared training data or similar optimizations.
-The two re-ranker models gain the highest similarity (0.44) but suggest distinctiveness in their retrieval mechanisms and architectures.
-In general, we can find out with different methods we have different result over the same query.
-
+Figure~\ref{fig:document_retrieval_confusion_matrix} visualizes similarity patterns in document selection across models, using Jaccard Similarity to quantify the overlap in documents identified as relevant by different models.
+Higher values indicate greater agreement between models in identifying similar documents, providing insights into consistency and variations in retrieval behavior across the models under evaluation.
 \begin{figure}[ht!]
     \centering
     \begin{minipage}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{res/ret_result_sim_1}
-        \caption{Document Retrieval Confusion Matrix}
-        \label{fig:document_retrieval_confusion_matrix_1}
     \end{minipage}
-%    \hspace{0.05\textwidth} % Space between the images
-%    \begin{minipage}[b]{0.45\textwidth}
-%        \centering
-%        \includegraphics[width=\textwidth]{res/ret_result_sim_2}
-%        \caption{Document Retrieval Performance}
-%        \label{fig:document_retrieval_confusion_matrix_2}
-%    \end{minipage}
+    \caption{Document Retrieval Confusion Matrix based on Jaccard Similarity between documents retrieved by each model.}
+    \label{fig:document_retrieval_confusion_matrix}
 \end{figure}
-
+We can figure out that Bm25-Okapi stands out as the most distinct model, with low similarity scores (0.20-0.24) to the others, suggesting it employs fundamentally different retrieval mechanisms.
+In contrast, the neural models show higher inter-model similarities, indicating shared approaches or architectures.
+The strong relationship (0.43) between \textit{contriever-msmarco} and \textit{re-ranker-msmarco}, likely due to shared training data or similar optimizations.
+The two re-ranker models gain the highest similarity (0.44), highlighting more consistent retrieval patterns.
+However, they still exhibit differences in document selection.
+In general, we can find out with different methods we have different result over the same query.
 To assess the quality of the retrieved documents from each of the above methods, we are passing them through one of our models and evaluating the outputs.
 
 \begin{table}[h!]
     \centering
     \noindent
+    \caption{Performance evaluation of various document retrieval methods on the FactBench dataset, using the Gemma2 model.}
     {\scriptsize \fbox{\textit{Retrieval Method}}}\\
     \resizebox{0.7\textwidth}{!}{
         \begin{threeparttable}
@@ -234,7 +185,6 @@ To assess the quality of the retrieved documents from each of the above methods,
             \item[*] It is measured in seconds on average per query.
         \end{tablenotes}
         \end{threeparttable}}
-    \caption{Evaluation Results for Different Retrieval Methods through the Pipeline (just with the Gemma2 model)}
     \label{tab:evaluation_results}
 \end{table}
 
@@ -271,9 +221,9 @@ The Alibaba-NLP model \textit{gte-large-en-v1.5} is text embedding model designe
 It is built upon a Transformer++ encoder architecture, combining the strengths of BERT~\cite{devlin2019bertpretrainingdeepbidirectional} with advanced techniques such as \ac{RoPE}~\cite{su2023roformerenhancedtransformerrotary} and Gated Linear Units (GLU).
 This combination allows for highly efficient text encoding over long sequences, with a maximum context length of 8192 tokens, significantly surpassing previous models restricted to shorter context lengths (up to 512 tokens)~\cite{zhang2024mgtegeneralizedlongcontexttext}.
 
-One of the major improvements in the gte-v1.5 series is its ability to process long-context text inputs, making it ideal for complex text retrieval and re-ranking tasks, especially in multilingual settings~\cite{li2023generaltextembeddingsmultistage}.
+One of the major improvements in the gte-v1.5 series is its ability to process long-context text inputs, making it ideal for complex text retrieval and re-ranking tasks~\cite{li2023generaltextembeddingsmultistage}.
 This series of models has demonstrated superior performance in multiple benchmarks, including the \ac{MTEB}~\cite{muennighoff-etal-2023-mteb} and the LoCo long-context retrieval benchmark~\cite{saadfalcon2024benchmarkingbuildinglongcontextretrieval}.
-In particular, the model ranked second on the MTEB leaderboard and first in the Chinese version of MTEB (C-MTEB).
+In particular, the tuned models of this model ranked second on the MTEB leaderboard and first in the Chinese version of MTEB (C-MTEB).
 
 The model achieves these results by employing a hybrid architecture, including both a text representation model (TRM) and a cross-encoder reranker.
 The TRM generates dense text embeddings for retrieval tasks, while the reranker refines results through more precise scoring of candidate texts.
@@ -282,7 +232,7 @@ This architecture is optimized for efficiency, allowing faster inference while m
 The \textit{gte-large-en-v1.5} also includes instruction-tuned variants, such as \textit{gte-Qwen1.5-7B-instruct}, which is particularly effective for multilingual text embeddings, leveraging a wide range of unsupervised and supervised contrastive learning techniques.
 These instruction-tuned models have outperformed various other large embedding models, making them highly suitable for industrial applications that require efficient, accurate text representation across diverse languages.
 
-In summary, the \textit{gte-large-en-v1.5} model stands out in its category due to its ability to handle large context lengths, its efficient encoding techniques, and its strong performance across multilingual and long-context benchmarks.
+In summary, the \textit{gte-large-en-v1.5} model stands out in its category due to its ability to handle large context lengths, its efficient encoding techniques, and its strong performance on long-context benchmarks.
 This makes it an invaluable tool for a variety of text retrieval, classification, and representation tasks in both academic research and real-world applications.
 
 \subsection{Jina-embeddings-v3}\label{subsec:jinaai}
@@ -294,11 +244,11 @@ One of the key innovations of \textit{Jina-embeddings-v3} is the introduction of
 These adapters are used to tailor the model's embeddings to specific tasks, such as query-document retrieval, clustering, re-ranking, and classification.
 This task-specific optimization is achieved without significantly increasing the model's parameter size.
 
-The model excels in multilingual environments, supporting over 30 languages, and is optimized for performance in long-context retrieval tasks.
-Compared to LLMs like \textit{e5-mistral-7b-instruct}, \textit{jina-embeddings-v3} offers a more efficient solution with fewer parameters (570 million vs. 7.1 billion), while still achieving competitive or superior performance on several benchmarks.
+The model excels in multilingual environments, supporting wide range of languages, and is optimized for performance in long-context retrieval tasks.
+Compared to LLMs like \textit{e5-mistral-7b-instruct}, \textit{jina-embeddings-v3} offers a more efficient solution with fewer parameters (570 million \vs 7.1 billion), while still achieving competitive or superior performance on several benchmarks.
 For example, it surpasses proprietary models like OpenAI~\footnote{\url{https://openai.com/}} and Cohere~\footnote{\url{https://cohere.com/}} on English tasks and achieves high scores on multilingual benchmarks.
 
-\textit{Jina-embeddings-v3} also features flexible \ac{MRL}~\cite{kusupati2024matryoshkarepresentationlearning}, allowing users to reduce the embedding size from 1024 to as low as 32 dimensions, making it adaptable to different resource constraints without significant loss of performance.
+\textit{Jina-embeddings-v3} also features flexible \ac{MRL}~\cite{kusupati2024matryoshkarepresentationlearning}, allowing users to reduce the embedding size from 1024 to as low as 16 dimensions, making it adaptable to different resource constraints without significant loss of performance.
 
 \subsection{Stella\_en\_1.5B\_v5}\label{subsec:dunzhang}
 The Dunzhang \textit{Stella\_en\_1.5B\_v5}\footnote{\url{https://huggingface.co/dunzhang/stella_en_1.5B_v5}} is a powerful multilingual text embedding model, built upon the foundations of \textit{Alibaba-NLP/gte-large-en-v1.5}~\ref{subsec:alibaba-nlp} and \textit{gte-Qwen2-1.5B-instruct}.
@@ -319,32 +269,28 @@ The E5-Large-Instruct model contains 24 layers and features an embedding size of
 It builds on the \textit{XLM-RoBERTa-large}~\cite{DBLP:journals/corr/abs-1911-02116} architecture, which supports 100 languages, albeit with varying performance depending on the resource richness of the language in question.
 The model was initialized from XLM-RoBERTa-large and underwent two key stages of training:
 \begin{itemize}
-    \item \textbf{Contrastive Pre-training:} The model was pre-trained on approximately 1 billion weakly supervised multilingual text pairs using a contrastive loss function with a temperature of 0.01. This stage aimed to align similar texts in a shared embedding space.
-    \item \textbf{Fine-tuning:} Following pre-training, the model was fine-tuned using high-quality labeled datasets from the E5-mistral paper. This second stage involved a more supervised approach, optimizing performance across specific tasks. During this phase, instruction-tuning was incorporated, where the model learned to generate better embeddings by using natural language task instructions.
+    \item \textbf{Contrastive Pre-training:} The model was pre-trained on approximately 1 billion weakly supervised multilingual text pairs using a InfoNCE contrastive loss with only in-batch negatives, while other hyperparameters remain consistent with the English E5 models.
+    \item \textbf{Fine-tuning:} Following pre-training, the model was fine-tuned using high-quality labeled datasets from the E5-mistral paper~\cite{wang2024improvingtextembeddingslarge}. This second stage involved a more supervised approach, optimizing performance across specific tasks. During this phase, instruction-tuning was incorporated, where the model learned to generate better embeddings by using natural language task instructions.
 \end{itemize}
 The E5-Large-Instruct model was evaluated on BEIR and MTEB benchmarks, and its performance is on par with state-of-the-art English-only models.
 Evaluation on the MIRACL~\cite{zhang-etal-2023-miracl} multilingual retrieval benchmark across 16 languages and on Bitext mining tasks across over 100 languages demonstrated its capability to handle diverse languages effectively.
-Despite the excellent performance on high-resource languages, the model shows degradation in performance for low-resource languages, a common limitation of multilingual models.
+Despite the excellent performance on high-resource languages, the model shows a little degradation in performance for low-resource languages, a common limitation of multilingual models, but still outperforms many other models in this category.
 The use of contrastive learning and instruction tuning enables the model to generate highly effective embeddings for information retrieval tasks.
-However, the absolute cosine similarity values generated by the model are less critical than the relative order of these values, which is more relevant for retrieval and similarity ranking tasks.
-
-%TODO: NEED TO BE UPDATED
 \subsection{bge-small-en-v1.5}\label{subsec:baai}
 The \textit{\textit{bge-small-en-v1.5}} model is part of the BGE (BAAI General Embeddings) series developed by the Beijing Academy of Artificial Intelligence~\cite{bge_embedding}.
-It is a compact English-specific model with just 25M parameters, making it highly efficient for deployment in resource-constrained environments.
-The model architecture is based on RoBERTa~\cite{liu2019robertarobustlyoptimizedbert} with optimizations like dynamic token pruning and embedding factorization to reduce computational costs.
-
+It is a compact English-specific model with just 33.4M parameters, making it highly efficient for deployment in resource-constrained environments.
+The model architecture is BERT-like which goes through three-stage of training.
 \textit{\textit{bge-small-en-v1.5}} follows a two-stage training pipeline similar to other BGE models:
 \begin{itemize}
     \item \textbf{Pre-training:} Weakly-supervised contrastive pre-training on large-scale web data
     \item \textbf{Fine-tuning:} Supervised fine-tuning on a curated set of high-quality English NLP datasets
 \end{itemize}
 
-The pre-training stage leverages diverse data sources like Wikipedia, Reddit, and CommonCrawl to learn general-purpose text representations. The fine-tuning stage incorporates datasets spanning retrieval, classification, paraphrase detection, and semantic textual similarity tasks to instill task-specific knowledge.
+The model fine-tuned using a process of contrastive learning, where sentences are embedded to prioritize semantic similarity.
+This technique enhances retrieval tasks by training the model to produce high similarity scores for semantically related sentences while keeping unrelated pairs distant in embedding space.
+The fine-tuning emphasizes retrieval for short queries to long passages, optimized with a contrastive loss function and often utilizes mined hard negatives to improve differentiation between similar and unrelated sentence pairs.
 
-Despite its small size, \textit{\textit{bge-small-en-v1.5}} punches above its weight on several English benchmarks.
-On the SentEval suite~\cite{conneau2018senteval}, it outperforms the base-sized BERT and RoBERTa models on most tasks while being 4x more compact.
-On retrieval challenges like BEIR, it achieves competitive results, often surpassing larger models like MPNet and the original DPR.
+Despite its small size, \textit{\textit{bge-small-en-v1.5}} punches above its weight on several English benchmarks and outperforms the base-sized BERT and RoBERTa models on most tasks while being more compact.
 The model's strong performance can be attributed to the efficient architecture design and the use of high-quality fine-tuning data.
 It presents an attractive option for applications requiring low-latency inference or deployment on edge devices.
 
@@ -364,31 +310,26 @@ Practitioners should consider the trade-off between embedding quality and effici
 \begin{table}[ht!]
     \centering
     \noindent
+    \caption{Comparison of characteristics of embedding models}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lcccc}
             \toprule
             \textbf{Model} & \shortstack{\textbf{Model Size} \\ (Million Parameters)}           & \shortstack{\textbf{Memory Usage} \\ (GB, fp32)}             & \shortstack{\textbf{Embedding}  \\ \textbf{Dimensions}}              & \shortstack{\textbf{Max}  \\ \textbf{Tokens}} \\
             \midrule
-            stella\_en\_1.5B\_v5              & 1543   & 5.75 & 8192  & 131072  \\
-            jina-embeddings-v3              & 572   & 2.13 & 1024  & 8194  \\
-            gte-large-en-v1.5              & 434   & 1.62 & 1024  & 8192  \\
-            multilingual-e5-large-instruct              & 560   & 2.09 & 1024  & 514  \\
-            bge-small-en-v1.5              & 33   & 0.12 & 384  & 51262  \\
+            stella\_en\_1.5B\_v5                & 1543  & 5.75  & 8192  & 131072    \\
+            jina-embeddings-v3                  & 572   & 2.13  & 1024  & 8194      \\
+            gte-large-en-v1.5                   & 434   & 1.62  & 1024  & 8192      \\
+            multilingual-e5-large-instruct      & 560   & 2.09  & 1024  & 514       \\
+            bge-small-en-v1.5                   & 33    & 0.12  & 384   & 51262     \\
             \bottomrule
         \end{tabular}}
-    \caption{Comparison of Embedding Models}
     \label{tab:comparison-embeddings}
 \end{table}
 
 \subsubsection{Language Coverage}
-Language coverage is a crucial aspect when selecting an embedding model for multilingual applications. The \textit{Multilingual-e5-large-instruct} model stands out in this regard, as it supports a wide range of languages. This model leverages instruction fine-tuning on multilingual data, enabling it to generate high-quality embeddings for various languages.
+Language coverage is a crucial aspect when selecting an embedding model for multilingual applications. The \textit{Multilingual-e5-large-instruct} model stands out in this regard, as it supports a wide range of languages.
+This model leverages instruction fine-tuning on multilingual data, enabling it to generate high-quality embeddings for various languages.
 The \textit{Jina-embeddings-v3} model also offers multilingual support, although the exact language coverage is not specified in the provided context. On the other hand, the \textit{Bge-small-en-v1.5}, \textit{Stella\_en\_1.5B\_v5}, and \textit{Gte-large-en-v1.5} models primarily focus on English embeddings, making them more suitable for monolingual English applications.
-
-\subsubsection{Supported Features}
-The embedding models offer various features that cater to different use cases. The \textit{Stella\_en\_1.5B\_v5} model supports two main prompts for diverse tasks: "s2p" (sentence-to-passage) for information retrieval and "s2s" (sentence-to-sentence) for semantic textual similarity. This flexibility allows users to adapt the model for specific NLP tasks with minimal effort.
-The \textit{Jina-embeddings-v3} model incorporates task-specific LoRA adapters, enabling it to generate high-quality embeddings for query-document retrieval, clustering, classification, and text matching. This feature eliminates the need for manual prompt engineering and provides a more streamlined approach for task-specific embeddings.
-Additionally, the \textit{Stella\_en\_1.5B\_v5} and \textit{Jina-embeddings-v3} models implement MRL, allowing users to generate embeddings with different dimensions based on their needs. This adaptability is particularly useful when balancing between embedding quality and storage or computational efficiency.
-
 \subsubsection{Conclusion}
 The choice of text embedding model depends on various factors, including the specific application, language coverage requirements, available computational resources, and desired features. For monolingual English applications, the \textit{Gte-large-en-v1.5} and \textit{Stella\_en\_1.5B\_v5} models offer high-quality embeddings with support for longer input sequences.
 The \textit{Stella\_en\_1.5B\_v5} model, in particular, provides prompt-based adaptability for information retrieval and semantic similarity tasks.
@@ -396,14 +337,14 @@ For multilingual applications, the \textit{Multilingual-e5-large-instruct} and \
 The \textit{Multilingual-e5-large-instruct} model supports a wide range of languages, while \textit{Jina-embeddings-v3} offers task-specific LoRA adapters for enhanced performance across various NLP tasks.
 When computational resources are limited, the \textit{Bge-small-en-v1.5} model presents a lightweight option with competitive performance.
 Its small size and low memory footprint make it suitable for deployment on edge devices or real-time applications.
-Ultimately, practitioners should carefully evaluate their specific requirements and constraints before selecting an embedding model.
+Ultimately, we should carefully evaluate our specific requirements and constraints before selecting an embedding model.
 The comparative analysis provided in this section aims to assist in this decision-making process by highlighting the key differences and strengths of each model.
-
 Now we will test these models through the pipeline and evaluate their performance.
 
 \begin{table}[h!]
     \centering
     \noindent
+    \caption{Performance evaluation of various embedding models on the FactBench dataset, using the Gemma2 model.}
     {\scriptsize ms-marco-MiniLM-L-6-v2,\fbox{\textit{Embedding Model}}}\\
     \resizebox{0.7\textwidth}{!}{
         \begin{threeparttable}
@@ -412,21 +353,23 @@ Now we will test these models through the pipeline and evaluate their performanc
             \textbf{Model} & Acc & F1 & Latency \\
             \midrule
             stella\_en\_1.5B\_v5                  & 0.8961          & 0.9028          & 17.692s \\
-            jina-embeddings-v3\tnote{*}           & 0.8852          & 0.9097          & 4.8745s \\
-            gte-large-en-v1.5\tnote{*}            & 0.8971          & \textbf{0.9174} & 5.8571s \\
             multilingual-e5-large-instruct        & 0.8954          & 0.9018          & 5.0038s \\
-            bge-small-en-v1.5                     & \textbf{0.9014} & 0.9077          & \textbf{1.6958s} \\
+            bge-small-en-v1.5                     & \textbf{0.9014} & 0.9077          & \textbf{1.6958s} \\\hline
+            \rowcolor{gry}
+            jina-embeddings-v3\tnote{*}           & 0.8852          & 0.9097          & 4.8745s \\
+            \rowcolor{gry}
+            gte-large-en-v1.5\tnote{*}            & 0.8971          & \textbf{0.9174} & 5.8571s \\
             \bottomrule
         \end{tabular}
         \begin{tablenotes}
             \item[*] The models were not able to complete the evaluation due to memory constraints, Jina evaluated on the 2238/2800 and Gte-large evaluated on the 2322/2800.
         \end{tablenotes}
     \end{threeparttable}}
-    \caption{Evaluation Results for Different Embedding Models through the Pipeline (just with the Gemma2 model)}
     \label{tab:evaluation_results_embedding}
 \end{table}
 
-Based on the Table~\ref{tab:evaluation_results_embedding}, we use the \textit{bge-small-en-v1.5} model for the subsequent evaluations and analyses due to its superior performance across accuracy metric.
+Based on the Table~\ref{tab:evaluation_results_embedding}, we use the \textit{bge-small-en-v1.5} model for the subsequent evaluations and analyses due to its superior performance across F1 and accuracy metrics.
+The low latency of 1.6958 seconds per query also makes it an attractive choice for real-time applications.
 The F1 score of \textit{gte-large-en-v1.5} is slightly higher, but the model is not able to complete the evaluation due to memory limitations in the same pipeline.
 
 \section{Chunking Strategies}\label{sec:chunking-strategies}
@@ -446,17 +389,7 @@ If the final chunk is smaller than the designated size, it is typically padded o
     \item \textbf{512-token chunks:} This medium-sized chunk strikes a balance between granularity and context preservation. It is often considered a good default choice for many applications.
     \item \textbf{1024-token chunks:} Larger chunks preserve more context but may retrieve more irrelevant information and increase computational overhead during retrieval and processing.
 \end{itemize}
-\subsubsection{Advantages and Limitations}
-Advantages:
-\begin{enumerate}
-    \item Simple to implement and understand
-    \item Consistent chunk sizes facilitate uniform processing
-\end{enumerate}
-Limitations:
-\begin{enumerate}
-    \item Fixed chunk sizes may not align with natural breaks in the text
-    \item Larger chunks can introduce irrelevant information and increase computational costs
-\end{enumerate}
+
 \subsection{Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}\label{subsec:smaller-child-chunks-referring-to-bigger-parent-chunks}
 The second method, which we will refer to as \textit{Small2Big}, involves creating a hierarchical structure of chunks, where smaller child chunks refer to larger parent chunks.
 This approach aims to combine the benefits of fine-grained retrieval with the context preservation of larger chunks.
@@ -489,46 +422,79 @@ all_nodes_dict = {n.node_id: n for n in all_nodes}
 # ... continue processing
 \end{lstlisting}
 
-\subsubsection{Advantages and Limitations}
-Advantages:
-\begin{enumerate}
-    \item Allows for fine-grained retrieval with the option to expand context
-    \item Adapts to different levels of specificity required by queries
-\end{enumerate}
-Limitations:
-\begin{enumerate}
-    \item More complex to implement and manage
-    \item Increased storage requirements due to redundancy in the hierarchy
-\end{enumerate}
 \subsection{Sentence Window Retrieval}\label{subsec:sentence-window-retrieval}
 The third method, Sentence Window Retrieval, focuses on maintaining semantic coherence by chunking based on sentences and incorporating surrounding context through windows.
 \subsubsection{Methodology}
 In this approach, documents are first split into individual sentences.
 For each sentence, a \textit{window} of surrounding sentences is included to provide context.
+we use the \textit{SentenceWindowNodeParser} to parse documents into single sentences per node.
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/window-ret}
+        \caption{Node sentence window replacement technique as described by Liu~\cite{liu2023tweet}.}
+        \label{fig:window-ret}
+    \end{minipage}
+\end{figure}
+Each node also contains a \textit{"window"} with the sentences on either side of the node sentence.
+Then, after retrieval, before passing the retrieved sentences to the LLM, the single sentences are replaced with a window containing the surrounding sentences using the MetadataReplacementNodePostProcessor.
+This is most useful for large documents/indexes, as it helps to retrieve more fine-grained details.
 We will examine two window sizes: 3 and 6.
-For each sentence, the chunk includes the sentence itself, one preceding sentence, and one following sentence.
-
-\subsubsection{Advantages and Limitations}
-Advantages:
-\begin{enumerate}
-    \item Preserves semantic units (sentences) and their immediate context
-    \item Adapts to the natural structure of the text
-\end{enumerate}
-Limitations:
-\begin{enumerate}
-    \item Variable chunk sizes may complicate processing and indexing
-    \item Optimal window size may vary depending on the document type and content
-\end{enumerate}
-\subsection{Evaluation}\label{subsec:evaluation}
+%There is example of the \textit{SentenceWindowNodeParser} and \textit{MetadataReplacementNodePostProcessor} in the Appendix~\ref{ch:chunking}.
+\subsection{Advantages and Limitations}\label{subsec:advantages-and-limitations}
+Table~\ref{tab:window-segmentation-analysis} provides an analysis of the advantages and limitations of each text segmentation method based on their methodological approach.
 Each of the three chunking methods presented in this section offers distinct advantages and limitations for RAG systems.
 The choice of method depends on factors such as the nature of the documents, the specific requirements of the application, and the computational resources available.
-The fixed-size chunking method provides simplicity and consistency but may sacrifice semantic coherence. 
-The Small2Big hierarchical approach offers flexibility in retrieval granularity but introduces complexity in implementation and storage. 
+The fixed-size chunking method provides simplicity and consistency but may sacrifice semantic coherence.
+The Small2Big hierarchical approach offers flexibility in retrieval granularity but introduces complexity in implementation and storage.
 Sentence Window Retrieval preserves semantic units and adapts to text structure but may result in variable chunk sizes.
 
+Examples of the three chunking methods are available in the Appendix~\ref{ch:chunking} for further reference.
+
+\begin{table}[h!]
+    \footnotesize
+    \caption{Advantages and Limitations of different chunking strategies for RAG systems.}
+    \begin{xltabular}{\linewidth}{lXX}
+        \toprule
+        \textbf{Method} & \textbf{Advantages} & \textbf{Limitations} \\
+        \midrule
+        Fixed Chunking &
+        $\ast$ Simple to implement and understand \newline
+        $\ast$ Consistent chunk sizes facilitate uniform processing
+        &
+        $\ast$ Fixed chunk sizes may not align with natural breaks in the text \newline
+        $\ast$ Larger chunks can introduce irrelevant information and increase computational costs
+        \\ \hline
+        Small2Big &
+        $\ast$ Allows for fine-grained retrieval with the option to expand context \newline
+        $\ast$ Adapts to different levels of specificity required by queries
+        &
+        $\ast$ More complex to implement and manage \newline
+        $\ast$ Increased storage requirements due to redundancy in the hierarchy
+        \\\hline
+        Sentence Window &
+        $\ast$ Preserves semantic units (sentences) and their immediate context \newline
+        $\ast$ Adapts to the natural structure of the text
+        &
+        $\ast$ Variable chunk sizes may complicate processing and indexing \newline
+        $\ast$ Optimal window size may vary depending on the document type and content \\
+        \bottomrule
+    \end{xltabular}
+    \label{tab:window-segmentation-analysis}
+\end{table}
+
+\subsection{Evaluation}\label{subsec:evaluation}
+The Table~\ref{tab:table_chunking} illustrates that as the chunk size increases, there is a minor downtick in the average latency.
+Consider that the pipeline's average response time increases as the chunk size increases, which is expected as the model has to process more tokens.
+Interestingly, the faithfulness (\ie measuring how closely response is aligned with the source material) seems to reach its zenith at chunk\_size of 1024, whereas average relevancy shows a consistent improvement with larger chunk sizes, also peaking at 1024.
+This suggests that a chunk size of 1024 might strike an optimal balance between response time and the quality of the responses, measured in terms of faithfulness and relevancy.
+In the sliding window method, the window size of 3 outperforms the window size of 6 in terms of both accuracy and F1 score, while maintaining nearly the same average response time.
+We can figure out that the baseline accuracy and F1 scores across chunking strategies indicate that the model’s performance is largely unaffected by these variations, suggesting that factors other than chunk size, may have a more significant impact on the retrieval process.
 \begin{table}[h!]
     \centering
     \noindent
+    \caption{Performance evaluation of various chunking strategy on the FactBench dataset, using the Gemma2 model.}
     {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5,\fbox{\textit{Chunking Strategy}}}\\
     \resizebox{0.75\textwidth}{!}{
         \begin{tabular}{llccc}
@@ -544,20 +510,17 @@ Sentence Window Retrieval preserves semantic units and adapts to text structure 
                                                 & Window Size: 6        & \textbf{0.9014} & 0.9077          & 0.03534s \\
             \bottomrule
         \end{tabular}}
-    \caption{Evaluation Results for Different Chunking Strategies through the Pipeline (just with the Gemma2 model)}
     \label{tab:table_chunking}
 \end{table}
-Examples of the three chunking methods are available in the Appendix~\ref{ch:chunking} for further reference.
 
-The high baseline accuracy and F1 scores across chunking strategies indicate that the model’s performance is largely unaffected by these variations, suggesting that factors other than chunk size, may have a more significant impact on the retrieval process.
-We choose the Sliding Window method as it provides the surrounding context of the text and for the window size, we select 3 as it has the highest F1 score and accuracy.
+We chose the Sliding Window with window size 3 method as it provides the surrounding context of the text and has the highest F1 score and accuracy.
 
 \section{Similarity Cut-off}\label{sec:similar-cut-off}
 In this section we will discuss how similarity cut-off can be used to filter out irrelevant nodes and improve the efficiency of the retrieval process.
 We use Node postprocessors to apply a similarity cut-off to the retrieved nodes, discarding those with a similarity score below a certain threshold.
 Node postprocessors are a set of modules that take a set of nodes, and apply some kind of transformation or filtering before returning them.
 For our experiments, we set the similarity cut-off threshold to 0.3, meaning that nodes with a similarity score below 0.3 are discarded, we use the naive score and the re-ranker score to compare the results.
-
+The Algorithm~\ref{alg:algorithm} shows the similarity cut-off postprocessor implementation.
 \begin{algorithm}
     \begin{algorithmic}[1]
         \Procedure{PostprocessNodes}{nodes, knowledge\_graph, similarity\_cutoff}
@@ -576,29 +539,30 @@ For our experiments, we set the similarity cut-off threshold to 0.3, meaning tha
             \State \Return $new\_nodes$
         \EndProcedure
     \end{algorithmic}
-    \caption{Similarity Cutoff Postprocessor}\label{alg:algorithm}
+    \caption{Similarity Cutoff Postprocessor (re-rank score)}\label{alg:algorithm}
 \end{algorithm}
 
 \begin{table}[h!]
     \centering
     \noindent
+    \caption{Performance evaluation of similarity cut-off method on the FactBench dataset, using the Gemma2 model.}
     {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), \fbox{\textit{Similarity Cut-off}}}\\
     \resizebox{0.7\textwidth}{!}{
         \begin{threeparttable}
-        \begin{tabular}{lccc}
-            \toprule
-            \textbf{Method} & Acc & F1 & Latency\tnote{*} \\
-            \midrule
-            w/o similarity cut-off                                  & 0.8971          & 0.9036                  &  N/A \\
-            similarity cut-off (original score)                     & \textbf{0.9018} & \textbf{0.9080}         & -0.22237s \\
-            similarity cut-off (re-ranked score)                    & 0.9014          & \textbf{0.9080}         & -0.350783 \\
-            \bottomrule
-        \end{tabular}
-        \begin{tablenotes}
-            \item[*] The latency is compared to the baseline without the similarity cut-off on average per query.
-        \end{tablenotes}
-    \end{threeparttable}}
-    \caption{Evaluation Results for Different Similarity Cut through the Pipeline (just with the Gemma2 model)}
+            \begin{tabular}{lccc}
+                \toprule
+                \textbf{Method} & Acc & F1 & Latency Diff.\tnote{*} \\
+                \midrule
+                \rowcolor{LightGreen}
+                w/o similarity cut-off (baseline)                       & 0.8971          & 0.9036                  &  -- \\\hline
+                similarity cut-off (original score)                     & \textbf{0.9018} & \textbf{0.9080}         & -0.22237s \\
+                similarity cut-off (re-ranked score)                    & 0.9014          & \textbf{0.9080}         & -0.350783 \\
+                \bottomrule
+            \end{tabular}
+            \begin{tablenotes}
+                \item[*] The latency is compared to the baseline without the similarity cut-off on average per query.
+            \end{tablenotes}
+        \end{threeparttable}}
     \label{tab:table_similarity_cut}
 \end{table}
 
@@ -607,14 +571,16 @@ This approach yields the highest accuracy and F1 score, though it is slightly sl
 A drawback of re-ranking is that it may eliminate all relevant nodes based on low similarity score, requiring a re-run without the similarity cut-off, which increases processing time (not shown in the Table~\ref{tab:table_similarity_cut}).
 In separate evaluations (not reported in Table~\ref{tab:table_similarity_cut}), we also tested a normalized similarity cut-off using re-ranked scores scaled between the original minimum and maximum values.
 However, this normalized approach did not perform as well as the original scores.
+
 \section{Top K}\label{sec:top-k}
 Top\_k mentions how many top embeddings to take into context.
 Considering a large top\_k might go beyond the max\_tokens of the model, we will evaluate the performance of the pipeline with the top\_k set to 3 and 6, and compare the results to determine the optimal value for this parameter.
 \begin{table}[h!]
     \centering
     \noindent
+    \caption{Performance evaluation of different Top\_k retrieval strategies on the FactBench dataset using the Gemma2 model. }
     {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original),\fbox{\textit{Top\_k}}}
-    \resizebox{0.4\textwidth}{!}{
+    \resizebox{0.45\textwidth}{!}{
         \begin{threeparttable}
         \begin{tabular}{lccc}
             \toprule
@@ -628,23 +594,38 @@ Considering a large top\_k might go beyond the max\_tokens of the model, we will
             \item[*] The latency represents the average time per query for a complete run.
         \end{tablenotes}
         \end{threeparttable}}
-    \caption{Evaluation Results for Different Top\_k through the Pipeline (just with the Gemma2 model)}
     \label{tab:table_top_k}
 \end{table}
-
-As we decided to set the similarity cut-off with 0.3 threshold, it's good to use the top\_k 6 to have more high-quality embeddings in the context, and based on results it outperforms the top\_k 3, so we will use top\_k 6 for subsequent evaluations.
+\newline
+As we decided to set the similarity cut-off with 0.3 threshold, it's good to use the top\_k 6 to have more high-quality embeddings in the context, and based on results on Table~\ref{tab:table_top_k} it outperforms the top\_k 3, so we will use top\_k 6 for subsequent evaluations.
 The difference in latency is significant, presenting a trade-off between more data and response time.
 Since the quality of data for additional facts is uncertain, we aim to include more data in the context.
 
 \section{Evaluation}\label{sec:evaluation-and-discussion}
 In this ablation study, we evaluate the performance of the merging method, which leverages a novel ensemble approach by combining multiple models (\textit{Gemma2}, \textit{Qwen2.5}, \textit{Llama3.1}, and \textit{Mistral}) to show the robustness and accuracy of the pipeline.
-As presented in Tables~\ref{tab:evaluation_results-full-category} and~\ref{tab:evaluation_results-full-wo-category}, along with Figures~\ref{fig:correct-radar-chart}, ~\ref{fig:wrong-radar-chart}, and ~\ref{fig:all-radar-chart}, the proposed ensemble method consistently outperforms individual models across both positive and negative labels, achieving a more balanced and comprehensive performance.
+As presented in Tables~\ref{tab:evaluation_results-full-category} and~\ref{tab:evaluation_results-full-wo-category}, along with Figure~\ref{fig:radar-charts}, the proposed ensemble method consistently outperforms individual models across both positive and negative labels, achieving a more balanced and comprehensive performance.
 
 Note that the ensemble method is based on the tie-breaking strategy discussed in Section~\ref{subsec:conflict-resolution-strategies}, with \textit{At\_Most} as the merging method.
 Based on the provided configurations the model selected for \textit{At\_Most} methodology is the \textit{Gemma2:21B}.
 
-\begin{table}
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/combined_correct_radar_chart}
+    \end{minipage}
+    \hspace{0.05\textwidth} % Space between the images
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/combined_wrong_radar_chart}
+    \end{minipage}
+    \caption{Category-wise performance of different models in identifying Positive Labels (left) and Negative Labels (right) on the FactBench dataset.}
+    \label{fig:radar-charts}
+\end{figure}
+
+\begin{table}[h!]
     \noindent
+    \caption{Category-wise performance evaluation results of various models on the FactBench dataset.}
     {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original), Top\_k 6}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lcccccccccc||c}
@@ -666,17 +647,17 @@ Based on the provided configurations the model selected for \textit{At\_Most} me
             Proposed (At\_Most)                & 0.8846                                                  & 0.9308                                                  & 0.9077                                                  & 0.7692                                                            & 0.8923                                                  & 0.6615                                                    & 0.9000                                                            & 0.8846                                                  & 0.8385                                 & 0.7462                                   & 0.8415 \\
             \bottomrule
         \end{tabular}}
-    \caption{Pipeline Evaluation Results - Category-wise}
     \label{tab:evaluation_results-full-category}
 \end{table}
 
 \begin{table}
     \noindent
+    \caption{Performance evaluation of various models on the FactBench dataset.}
     {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original), Top\_k 6}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lccc||cc}
             \toprule
-            \textbf{Model}                     & \textbf{Stability}             & \textbf{Avg. Request Duration} & \textbf{Avg. tokens per request}          & \textbf{ACC} & \textbf{F1} \\
+            \textbf{Model}                     & \textbf{Consistency}             & \textbf{Avg. Request Duration} & \textbf{Avg. tokens per request}          & \textbf{ACC} & \textbf{F1} \\
             \midrule
             Gemma2                             & 0.8720                         & 5.6826s                            & 1605.29                                       & \textbf{0.9032}    & \textbf{0.9101}   \\
             Qwen2.5                            & 0.8685                         & 6.3094s                            & 1652.66                                       & 0.8729    & 0.8888   \\
@@ -685,54 +666,37 @@ Based on the provided configurations the model selected for \textit{At\_Most} me
             Proposed (At\_Most)                & \textbf{0.9176}                & 16.815s                            & 1604.196                                      & 0.8964    & 0.9071   \\
             \bottomrule
         \end{tabular}}
-    \caption{Pipeline Evaluation Results}
     \label{tab:evaluation_results-full-wo-category}
 \end{table}
 
-\begin{figure}[ht!]
-    \centering
-    \begin{minipage}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{res/combined_correct_radar_chart}
-        \caption{Positive Labels}
-        \label{fig:correct-radar-chart}
-    \end{minipage}
-    \hspace{0.05\textwidth} % Space between the images
-    \begin{minipage}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{res/combined_wrong_radar_chart}
-        \caption{Negative Labels}
-        \label{fig:wrong-radar-chart}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}[ht!]
-    \centering
-    \begin{minipage}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{res/combined_radar_chart}
-        \caption{All Labels}
-        \label{fig:all-radar-chart}
-    \end{minipage}
-\end{figure}
-
+%
+%\begin{figure}[ht!]
+%    \centering
+%    \begin{minipage}[b]{0.4\textwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{res/combined_radar_chart}
+%    \end{minipage}
+%    \caption{Category-wise performance of different models on the FactBench dataset.}
+%    \label{fig:all-radar-chart}
+%\end{figure}
 
 \section{Failure Analysis}\label{sec:faiure-analysis}
 To gain a deeper understanding of the limitations and challenges faced by our fact-checking system, we conducted a comprehensive failure analysis using the \textit{FactBench} dataset.
 By examining the instances where our system, based on the majority vote, failed to correctly verify the facts, we aimed to identify the main error types and provide insights into the reasons behind these failures.
 \subsubsection{Error Type Categorization}
-After analyzing the failure cases, we categorized the errors into five main types:
+After analyzing the failure cases, we categorized the errors into four main types:
 \begin{itemize}
     \item \textbf{Insufficient or Irrelevant Context:} In some cases, the provided context information does not directly support or refute the given triple. The LLMs struggle to make accurate judgments when the necessary facts are missing or the available information is tangentially related to the claim.
     \item \textbf{Misinterpretation of Relationships:} The LLMs sometimes misinterpret the relationships between entities mentioned in the context. They may confuse family relations, professional associations, or the nature of events.
     \item \textbf{Over reliance on Keyword Matching:} In some instances, the LLMs rely too heavily on surface-level keyword matching rather than understanding the underlying semantics. The presence of certain words or phrases can lead to incorrect assumptions.
     \item \textbf{Lack of Common Sense Reasoning:} The LLMs can struggle with applying common sense knowledge or reasoning about the plausibility of claims. They may fail to consider the unlikelihood of certain scenarios or relationships.
-    \item \textbf{Difficulty with Negation and Contradiction:} The LLMs sometimes struggle with handling negation or identifying contradictions between the triple and the context information. They may overlook explicit denials or fail to recognize inconsistencies.
+%    \item \textbf{Difficulty with Negation and Contradiction:} The LLMs sometimes struggle with handling negation or identifying contradictions between the triple and the context information. They may overlook explicit denials or fail to recognize inconsistencies.
 \end{itemize}
 
-To quantify the distribution of error types, we classified each error instance into one or more of five categories, allowing for overlaps when errors fit multiple categories.
+%To quantify the distribution of error types, we classified each error instance into one or more of four categories, allowing for overlaps when errors fit multiple categories.
 \begin{table}[h!]
     \footnotesize
+    \caption{Overview of failure cases and error analysis observed in the FactBench dataset.}
     \begin{xltabular}{\linewidth}{p{3cm}p{3cm}X}
         \toprule
         \textbf{Error Type} & \textbf{Triple} & \textbf{Description} \\
@@ -741,14 +705,13 @@ To quantify the distribution of error types, we classified each error instance i
         Mis Interpretation of Relationships & Mitt Romney office Dallas & LLMs mistakenly infer that Romney has an office in Dallas based on his attendance at a fundraiser there. Attending an event doesn't imply having a permanent office. \\
         Over reliance on Keyword Matching & Robbie Williams office Los Angeles & LLMs wrongly assume Robbie Williams has an office in Los Angeles due to text discussing his purchase or sell of a property there, not an office. \\
         Lack of Common Sense Reasoning & Saul Bellow starring Nobel Prize in Literature & LLMs fail to recognize "starring" is inappropriate for receiving a Nobel Prize. Common sense suggests terms like "awarded" or "received." \\
-        Difficulty with Negation and Contradiction & John William Strutt team Nobel Prize in Physics & LLMs confirm the presence of a team, despite no evidence suggesting Strutt was part of one. The context mentions Strutt’s Nobel Prize but lacks information about team involvement. \\
+%        Difficulty with Negation and Contradiction & John William Strutt team Nobel Prize in Physics & LLMs confirm the presence of a team, despite no evidence suggesting Strutt was part of one. The context mentions Strutt’s Nobel Prize but lacks information about team involvement. \\
         \bottomrule
     \end{xltabular}
-    \caption{Examples of Failure Cases and Error Analysis}
     \label{tab:factbench-failure-analysis}
 \end{table}
 
-Based on Figures~\ref{fig:wrong_prediction_distribution_0} and~\ref{fig:wong_prediction_distribution_1}, The "foundationPlace" relation shows the highest number of total instances and errors in both charts.
+Based on Figure~\ref{fig:wrong_prediction_distribution}, The "foundationPlace" relation shows the highest number of total instances and errors in both charts.
 This suggests that the model struggles most with verifying facts about the locations where organizations or institutions were founded.
 The large discrepancy between correct and incorrect predictions for this relation indicates a significant challenge in accurately processing location-based information.
 
@@ -764,16 +727,14 @@ This indicates that the model has some difficulty in correctly identifying profe
     \begin{minipage}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{res/radar-error-0}
-        \caption{Distribution of Fully Incorrect Predictions 4/4}
-        \label{fig:wrong_prediction_distribution_0}
     \end{minipage}
     \hspace{0.05\textwidth} % Space between the images
     \begin{minipage}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{res/radar-error-1}
-        \caption{Distribution of Partially Incorrect Predictions 3/4}
-        \label{fig:wong_prediction_distribution_1}
     \end{minipage}
+    \caption{Prediction accuracy on the FactBench dataset, focusing on incorrect predictions. The left chart illustrates the Distribution of Fully Incorrect Predictions (4/4), detailing the instances where all predictions made by the model were incorrect. The right chart depicts the Distribution of Partially Incorrect Predictions (3/4).}
+    \label{fig:wrong_prediction_distribution}
 \end{figure}
 
-In general, by comparing Figures~\ref{fig:wrong_prediction_distribution_0} and~\ref{fig:wong_prediction_distribution_1}, we can observe that the overall shape of the error distribution is similar, indicating consistency in the model's performance across different voting thresholds
+In general, by spotting Figure~\ref{fig:wrong_prediction_distribution}, we can observe that the overall shape of the error distribution is similar, indicating consistency in the model's performance across different voting thresholds.

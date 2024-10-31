@@ -48,8 +48,19 @@
 \RequirePackage{indentfirst}
 
 % captions
-\RequirePackage{caption}
+\RequirePackage[font=small,labelfont=bf]{caption}
 \RequirePackage{subcaption}
+
+% tables row colors
+\RequirePackage{color, colortbl}
+\definecolor{gry}{gray}{0.9}
+\definecolor{LightGreen}{rgb}{0.9,1,0.8}
+
+% acronyms eg, ie, etc, etc...
+\RequirePackage{xspace}
+
+
+
 
 % footnotes
 \RequirePackage{footnote}

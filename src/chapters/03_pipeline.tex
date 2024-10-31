@@ -58,7 +58,7 @@ The implementation of a knowledge graph fulfills multiple essential functions:
 The Knowledge Graph Dataset in our pipeline is composed of several key components:
 \begin{itemize}
     \item \textbf{Nodes:} Representing entities or concepts, nodes are the fundamental units of information in the graph. Each node typically corresponds to a distinct piece of knowledge, such as a person, place, event, or abstract concept.
-    \item \textbf{Edges:} These are the connections between nodes, representing relationships or interactions. Edges are often directional and labeled to indicate the nature of the relationship (e.g., "is\_a", "part\_of", "created\_by").
+    \item \textbf{Edges:} These are the connections between nodes, representing relationships or interactions. Edges are often directional and labeled to indicate the nature of the relationship (\ex, "is\_a", "part\_of", "created\_by").
     \item \textbf{Properties:} Nodes and edges can have associated properties or attributes that provide additional details or metadata about the entity or relationship.
 \end{itemize}
 
@@ -71,7 +71,7 @@ The Query Generation and Processing step, following to the basic Knowledge Graph
 This section clarifies the techniques and methodologies utilized in this critical phase for subsequent actions in the information retrieval process.
 
 \subsection{Human-Understandable Text Generation}\label{subsec:human-understandable-text-generation}
-In the first step of the pipeline, we use a LLM (ie. LLama3~\cite{dubey2024llama3herdmodels}, Gemma2~\cite{gemmateam2024gemma2improvingopen}) to easily generate human-readable text by submitting prompts.
+In the first step of the pipeline, we use a LLM (\ie LLama3~\cite{dubey2024llama3herdmodels}, Gemma2~\cite{gemmateam2024gemma2improvingopen}) to easily generate human-readable text by submitting prompts.
 This approach bridges the gap between representing raw data and conveying it in natural language, making the information more accessible and understandable.
 For additional information, consult the prompt template in Appendix~\ref{sec:prompt-templates:human-understandable} to observe the sentence generation process.
 
@@ -83,9 +83,9 @@ Key aspects of this process include:
 \end{itemize}
 
 Be aware that certain knowledge graph datasets are human-readable, whereas others are not; for instance, the FactBench~\cite{GERBER201585} dataset may be easily comprehended by concatenating the subject, predicate, and object of each triple.
-% TODO: DBpedia refrence needed to be added
 \begin{table}[h!]
     \noindent
+    \caption{Examples of Human-Understandable Text Generation, illustrates entries from multiple knowledge graphs, detailing the transformation of raw triples into readable sentences.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{p{3cm} p{3cm} p{3cm} c c p{3cm}}
             \toprule
@@ -101,7 +101,7 @@ Be aware that certain knowledge graph datasets are human-readable, whereas other
             \textit{Shock\_to\_the \_System \_(Gemma\_Hayes \_song)} & \textit{length} & \textit{221.0} & DBpedia & \ding{51} & \textit{The length of Shock to the System (Gemma Hayes song) is 221.0.} \\
             \textit{Paora\_Winitana} & \textit{years} & \textit{2011} & DBpedia & \ding{51} & \textit{Paora Winitana was active in 2011.} \\
             \bottomrule
-        \end{tabular}}\caption{Examples of Generation of Human-Understandable Text}
+        \end{tabular}}
     \label{tab:Text-Generation}
 \end{table}
 
@@ -116,9 +116,8 @@ This multi-question approach serves several purposes:
     \item \textbf{Robustness:} The diversity of questions increases the likelihood of capturing the user's true intent, even if the original input is vague or imprecise.
 \end{itemize}
 
-Implementation of this technique likely involves:
-Using \ac{LLMs} to generate 10 questions about the input sentence, leveraging the models' language understanding capabilities to ensure the questions are relevant and contextually appropriate.
-The prompt template used to guide the question generation process reported in Appendix~\ref{sec:prompt-templates:10-question}.
+Implementing this technique involves using \ac{LLMs} to generate 10 questions about the input sentence, leveraging the models’ language understanding capabilities to ensure the questions are relevant and contextually appropriate.
+The prompt template used to guide the question generation process is reported in Appendix~\ref{sec:prompt-templates:10-question}.
 
 \subsection{Cross-Encoder for Query Relevance Scoring}\label{subsec:cross-encoder-for-query-relevance-scoring}
 The Cross-Encoder component is essential for evaluating the relevance of the generated questions.
@@ -129,21 +128,21 @@ As indicated in the Figure~\ref{fig:cross-encoder-articture}, this module takes 
     \begin{minipage}[b]{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{res/Cross-Encoder}
-        \caption{Cross-Encoder Architecture}
-        \label{fig:cross-encoder-articture}
     \end{minipage}
+    \caption{Cross-Encoder component, which assesses the relevance of generated questions by taking multiple input pairs and assigning a relevance score to each, supporting question evaluation and refinement.}
+    \label{fig:cross-encoder-articture}
 \end{figure}
 
 Key features of the Cross-Encoder include:
 
 \begin{itemize}
-    \item Input Processing
+    \item \textbf{Input Processing:}
     \begin{itemize}
         \item Source Sentence: The original input text.
         \item Sentences to Compare: Likely the 10 generated questions.
     \end{itemize}
-    \item Scoring Mechanism: The Cross-Encoder assigns numerical scores (e.g., 0.83 as shown in the figure~\ref{fig:cross-encoder-articture}) to each question, indicating its relevance to the source sentence.
-    \item Comparative Analysis: By processing all inputs simultaneously, the Cross-Encoder can perform nuanced comparisons between the original input and each generated question, as well as among the questions themselves.
+    \item \textbf{Scoring Mechanism:} The Cross-Encoder assigns numerical scores (\eg, 0.83 as shown in the figure~\ref{fig:cross-encoder-articture}) to each question, indicating its relevance to the source sentence.
+    \item \textbf{Comparative Analysis:} By processing all inputs simultaneously, the Cross-Encoder can perform nuanced comparisons between the original input and each generated question, as well as among the questions themselves.
 \end{itemize}
 
 In this case we use the \textit{jinaai/jina-reranker-v1-turbo-en}\footnote{\url{https://huggingface.co/jinaai/jina-reranker-v1-turbo-en}} model from the Hugging Face Transformers library.
@@ -156,13 +155,14 @@ The model employs a process known as knowledge distillation to attain exceptiona
     \begin{minipage}[b]{\textwidth}
         \centering
         \includegraphics[width=0.7\textwidth]{res/knowledge-distill}
-        \caption{Knowledge Distillation Process}
-        \label{fig:knowledge-distill}
     \end{minipage}
+    \caption{Knowledge Distillation Process for Enhanced Re-Ranking Efficiency}
+    \label{fig:knowledge-distill}
 \end{figure}
 
 \begin{table}[h!]
     \noindent
+    \caption{Example of generated questions by the Gemma2 model with relevance scores assigned by the Jina Re-ranker Cross-Encoder.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{llc}
             \toprule
@@ -179,7 +179,7 @@ The model employs a process known as knowledge distillation to attain exceptiona
             & What is the significance of the award given to Frédéric Passy? & 0.6036 \\
             & Is there a Nobel laureate with the name Frédéric Passy? & 0.8505 \\
             \bottomrule
-        \end{tabular}}\caption{Question Generation and Scoring Procedure}
+        \end{tabular}}
     \label{tab:Question scoring}
 \end{table}
 
@@ -202,10 +202,10 @@ This integration serves to expand the information horizon beyond the confines of
 Key aspects of this integration include:
 
 \begin{itemize}
-    \item \textbf{Query Submission:} The system submits the N top questions (where N is a predefined number) along with the main question to Google Search. This approach ensures a multi-faceted search that captures various aspects of the original query.
+    \item \textbf{Query Submission:} The system submits the $N$ top questions (where $N$ is a predefined number) along with the main question to Google Search. This approach ensures a multi-faceted search that captures various aspects of the original query.
     \item \textbf{Result Fetching:} As indicated in the diagram, the system retrieves the top 100 search results. This number strikes a balance between comprehensiveness and computational efficiency.
     \item \textbf{Dynamic Information Access:} By leveraging Google Search, the system gains access to up-to-date information, complementing the more static nature of the internal Knowledge Graph.
-    \item \textbf{Diverse Source Types:} Google Search results typically include a variety of source types (e.g., websites, news articles, academic papers), enriching the diversity of the retrieved information.
+    \item \textbf{Diverse Source Types:} Google Search results typically include a variety of source types (\eg, websites, news articles, academic papers), enriching the diversity of the retrieved information.
 \end{itemize}
 
 \begin{figure}[ht!]
@@ -213,15 +213,15 @@ Key aspects of this integration include:
     \begin{minipage}[b]{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{res/Google-Search-Result}
-        \caption{Fetching the results from Google Search}
-        \label{fig:google-search-result}
     \end{minipage}
+    \caption{Fetching results from Google Search engine for top $N$ questions and the main knowledge graph query.}
+    \label{fig:google-search-result}
 \end{figure}
 
 Implementation considerations:
 \begin{itemize}
     \item The system may employ proxies or other mechanisms to manage rate limits and ensure uninterrupted access to search results.
-    \item The search query may be customized based on the specific requirements of the pipeline, such as language restrictions, geolocation preferences, or result quantity. parameters are lr, hl, gl, and num.
+    \item The search query may be customized based on the specific requirements of the pipeline, such as language restrictions, geolocation preferences, or result quantity. parameters are \textit{lr}, \textit{hl}, \textit{gl}, and \textit{num}.
 \end{itemize}
 
 Take note that the code base is generic, and it means that you can use any search engine, not only Google Search.
@@ -294,9 +294,9 @@ Key features of the \textit{newspaper4k} library include:
     \begin{minipage}[b]{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{res/Google-Search-Result-Content}
-        \caption{Extracted Content from the Crawled URLs using newspaper4k}
-        \label{fig:google-search-result-content}
     \end{minipage}
+    \caption{Extracted content from the crawled URLs using newspaper4k library.}
+    \label{fig:google-search-result-content}
 \end{figure}
 
 For our purpose, we only use the text content of the page.
@@ -339,22 +339,22 @@ Key aspects of this embedding process include:
     \item \textbf{Dimensionality Reduction:} Transforming high-dimensional textual data into lower-dimensional vector spaces while preserving semantic relationships.
 \end{itemize}
 
-we use the \textit{SentenceWindowNodeParser} to parse documents into single sentences per node.
-Each node also contains a \textit{"window"} with the sentences on either side of the node sentence.
-Then, after retrieval, before passing the retrieved sentences to the LLM, the single sentences are replaced with a window containing the surrounding sentences using the MetadataReplacementNodePostProcessor.
-This is most useful for large documents/indexes, as it helps to retrieve more fine-grained details.
-
-\begin{figure}[ht!]
-    \centering
-    \begin{minipage}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{res/window-ret}
-        \caption{Node sentence window replacement~\cite{liu2023tweet}}
-        \label{fig:window-ret}
-    \end{minipage}
-\end{figure}
-
-There is example of the \textit{SentenceWindowNodeParser} and \textit{MetadataReplacementNodePostProcessor} in the Appendix~\ref{sec:chunking:sliding-window}.
+%we use the \textit{SentenceWindowNodeParser} to parse documents into single sentences per node.
+%Each node also contains a \textit{"window"} with the sentences on either side of the node sentence.
+%Then, after retrieval, before passing the retrieved sentences to the LLM, the single sentences are replaced with a window containing the surrounding sentences using the MetadataReplacementNodePostProcessor.
+%This is most useful for large documents/indexes, as it helps to retrieve more fine-grained details.
+%
+%\begin{figure}[ht!]
+%    \centering
+%    \begin{minipage}[b]{\textwidth}
+%        \centering
+%        \includegraphics[width=\textwidth]{res/window-ret}
+%        \caption{Node sentence window replacement~\cite{liu2023tweet}}
+%        \label{fig:window-ret}
+%    \end{minipage}
+%\end{figure}
+%
+%There is example of the \textit{SentenceWindowNodeParser} and \textit{MetadataReplacementNodePostProcessor} in the Appendix~\ref{sec:chunking:sliding-window}.
 
 \subsubsection{Challenges and Considerations}
 Several challenges and considerations are inherent in the Embedding and Retrieval Tasks:
@@ -372,7 +372,7 @@ One of the most important aspects that is highlighted in the pipeline diagram is
 This strategy likely involves:
 \begin{itemize}
     \item \textbf{Threshold Definition:} Establishing a similarity threshold below which embedded chunks are considered insufficiently relevant or related to the query or context.
-    \item \textbf{Similarity Metrics:} Employing appropriate similarity measures (e.g., cosine similarity, Euclidean distance) to quantify the relatedness between embedded representations.
+    \item \textbf{Similarity Metrics:} Employing appropriate similarity measures (\eg, cosine similarity, Euclidean distance) to quantify the relatedness between embedded representations.
     \item \textbf{Re-run Mechanism:} Potentially re-do the response generation process if the similarity cutoff is not met for all the documents and the response is not generated.
 \end{itemize}
 
@@ -405,7 +405,7 @@ Implementation considerations:
     \item \textbf{Version Management:} Maintaining and updating multiple LLMs to ensure they remain current and aligned with the latest advancements in NLP.
 \end{itemize}
 
-For running open-source LLMs, we use \textit{Ollama}\footnote{\url{https://ollama.com/}}, Ollama is an open-source project that simplifies the process of setting up, running, and using large language models (LLMs) locally on your machine.
+For running open-source LLMs, we use \textit{Ollama}\footnote{\url{https://ollama.com/}}, Ollama is an open-source project that simplifies the process of setting up, running, and using LLMs locally on your machine.
 It provides a user-friendly area for managing and interacting with various LLMs, making it easier for developers and enthusiasts to experiment with AI without relying on cloud services.
 Under the hood, \textit{Ollama} is just an API server written in go that serves GGUF models via llama.cpp~\footnote{\url{https://github.com/ggerganov/llama.cpp}} and a centralized hub of models/settings.
 
@@ -456,7 +456,7 @@ Implementation challenges:
     \item \textbf{Threshold Setting:} Establishing the criteria for what constitutes a "majority" and how to handle cases with no clear consensus.
     \item \textbf{Combining Diverse Outputs:} Developing methods to meaningfully aggregate potentially disparate outputs from different models into a coherent final response.
 \end{itemize}
-The pipeline incorporates several mechanisms for resolving conflicts that may arise from divergent model outputs:
+The pipeline incorporates several mechanisms for resolving conflicts that may arise from divergent model outputs.
 
 \subsection{Conflict Resolution Strategies}\label{subsec:conflict-resolution-strategies}
 As previously discussed~\ref{subsec:majority-voting-system}, the system employs a majority voting approach among LLMs to determine the most appropriate response.
@@ -469,7 +469,7 @@ Key aspects of the final judge implementation:
 \begin{itemize}
     \item \textbf{Conflict Identification:} Detecting discrepancies or contradictions in outputs from different models.
     \item \textbf{Resolution Mechanisms:} Using predefined rules or algorithms to determine the final output based on the majority voting results.
-    \item \textbf{Tie-Breaking:}Implementing strategies for scenarios where the majority voting system results in a tie or lacks a clear consensus.
+    \item \textbf{Tie-Breaking:} Implementing strategies for scenarios where the majority voting system results in a tie or lacks a clear consensus.
     \item \textbf{Consistency Enforcement:} Ensuring that the final output maintains logical consistency and aligns with established knowledge bases.
 \end{itemize}
 
@@ -478,10 +478,10 @@ The final judge module used a system named \textit{Adaptive Conflict Resolution}
 \subsubsection{Adaptive Conflict Resolution}
 The pipeline demonstrates an adaptive approach to conflict resolution, as evidenced by the following feature:
 "When two of the language models believe the answer is correct, and two believe it is wrong, we switch to a more advanced model, such as a commercial one or a model with more parameters."
-There are two ways to apply this adaptive method: 1) Directly selecting paid models (e.g., GPT-4), or 2) Using a more advanced, open-source model with more parameters (e.g., Gemma2:27b).
+There are two ways to apply this adaptive method: 1) Directly selecting commercial models (\eg, GPT-4), or 2) Using a more advanced, open-source model with more parameters (\eg, Gemma2:27b).
 For the second option, we use the algorithm shown in Algorithm~\ref{alg:model-selection}.
 This algorithm uses the mapping between the already used and final models to select the final model.
-It utilizes parameters to identify either the most stable model or the least stable model to choose based on a majority vote across the entire system.
+It utilizes parameters to identify either the most consistent model or the least consistent model to choose based on a majority vote across the entire system.
 
 This adaptive strategy offers several advantages:
 \begin{itemize}
@@ -564,6 +564,7 @@ The pipeline flow can be broadly categorized into several main stages, each with
 Let's examine each of these stages in detail in table~\ref{tab:pipeline-decision-points}, focusing on the flow of information and the critical decision points within each.
 \begin{table}[ht!]
     \noindent
+    \caption{Comprenhensive list of decision points in the pipeline flow.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lp{11cm}}
             \toprule
@@ -598,7 +599,7 @@ Let's examine each of these stages in detail in table~\ref{tab:pipeline-decision
             Final Judge Implementation & Determination of the final response based on aggregated model outputs and conflict resolution results. \\
             Response Generation & Selection of the most appropriate format and level of detail for the response. \\
             \bottomrule
-        \end{tabular}}\caption{Comprenhensive list of decision points in the pipeline flow.}
+        \end{tabular}}
     \label{tab:pipeline-decision-points}
 \end{table}
 
@@ -620,36 +621,44 @@ In Tables~\ref{tab:pipeline-performance-report},~\ref{tab:pipeline-performance-r
 Other sections of the pipeline, such as RAG and conflict resolution mechanisms, will be evaluated in future chapters.
 \begin{table}[ht!]
     \noindent
+    \caption{Performance of our LLM-based tasks in production, generated by Openlit~\footnote{\url{https://openlit.io/}} with \textit{Gemma2} model.}
     \resizebox{\textwidth}{!}{
+        \begin{threeparttable}
         \begin{tabular}{lcc}
             \toprule
-            \textbf{Task} & \textbf{Avg. Request Duration} & \textbf{Avg. tokens per request} \\
+            \textbf{Task} & \textbf{Avg. Request Time}\tnote{*} & \textbf{Avg. tokens per request} \\
             \midrule
             Human understandable text~\ref{subsec:human-understandable-text-generation} & 1.3164 sec & 343.16 \\
             Question Generation~\ref{subsec:question-formulation-techniques} & 9.6076 sec & 672.58 \\
             \bottomrule
-        \end{tabular}}
-    \caption{Performance of our LLM applications in production, generated by Openlit~\footnote{\url{https://openlit.io/}} with \textit{Gemma2} model.}
+        \end{tabular}
+        \begin{tablenotes}
+            \item[*] The average time is calculated on the Macbook Pro with M2 max chip and 32GB of RAM\@.
+        \end{tablenotes}
+        \end{threeparttable}}
     \label{tab:pipeline-performance-report}
 \end{table}
 
 \begin{table}[ht!]
 %    \noindent
     \centering
+    \caption{Performance of our information retrieval mechanisms.}
+    \begin{threeparttable}
     \begin{tabular}{lc}
         \toprule
-        \textbf{Task} & \textbf{Avg. Duration} \\
+        \textbf{Task} & \textbf{Avg. Time}\tnote{*} \\
         \midrule
         Sorting the questions by similarity~\ref{subsec:cross-encoder-for-query-relevance-scoring} & 0.013 sec \\
         Get documents (Google pages)~\ref{subsec:google-search-integration} & 3.6 sec \\
         Fetch documents for each triple~\ref{subsec:process-and-extract-links} & 350 sec \\
         \bottomrule
     \end{tabular}
-    \caption{Performance of our Information Retrieval Mechanisms.}
+    \begin{tablenotes}
+        \item[*] The average time is calculated on the unix based server with 2 cores and 4GB of RAM\@.
+    \end{tablenotes}
+    \end{threeparttable}
     \label{tab:pipeline-performance-report-2}
 \end{table}
-
-
 
 \section{Ethical Considerations and Limitations}\label{sec:ethical-considerations-and-limitations}
 The development and deployment of advanced pipelines, such as the one described in this thesis, necessitate a thorough examination of ethical considerations and an acknowledgment of system limitations.
@@ -665,13 +674,6 @@ The system's ability to synthesize information from various sources poses risks 
     \item \textbf{Generation of Harmful Content:} Risk of producing responses that could be considered harmful, offensive, or inappropriate.
 \end{itemize}
 
-%Mitigation Strategies:
-%\begin{itemize}
-%    \item Implementation of fact-checking mechanisms and reliable source prioritization.
-%    \item Content filtering systems to detect and prevent the generation of harmful or inappropriate responses.
-%    \item Regular updates to the system to address emerging misinformation trends.
-%\end{itemize}
-
 \subsubsection{Environmental Considerations}\label{subsubsec:environmental-considerations}
 The computational resources required to run multiple LLMs and process large volumes of data raise environmental concerns:
 \begin{itemize}
@@ -679,18 +681,12 @@ The computational resources required to run multiple LLMs and process large volu
     \item \textbf{Carbon Footprint:} Environmental impact of the infrastructure required to support the pipeline.
 \end{itemize}
 
-%Mitigation Strategies:
-%\begin{itemize}
-%    \item Optimization of model efficiency and resource utilization.
-%    \item Exploration of more energy-efficient hardware and green computing practices.
-%    \item Consideration of the trade-offs between model complexity and environmental impact.
-%\end{itemize}
-
 \subsection{Limitations}\label{subsec:limitations}
 Understanding and acknowledging the limitations of the system is crucial for ethical deployment and user trust:
 
 \begin{table}[h!]
     \noindent
+    \caption{Limitations of the pipeline, categorized by scope of knowledge.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lp{11cm}}
             \toprule
@@ -716,6 +712,7 @@ Understanding and acknowledging the limitations of the system is crucial for eth
             Static Knowledge Base & Limitations in adapting to real-time changes without system updates. \\
             Learning from Interactions & Inability to learn and improve from individual user interactions due to privacy and architectural constraints. \\
             \bottomrule
-            \end{tabular}}\caption{Limitions of the pipeline.}
+            \end{tabular}
+    }
     \label{tab:pipeline-limitations}
 \end{table}

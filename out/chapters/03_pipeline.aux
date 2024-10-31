@@ -20,25 +20,25 @@
 \newlabel{subsec:human-understandable-text-generation}{{3.2.1}{19}{Human-Understandable Text Generation}{subsection.3.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Question Formulation Techniques}{19}{subsection.3.2.2}\protected@file@percent }
 \newlabel{subsec:question-formulation-techniques}{{3.2.2}{19}{Question Formulation Techniques}{subsection.3.2.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Examples of Generation of Human-Understandable Text}}{20}{table.caption.26}\protected@file@percent }
-\newlabel{tab:Text-Generation}{{3.1}{20}{Examples of Generation of Human-Understandable Text}{table.caption.26}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Examples of Human-Understandable Text Generation, illustrates entries from multiple knowledge graphs, detailing the transformation of raw triples into readable sentences.}}{20}{table.caption.26}\protected@file@percent }
+\newlabel{tab:Text-Generation}{{3.1}{20}{Examples of Human-Understandable Text Generation, illustrates entries from multiple knowledge graphs, detailing the transformation of raw triples into readable sentences}{table.caption.26}{}}
 \acronymused{LLMs}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Cross-Encoder for Query Relevance Scoring}{20}{subsection.3.2.3}\protected@file@percent }
 \newlabel{subsec:cross-encoder-for-query-relevance-scoring}{{3.2.3}{20}{Cross-Encoder for Query Relevance Scoring}{subsection.3.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Cross-Encoder Architecture}}{21}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:cross-encoder-articture}{{3.2}{21}{Cross-Encoder Architecture}{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Knowledge Distillation Process}}{21}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:knowledge-distill}{{3.3}{21}{Knowledge Distillation Process}{figure.caption.28}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Question Generation and Scoring Procedure}}{22}{table.caption.29}\protected@file@percent }
-\newlabel{tab:Question scoring}{{3.2}{22}{Question Generation and Scoring Procedure}{table.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Cross-Encoder component, which assesses the relevance of generated questions by taking multiple input pairs and assigning a relevance score to each, supporting question evaluation and refinement.}}{21}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:cross-encoder-articture}{{3.2}{21}{Cross-Encoder component, which assesses the relevance of generated questions by taking multiple input pairs and assigning a relevance score to each, supporting question evaluation and refinement}{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Knowledge Distillation Process for Enhanced Re-Ranking Efficiency}}{21}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:knowledge-distill}{{3.3}{21}{Knowledge Distillation Process for Enhanced Re-Ranking Efficiency}{figure.caption.28}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Example of generated questions by the Gemma2 model with relevance scores assigned by the Jina Re-ranker Cross-Encoder.}}{22}{table.caption.29}\protected@file@percent }
+\newlabel{tab:Question scoring}{{3.2}{22}{Example of generated questions by the Gemma2 model with relevance scores assigned by the Jina Re-ranker Cross-Encoder}{table.caption.29}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Relevance Threshold and Sorting}{22}{subsection.3.2.4}\protected@file@percent }
 \newlabel{subsec:relevance-threshold-and-sorting}{{3.2.4}{22}{Relevance Threshold and Sorting}{subsection.3.2.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Information Retrieval Mechanisms}{22}{section.3.3}\protected@file@percent }
 \newlabel{sec:information-retrieval-mechanisms}{{3.3}{22}{Information Retrieval Mechanisms}{section.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Google Search Integration}{22}{subsection.3.3.1}\protected@file@percent }
-\newlabel{subsec:google-search-integration}{{3.3.1}{22}{Google Search Integration}{subsection.3.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Fetching the results from Google Search}}{23}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:google-search-result}{{3.4}{23}{Fetching the results from Google Search}{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Google Search Integration}{23}{subsection.3.3.1}\protected@file@percent }
+\newlabel{subsec:google-search-integration}{{3.3.1}{23}{Google Search Integration}{subsection.3.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Fetching results from Google Search engine for top $N$ questions and the main knowledge graph query.}}{23}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:google-search-result}{{3.4}{23}{Fetching results from Google Search engine for top $N$ questions and the main knowledge graph query}{figure.caption.30}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Process and Extract Links}{24}{subsection.3.3.2}\protected@file@percent }
 \newlabel{subsec:process-and-extract-links}{{3.3.2}{24}{Process and Extract Links}{subsection.3.3.2}{}}
 \AC@undonewlabel{acro:HTML}
@@ -46,50 +46,48 @@
 \acronymused{HTML}
 \newlabel{lst:crawling-urls}{{3.1}{24}{Crawling the Extracted URLs}{lstlisting.3.1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}{\ignorespaces Crawling the Extracted URLs}}{24}{lstlisting.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Extracted Content from the Crawled URLs using newspaper4k}}{26}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:google-search-result-content}{{3.5}{26}{Extracted Content from the Crawled URLs using newspaper4k}{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Extracted content from the crawled URLs using newspaper4k library.}}{26}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:google-search-result-content}{{3.5}{26}{Extracted content from the crawled URLs using newspaper4k library}{figure.caption.32}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Data Pool Creation}{26}{subsection.3.3.3}\protected@file@percent }
 \newlabel{subsec:data-pool-creation}{{3.3.3}{26}{Data Pool Creation}{subsection.3.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Data filtering}{26}{subsection.3.3.4}\protected@file@percent }
-\newlabel{subsec:data-filtering}{{3.3.4}{26}{Data filtering}{subsection.3.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Data filtering}{27}{subsection.3.3.4}\protected@file@percent }
+\newlabel{subsec:data-filtering}{{3.3.4}{27}{Data filtering}{subsection.3.3.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Embedding and Retrieval Tasks}{27}{section.3.4}\protected@file@percent }
 \newlabel{sec:embedding-and-retrieval-tasks}{{3.4}{27}{Embedding and Retrieval Tasks}{section.3.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Embedding Techniques for Smaller Chunks}{27}{subsection.3.4.1}\protected@file@percent }
 \newlabel{subsec:embedding-techniques-for-smaller-chunks}{{3.4.1}{27}{Embedding Techniques for Smaller Chunks}{subsection.3.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Node sentence window replacement~\blx@tocontentsinit {0}\cite {liu2023tweet}}}{28}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:window-ret}{{3.6}{28}{Node sentence window replacement~\cite {liu2023tweet}}{figure.caption.33}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Challenges and Considerations}{28}{figure.caption.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Similarity Cutoff Strategy}{29}{subsection.3.4.2}\protected@file@percent }
-\newlabel{subsec:similarity-cutoff-strategy}{{3.4.2}{29}{Similarity Cutoff Strategy}{subsection.3.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Challenges and Considerations}{28}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Similarity Cutoff Strategy}{28}{subsection.3.4.2}\protected@file@percent }
+\newlabel{subsec:similarity-cutoff-strategy}{{3.4.2}{28}{Similarity Cutoff Strategy}{subsection.3.4.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}LLMs}{29}{section.3.5}\protected@file@percent }
 \newlabel{sec:large-language-models-llms-in-the-pipeline}{{3.5}{29}{LLMs}{section.3.5}{}}
 \acronymused{LLMs}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Integration of Multiple LLMs}{30}{subsection.3.5.1}\protected@file@percent }
-\newlabel{subsec:integration-of-multiple-llms}{{3.5.1}{30}{Integration of Multiple LLMs}{subsection.3.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Roles of LLMs in the Pipeline}{31}{subsection.3.5.2}\protected@file@percent }
-\newlabel{subsec:roles-of-llms-in-the-pipeline}{{3.5.2}{31}{Roles of LLMs in the Pipeline}{subsection.3.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Integration of Multiple LLMs}{29}{subsection.3.5.1}\protected@file@percent }
+\newlabel{subsec:integration-of-multiple-llms}{{3.5.1}{29}{Integration of Multiple LLMs}{subsection.3.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Roles of LLMs in the Pipeline}{30}{subsection.3.5.2}\protected@file@percent }
+\newlabel{subsec:roles-of-llms-in-the-pipeline}{{3.5.2}{30}{Roles of LLMs in the Pipeline}{subsection.3.5.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.6}Voting System and Conflict Resolution}{31}{section.3.6}\protected@file@percent }
 \newlabel{sec:model-diversity-and-conflict-resolution}{{3.6}{31}{Voting System and Conflict Resolution}{section.3.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Majority Voting System}{32}{subsection.3.6.1}\protected@file@percent }
-\newlabel{subsec:majority-voting-system}{{3.6.1}{32}{Majority Voting System}{subsection.3.6.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Majority Voting System}{31}{subsection.3.6.1}\protected@file@percent }
+\newlabel{subsec:majority-voting-system}{{3.6.1}{31}{Majority Voting System}{subsection.3.6.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}Conflict Resolution Strategies}{32}{subsection.3.6.2}\protected@file@percent }
 \newlabel{subsec:conflict-resolution-strategies}{{3.6.2}{32}{Conflict Resolution Strategies}{subsection.3.6.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Final Judge Implementation:}{33}{subsection.3.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Final Judge Implementation:}{32}{subsection.3.6.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Adaptive Conflict Resolution}{33}{subsection.3.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Pipeline Flow and Decision Points}{34}{section.3.7}\protected@file@percent }
-\newlabel{sec:pipeline-flow-and-decision-points}{{3.7}{34}{Pipeline Flow and Decision Points}{section.3.7}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Resolve Ties in Majority Voting System}}{35}{algorithm.1}\protected@file@percent }
-\newlabel{alg:model-selection}{{1}{35}{Resolve Ties in Majority Voting System}{algorithm.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Comprenhensive list of decision points in the pipeline flow.}}{36}{table.caption.34}\protected@file@percent }
-\newlabel{tab:pipeline-decision-points}{{3.3}{36}{Comprenhensive list of decision points in the pipeline flow}{table.caption.34}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Resolve Ties in Majority Voting System}}{34}{algorithm.1}\protected@file@percent }
+\newlabel{alg:model-selection}{{1}{34}{Resolve Ties in Majority Voting System}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Pipeline Flow and Decision Points}{35}{section.3.7}\protected@file@percent }
+\newlabel{sec:pipeline-flow-and-decision-points}{{3.7}{35}{Pipeline Flow and Decision Points}{section.3.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Comprenhensive list of decision points in the pipeline flow.}}{36}{table.caption.33}\protected@file@percent }
+\newlabel{tab:pipeline-decision-points}{{3.3}{36}{Comprenhensive list of decision points in the pipeline flow}{table.caption.33}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.8}Performance Report}{37}{section.3.8}\protected@file@percent }
 \newlabel{sec:performance-report}{{3.8}{37}{Performance Report}{section.3.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Performance of our LLM applications in production, generated by Openlit~\let \reserved@d =[\def \par }}{37}{table.caption.35}\protected@file@percent }
-\newlabel{tab:pipeline-performance-report}{{3.4}{37}{Performance of our LLM applications in production, generated by Openlit~\footnote {\url {https://openlit.io/}} with \textit {Gemma2} model}{table.caption.35}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Performance of our Information Retrieval Mechanisms.}}{37}{table.caption.36}\protected@file@percent }
-\newlabel{tab:pipeline-performance-report-2}{{3.5}{37}{Performance of our Information Retrieval Mechanisms}{table.caption.36}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.9}Ethical Considerations and Limitations}{38}{section.3.9}\protected@file@percent }
-\newlabel{sec:ethical-considerations-and-limitations}{{3.9}{38}{Ethical Considerations and Limitations}{section.3.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Performance of our LLM-based tasks in production, generated by Openlit~\let \reserved@d =[\def \par }}{37}{table.caption.34}\protected@file@percent }
+\newlabel{tab:pipeline-performance-report}{{3.4}{37}{Performance of our LLM-based tasks in production, generated by Openlit~\footnote {\url {https://openlit.io/}} with \textit {Gemma2} model}{table.caption.35}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Performance of our information retrieval mechanisms.}}{37}{table.caption.36}\protected@file@percent }
+\newlabel{tab:pipeline-performance-report-2}{{3.5}{37}{Performance of our information retrieval mechanisms}{table.caption.37}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.9}Ethical Considerations and Limitations}{37}{section.3.9}\protected@file@percent }
+\newlabel{sec:ethical-considerations-and-limitations}{{3.9}{37}{Ethical Considerations and Limitations}{section.3.9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.9.1}Ethical Considerations}{38}{subsection.3.9.1}\protected@file@percent }
 \newlabel{subsec:ethical-considerations}{{3.9.1}{38}{Ethical Considerations}{subsection.3.9.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Misinformation and Harmful Content}{38}{subsection.3.9.1}\protected@file@percent }
@@ -98,8 +96,8 @@
 \newlabel{subsubsec:environmental-considerations}{{3.9.1}{38}{Environmental Considerations}{subsection.3.9.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.9.2}Limitations}{38}{subsection.3.9.2}\protected@file@percent }
 \newlabel{subsec:limitations}{{3.9.2}{38}{Limitations}{subsection.3.9.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Limitions of the pipeline.}}{39}{table.caption.37}\protected@file@percent }
-\newlabel{tab:pipeline-limitations}{{3.6}{39}{Limitions of the pipeline}{table.caption.37}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Limitations of the pipeline, categorized by scope of knowledge.}}{39}{table.caption.38}\protected@file@percent }
+\newlabel{tab:pipeline-limitations}{{3.6}{39}{Limitations of the pipeline, categorized by scope of knowledge}{table.caption.38}{}}
 \@setckpt{chapters/03_pipeline}{
 \setcounter{page}{40}
 \setcounter{equation}{0}
@@ -116,7 +114,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{6}
+\setcounter{figure}{5}
 \setcounter{table}{6}
 \setcounter{section@level}{0}
 \setcounter{Item}{8}
@@ -146,7 +144,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{29}
+\setcounter{instcount}{27}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}

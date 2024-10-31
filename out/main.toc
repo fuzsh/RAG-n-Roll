@@ -27,25 +27,25 @@
 \contentsline {subsection}{\numberline {3.2.3}Cross-Encoder for Query Relevance Scoring}{20}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Relevance Threshold and Sorting}{22}{subsection.3.2.4}%
 \contentsline {section}{\numberline {3.3}Information Retrieval Mechanisms}{22}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Google Search Integration}{22}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.1}Google Search Integration}{23}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Process and Extract Links}{24}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Data Pool Creation}{26}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Data filtering}{26}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.4}Data filtering}{27}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Embedding and Retrieval Tasks}{27}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Embedding Techniques for Smaller Chunks}{27}{subsection.3.4.1}%
-\contentsline {subsubsection}{Challenges and Considerations}{28}{figure.caption.33}%
-\contentsline {subsection}{\numberline {3.4.2}Similarity Cutoff Strategy}{29}{subsection.3.4.2}%
+\contentsline {subsubsection}{Challenges and Considerations}{28}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Similarity Cutoff Strategy}{28}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}LLMs}{29}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Integration of Multiple LLMs}{30}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Roles of LLMs in the Pipeline}{31}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.1}Integration of Multiple LLMs}{29}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Roles of LLMs in the Pipeline}{30}{subsection.3.5.2}%
 \contentsline {section}{\numberline {3.6}Voting System and Conflict Resolution}{31}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Majority Voting System}{32}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.1}Majority Voting System}{31}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Conflict Resolution Strategies}{32}{subsection.3.6.2}%
-\contentsline {subsubsection}{Final Judge Implementation:}{33}{subsection.3.6.2}%
+\contentsline {subsubsection}{Final Judge Implementation:}{32}{subsection.3.6.2}%
 \contentsline {subsubsection}{Adaptive Conflict Resolution}{33}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}Pipeline Flow and Decision Points}{34}{section.3.7}%
+\contentsline {section}{\numberline {3.7}Pipeline Flow and Decision Points}{35}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Performance Report}{37}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Ethical Considerations and Limitations}{38}{section.3.9}%
+\contentsline {section}{\numberline {3.9}Ethical Considerations and Limitations}{37}{section.3.9}%
 \contentsline {subsection}{\numberline {3.9.1}Ethical Considerations}{38}{subsection.3.9.1}%
 \contentsline {subsubsection}{Misinformation and Harmful Content}{38}{subsection.3.9.1}%
 \contentsline {subsubsection}{Environmental Considerations}{38}{subsection.3.9.1}%
@@ -86,40 +86,37 @@
 \contentsline {subsubsection}{Jina.ai Reranker}{59}{subsection.5.2.2}%
 \contentsline {subsubsection}{MS MARCO MiniLM}{60}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}Evaluation with Large Language Models}{61}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Embedding Models}{62}{section.5.3}%
+\contentsline {section}{\numberline {5.3}Embedding Models}{63}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Gte-large-en-v1.5}{63}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Jina-embeddings-v3}{64}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}Stella\_en\_1.5B\_v5}{65}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Multilingual-e5-large-instruct}{65}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}bge-small-en-v1.5}{66}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.4}Multilingual-e5-large-instruct}{66}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}bge-small-en-v1.5}{67}{subsection.5.3.5}%
 \contentsline {subsection}{\numberline {5.3.6}Comparative Analysis}{67}{subsection.5.3.6}%
 \contentsline {subsubsection}{Model Size and Efficiency}{67}{subsection.5.3.6}%
-\contentsline {subsubsection}{Language Coverage}{68}{table.caption.54}%
-\contentsline {subsubsection}{Supported Features}{68}{table.caption.54}%
-\contentsline {subsubsection}{Conclusion}{69}{table.caption.54}%
-\contentsline {section}{\numberline {5.4}Chunking Strategies}{69}{section.5.4}%
+\contentsline {subsubsection}{Language Coverage}{68}{table.caption.55}%
+\contentsline {subsubsection}{Conclusion}{68}{table.caption.55}%
+\contentsline {section}{\numberline {5.4}Chunking Strategies}{70}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Parsing Documents into Text Chunks}{70}{subsection.5.4.1}%
 \contentsline {subsubsection}{Methodology}{70}{subsection.5.4.1}%
 \contentsline {subsubsection}{Chunk Sizes}{70}{subsection.5.4.1}%
-\contentsline {subsubsection}{Advantages and Limitations}{71}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}{71}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.2}Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}{70}{subsection.5.4.2}%
 \contentsline {subsubsection}{Methodology}{71}{subsection.5.4.2}%
-\contentsline {subsubsection}{Advantages and Limitations}{72}{lstnumber.5.1.17}%
-\contentsline {subsection}{\numberline {5.4.3}Sentence Window Retrieval}{72}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.3}Sentence Window Retrieval}{71}{subsection.5.4.3}%
 \contentsline {subsubsection}{Methodology}{72}{subsection.5.4.3}%
-\contentsline {subsubsection}{Advantages and Limitations}{73}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Evaluation}{73}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.4}Advantages and Limitations}{72}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Evaluation}{73}{subsection.5.4.5}%
 \contentsline {section}{\numberline {5.5}Similarity Cut-off}{74}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Top K}{75}{section.5.6}%
 \contentsline {section}{\numberline {5.7}Evaluation}{76}{section.5.7}%
 \contentsline {section}{\numberline {5.8}Failure Analysis}{77}{section.5.8}%
 \contentsline {subsubsection}{Error Type Categorization}{77}{section.5.8}%
 \contentsline {chapter}{\numberline {6}Conclusions and Future Works}{81}{chapter.6}%
-\contentsline {chapter}{Appendices}{83}{section*.68}%
+\contentsline {chapter}{Appendices}{83}{section*.70}%
 \contentsline {chapter}{\numberline {A}Prompt Templates}{83}{appendix.1.A}%
 \contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{83}{section.1.A.1}%
 \contentsline {section}{\numberline {A.2}Question Generation Prompt}{84}{section.1.A.2}%
 \contentsline {section}{\numberline {A.3}RAG Prompt}{85}{section.1.A.3}%
 \contentsline {chapter}{\numberline {B}Chunking Strategies}{87}{appendix.1.B}%
-\contentsline {chapter}{References}{91}{section*.72}%
-\contentsline {chapter}{Acknowledgments}{95}{section*.74}%
+\contentsline {chapter}{References}{91}{section*.74}%
+\contentsline {chapter}{Acknowledgments}{95}{section*.76}%
