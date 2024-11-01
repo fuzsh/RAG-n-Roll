@@ -69,8 +69,8 @@
 \contentsline {subsubsection}{Latency and Efficiency Measures}{46}{subsection.4.3.1}%
 \contentsline {subsubsection}{Consistency Evaluation}{47}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}System Configurations}{48}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Comparative Analysis}{50}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Discussion of Results}{50}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.4}Comparative Analysis}{49}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Discussion of Results}{49}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Key Findings}{51}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Error Analysis}{51}{subsection.4.4.3}%
 \contentsline {chapter}{\numberline {5}Ablation Study}{53}{chapter.5}%
@@ -94,8 +94,8 @@
 \contentsline {subsection}{\numberline {5.3.5}bge-small-en-v1.5}{65}{subsection.5.3.5}%
 \contentsline {subsection}{\numberline {5.3.6}Comparative Analysis}{65}{subsection.5.3.6}%
 \contentsline {subsubsection}{Model Size and Efficiency}{65}{subsection.5.3.6}%
-\contentsline {subsubsection}{Language Coverage}{66}{table.caption.55}%
-\contentsline {subsubsection}{Conclusion}{66}{table.caption.55}%
+\contentsline {subsubsection}{Language Coverage}{66}{table.caption.56}%
+\contentsline {subsubsection}{Conclusion}{66}{table.caption.56}%
 \contentsline {section}{\numberline {5.4}Chunking Strategies}{68}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Parsing Documents into Text Chunks}{68}{subsection.5.4.1}%
 \contentsline {subsubsection}{Methodology}{68}{subsection.5.4.1}%
@@ -112,11 +112,11 @@
 \contentsline {section}{\numberline {5.8}Failure Analysis}{75}{section.5.8}%
 \contentsline {subsubsection}{Error Type Categorization}{75}{section.5.8}%
 \contentsline {chapter}{\numberline {6}Conclusions and Future Works}{79}{chapter.6}%
-\contentsline {chapter}{Appendices}{81}{section*.70}%
+\contentsline {chapter}{Appendices}{81}{section*.71}%
 \contentsline {chapter}{\numberline {A}Prompt Templates}{81}{appendix.1.A}%
 \contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{81}{section.1.A.1}%
 \contentsline {section}{\numberline {A.2}Question Generation Prompt}{82}{section.1.A.2}%
 \contentsline {section}{\numberline {A.3}RAG Prompt}{83}{section.1.A.3}%
 \contentsline {chapter}{\numberline {B}Chunking Strategies}{85}{appendix.1.B}%
-\contentsline {chapter}{References}{89}{section*.74}%
-\contentsline {chapter}{Acknowledgments}{93}{section*.76}%
+\contentsline {chapter}{References}{89}{section*.75}%
+\contentsline {chapter}{Acknowledgments}{93}{section*.77}%

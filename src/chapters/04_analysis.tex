@@ -9,20 +9,20 @@ It comprises 2,800 facts, 1.500 true and 1.300 false, across three languages: En
 The dataset covers various domains, including geography, politics, and entertainment.
 The data was automatically extracted from Wikipedia\footnote{\url{https://www.wikipedia.org/}} (DBpedia respectively) and Freebase\footnote{\url{https://developers.google.com/freebase}}.
 
-To obtain positive examples, the repository leverages facts from both DBpedia and Freebase.
+To obtain positive examples, the authors leverages facts from both DBpedia and Freebase.
 For each property under consideration, they generated these examples by issuing either a SPARQL (for DBpedia) or MQL (for Freebase) query.
 They then selected the top 150 results.
 In Freebase, results are ranked using an internal relevance score, while in DBpedia, the results are sorted by the number of inbound links to the resource’s corresponding Wikipedia page.
 In total, 1500 correct statements were collected, with 750 allocated to both the test and training sets, ensuring that each relation had 150 positive facts equally distributed between the test and training sets.
 
-Generating negative examples is more complex than generating positive ones.
-To ensure that the negative examples closely resemble true statements (i.e., meaningful triples), the team altered the positive examples while still adhering to domain and range restrictions.
+For generating incorrect facts (negative examples), the authors modified correct ones while adhering to domain and range constraints.
+To ensure that the negative examples closely resemble true statements (\ie, meaningful triples), the team altered the positive examples while still adhering to domain and range restrictions.
 Given a triple (s, p, o) and its timespan (from, to) from the knowledge base, they used different methods to generate sets of negative examples.
 These methods include modifying the subject, object, both subject and object, or the property.
 Additionally, they included random modifications, a 20\% mix of these methods, and variations in the date.
 
 We don't consider the time aspect in our evaluation, as our system is not designed to handle time-sensitive issues.
-
+We consider a configuration where incorrect facts are a mix produced using different negative example generation strategies, resulting in a ground-truth accuracy of $\mu$ = 0.54.
 Key characteristics of \textit{FactBench} include:
 \begin{itemize}
     \item Multilingual support (English, German, and French)
@@ -56,8 +56,6 @@ The T-Box encompasses ontological entities and relationships, while A-Box contai
 After applying these filters, their working dataset consisted 4.6M entities with 170M triplets.
 
 From this filtered dataset, they conducted a comprehensive annotation study on 9,930 facts, which were carefully selected to represent diverse types of relationships and knowledge domains within DBpedia.
-This subset serves as the underlying knowledge graph for our experiments.
-
 To ensure annotation quality, Marchesin et al. implemented several measures:
 \begin{itemize}
     \item Multiple annotators per fact (minimum of three annotations per triplet)
@@ -69,6 +67,7 @@ To ensure annotation quality, Marchesin et al. implemented several measures:
 
 The dataset was carefully curated to ensure a manageable yet representative evaluation set, derived from the vast scale of \textit{DBpedia}.
 By utilizing this curated subset of \textit{DBpedia}, we benefit from a balance between the richness of a real-world knowledge graph and the practicality required for thorough empirical evaluation.
+For our evaluation system, we use subset of this annotated dataset, by removing facts with \textit{<UNK>} labels, resulting in 9,344 facts.
 
 \subsubsection{Dataset Summary}\label{subsubsec:empirical-evaluation:dataset-analysis:dbpedia:summary}
 To conclude, our empirical evaluation utilizes three distinct datasets: \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia}.
@@ -77,18 +76,18 @@ Table~\ref{tab:dataset-summary} summarizes the key features of these datasets:
 
 \begin{table}[h!]
     \centering
+    \caption{Statistical summary of FactBench, YAGO, and DBpedia datasets}
     \begin{tabular}{lccc}
         \toprule
-        \textbf{Feature} & \textbf{FactBench} & \textbf{YAGO} & \textbf{DBpedia} \\
+        & \textbf{FactBench} & \textbf{YAGO} & \textbf{DBpedia} \\
         \midrule
-        Number of Facts & 2,800 & 1,386 & 9,344 \\
-        Number of Predicates & 10 & 16 & 1,092 \\
-        Gold Accuracy & 0.54 & 0.99 & 0.85 \\
+        Num. of Facts & 2,800 & 1,386 & 9,344 \\
+        Num. of Predicates & 10 & 16 & 1,092 \\
 %        Query-Entity Pairs & N/A & N/A & N/A \\
         Avg. Facts per Entity & 2.42 & 1.69 & 3.18 \\
+        Gold Accuracy ($\mu$) & 0.54 & 0.99 & 0.85 \\
         \bottomrule
     \end{tabular}
-    \caption{Summary of Datasets Used in Empirical Evaluation}
     \label{tab:dataset-summary}
 \end{table}
 
@@ -101,26 +100,25 @@ This diverse selection of datasets enables a comprehensive evaluation of our ver
 \subsection{Gemma2}\label{subsec:empirical-evaluation:candidate-models:gemma2}
 Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models~\footnote{\url{https://deepmind.google/technologies/gemini/#introduction}}.
 They are text-to-text, decoder-only large language models, available in English, with open weights for both pre-trained variants and instruction-tuned variants.
-Gemma 2 implements a novel approach to attention mechanisms:
-\begin{itemize}
-    \item Every other layer uses a sliding window attention with a local context of 4096 tokens.
-    \item Alternating layers employ full quadratic global attention across the entire 8192 token context.
-\end{itemize}
+Gemma 2 implements a similar architecture to the original Gemma model, with a few key differences.
+The model alternates between local sliding window attention with a 4096-token span and global attention with an 8192-token span in alternate layers.
+Logits are capped within a specified range to stabilize the values during attention and final layers, with soft\_cap set to 50 for self-attention layers and 30 for the final layer.
+RMSNorm is used for normalization in transformer sub-layers, and \ac{GQA} with two groups enhances inference speed without sacrificing performance.
 This hybrid approach aims to balance efficiency with the ability to capture long-range dependencies in the input.
 
 We selected the \textit{Gemma2-9B} model for our evaluation, which has 9 billion parameters.
 The 9B model learns from a larger teacher model during initial training in pre-training and use on-policy distillation to refine its performance post-training.
-This approach allows Gemma2-9B to capture the knowledge and capabilities of the larger model while maintaining a more compact size.
+This approach allows \textit{Gemma2-9B} to capture the knowledge and capabilities of the larger model while maintaining a more compact size.
 As a result, \textit{Gemma2-9B} delivers competitive performance relative to models 2-3 times its size, making it an attractive choice for applications with computational constraints.
 
 \subsection{Qwen2.5}\label{subsec:empirical-evaluation:candidate-models:qwen2.5}
 \textit{Qwen2.5} is the latest series of Qwen LLMs~\cite{qwen2}.
 For \textit{Qwen2.5}, Alibaba Cloud~\footnote{\url{https://www.alibabacloud.com/en?_p_lc=7}} release a number of base language models and instruction-tuned language models ranging from 0.5 to 72 billion parameters.
 All models are pre-trained on our latest large-scale dataset, encompassing up to 18 trillion tokens.
-Compared to Qwen2, Qwen2.5 has acquired significantly more knowledge and has greatly improved capabilities in coding and mathematics.
-Additionally, the new models achieve significant improvements in instruction following, generating long texts (over 8K tokens), understanding structured data (e.g, tables), and generating structured outputs especially JSON.
+Compared to \textit{Qwen2}, \textit{Qwen2.5} has acquired significantly more knowledge and has greatly improved capabilities in coding and mathematics.
+Additionally, the new models achieve significant improvements in instruction following, generating long texts (over 8K tokens), understanding structured data (\eg, tables), and generating structured outputs especially JSON.
 \textit{Qwen2.5} models are generally more resilient to the diversity of system prompts, enhancing role-play implementation and condition-setting for chatbots.
-Like Qwen2, the \textit{Qwen2.5} language models support up to 128K tokens and can generate up to 8K tokens.
+Like \textit{Qwen2}, the \textit{Qwen2.5} language models support up to 128K tokens and can generate up to 8K tokens.
 They also maintain multilingual support for over 29 languages~\cite{qwen2.5}.
 
 We selected the \textit{Qwen2.5-7b} model for our evaluation, which has 7 billion parameters.
@@ -130,10 +128,14 @@ The Meta \textit{Llama3.1} collection of multilingual LLMs is a collection of pr
 The \textit{Llama3.1} instruction tuned text only models (8B, 70B, 405B) are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.
 
 \textit{Llama3.1} is an auto-regressive language model that uses an optimized transformer architecture.
-The tuned versions use \ac{SFT} and \ac{RLHF} to align with human preferences for helpfulness and safety.
-All model versions use \ac{GQA} for improved inference scalability.
-\textit{Llama3.1} was pre-trained on ~15 trillion tokens of data from publicly available sources.
-The fine-tuning data includes publicly available instruction datasets, as well as over 25M synthetically generated examples~\cite{dubey2024llama3herdmodels,meta2023llama3}.
+\textit{Llama3.1} was pre-trained on ~15 trillion tokens of data.
+In post-training The models produced by doing several rounds of alignment on top of the pre-trained model.
+Each round involves \ac{SFT}, \ac{RS}, and \ac{DPO}.
+Meta use synthetic data generation to produce the vast majority of our SFT examples, iterating multiple times to produce higher and higher quality synthetic data across all capabilities.
+Additionally, they invest in multiple data processing techniques to filter this synthetic data to the highest quality.
+This enables model to scale the amount of fine-tuning data across capabilities.
+Compared to previous versions of Llama, developers improved both the quantity and quality of the data we use for pre and post-training.
+These improvements include the development of more careful pre-processing and curation pipelines for pre-training data, the development of more rigorous quality assurance, and filtering approaches for post-training data~\cite{dubey2024llama3herdmodels,meta2023llama3}.
 
 We selected the \textit{Llama3.1-8b} model for our evaluation, which has 8 billion parameters.
 
@@ -149,26 +151,28 @@ We chose \textit{Gemma2}, \textit{Qwen2.5}, \textit{Llama3.1}, and \textit{Mistr
 Each of these models brings unique advantages to our verification framework, as summarized in Table~\ref{tab:candidate_models}.
 
 \begin{table}[h!]
-    \centering
-    \begin{tabular}{c|p{4cm}|p{8cm}}
+    \footnotesize
+    \caption{Summary of key strengths of selected candidate LLMs for knowledge graph fact verification.}
+    \begin{xltabular}{\linewidth}{cp{3.6cm}X}
         \toprule
         \textbf{Model} & \textbf{Key Strengths} & \textbf{Description} \\
         \midrule
-        \textbf{Gemma2} & Dense Retrieval and Query Processing & Optimized for dense retrieval tasks, Gemma2 processes complex linguistic structures, making it well-suited for entity-rich query generation and document ranking. \\
+        \multirow{3}{*}{Gemma2} & \multirow{3}{*}{\shortstack{Dense Retrieval \\\& Query Processing}} & Optimized for dense retrieval tasks, Gemma2 processes complex linguistic structures, making it well-suited for entity-rich query generation and document ranking. \\
         \hline
-        \textbf{Qwen2.5} & Logical Reasoning and Prompt Efficiency & Excels in reasoning tasks with minimal prompting. Its accuracy in logical inference supports consistent veracity assessments, especially for ambiguous or conflicting evidence. \\
+        \multirow{4}{*}{Qwen2.5} & \multirow{4}{*}{\shortstack{Logical Reasoning \\\& Prompt Efficiency}} & Excels in reasoning tasks with minimal prompting. Its accuracy in logical inference supports consistent veracity assessments, especially for ambiguous or conflicting evidence. \\
         \hline
-        \textbf{Llama3.1} & Efficiency and Versatility & Offers a balance of efficiency and accuracy, with robust performance across fact-checking benchmarks. Llama3.1's lower computational demands ensure responsive processing without compromising output quality. \\
+        \multirow{5}{*}{Llama3.1} & \multirow{5}{*}{Efficiency \& Versatility} & Offers a balance of efficiency and accuracy, with robust performance across fact-checking benchmarks. Llama3.1's lower computational demands ensure responsive processing without compromising output quality. \\
         \hline
-        \textbf{Mistral} & Context Sensitivity and Interpretability & Known for nuanced, context-driven outputs and interpretability. Mistral’s language generation capabilities provide clear, human-like explanations, critical for user-friendly veracity decisions. \\
+        \multirow{4}{*}{Mistral} & \multirow{4}{*}{\shortstack{Context Sensitivity \\\& Interpretability}} & Known for nuanced, context-driven outputs and interpretability. Mistral’s language generation capabilities provide clear, human-like explanations, making it ideal for understanding the facts like a human. \\
         \bottomrule
-    \end{tabular}
-    \caption{Summary of Candidate LLM Models for Knowledge Graph Fact Verification}
+    \end{xltabular}
     \label{tab:candidate_models}
 \end{table}
 
-These models, when used in ensemble, offer a balanced approach to handling complex fact verification tasks across knowledge graphs.
-The multi-model architecture ensures high adaptability and reliability, allowing the system to respond accurately to diverse verification scenarios.
+For model selection, we can choose either instruction-tuned and quantized models with similar architectures or with different architectures.
+Here, we opted for models with varied architectures to make the ensemble more versatile and capable of handling a wide range of query scenarios.
+Using diverse models in the ensemble offers a balanced approach to complex fact verification tasks across knowledge graphs.
+This multi-model setup enhances adaptability and reliability, allowing the system to respond accurately to diverse verification scenarios, even when they differ in nature.
 
 \section{Experimental Setup}\label{sec:empirical-evaluation:experimental-setup}
 \subsection{Performance Metrics and Evaluation}\label{subsec:empirical-evaluation:experimental-setup:performance-metrics-and-evaluation}
@@ -183,8 +187,8 @@ The evaluation of a fact-checking system typically involves assessing both the c
 
 Potential metrics include:
 \begin{itemize}
-    \item \textbf{Recall:} The proportion of relevant responses generated by the system among all possible relevant responses.
-    \item \textbf{Precision:} The proportion of correct responses among all generated responses.
+%    \item \textbf{Recall:} The proportion of relevant responses generated by the system among all possible relevant responses.
+%    \item \textbf{Precision:} The proportion of correct responses among all generated responses.
     \item \textbf{F1 Score:} The harmonic mean of precision and recall, providing a balanced measure of accuracy.
     \item \textbf{Accuracy:} The proportion of correct responses generated by the system.
 \end{itemize}
@@ -192,9 +196,9 @@ Potential metrics include:
 Given the complexity of the pipeline, evaluating its operational efficiency is crucial:
 \begin{itemize}
     \item \textbf{Response Time:} Measuring the end-to-end time from query input to response generation.
-    \item \textbf{Component-wise Latency:} Assessing the processing time of individual pipeline components (e.g., embedding generation, LLM processing).
-    \item \textbf{Resource Utilization:} Monitoring computational resource usage, particularly important given the use of multiple LLMs.
-    \item \textbf{Cost Efficiency:} Evaluating the cost-effectiveness of the pipeline in terms of computational resources and infrastructure.
+    \item \textbf{Component-wise Latency:} Assessing the processing time of individual pipeline components (\eg, embedding generation, LLM processing). Fully reported in ablation study in chapter~\ref{ch:ablation} and performance report in section~\ref{sec:performance-report}.
+%    \item \textbf{Resource Utilization:} Monitoring computational resource usage, particularly important given the use of multiple LLMs.
+    \item \textbf{Cost Efficiency:} Evaluating the cost-effectiveness of the pipeline in terms of computational resources and infrastructure by reporting the average token used per query.
 \end{itemize}
 \subsubsection{Consistency Evaluation}
 The use of multiple models and a conflict resolution mechanism necessitates specific evaluation of output consistency:
@@ -203,111 +207,82 @@ The use of multiple models and a conflict resolution mechanism necessitates spec
     \item \textbf{Stability Across Models:} Assessing the consistency of responses generated by different LLMs for the same query, refer to Algorithm~\ref{alg:stability-across-queries}.
 \end{itemize}
 \begin{algorithm}
-    \caption{Calculate Model Stability Per Model}
+    \caption{Calculate Model Consistency Per Model}
     \begin{algorithmic}[1]
         \Procedure{ModelStabilityCal}{$models$} \Comment{Containing binary results}
-            \State $numModels \gets \text{length}(models)$
-            \State Initialize empty dictionary $stabilityScores$
+            \State $m\_len \gets \text{length}(models)$, $stabilityScores \gets []$
 
-            \For{$i \gets 0$ to $numModels - 1$}
-                \State $model1 \gets models[i]$
-                \State Initialize empty list $modelStabilities$
+            \For{$i \gets 0$ to $m\_len - 1$}
+                \State $m1 \gets models[i]$, $mStabilities \gets []$
 
-                \For{$j \gets 0$ to $numModels - 1$}
+                \For{$j \gets 0$ to $m\_len - 1$}
                     \If{$i \neq j$}
-                        \State $model2 \gets models[j]$
-                        \State $matchCount \gets 0$
-                        \State $totalPredictions \gets \text{length}(model1)$
+                        \State $m2 \gets models[j]$, $matchCount \gets 0$
+                        \State $totPreds \gets \text{length}(m1)$
 
                         \For{$k \gets 0$ to $totalPredictions - 1$}
-                            \If{$model1[k] = model2[k]$}
+                            \If{$m1[k] = m2[k]$}
                                 \State $matchCount \gets matchCount + 1$
                             \EndIf
                         \EndFor
 
-                        \State Append $matchCount / totalPredictions$ to $modelStabilities$
+                        \State $mStabilities$ \gets $\dfrac{matchCount}{totPreds}$ \Comment{Append the stability score}
                     \EndIf
                 \EndFor
 
-                \State $stabilityScores[i] \gets \text{mean}(modelStabilities)$
+                \State $stabilityScores[i] \gets \text{mean}(mStabilities)$
             \EndFor
 
             \State \Return $stabilityScores$ \Comment{Dictionary with model stability scores}
         \EndProcedure
-    \end{algorithmic}\label{alg:stability-across-queries}
+    \end{algorithmic}
+    \label{alg:stability-across-queries}
 \end{algorithm}
 
 \subsection{System Configurations}\label{subsec:empirical-evaluation:experimental-setup:system-configurations}
-The system configurations are selected based on the best results obtained from black-box testing the pipeline through a series of experiments, detailed in section~\ref{ch:ablation}.
+The system configurations are selected based on the best results obtained from black-box testing the pipeline through a series of experiments, detailed in chapter~\ref{ch:ablation}.
 Table~\ref{tab:system-configurations} summarizes the key system configurations used in our empirical evaluation.
 
 {
     \noindent
     \centering
     \footnotesize
-    \begin{tabularx}{\linewidth}{XXX}
+    \begin{tabularx}{\linewidth}{lp{2.9cm}X}
+        \caption{System configurations for empirical evaluation} \\
         \toprule
-        \textbf{Section} & \textbf{Method/Model Used} & \textbf{Considerations} \\
+        \textbf{Section} & \textbf{Parameter} & \textbf{Considerations} \\
         \midrule
-        Human Understandable Text & Gemma2:9b & Other LLMs can be used, but using instruction-tuned models is recommended. This is skipped for \textit{FactBench} dataset as discussed on~\ref{subsec:human-understandable-text-generation}. \\
+        \multirow{4}{*}{Human Understanble Text} & \multirow{4}{*}{Gemma2:9b} & Other LLMs can be used, but using instruction-tuned models is recommended. This is skipped for \textit{FactBench} dataset as discussed on~\ref{subsec:human-understandable-text-generation}. \\
         \hline
-        Question Generation & Gemma2:9b & Other LLMs can be used, but using instruction-tuned models is recommended. \\
+        \multirow{3}{*}{Question Generation} & \multirow{3}{*}{Gemma2:9b} & Other LLMs can be used, but using instruction-tuned models is recommended. \\
         \hline
-        Question Relevance & Jina-reranker-v1-turbo-en & Cross-encoder models are recommended for this task. \\
+        \multirow{2}{*}{Question Relevance} & Jina-reranker-v1-turbo-en & Cross-encoder models are recommended for this task. \\
         \hline
-        Question Relevance Threshold & 0.5 & - \\
+        Question RelevanceThreshold  & 0.5 & -- \\
         \hline
-        Num of Selected Questions & 3 & - \\
+        Num. of Selected Questions & 3 & -- \\
         \hline
-        Google Search & - & Used query params: \textit{lr} = 'lang\_en', \textit{gl} = 'us', \textit{hl} = 'en', \textit{num} = '100'. The lr parameter is set to the language of the query, gl to the country, hl to the language, and num to the number of results. \\
+        \multirow{6}{*}{Google Search} & \multirow{6}{*}{--} & Used query params: \textit{lr} = 'lang\_en', \textit{gl} = 'us', \textit{hl} = 'en', \textit{num} = '100'. The lr parameter is set to the language of the query, gl to the country, hl to the language, and num to the number of results. \\
         \hline
-        Num of Selected Documents & 10 & - \\
+        Num. of Selected Documents & 10 & -- \\
         \hline
-        Document Selection & ms-marco-MiniLM-L-6-v2 & Filtered out the documents from these origins: "dbpedia.org", "wikipedia.org", "wikimedia.org", "wikidata.org", "quora.com", "britannica.com", "scholarpedia.org", "newworldencyclopedia.org", "everipedia.org", "encyclopedia.com", "wikibooks.org", "wiktionary.org", "wikiversity.org", "wikisource.org", "wikiquote.org", "wikivoyage.org", "academia.edu", "nytimes.com" \\
+        \multirow{8}{*}{Document Selection} & \multirow{8}{*}{\shortstack{ms-marco-MiniLM\\-L-6-v2}} & Filtered out the documents from these origins: dbpedia, wikipedia, wikimedia, wikidata, quora, britannica, scholarpedia, newworldencyclopedia, everipedia, encyclopedia, wikibooks, wiktionary, wikiversity, wikisource, wikiquote, wikivoyage, academia, and nytimes \\
         \hline
-        Embedding Model & BAAI/bge-small-en-v1.5 & - \\
+        Embedding Model & bge-small-en-v1.5 & -- \\
         \hline
-        Chunking Strategy & Sliding Window with window size 3 & - \\
+        \multirow{2}{*}{Chunking Strategy} & Sliding Window window size 3 & -- \\
         \hline
         Similarity Cut-off & Simple & Use the threshold to filter out irrelevant documents. \\
         \hline
-        Similarity Cut-off Threshold & 0.3 & - \\
+        Similarity Cut-off Threshold & 0.3 & -- \\
         \hline
-        Top\_k & 6 & - \\
+        Top\_k & 6 & -- \\
         \hline
-        Tie-Breaking & - & Based on the models we selected, we use model with higher-param for each model, for Gemma2:9b~$\rightarrow$~27b, Qwen2.5:7b~$\rightarrow$~14b, Llama3.1:8b~$\rightarrow$~70b, and Mistral:7b~$\rightarrow$~Mistral nemo:12b. \\
+        \multirow{4}{*}{Tie-Breaking} & \multirow{4}{*}{--} & Use model with higher-param for each model, for llama3.1:8b~$\rightarrow$~70b, gemma2:9b~$\rightarrow$~27b, qwen2.5:7b~$\rightarrow$~14b, and mistral:7b~$\rightarrow$~mistral nemo:12b. \\
         \bottomrule
-        \caption{System Configurations for Empirical Evaluation} \\
         \label{tab:system-configurations}
     \end{tabularx}
 }
-
-%\begin{table}[h!]
-%    \footnotesize
-%    \begin{xltabular}{\linewidth}{p{3cm}p{2cm}X}
-%        \toprule
-%        \textbf{Section} & \textbf{\shortstack{Method/\\Model\\Used}} & \textbf{Considerations} \\
-%        \midrule
-%        Human Understandable Text & Gemma2:9b & Other LLMs can be used, but using instruction-tuned models is recommended. This is skipped for \textit{FactBench} dataset as discussed on~\ref{subsec:human-understandable-text-generation}. \\\hline
-%        Question Generation & Gemma2:9b & Other LLMs can be used, but using instruction-tuned models is recommended. \\\hline
-%        Question Relevance & Jina-reranker-v1-turbo-en & Cross-encoder models are recommended for this task. \\\hline
-%        Question Relevance Threshold & 0.5 & - \\\hline
-%        Num of Selected Questions & 3 & - \\\hline
-%        Google Search & - & Used query params: \textit{lr} = 'lang\_en', \textit{gl} = 'us', \textit{hl} = 'en', \textit{num} = '100'. The lr parameter is set to the language of the query, gl to the country, hl to the language, and num to the number of results. \\\hline
-%        Fact Extraction & - & - \\\hline
-%        Num of Selected Documents & 10 & - \\\hline
-%        Document Selection & ms-marco-MiniLM-L-6-v2 & Filtered out the documents from these origins: "dbpedia.org", "wikipedia.org", "wikimedia.org", "wikidata.org", "quora.com", "britannica.com", "scholarpedia.org", "newworldencyclopedia.org", "everipedia.org", "encyclopedia.com", "wikibooks.org", "wiktionary.org", "wikiversity.org", "wikisource.org", "wikiquote.org", "wikivoyage.org", "academia.edu", "nytimes.com" \\\hline
-%        Embedding Model & BAAI/bge-small-en-v1.5 & - \\\hline
-%        Chunking Strategy & Sliding Window with window size 3 & - \\\hline
-%        Similarity Cut-off & Simple & Use the threshold to filter out irrelevant documents. \\\hline
-%        Similarity Cut-off Threshold & 0.3 & - \\\hline
-%        Top\_k & 6 & - \\\hline
-%        Tie-Breaking & - & Based on the models we selected, we use model with higher-param for each model, for Gemma2:9b~\rightarrow~27b, Qwen2.5:7b~\rightarrow~14b, Llama3.1:8b~\rightarrow~70b, and Mistral:7b~\rightarrow~Mistral nemo:12b. \\
-%        \bottomrule
-%    \end{xltabular}
-%    \caption{System Configurations for Empirical Evaluation}
-%    \label{tab:system-configurations}
-%\end{table}
 
 The tests are run on a server with the following specifications:
 \begin{itemize}
@@ -320,17 +295,18 @@ The tests are run on a server with the following specifications:
     \item \textbf{System Firmware Version:} 11881.1.1
     \item \textbf{OS Loader Version:} 11881.1.1
 \end{itemize}
-The timing tests are conducted over 50 samples for each section, using a MacBook Pro equipped with an Apple M2 Max chip and 32 GB of memory.
+%The timing tests are conducted over 50 samples for each section, using a MacBook Pro equipped with an Apple M2 Max chip and 32 GB of memory.
 
 \section{Comparative Analysis}\label{sec:empirical-evaluation:comparative-analysis}
 \begin{table}[ht!]
     \noindent
+    \caption{Empirical evaluation results of the proposed system and candidate models over the datasets.}
     {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original), Top\_k 6}
     \resizebox{\textwidth}{!}{
         \begin{threeparttable}
         \begin{tabular}{llccc||cc}
             \toprule
-            \textbf{Dataset}            & \textbf{Model}                     & \textbf{Stability}             & \textbf{Avg. Request Duration}\tnote{*} & \textbf{Avg. tokens per request} & \textbf{ACC} & \textbf{F1} \\
+            \textbf{Dataset}            & \textbf{Model}                     & \textbf{Consistency}\tnote{a}  & \textbf{Avg. Request Time}\tnote{b} & \textbf{Avg. tokens per request} & \textbf{ACC} & \textbf{F1} \\
             \midrule
             \multirow{6}{*}{FactBench}  & Gemma2                             & 0.8720                         & 5.6826s                            & 1605.29                                       & \textbf{0.9032}    & \textbf{0.9101}   \\
                                         & Qwen2.5                            & 0.8685                         & 6.3094s                            & 1652.66                                       & 0.8729    & 0.8888   \\
@@ -354,10 +330,10 @@ The timing tests are conducted over 50 samples for each section, using a MacBook
             \bottomrule
         \end{tabular}
         \begin{tablenotes}
-            \item[*] Each query uses two requests, so the average request duration and average tokens per request are calculated based on the two requests.
+            \item[a] Consistency score for each individual model is calculated across all models, excluding the ensemble models.
+            \item[b] Each query uses two requests, so the average request duration is calculated based on the two requests.
         \end{tablenotes}
         \end{threeparttable}}
-    \caption{Empirical Evaluation Results of the Proposed System and Candidate Models over the Datasets}
     \label{tab:evaluation_results-full-wo-category-all-datasets}
 \end{table}
 

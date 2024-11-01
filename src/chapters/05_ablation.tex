@@ -459,21 +459,21 @@ Examples of the three chunking methods are available in the Appendix~\ref{ch:chu
         \toprule
         \textbf{Method} & \textbf{Advantages} & \textbf{Limitations} \\
         \midrule
-        Fixed Chunking &
+        \multirow{5}{*}{Fixed Chunking} &
         $\ast$ Simple to implement and understand \newline
         $\ast$ Consistent chunk sizes facilitate uniform processing
         &
         $\ast$ Fixed chunk sizes may not align with natural breaks in the text \newline
         $\ast$ Larger chunks can introduce irrelevant information and increase computational costs
         \\ \hline
-        Small2Big &
+        \multirow{5}{*}{Small2Big} &
         $\ast$ Allows for fine-grained retrieval with the option to expand context \newline
         $\ast$ Adapts to different levels of specificity required by queries
         &
         $\ast$ More complex to implement and manage \newline
         $\ast$ Increased storage requirements due to redundancy in the hierarchy
         \\\hline
-        Sentence Window &
+        \multirow{5}{*}{Sentence Window} &
         $\ast$ Preserves semantic units (sentences) and their immediate context \newline
         $\ast$ Adapts to the natural structure of the text
         &
@@ -696,14 +696,14 @@ After analyzing the failure cases, we categorized the errors into four main type
 %To quantify the distribution of error types, we classified each error instance into one or more of four categories, allowing for overlaps when errors fit multiple categories.
 \begin{table}[h!]
     \footnotesize
-    \caption{Overview of failure cases and error analysis observed in the FactBench dataset.}
+    \caption{Example of failure cases and error analysis observed in the FactBench dataset using generated results and explanations.}
     \begin{xltabular}{\linewidth}{p{3cm}p{3cm}X}
         \toprule
         \textbf{Error Type} & \textbf{Triple} & \textbf{Description} \\
         \midrule
-        Insufficient or Irrelevant Context & Ai Sugiyama birth place Yokohama & Since there's no information in any of the documents about Ai Sugiyama being born in Yokohama, and one document explicitly states her birthplace as Tokyo. So LLms infer that Ai Sugiyama was born in Tokyo, Japan and not Yokohama, Japan. \\
-        Mis Interpretation of Relationships & Mitt Romney office Dallas & LLMs mistakenly infer that Romney has an office in Dallas based on his attendance at a fundraiser there. Attending an event doesn't imply having a permanent office. \\
-        Over reliance on Keyword Matching & Robbie Williams office Los Angeles & LLMs wrongly assume Robbie Williams has an office in Los Angeles due to text discussing his purchase or sell of a property there, not an office. \\
+        Insufficient or Irrelevant Context & Ai Sugiyama birth place Yokohama & Since there's no information in any of the documents about Ai Sugiyama being born in Yokohama, and one document explicitly states her birthplace as Tokyo. So LLms infer that Ai Sugiyama was born in Tokyo, Japan and not Yokohama, Japan. \\\hline
+        Mis Interpretation of Relationships & Mitt Romney office Dallas & LLMs mistakenly infer that Romney has an office in Dallas based on his attendance at a fundraiser there. Attending an event doesn't imply having a permanent office. \\\hline
+        Over reliance on Keyword Matching & Robbie Williams office Los Angeles & LLMs wrongly assume Robbie Williams has an office in Los Angeles due to text discussing his purchase or sell of a property there, not an office. \\\hline
         Lack of Common Sense Reasoning & Saul Bellow starring Nobel Prize in Literature & LLMs fail to recognize "starring" is inappropriate for receiving a Nobel Prize. Common sense suggests terms like "awarded" or "received." \\
 %        Difficulty with Negation and Contradiction & John William Strutt team Nobel Prize in Physics & LLMs confirm the presence of a team, despite no evidence suggesting Strutt was part of one. The context mentions Strutt’s Nobel Prize but lacks information about team involvement. \\
         \bottomrule
