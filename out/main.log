@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  1 NOV 2024 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  1 NOV 2024 16:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2718,9 +2718,6 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 933B411889194CA125E5C1B108582319;7582.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -2842,7 +2839,7 @@ onts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
 newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zpl
 ri.pfb>
 Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (113 p
-ages, 10400214 bytes).
+ages, 10400407 bytes).
 PDF statistics:
  1854 PDF objects out of 2073 (max. 8388607)
  1656 compressed objects within 17 object streams
