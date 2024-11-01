@@ -1,27 +1,43 @@
 \chapter{Pipeline}\label{ch:pipeline}
-This chapter presents a detailed examination of a multi-stage NLP pipeline designed to enhance information retrieval and question answering capabilities.
-The pipeline integrates various cutting-edge technologies and methodologies, creating a synergistic system that pushes the boundaries of what is possible in automated information processing and response generation.
-However, the challenges of accurately interpreting user queries, retrieving relevant information from vast datasets, and generating coherent and contextually appropriate responses remain significant.
-This pipeline addresses these challenges through a carefully orchestrated series of processes, each designed to refine and enhance the quality of information flow from input to output.
+%This chapter presents a detailed examination of a multi-stage NLP pipeline designed to enhance information retrieval and question answering capabilities.
+%The pipeline integrates various cutting-edge technologies and methodologies, creating a synergistic system that pushes the boundaries of what is possible in automated information processing and response generation.
+%However, the challenges of accurately interpreting user queries, retrieving relevant information from vast datasets, and generating coherent and contextually appropriate responses remain significant.
+%This pipeline addresses these challenges through a carefully orchestrated series of processes, each designed to refine and enhance the quality of information flow from input to output.
+%
+%At its core, the pipeline leverages a knowledge graph dataset, serving as the foundational repository of interconnected information.
+%This graph structure allows for the representation of complex relationships between entities, facilitating more nuanced understanding and retrieval of information.
+%The pipeline then employs a series of sophisticated mechanisms, including query generation, cross-encoding for relevance assessment, and multi-tiered information retrieval strategies, to navigate this knowledge landscape effectively.
+%
+%One of the key innovations in this pipeline is its approach to context processing and information synthesis.
+%By breaking down retrieved information into manageable chunks and employing advanced embedding techniques, the system can perform more granular and accurate analyses of textual data.
+%This granularity, combined with the implementation of multiple LLMs working in concert, allows for a more robust and nuanced interpretation of complex queries and generation of comprehensive responses.
+%
+%The integration of external information sources, notably through the incorporation of Google Search capabilities, further enhances the pipeline's ability to access and process up-to-date and diverse information.
+%This hybrid approach, combining structured knowledge graphs with dynamic web-based information retrieval, positions the pipeline at the forefront of adaptive and responsive AI systems.
+%
+%Critical to the pipeline's effectiveness is its sophisticated decision-making architecture.
+%Employing strategies such as majority voting among multiple models and the implementation of a final judge for conflict resolution, the system strives to achieve a balance between diverse perspectives and the need for coherent, unified outputs.
+%This approach not only enhances the accuracy and reliability of the generated responses but also provides a framework for managing the inherent uncertainties and potential biases in AI-driven decision-making processes.
+%
+%As we delve deeper into each component of this pipeline, it is crucial to maintain a critical perspective on both its capabilities and limitations.
+%While the system represents a significant advancement in NLP and information retrieval technologies, it also raises important questions about the ethical implications of AI-driven information processing, the potential for bias in knowledge representation and model training, and the broader societal impacts of increasingly sophisticated question-answering systems.
 
-At its core, the pipeline leverages a knowledge graph dataset, serving as the foundational repository of interconnected information.
-This graph structure allows for the representation of complex relationships between entities, facilitating more nuanced understanding and retrieval of information.
-The pipeline then employs a series of sophisticated mechanisms, including query generation, cross-encoding for relevance assessment, and multi-tiered information retrieval strategies, to navigate this knowledge landscape effectively.
+This chapter outlines a multi-stage NLP pipeline developed specifically for fact verification.
+The pipeline integrates advanced technologies and methodologies to address core challenges in verifying information accuracy, interpreting user queries, retrieving relevant data from large datasets, and generating factually consistent responses.
 
-One of the key innovations in this pipeline is its approach to context processing and information synthesis.
-By breaking down retrieved information into manageable chunks and employing advanced embedding techniques, the system can perform more granular and accurate analyses of textual data.
-This granularity, combined with the implementation of multiple LLMs working in concert, allows for a more robust and nuanced interpretation of complex queries and generation of comprehensive responses.
+The pipeline's foundation is a knowledge graph dataset, which captures complex relationships between entities to support in-depth retrieval and verification.
+The pipeline applies query generation, cross-encoding for relevance, and multi-layered retrieval strategies to effectively analyze and cross-check information against this structured data.
 
-The integration of external information sources, notably through the incorporation of Google Search capabilities, further enhances the pipeline's ability to access and process up-to-date and diverse information.
-This hybrid approach, combining structured knowledge graphs with dynamic web-based information retrieval, positions the pipeline at the forefront of adaptive and responsive AI systems.
+To access diverse and up-to-date sources, the pipeline incorporates Google Search, blending structured knowledge with real-time information retrieval to enhance verification accuracy.
 
-Critical to the pipeline's effectiveness is its sophisticated decision-making architecture.
-Employing strategies such as majority voting among multiple models and the implementation of a final judge for conflict resolution, the system strives to achieve a balance between diverse perspectives and the need for coherent, unified outputs.
-This approach not only enhances the accuracy and reliability of the generated responses but also provides a framework for managing the inherent uncertainties and potential biases in AI-driven decision-making processes.
+A key feature of the pipeline is its approach to context processing and information synthesis.
+By dividing retrieved data into manageable sections and utilizing embedding techniques, the pipeline performs precise analyses, enabling a robust assessment of facts with the support of multiple LLMs, and ensuring thorough verification.
 
-As we delve deeper into each component of this pipeline, it is crucial to maintain a critical perspective on both its capabilities and limitations.
-While the system represents a significant advancement in NLP and information retrieval technologies, it also raises important questions about the ethical implications of AI-driven information processing, the potential for bias in knowledge representation and model training, and the broader societal impacts of increasingly sophisticated question-answering systems.
+The decision-making framework in the pipeline leverages majority voting across models and employs a final judge to resolve inconsistencies, creating a balanced and coherent output.
+This approach helps reduce errors and manage potential biases, strengthening the reliability of verified information.
 
+As each pipeline component is further explored, critical insights into its strengths and limitations are addressed.
+This includes ethical considerations in AI-driven fact verification, potential biases in knowledge representation, and the broader impacts of advanced verification systems.
 \begin{figure}[ht!]
     \centering
     \begin{minipage}[b]{\textwidth}
@@ -159,6 +175,13 @@ The model employs a process known as knowledge distillation to attain exceptiona
     \caption{Knowledge Distillation Process for Enhanced Re-Ranking Efficiency}
     \label{fig:knowledge-distill}
 \end{figure}
+\subsection{Relevance Threshold and Sorting}\label{subsec:relevance-threshold-and-sorting}
+Following the Cross-Encoder's scoring, the pipeline implements a crucial decision point:
+\begin{itemize}
+    \item \textbf{Sorting:} Questions are sorted based on their relevance scores, establishing a priority order for further processing.
+    \item \textbf{Threshold Evaluation:} The system checks if the top question's score exceeds an upper threshold. This step ensures that only sufficiently relevant questions proceed further in the pipeline.
+    \item \textbf{Feedback Loop:} If the threshold is not met, the process must loop back to generate new questions to adjust the existing ones, maintaining the quality of queries entering subsequent stages.
+\end{itemize}
 
 \begin{table}[h!]
     \noindent
@@ -182,14 +205,6 @@ The model employs a process known as knowledge distillation to attain exceptiona
         \end{tabular}}
     \label{tab:Question scoring}
 \end{table}
-
-\subsection{Relevance Threshold and Sorting}\label{subsec:relevance-threshold-and-sorting}
-Following the Cross-Encoder's scoring, the pipeline implements a crucial decision point:
-\begin{itemize}
-    \item \textbf{Sorting:} Questions are sorted based on their relevance scores, establishing a priority order for further processing.
-    \item \textbf{Threshold Evaluation:} The system checks if the top question's score exceeds an upper threshold. This step ensures that only sufficiently relevant questions proceed further in the pipeline.
-    \item \textbf{Feedback Loop:} If the threshold is not met, the process must loop back to generate new questions to adjust the existing ones, maintaining the quality of queries entering subsequent stages.
-\end{itemize}
 
 \section{Information Retrieval Mechanisms}\label{sec:information-retrieval-mechanisms}
 The Information Retrieval Mechanisms are an essential element of our pipeline, connecting query processing and content synthesis.
@@ -408,8 +423,7 @@ Implementation considerations:
 For running open-source LLMs, we use \textit{Ollama}\footnote{\url{https://ollama.com/}}, Ollama is an open-source project that simplifies the process of setting up, running, and using LLMs locally on your machine.
 It provides a user-friendly area for managing and interacting with various LLMs, making it easier for developers and enthusiasts to experiment with AI without relying on cloud services.
 Under the hood, \textit{Ollama} is just an API server written in go that serves GGUF models via llama.cpp~\footnote{\url{https://github.com/ggerganov/llama.cpp}} and a centralized hub of models/settings.
-
-Performance Considerations and Limitations:
+Performance Considerations and Limitations of \textit{Ollama}:
 \begin{itemize}
     \item Performance Considerations
     \begin{itemize}
@@ -502,38 +516,13 @@ Implementation challenges:
     \caption{Resolve Ties in Majority Voting System}
     \begin{algorithmic}[1]
         \Require
-        \Statex $data$ - A list of dictionaries, each representing a model's response
+        \Statex $modelScores$ - A list of consistency scores for each model
         \Statex $finalJudger$ - A dictionary mapping file indices to final model
         \Statex $atLeast$ - A boolean flag:
         \Statex \hspace{1em} True: select model with the highest agreement score
         \Statex \hspace{1em} False: select model with the lowest agreement score
 
-        \Procedure{ProcessFiles}{$data, finalJudger, atLeast$}
-            \State $majorityValues \gets \emptyset$
-            \State $keys \gets $ keys from first element of $data$
-            \For{each $key$ in $keys$}
-                \State $values \gets $ list of values for $key$ from all data
-                \State $count \gets $ count occurrences of 1's and 0's in $values$
-                \If{count of 1's $>$ count of 0's}
-                    \State $majorityValues[key] \gets 1$
-                \ElsIf{count of 1's $<$ count of 0's}
-                \State $majorityValues[key] \gets 0$
-                \Else
-                    \State continue to next key
-                \EndIf
-            \EndFor
-
-            \State $modelScores \gets \emptyset$
-            \For{$i \gets 0$ to $|data| - 1$}
-                \State $trueCount \gets 0$
-                \For{each $(k, v)$ in $data[i]$}
-                    \If{$majorityValues[k] = v$}
-                        \State $trueCount \gets trueCount + 1$
-                    \EndIf
-                \EndFor
-                \State Add $(i, trueCount)$ to $modelScores$
-            \EndFor
-
+        \Procedure{ProcessFiles}{$modelScores, finalJudger, atLeast$}
             \If{$atLeast$ is True}
                 \State $maxScore \gets $ maximum score in $modelScores$
                 \State $candidates \gets $ indices with score equal to $maxScore$
@@ -547,6 +536,48 @@ Implementation challenges:
         \EndProcedure
     \end{algorithmic}\label{alg:model-selection}
 \end{algorithm}
+\section{Performance Report}\label{sec:performance-report}
+In Tables~\ref{tab:pipeline-performance-report},~\ref{tab:pipeline-performance-report-2}, we provide a detailed performance report, highlighting key metrics that demonstrate the pipeline's efficiency.
+Other sections of the pipeline, such as RAG and conflict resolution mechanisms, will be evaluated in future chapters.
+\begin{table}[ht!]
+    \noindent
+    \caption{Performance of our LLM-based tasks in production, generated by Openlit~\footnote{\url{https://openlit.io/}} with \textit{Gemma2} model.}
+    \resizebox{\textwidth}{!}{
+        \begin{threeparttable}
+            \begin{tabular}{lcc}
+                \toprule
+                \textbf{Task} & \textbf{Avg. Request Time}\tnote{*} & \textbf{Avg. tokens per request} \\
+                \midrule
+                Human understandable text~\ref{subsec:human-understandable-text-generation} & 1.3164 sec & 343.16 \\
+                Question Generation~\ref{subsec:question-formulation-techniques} & 9.6076 sec & 672.58 \\
+                \bottomrule
+            \end{tabular}
+            \begin{tablenotes}
+                \item[*] The average time is calculated on the Macbook Pro with M2 max chip and 32GB of RAM\@.
+            \end{tablenotes}
+        \end{threeparttable}}
+    \label{tab:pipeline-performance-report}
+\end{table}
+\begin{table}[ht!]
+%    \noindent
+    \centering
+    \caption{Performance of our information retrieval mechanisms.}
+    \begin{threeparttable}
+        \begin{tabular}{lc}
+            \toprule
+            \textbf{Task} & \textbf{Avg. Time}\tnote{*} \\
+            \midrule
+            Sorting the questions by similarity~\ref{subsec:cross-encoder-for-query-relevance-scoring} & 0.013 sec \\
+            Get documents (Google pages)~\ref{subsec:google-search-integration} & 3.6 sec \\
+            Fetch documents for each triple~\ref{subsec:process-and-extract-links} & 350 sec \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}
+            \item[*] The average time is calculated on the unix based server with 2 cores and 4GB of RAM\@.
+        \end{tablenotes}
+    \end{threeparttable}
+    \label{tab:pipeline-performance-report-2}
+\end{table}
 
 \section{Pipeline Flow and Decision Points}\label{sec:pipeline-flow-and-decision-points}
 The architecture of our pipeline is characterized by a sophisticated flow of information and a series of critical decision points.
@@ -616,49 +647,6 @@ In conclusion, the Pipeline Flow and Decision Points represent a complex yet wel
 By implementing a series of carefully designed stages and critical decision points, the system aims to process information in a manner that maximizes accuracy, relevance, and reliability.
 The adaptive nature of the pipeline, particularly in its approach to conflict resolution and model selection, demonstrates a commitment to handling a wide range of query complexities and scenarios.
 However, the intricate nature of this flow also underscores the importance of ongoing optimization, monitoring, and refinement to ensure that the system continues to perform effectively and ethically in the face of evolving challenges and requirements in the field of AI and natural language processing.
-\section{Performance Report}\label{sec:performance-report}
-In Tables~\ref{tab:pipeline-performance-report},~\ref{tab:pipeline-performance-report-2}, we provide a detailed performance report, highlighting key metrics that demonstrate the pipeline's efficiency.
-Other sections of the pipeline, such as RAG and conflict resolution mechanisms, will be evaluated in future chapters.
-\begin{table}[ht!]
-    \noindent
-    \caption{Performance of our LLM-based tasks in production, generated by Openlit~\footnote{\url{https://openlit.io/}} with \textit{Gemma2} model.}
-    \resizebox{\textwidth}{!}{
-        \begin{threeparttable}
-        \begin{tabular}{lcc}
-            \toprule
-            \textbf{Task} & \textbf{Avg. Request Time}\tnote{*} & \textbf{Avg. tokens per request} \\
-            \midrule
-            Human understandable text~\ref{subsec:human-understandable-text-generation} & 1.3164 sec & 343.16 \\
-            Question Generation~\ref{subsec:question-formulation-techniques} & 9.6076 sec & 672.58 \\
-            \bottomrule
-        \end{tabular}
-        \begin{tablenotes}
-            \item[*] The average time is calculated on the Macbook Pro with M2 max chip and 32GB of RAM\@.
-        \end{tablenotes}
-        \end{threeparttable}}
-    \label{tab:pipeline-performance-report}
-\end{table}
-
-\begin{table}[ht!]
-%    \noindent
-    \centering
-    \caption{Performance of our information retrieval mechanisms.}
-    \begin{threeparttable}
-    \begin{tabular}{lc}
-        \toprule
-        \textbf{Task} & \textbf{Avg. Time}\tnote{*} \\
-        \midrule
-        Sorting the questions by similarity~\ref{subsec:cross-encoder-for-query-relevance-scoring} & 0.013 sec \\
-        Get documents (Google pages)~\ref{subsec:google-search-integration} & 3.6 sec \\
-        Fetch documents for each triple~\ref{subsec:process-and-extract-links} & 350 sec \\
-        \bottomrule
-    \end{tabular}
-    \begin{tablenotes}
-        \item[*] The average time is calculated on the unix based server with 2 cores and 4GB of RAM\@.
-    \end{tablenotes}
-    \end{threeparttable}
-    \label{tab:pipeline-performance-report-2}
-\end{table}
 
 \section{Ethical Considerations and Limitations}\label{sec:ethical-considerations-and-limitations}
 The development and deployment of advanced pipelines, such as the one described in this thesis, necessitate a thorough examination of ethical considerations and an acknowledgment of system limitations.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  31 OCT 2024 15:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  1 NOV 2024 10:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1876,31 +1876,31 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 
  [12] (/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot
 Runaway argument?
-{\numberline {3.4}{\ignorespaces Performance of our LLM-based tasks i\ETC.
-/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot:8: Paragraph ended befor
+{\numberline {3.3}{\ignorespaces Performance of our LLM-based tasks i\ETC.
+/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot:7: Paragraph ended befor
 e \contentsline was complete.
 <to be read again> 
                    \par 
-l.8 ...ted by Openlit~\let \reserved@d =[\def \par
-                                                   }}{37}{table.caption.34}%
+l.7 ...ted by Openlit~\let \reserved@d =[\def \par
+                                                   }}{34}{table.caption.33}%
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot:8: Extra }, or forgotten
+/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot:7: Extra }, or forgotten
  \endgroup.
-l.8 ...d by Openlit~\let \reserved@d =[\def \par }
-                                                  }{37}{table.caption.34}%
+l.7 ...d by Openlit~\let \reserved@d =[\def \par }
+                                                  }{34}{table.caption.33}%
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot:8: Extra }, or forgotten
+/Users/farzad/Documents/Thesis/msc-thesis/out/main.lot:7: Extra }, or forgotten
  \endgroup.
-l.8 ... by Openlit~\let \reserved@d =[\def \par }}
-                                                  {37}{table.caption.34}%
+l.7 ... by Openlit~\let \reserved@d =[\def \par }}
+                                                  {34}{table.caption.33}%
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2022,7 +2022,7 @@ Package acronym Info: Label `acro:NLI' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
 Package acronym Info: Label `acro:QA' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
-<res/rel-human-llm-inference.png, id=885, 599.23875pt x 703.62875pt>
+<res/rel-human-llm-inference.png, id=883, 599.23875pt x 703.62875pt>
 File: res/rel-human-llm-inference.png Graphic file (type png)
 <use res/rel-human-llm-inference.png>
 Package pdftex.def Info: res/rel-human-llm-inference.png  used on input line 15
@@ -2032,39 +2032,39 @@ Package pdftex.def Info: res/rel-human-llm-inference.png  used on input line 15
 Underfull \vbox (badness 2762) has occurred while \output is active []
 
  [8 <./res/rel-human-llm-inference.png>]
-Overfull \hbox (9.54247pt too wide) in paragraph at lines 43--44
+Overfull \hbox (9.54247pt too wide) in paragraph at lines 42--44
 []\T1/zpltlf/m/n/12 This pipeline rep-re-sents a de-par-ture from tra-di-tional
  fact-checking ap-proaches,
  []
 
 
-Overfull \hbox (3.24234pt too wide) in paragraph at lines 45--46
-[]\T1/zpltlf/m/n/12 Several stud-ies have demon-strated the ef-fec-tive-ness of
- LLM-based ap-proaches
+Overfull \hbox (8.919pt too wide) in paragraph at lines 45--46
+[]\T1/zpltlf/m/n/12 Zhang and Gao [[][]40[][]] in-tro-duced the Hi-er-ar-chi-ca
+l Step-by-Step (HiSS) prompt-
  []
 
-<res/rel-claim-verification.png, id=910, 402.50375pt x 444.66125pt>
+<res/rel-claim-verification.png, id=908, 402.50375pt x 444.66125pt>
 File: res/rel-claim-verification.png Graphic file (type png)
 <use res/rel-claim-verification.png>
-Package pdftex.def Info: res/rel-claim-verification.png  used on input line 57.
+Package pdftex.def Info: res/rel-claim-verification.png  used on input line 55.
 
 (pdftex.def)             Requested size: 250.95476pt x 277.24088pt.
 [9] [10 <./res/rel-claim-verification.png>]
-Overfull \hbox (1.57443pt too wide) in paragraph at lines 77--81
+Overfull \hbox (1.57443pt too wide) in paragraph at lines 75--79
 []\T1/zpltlf/m/n/12 The pa-per Retrieval-Augmented Fact Ver-i-fi-ca-tion by Syn
 -the-siz-ing Con-trastive
  []
 
-<res/rel-rafts.png, id=933, 787.94376pt x 367.3725pt>
+<res/rel-rafts.png, id=931, 787.94376pt x 367.3725pt>
 File: res/rel-rafts.png Graphic file (type png)
 <use res/rel-rafts.png>
-Package pdftex.def Info: res/rel-rafts.png  used on input line 90.
+Package pdftex.def Info: res/rel-rafts.png  used on input line 88.
 (pdftex.def)             Requested size: 418.25368pt x 195.00359pt.
 [11] [12 <./res/rel-rafts.png>]
-<res/rel-ragar.png, id=947, 465.74pt x 599.23875pt>
+<res/rel-ragar.png, id=946, 465.74pt x 599.23875pt>
 File: res/rel-ragar.png Graphic file (type png)
 <use res/rel-ragar.png>
-Package pdftex.def Info: res/rel-ragar.png  used on input line 117.
+Package pdftex.def Info: res/rel-ragar.png  used on input line 115.
 (pdftex.def)             Requested size: 250.95476pt x 322.88919pt.
  [13 <./res/rel-ragar.png>]) [14]
 \openout2 = `chapters/03_pipeline.aux'.
@@ -2072,31 +2072,27 @@ Package pdftex.def Info: res/rel-ragar.png  used on input line 117.
 
 (./chapters/03_pipeline.tex
 Chapter 3.
+
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./res/pipeline.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+<res/pipeline.pdf, id=956, 5051.37187pt x 3845.36626pt>
+File: res/pipeline.pdf Graphic file (type pdf)
+<use res/pipeline.pdf>
+Package pdftex.def Info: res/pipeline.pdf  used on input line 45.
+(pdftex.def)             Requested size: 418.25368pt x 318.3732pt.
 [15
 
 
 
 
 
-]
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./res/pipeline.pdf): PDF inc
-lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<res/pipeline.pdf, id=963, 5051.37187pt x 3845.36626pt>
-File: res/pipeline.pdf Graphic file (type pdf)
-<use res/pipeline.pdf>
-Package pdftex.def Info: res/pipeline.pdf  used on input line 29.
-(pdftex.def)             Requested size: 418.25368pt x 318.3732pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
+] [16 <./res/pipeline.pdf>]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 44.
+(Font)              scaled to size 14.4pt on input line 60.
 
-[17 <./res/pipeline.pdf>]
-./chapters/03_pipeline.tex:61: Undefined control sequence.
-l.61 ...dicate the nature of the relationship (\ex
+./chapters/03_pipeline.tex:77: Undefined control sequence.
+l.77 ...dicate the nature of the relationship (\ex
                                                   , "is\_a", "part\_of", "cr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2104,199 +2100,184 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 []|\T1/zpltlf/m/it/12 Albert Ein-stein
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 []|\T1/zpltlf/m/it/12 Fayetteville,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 []|\T1/zpltlf/m/it/12 Chris Benoit
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 []|\T1/zpltlf/m/it/12 Alexander_III
  []
 
 
-Overfull \hbox (5.96175pt too wide) in paragraph at lines 104--104
+Overfull \hbox (5.96175pt too wide) in paragraph at lines 120--120
 []|\T1/zpltlf/m/it/12 Maria_Feodorovna
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 \T1/zpltlf/m/it/12 __Dag-
  []
 
 
-Overfull \hbox (5.61374pt too wide) in paragraph at lines 104--104
+Overfull \hbox (5.61374pt too wide) in paragraph at lines 120--120
 \T1/zpltlf/m/it/12 mar_of_Denmark_| 
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 104--104
+Underfull \hbox (badness 8000) in paragraph at lines 120--120
 \T1/zpltlf/m/it/12 as Dag-mar of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 []|\T1/zpltlf/m/it/12 Shock_to_the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 \T1/zpltlf/m/it/12 _Sys-tem
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 \T1/zpltlf/m/it/12 _(Gemma_Hayes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 []|\T1/zpltlf/m/it/12 The length of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 \T1/zpltlf/m/it/12 Shock to the
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 104--104
+Underfull \hbox (badness 1845) in paragraph at lines 120--120
 \T1/zpltlf/m/it/12 Sys-tem (Gemma
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 104--104
+Underfull \hbox (badness 3000) in paragraph at lines 120--120
 \T1/zpltlf/m/it/12 Hayes song) is
  []
 
 
-Underfull \hbox (badness 6842) in paragraph at lines 104--104
+Underfull \hbox (badness 6842) in paragraph at lines 120--120
 []|\T1/zpltlf/m/it/12 Paora Wini-tana
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 \T1/zpltlf/m/it/12 was ac-tive in
  []
 
 
-Overfull \hbox (2.03044pt too wide) in paragraph at lines 85--107
+Overfull \hbox (2.03044pt too wide) in paragraph at lines 101--123
 []\T1/zpltlf/m/n/12 Be aware that cer-tain knowl-edge graph datasets are human-
 readable, whereas
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[19]
-<res/Cross-Encoder.png, id=997, 7831.2575pt x 1920.17375pt>
+[18] [19]
+<res/Cross-Encoder.png, id=996, 7831.2575pt x 1920.17375pt>
 File: res/Cross-Encoder.png Graphic file (type png)
 <use res/Cross-Encoder.png>
-Package pdftex.def Info: res/Cross-Encoder.png  used on input line 130.
+Package pdftex.def Info: res/Cross-Encoder.png  used on input line 146.
 (pdftex.def)             Requested size: 418.25368pt x 102.54808pt.
- [20]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 148.
+(Font)              scaled to size 8.8pt on input line 164.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 148.
+(Font)              scaled to size 10.0pt on input line 164.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 148.
+(Font)              scaled to size 7.3pt on input line 164.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 148.
+(Font)              scaled to size 5.5pt on input line 164.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 148.
+(Font)              scaled to size 7.3pt on input line 164.
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-148.
+164.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 148.
+(Font)              scaled to size 10.0pt on input line 164.
+
+[20 <./res/Cross-Encoder.png>]
 <res/knowledge-distill.png, id=1008, 3573.35pt x 1159.33125pt>
 File: res/knowledge-distill.png Graphic file (type png)
 <use res/knowledge-distill.png>
-Package pdftex.def Info: res/knowledge-distill.png  used on input line 157.
+Package pdftex.def Info: res/knowledge-distill.png  used on input line 173.
 (pdftex.def)             Requested size: 292.77629pt x 94.97733pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[21 <./res/Cross-Encoder.png> <./res/knowledge-distill.png>]
-Overfull \hbox (7.82625pt too wide) in paragraph at lines 195--198
+Overfull \hbox (7.82625pt too wide) in paragraph at lines 210--213
 []\T1/zpltlf/m/n/12 The In-for-ma-tion Re-trieval Mech-a-nisms are an es-sen-ti
 al el-e-ment of our pipeline,
  []
 
-[22]
-<res/Google-Search-Result.png, id=1023, 9867.86626pt x 4028.04875pt>
+[21 <./res/knowledge-distill.png>]
+<res/Google-Search-Result.png, id=1016, 9867.86626pt x 4028.04875pt>
 File: res/Google-Search-Result.png Graphic file (type png)
 <use res/Google-Search-Result.png>
-Package pdftex.def Info: res/Google-Search-Result.png  used on input line 215.
+Package pdftex.def Info: res/Google-Search-Result.png  used on input line 230.
 (pdftex.def)             Requested size: 418.25368pt x 170.68274pt.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 217.
+(Font)              scaled to size 10.95pt on input line 232.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 217.
+(Font)              scaled to size 8.0pt on input line 232.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 217.
- [23 <./res/Google-Search-Result.png>]
+(Font)              scaled to size 6.1pt on input line 232.
+ [22]
 Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
 
-although it is yet undefined on input line 233.
+although it is yet undefined on input line 248.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 244.
+nput line 259.
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 244.
+(Font)              scaled to size 12.0pt on input line 259.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 245.
- [24]
-Overfull \hbox (2.30835pt too wide) in paragraph at lines 270--271
+(Font)              scaled to size 6.0pt on input line 260.
+ [23 <./res/Google-Search-Result.png>]
+Overfull \hbox (2.30835pt too wide) in paragraph at lines 285--286
 []\T1/zpltlf/b/n/12 Protection against scrap-ing: \T1/zpltlf/m/n/12 Sites may h
 ave pro-tec-tion mech-a-nisms against
  []
 
-[25]
-<res/Google-Search-Result-Content.png, id=1072, 9995.3425pt x 2480.26625pt>
+[24]
+<res/Google-Search-Result-Content.png, id=1064, 9995.3425pt x 2480.26625pt>
 File: res/Google-Search-Result-Content.png Graphic file (type png)
 <use res/Google-Search-Result-Content.png>
 Package pdftex.def Info: res/Google-Search-Result-Content.png  used on input li
-ne 296.
+ne 311.
 (pdftex.def)             Requested size: 418.25368pt x 103.77309pt.
- [26 <./res/Google-Search-Result-Content.png>] [27]
+ [25 <./res/Google-Search-Result-Content.png>] [26]
 LaTeX Font Info:    Font shape `T1/zpltlf/b/sc' will be
-(Font)              scaled to size 12.0pt on input line 359.
- [28] [29] [30] [31]
-[32]
+(Font)              scaled to size 12.0pt on input line 374.
+ [27] [28] [29] [30]
+[31] [32]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 502.
- [33] [34{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}{
-/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
-Underfull \hbox (badness 1924) in paragraph at lines 602--602
-[]|\T1/zpltlf/m/n/12 Determining the op-ti-mal chunk size and pro-cess-ing
- []
+put line 516.
 
-[35]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36]
-./chapters/03_pipeline.tex:624: Argument of \caption@ydblarg has an extra }.
+./chapters/03_pipeline.tex:544: Argument of \caption@ydblarg has an extra }.
 <inserted text> 
                 \par 
-l.624 ...penlit.io/}} with \textit{Gemma2} model.}
+l.544 ...penlit.io/}} with \textit{Gemma2} model.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -2307,33 +2288,34 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
 {\@caption \@captype }{\@xfootnote }\def \reserved@b {\stepcounter \@mpfn \ETC.
-./chapters/03_pipeline.tex:624: Paragraph ended before \caption@ydblarg was com
+./chapters/03_pipeline.tex:544: Paragraph ended before \caption@ydblarg was com
 plete.
 <to be read again> 
                    \par 
-l.624 ...penlit.io/}} with \textit{Gemma2} model.}
+l.544 ...penlit.io/}} with \textit{Gemma2} model.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 624.
+(Font)              scaled to size 8.0pt on input line 544.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 624.
+(Font)              scaled to size 10.95pt on input line 544.
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--640
+Underfull \hbox (badness 10000) in paragraph at lines 545--560
 [][]
  []
 
-[37]
+[33{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}]
+Underfull \hbox (badness 1924) in paragraph at lines 633--633
+[]|\T1/zpltlf/m/n/12 Determining the op-ti-mal chunk size and pro-cess-ing
+ []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [38] [39]
+[34] [35] [36]) [37]
 \openout2 = `chapters/04_analysis.aux'.
 
- (./chapters/04_analysis.tex [40
+ (./chapters/04_analysis.tex [38
 
 
 
@@ -2341,7 +2323,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ]
 Chapter 4.
-[41] [42]
+[39] [40]
 
 ./chapters/04_analysis.tex:66: LaTeX Error: Unicode character κ (U+03BA)
                not set up for use with LaTeX.
@@ -2355,7 +2337,7 @@ l.66 ...annotators (77\% agreement with Cohen's κ
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[43]
+[41]
 ./chapters/04_analysis.tex:102: Illegal parameter number in definition of \Hy@t
 empa.
 <to be read again> 
@@ -2376,7 +2358,7 @@ You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-[44] [45]
+[42] [43]
 Package acronym Info: Label `acro:SFT' newly defined as it shall be overridden
 although it is yet undefined on input line 133.
 Package acronym Info: Label `acro:RLHF' newly defined as it shall be overridden
@@ -2386,7 +2368,7 @@ Package acronym Info: Label `acro:GQA' newly defined as it shall be overridden
 although it is yet undefined on input line 134.
 Package acronym Info: Label `acro:SWA' newly defined as it shall be overridden
 although it is yet undefined on input line 142.
- [46]
+ [44]
 Underfull \hbox (badness 6477) in paragraph at lines 157--158
 []|\T1/zpltlf/m/n/12 Optimized for dense re-trieval tasks,
  []
@@ -2419,11 +2401,12 @@ Overfull \hbox (9.31137pt too wide) in paragraph at lines 153--166
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47]
-[48]
+ [45]
+[46]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 6.6pt on input line 209.
- [49]
+ [47{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
+
 ./chapters/04_analysis.tex:282: Undefined control sequence.
 \adl@@cr ...tempdima \xdef \adl@rowsL {\adl@rowsL 
                                                   (\adl@colsL /\number \adl@...
@@ -2568,10 +2551,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 282--282
 \T1/zpltlf/m/n/10 Qwen2.5:7b $\LMS/npxsy/m/n/10 !$ \T1/zpltlf/m/n/10 14b,
  []
 
-[50] [51] [52]) [53]
+[48] [49] [50]) [51]
 \openout2 = `chapters/05_ablation.aux'.
 
- (./chapters/05_ablation.tex [54
+ (./chapters/05_ablation.tex [52
 
 
 
@@ -2582,20 +2565,20 @@ Chapter 5.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55]
-[56] [57] [58]
+ [53]
+[54] [55] [56]
 Overfull \hbox (1.48035pt too wide) in paragraph at lines 99--100
 \T1/zpltlf/m/n/12 Con-triever's per-for-mance on var-i-ous re-trieval bench-mar
 ks, es-pe-cially those
  []
 
-[59] [60]
-<res/ret_result_sim_1.png, id=1353, 722.7pt x 578.16pt>
+[57] [58]
+<res/ret_result_sim_1.png, id=1340, 722.7pt x 578.16pt>
 File: res/ret_result_sim_1.png Graphic file (type png)
 <use res/ret_result_sim_1.png>
 Package pdftex.def Info: res/ret_result_sim_1.png  used on input line 151.
 (pdftex.def)             Requested size: 188.21288pt x 150.56506pt.
- [61 <./res/ret_result_sim_1.png>]
+ [59 <./res/ret_result_sim_1.png>]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
 (Font)              scaled to size 8.0pt on input line 168.
 
@@ -2607,7 +2590,7 @@ tlf/m/it/12 ms-marco-MiniLM-L-6-v2 \T1/zpltlf/m/n/12 achieved
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62]
+ [60]
 Overfull \hbox (3.70161pt too wide) in paragraph at lines 215--218
 \T1/zpltlf/m/n/12 con-trastive learn-ing, and in-struc-tion fine-tuning to pro-
 duce high-quality, general-
@@ -2619,11 +2602,11 @@ although it is yet undefined on input line 221.
 Package acronym Info: Label `acro:MTEB' newly defined as it shall be overridden
 
 although it is yet undefined on input line 225.
-[63]
+[61]
 Package acronym Info: Label `acro:LoRA' newly defined as it shall be overridden
 
 although it is yet undefined on input line 243.
- [64]
+ [62]
 Package acronym Info: Label `acro:MRL' newly defined as it shall be overridden
 although it is yet undefined on input line 251.
 
@@ -2632,28 +2615,28 @@ Overfull \hbox (4.09348pt too wide) in paragraph at lines 258--263
 ally, a 1024-dimensional
  []
 
-[65] [66] [67] [68]
+[63] [64] [65] [66]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
-[70]
-<res/window-ret.png, id=1451, 2848.6425pt x 1128.215pt>
+ [67]
+[68]
+<res/window-ret.png, id=1440, 2848.6425pt x 1128.215pt>
 File: res/window-ret.png Graphic file (type png)
 <use res/window-ret.png>
 Package pdftex.def Info: res/window-ret.png  used on input line 435.
 (pdftex.def)             Requested size: 418.25368pt x 165.6442pt.
- [71] [72 <./res/window-ret.png>]
+ [69] [70 <./res/window-ret.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[73] [74] [75]
-<res/combined_correct_radar_chart.png, id=1508, 578.16pt x 578.16pt>
+[71] [72] [73]
+<res/combined_correct_radar_chart.png, id=1497, 578.16pt x 578.16pt>
 File: res/combined_correct_radar_chart.png Graphic file (type png)
 <use res/combined_correct_radar_chart.png>
 Package pdftex.def Info: res/combined_correct_radar_chart.png  used on input li
 ne 615.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
-<res/combined_wrong_radar_chart.png, id=1509, 578.16pt x 578.16pt>
+<res/combined_wrong_radar_chart.png, id=1498, 578.16pt x 578.16pt>
 File: res/combined_wrong_radar_chart.png Graphic file (type png)
 <use res/combined_wrong_radar_chart.png>
 Package pdftex.def Info: res/combined_wrong_radar_chart.png  used on input line
@@ -2670,9 +2653,9 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Underfull \vbox (badness 3209) has occurred while \output is active []
 
- [76 <./res/combined_correct_radar_chart.png> <./res/combined_wrong_radar_chart
+ [74 <./res/combined_correct_radar_chart.png> <./res/combined_wrong_radar_chart
 .png>]
-[77]
+[75]
 Underfull \hbox (badness 1097) in paragraph at lines 710--710
 []|\T1/zpltlf/m/n/10 Mis In-ter-pre-ta-tion
  []
@@ -2692,22 +2675,22 @@ Underfull \hbox (badness 2409) in paragraph at lines 710--710
 []|\T1/zpltlf/m/n/10 Saul Bel-low star-
  []
 
-[78]
-<res/radar-error-0.jpg, id=1526, 575.14874pt x 537.00626pt>
+[76]
+<res/radar-error-0.jpg, id=1514, 575.14874pt x 537.00626pt>
 File: res/radar-error-0.jpg Graphic file (type jpg)
 <use res/radar-error-0.jpg>
 Package pdftex.def Info: res/radar-error-0.jpg  used on input line 729.
 (pdftex.def)             Requested size: 167.2989pt x 156.20308pt.
-<res/radar-error-1.jpg, id=1527, 575.14874pt x 537.00626pt>
+<res/radar-error-1.jpg, id=1515, 575.14874pt x 537.00626pt>
 File: res/radar-error-1.jpg Graphic file (type jpg)
 <use res/radar-error-1.jpg>
 Package pdftex.def Info: res/radar-error-1.jpg  used on input line 734.
 (pdftex.def)             Requested size: 167.2989pt x 156.20308pt.
-) [79 <./res/radar-error-0.jpg> <./res/radar-error-1.jpg>]
+) [77 <./res/radar-error-0.jpg> <./res/radar-error-1.jpg>]
 \openout2 = `chapters/98_conclusions.aux'.
 
 
-(./chapters/98_conclusions.tex [80
+(./chapters/98_conclusions.tex [78
 
 
 
@@ -2721,14 +2704,14 @@ Overfull \hbox (2.8481pt too wide) in paragraph at lines 6--7
 -o-lu-tion has proven
  []
 
-[81]) [82]
+[79]) [80]
 \openout2 = `chapters/99_appendix.aux'.
 
  (./chapters/99_appendix.tex (./chapters/prompt-templates.tex
 Appendix A.
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 (Font)              scaled to size 10.95pt on input line 4.
-[83
+[81
 
 
 
@@ -2736,7 +2719,7 @@ LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 
 
 
-] [84] [85]) (./chapters/chunking-strategies.tex [86]
+] [82] [83]) (./chapters/chunking-strategies.tex [84]
 Appendix B.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2747,10 +2730,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-)) [87
+)) [85
 
 
-] [88] [89] [90] [91
+] [86] [87] [88] [89
 
 
 
@@ -2770,13 +2753,13 @@ Overfull \hbox (5.51793pt too wide) in paragraph at lines 68--68
  ^^P  Utility-Oriented
  []
 
-[92] [93]
+[90] [91]
 Overfull \hbox (4.19168pt too wide) in paragraph at lines 68--68
 []\T1/zpltlf/m/n/12 An Yang et al. ^^P  Qwen2 Tech-ni-cal Re-port^^Q. In: \T1/z
 pltlf/m/it/12 arXiv preprint arXiv:2407.10671
  []
 
-[94] (./frontmatter/thanks.tex) [95
+[92] (./frontmatter/thanks.tex) [93
 
 
 
@@ -2798,17 +2781,20 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E2822C0586643FD2F9844B45FC0EA81A;7582.
+(rerunfilecheck)             Checksum: 82C3E8BAC7A585CF2651FC698D5146B6;7582.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49546 strings out of 474116
- 904384 string characters out of 5743682
+ 49542 strings out of 474116
+ 904277 string characters out of 5743682
  2050187 words of memory out of 5000000
- 70614 multiletter control sequences out of 15000+600000
+ 70612 multiletter control sequences out of 15000+600000
  684965 words of font info for 160 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,18n,131p,1654b,4011s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2918,11 +2904,11 @@ onts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/
 newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zpl
 ri.pfb>
-Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (115 p
-ages, 10401040 bytes).
+Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (113 p
+ages, 10397856 bytes).
 PDF statistics:
- 1857 PDF objects out of 2073 (max. 8388607)
- 1656 compressed objects within 17 object streams
- 433 named destinations out of 1000 (max. 500000)
+ 1843 PDF objects out of 2073 (max. 8388607)
+ 1645 compressed objects within 17 object streams
+ 431 named destinations out of 1000 (max. 500000)
  899 words of extra memory for PDF output out of 10000 (max. 10000000)
 

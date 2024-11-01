@@ -13,9 +13,9 @@ The authors found that LLMs generally excel in multi-hop reasoning tasks, partic
     \begin{minipage}[b]{\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{res/rel-human-llm-inference}
-        \caption{\textbf{Distinctions between human and LLM Inferences.} The entailment prediction performance of humans and LLMs are depicted by a 5-star rating scale~\cite{sanyal2024machinesbettercomplexreasoning}.}
-        \label{fig:distinguishing-human-llm-inferences}
     \end{minipage}
+    \caption{Distinctions between human and LLM Inferences. The entailment prediction performance of humans and LLMs are depicted by a 5-star rating scale~\cite{sanyal2024machinesbettercomplexreasoning}.}
+    \label{fig:distinguishing-human-llm-inferences}
 \end{figure}
 
 Interestingly, both perform comparably in situations requiring inference of missing knowledge.
@@ -29,22 +29,20 @@ Both approaches deal with inference verification but diverge in their method of 
 This distinction is significant in terms of application: while their fine-tuned Flan-T5 model achieves high accuracy in entailment tasks, it remains bound to the contextual limits of its training data.
 My work, by integrating retrieval, potentially overcomes this limitation by dynamically accessing external data, thus offering a complementary perspective to entailment verification focused on enhancing factuality.
 
-\section{Claim Verification in the Age of Large Language Models}\label{subsec:claim-verification-in-the-age-of-large-language-models}
+\section{Claim Verification in the Age of Large Language Models}\label{sec:claim-verification-in-the-age-of-large-language-models}
 Dmonte et al.~\cite{dmonte2024claimverificationagelarge} provide a comprehensive survey of \ac{LLM}-based approaches to claim verification, highlighting the shift from traditional \ac{NLP} methods to more sophisticated LLM-driven techniques.
-
 The typical LLM-based claim verification pipeline, as described by Dmonte et al., consists of several key components:
 \begin{enumerate}
-    \item Evidence Retrieval: Utilizing techniques like \ac{RAG} to fetch relevant information from external sources.
-    \item Prompt Creation: Developing effective prompting strategies to guide LLMs in processing claims and evidence.
-    \item Transfer Learning: Employing fine-tuning and in-context learning to adapt LLMs to the specific task of claim verification.
-    \item LLM Generation: Using LLMs to generate veracity labels, supporting evidence, and explanations.
+    \item \textbf{Evidence Retrieval:} Utilizing techniques like \ac{RAG} to fetch relevant information from external sources.
+    \item \textbf{Prompt Creation:} Developing effective prompting strategies to guide LLMs in processing claims and evidence.
+    \item \textbf{Transfer Learning:} Employing fine-tuning and in-context learning to adapt LLMs to the specific task of claim verification.
+    \item \textbf{LLM Generation:} Using LLMs to generate veracity labels, supporting evidence, and explanations.
 \end{enumerate}
 
 This pipeline represents a departure from traditional fact-checking approaches, leveraging the power of \ac{LLMs} to improve accuracy and provide more nuanced assessments of claim veracity.
-
-Several studies have demonstrated the effectiveness of LLM-based approaches in claim verification:
+Based on survey, several studies have demonstrated the effectiveness of LLM-based approaches in claim verification:
 \begin{itemize}
-    \item Zhang and Gao~\cite{zhang2024reinforcementretrievalleveragingfinegrained} introduced HiSS, a hierarchical prompting technique that improved performance on complex news claim verification tasks.
+    \item Zhang and Gao~\cite{zhang2023llmbasedfactverificationnews} introduced the Hierarchical Step-by-Step (HiSS) prompting method, which directs LLMs to separate a claim into several sub-claims and then verify each via multiple questions-answering steps progressively, improving performance on complex news claim verification tasks.
     \item Lee et al.~\cite{lee2023factualityenhancedlanguagemodels} developed FactualityPrompts, a framework for assessing the factual accuracy of LLM-generated content.
 \end{itemize}
 
@@ -55,17 +53,17 @@ These studies consistently show that LLM-based methods outperform traditional NL
     \begin{minipage}[b]{\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{res/rel-claim-verification}
-        \caption{Comparison of claim verification systems between NLP-based (traditional) and LLM-based for claim veracity.~\cite{dmonte2024claimverificationagelarge}.}
-        \label{fig:claim-verification-llm}
     \end{minipage}
+    \caption{Comparison of claim verification systems between NLP-based (traditional) and LLM-based for claim veracity.~\cite{dmonte2024claimverificationagelarge}.}
+    \label{fig:claim-verification-llm}
 \end{figure}
 
 Our approach shares similarities with the LLM-based pipeline described by Dmonte et al., particularly in the use of retrieval-augmented generation and the integration of multiple LLMs. However, our method differs in several key aspects:
 \begin{enumerate}
-    \item Multi-Query Retrieval: We employ a multi-query strategy for evidence retrieval, potentially improving the coverage and relevance of supporting information.
-    \item Iterative Refinement: Our system incorporates an iterative process for refining retrieved evidence and generated responses, which is not explicitly mentioned in most LLM-based approaches surveyed.
-    \item Explainability Focus: While many LLM approaches provide explanations, our method places a stronger emphasis on generating detailed, step-by-step justifications for veracity assessments.
-    \item Specialized Embedding Models: We utilize domain-specific embedding models for improved semantic understanding in the retrieval phase, which is not commonly discussed in general LLM-based approaches.
+    \item \textbf{Multi-Query Retrieval:} We employ a multi-query strategy for evidence retrieval, potentially improving the coverage and relevance of supporting information.
+    \item \textbf{Iterative Refinement:} Our system incorporates an iterative process for refining retrieved evidence and generated responses, which is not explicitly mentioned in most LLM-based approaches surveyed.
+    \item \textbf{Limited Explanation:} While many LLM approaches provide explanations, our method places a stronger emphasis on generating binary (pass/fail) labels for claims to reduce the costs of using LLMs.
+    \item \textbf{Diverse LLM Model:} We use multiple LLMs with diverse architectures to provide more reliable verification result.
 \end{enumerate}
 
 These distinctions position our work as a novel contribution to the field, building upon the foundations of LLM-based claim verification while introducing innovative techniques to enhance performance and interpretability.
@@ -75,7 +73,7 @@ Dmonte et al. highlight issues such as handling irrelevant context, resolving kn
 
 \section{Retrieval-Augmented Fact Verification by Synthesizing Contrastive Arguments}\label{sec:retrieval-augmented-fact-verification}
 The paper Retrieval-Augmented Fact Verification by Synthesizing Contrastive Arguments~\cite{yue2024retrievalaugmentedfactverification} explores a method for improving fact verification in knowledge graphs using RAG.
-The proposed framework combines retrieval of external information and the generation of contrastive arguments—claims supported by retrieved evidence, but also those that provide counterpoints.
+The proposed framework combines retrieval of external information and the generation of contrastive arguments-claims supported by retrieved evidence, but also those that provide counterpoints.
 This dual synthesis provides a richer and more nuanced verification process, allowing the system to handle conflicting evidence more effectively.
 The core contribution of the work lies in the creation of contrastive arguments, a strategy designed to reduce errors in fact verification systems, especially when LLMs may hallucinate or generate incomplete reasoning.
 
@@ -115,9 +113,9 @@ The authors integrate various modalities text, images, and other media sources i
     \begin{minipage}[b]{\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{res/rel-ragar}
-        \caption{An overview of the fact-checking pipeline~\cite{khaliq2024ragarfalsehoodradarragaugmented} contrasting the baseline Sub-Question Generation approach from the RAGAR: Chain of RAG and RAGAR: Tree of RAG approach followed by a veracity explanation generated by a Veracity Prediction module.}
-        \label{fig:rel-ragar}
     \end{minipage}
+    \caption{An overview of the fact-checking pipeline contrasting the baseline Sub-Question Generation approach from the Chain of RAG and Tree of RAG approach followed by veracity prediction and explanation.}
+    \label{fig:rel-ragar}
 \end{figure}
 
 The central innovation of RAGAR lies in its multimodal reasoning capabilities, which allow the model to handle political claims that involve not only textual content but also visual data, such as images or charts.

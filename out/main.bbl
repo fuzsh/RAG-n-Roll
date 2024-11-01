@@ -6259,7 +6259,7 @@
       \verb https://aclanthology.org/2023.tacl-1.63
       \endverb
     \endentry
-    \entry{zhang2024reinforcementretrievalleveragingfinegrained}{misc}{}
+    \entry{zhang2023llmbasedfactverificationnews}{misc}{}
       \name{author}{2}{}{%
         {{hash=2c65dc0155fc0f151c939cd8fa10040e}{%
            family={Zhang},
@@ -6284,16 +6284,16 @@
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.CL}
       \field{eprinttype}{arXiv}
-      \field{title}{Reinforcement Retrieval Leveraging Fine-grained Feedback for Fact Checking News Claims with Black-Box LLM}
-      \field{year}{2024}
+      \field{title}{Towards LLM-based Fact Verification on News Claims with a Hierarchical Step-by-Step Prompting Method}
+      \field{year}{2023}
       \verb{eprint}
-      \verb 2404.17283
+      \verb 2310.00305
       \endverb
       \verb{urlraw}
-      \verb https://arxiv.org/abs/2404.17283
+      \verb https://arxiv.org/abs/2310.00305
       \endverb
       \verb{url}
-      \verb https://arxiv.org/abs/2404.17283
+      \verb https://arxiv.org/abs/2310.00305
       \endverb
     \endentry
   \enddatalist
