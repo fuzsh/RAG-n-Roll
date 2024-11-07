@@ -402,7 +402,7 @@ The ensemble approach proved particularly effective in resolving ambiguous cases
 While the computational cost of ensemble methods is higher, their selective application only to uncertain cases (5-10\% of queries) makes this trade-off acceptable in practice.
 The high consistency scores observed in ensemble methods (>0.91) suggest more reliable predictions for challenging cases, justifying the additional computational investment for these specific instances.
 
-\subsection{Error Analysis}\label{subsec:empirical-evaluation:discussion-of-results:error-analysis}
+\subsection{Qualitative Error Analysis}\label{subsec:empirical-evaluation:discussion-of-results:error-analysis}
 \begin{figure}[ht!]
     \centering
     \begin{minipage}[b]{\textwidth}
@@ -449,22 +449,22 @@ The labeling data for each cluster is as follows:
             \toprule
             \textbf{Dataset}            & \textbf{Model} & \textbf{UnLabeled} & \textbf{Relationship} & \textbf{Role Errors} & \textbf{Geo Errors} & \textbf{Classification} & \textbf{Identifiers} & \textbf{Total}\tnote{*} \\
             \midrule
-            \multirow{5}{*}{FactBench}  & Gemma2                             & 4   & 36  & 45  & 176  & 13  & 1   & 275 \\
-            & Qwen2.5                            & 33  & 27  & 60  & 194  & 34  & 1   & 349 \\
-            & Llama3.1                           & 38  & 44  & 73  & 295  & 38  & 3   & 490 \\
-            & Mistral                            & 53  & 27  & 53  & 242  & 40  & 2   & 417 \\ \cline{2-9}
-            & Total                              & 128 & 134 & 231 & 907  & 125 & 7   & 1532 \\ \hline
-            \multirow{5}{*}{YAGO}       & Gemma2                             & 6   & 134 & 0   & 14   & 51  & 2   & 207 \\
-            & Qwen2.5                            & 7   & 109 & 0   & 13   & 63  & 2   & 194 \\
-            & Llama3.1                           & 8   & 98  & 0   & 19   & 104 & 2   & 231 \\
-            & Mistral                            & 7   & 54  & 0   & 10   & 34  & 3   & 108 \\ \cline{2-9}
-            & Total                              & 28  & 395 & 0   & 56   & 252 & 9   & 740 \\ \hline
-            \multirow{5}{*}{DBpedia}    & Gemma2                             & 353 & 22  & 98  & 1730 & 459 & 300 & 1962 \\
-            & Qwen2.5                            & 339 & 19  & 91  & 1525 & 357 & 237 & 1568 \\
-            & Llama3.1                           & 382 & 28  & 109 & 2172 & 509 & 318 & 2720 \\
-            & Mistral                            & 325 & 20  & 94  & 1487 & 438 & 241 & 1932 \\ \cline{2-9}
-            & Total                              & 1399 & 89  & 392 & 5914 & 1753 & 1096 & 10115 \\ \hline
-            Total                       & -----                              & 1555 & 618 & 392 & 6877 & 2130 & 1112 & 12084 \\
+            \multirow{5}{*}{FactBench}  & Gemma2                             & 4    & 36    & 45    & 176  & 13     & 1     & 275 \\
+                                        & Qwen2.5                            & 33   & 27    & 60    & 194  & 34     & 1     & 349 \\
+                                        & Llama3.1                           & 38   & 44    & 73    & 295  & 38     & 3     & 491 \\
+                                        & Mistral                            & 53   & 27    & 53    & 242  & 40     & 2     & 417 \\ \cline{2-9}
+                                        & Unique. Ratio (\%)                 & 0.62 & 0.72  & 0.44  & 0.52 & 0.63   & 0.57  & 0.53 \\ \hline
+            \multirow{5}{*}{YAGO}       & Gemma2                             & 6        & 134   & 0   & 14      & 51    & 2     & 207   \\
+                                        & Qwen2.5                            & 7        & 109   & 0   & 13      & 63    & 2     & 194   \\
+                                        & Llama3.1                           & 8        & 98    & 0   & 19      & 104   & 2     & 231   \\
+                                        & Mistral                            & 7        & 54    & 0   & 10      & 34    & 3     & 108   \\ \cline{2-9}
+                                        & Unique. Ratio (\%)                 & 0.35     & 0.52  & --   & 0.46    & 0.51  & 0.33  & 0.50  \\ \hline
+            \multirow{5}{*}{DBpedia}    & Gemma2                             & 353      & 22    & 98  & 1729    & 459   & 299   & 2960  \\
+                                        & Qwen2.5                            & 339      & 19    & 91  & 1525    & 357   & 237   & 2568 \\
+                                        & Llama3.1                           & 382      & 28    & 109 & 2172    & 509   & 318   & 3518 \\
+                                        & Mistral                            & 325      & 20    & 94  & 1487    & 438   & 241   & 2605 \\ \cline{2-9}
+                                        & Unique. Ratio (\%)                 & 0.41     & 0.43  & 0.44 & 0.42   & 0.42  & 0.40  & 0.41 \\
+%            Total                       & -----                              & 1555 & 618 & 392 & 6877 & 2130 & 1112 & 12084 \\
             \bottomrule
         \end{tabular}
     \begin{tablenotes}
