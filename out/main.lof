@@ -12,11 +12,15 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Fetching results from Google Search engine for top $N$ questions and the main knowledge graph query.}}{23}{figure.caption.30}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Extracted content from the crawled URLs using newspaper4k library.}}{25}{figure.caption.32}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Collecting logs and leveraging LLM-generated reasoning, combined with contextual document embeddings (jxm/cde-small-v1), to cluster errors using a hierarchical density-based spatial technique.}}{52}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Normalized distribution of error clusters across datasets.}}{54}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Distribution of error clusters across selected LLMs.}}{54}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Distribution of tendency to be wrong across gemma2, qwen2.5, \textit {LLama3.1} and mistral models. The right chart illustrates the distribution of fully incorrect predictions (4/4) detailing the instances where all predictions made by the models were incorrect. The left chart depicts the distribution of just one wrong predictions (1/4).}}{54}{figure.caption.55}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Document Retrieval Confusion Matrix based on Jaccard Similarity between documents retrieved by each model.}}{59}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Node sentence window replacement technique as described by Liu~\blx@tocontentsinit {0}\cite {liu2023tweet}.}}{70}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Category-wise performance of different models in identifying Positive Labels (left) and Negative Labels (right) on the FactBench dataset.}}{74}{figure.caption.66}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy on the FactBench dataset, focusing on incorrect predictions. The left chart illustrates the Distribution of Fully Incorrect Predictions (4/4), detailing the instances where all predictions made by the model were incorrect. The right chart depicts the Distribution of Partially Incorrect Predictions (3/4).}}{77}{figure.caption.70}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Document Retrieval Confusion Matrix based on Jaccard Similarity between documents retrieved by each model.}}{63}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Node sentence window replacement technique as described by Liu~\blx@tocontentsinit {0}\cite {liu2023tweet}.}}{74}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Category-wise performance of different models in identifying Positive Labels (left) and Negative Labels (right) on the FactBench dataset.}}{78}{figure.caption.74}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy on the FactBench dataset, focusing on incorrect predictions. The right chart illustrates the Distribution of Fully Incorrect Predictions (4/4), detailing the instances where all predictions made by the models were incorrect. The left chart depicts the Distribution of Partially Incorrect Predictions (3/4).}}{81}{figure.caption.79}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

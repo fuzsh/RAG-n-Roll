@@ -3940,6 +3940,43 @@
       \verb https://mistral.ai/news/announcing-mistral-7b/
       \endverb
     \endentry
+    \entry{morris2024contextualdocumentembeddings}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=c197d948964c01e6ac22ea8605684b51}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima X.},
+           giveni={J\bibinitperiod\bibinitdelim X\bibinitperiod}}}%
+        {{hash=f242a0a9b3b93ccf3879646ed9ab662f}{%
+           family={Rush},
+           familyi={R\bibinitperiod},
+           given={Alexander\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{21622e9eee55efb5c2c192642d3ea9b0}
+      \strng{fullhash}{21622e9eee55efb5c2c192642d3ea9b0}
+      \strng{bibnamehash}{21622e9eee55efb5c2c192642d3ea9b0}
+      \strng{authorbibnamehash}{21622e9eee55efb5c2c192642d3ea9b0}
+      \strng{authornamehash}{21622e9eee55efb5c2c192642d3ea9b0}
+      \strng{authorfullhash}{21622e9eee55efb5c2c192642d3ea9b0}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{Contextual Document Embeddings}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2410.02525
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2410.02525
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2410.02525
+      \endverb
+    \endentry
     \entry{muennighoff-etal-2023-mteb}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=a2deb8466aa6f0edfe3cc805f9d776d8}{%

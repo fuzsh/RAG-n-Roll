@@ -12,7 +12,7 @@ The data was automatically extracted from Wikipedia\footnote{\url{https://www.wi
 To obtain positive examples, the authors leverages facts from both DBpedia and Freebase.
 For each property under consideration, they generated these examples by issuing either a SPARQL (for DBpedia) or MQL (for Freebase) query.
 They then selected the top 150 results.
-In Freebase, results are ranked using an internal relevance score, while in DBpedia, the results are sorted by the number of inbound links to the resource’s corresponding Wikipedia page.
+In Freebase, results are ranked using an internal relevance score, while in \textit{DBpedia}, the results are sorted by the number of inbound links to the resource’s corresponding Wikipedia page.
 In total, 1500 correct statements were collected, with 750 allocated to both the test and training sets, ensuring that each relation had 150 positive facts equally distributed between the test and training sets.
 
 For generating incorrect facts (negative examples), the authors modified correct ones while adhering to domain and range constraints.
@@ -55,7 +55,7 @@ Additionally, they focused exclusively on A-Box triplets (assertional knowledge)
 The T-Box encompasses ontological entities and relationships, while A-Box contains the actual assertions that need verification.
 After applying these filters, their working dataset consisted 4.6M entities with 170M triplets.
 
-From this filtered dataset, they conducted a comprehensive annotation study on 9,930 facts, which were carefully selected to represent diverse types of relationships and knowledge domains within DBpedia.
+From this filtered dataset, they conducted a comprehensive annotation study on 9,930 facts, which were carefully selected to represent diverse types of relationships and knowledge domains within \textit{DBpedia}.
 To ensure annotation quality, Marchesin et al. implemented several measures:
 \begin{itemize}
     \item Multiple annotators per fact (minimum of three annotations per triplet)
@@ -295,71 +295,240 @@ The tests are run on a server with the following specifications:
     \item \textbf{System Firmware Version:} 11881.1.1
     \item \textbf{OS Loader Version:} 11881.1.1
 \end{itemize}
-%The timing tests are conducted over 50 samples for each section, using a MacBook Pro equipped with an Apple M2 Max chip and 32 GB of memory.
 
 \section{Comparative Analysis}\label{sec:empirical-evaluation:comparative-analysis}
 \begin{table}[ht!]
     \noindent
-    \caption{Empirical evaluation results of the proposed system and candidate models over the datasets.}
+    \caption{Empirical evaluation results of the proposed system and candidate LLMs over the FactBench, YAGO, and DBpedia.}
     {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original), Top\_k 6}
     \resizebox{\textwidth}{!}{
         \begin{threeparttable}
-        \begin{tabular}{llccc||cc}
-            \toprule
-            \textbf{Dataset}            & \textbf{Model}                     & \textbf{Consistency}\tnote{a}  & \textbf{Avg. Request Time}\tnote{b} & \textbf{Avg. tokens per request} & \textbf{ACC} & \textbf{F1} \\
-            \midrule
-            \multirow{6}{*}{FactBench}  & Gemma2                             & 0.8720                         & 5.6826s                            & 1605.29                                       & \textbf{0.9032}    & \textbf{0.9101}   \\
-                                        & Qwen2.5                            & 0.8685                         & 6.3094s                            & 1652.66                                       & 0.8729    & 0.8888   \\
-                                        & LLama3.1                           & 0.8291                         & 6.5270s                            & 1679.04                                       & 0.8154    & 0.8299   \\
-                                        & Mistral                            & 0.8650                         & 4.6692s                            & 1594.76                                       & 0.8511    & 0.8733   \\ \cline{2-7}
-                                        & Proposed (At\_Most)                & \textbf{0.9176}                & 16.815s                            & 1604.196                                       & 0.8964    & 0.9071   \\
-                                        & Proposed (At\_Least)               & N/A                            & N/A                            & N/A                                       & N/A    & N/A   \\ \hline \hline
-            \multirow{6}{*}{YAGO}       & Gemma2                             & 0.8785                         & 5.1982s                            & 1597.50                                       & 0.8499    & 0.9187   \\
-                                        & Qwen2.5                            & 0.8773                         & 6.2770s                            & 1653.56                                       & 0.8506    & 0.9191   \\
-                                        & LLama3.1                           & 0.8276                         & 6.4070s                            & 1682.78                                       & 0.8059    & 0.8922   \\
-                                        & Mistral                            & 0.8817                         & 4.4824s                            & 1589.58                                       & \textbf{0.9250}    & \textbf{0.9610}   \\ \cline{2-7}
-                                        & Proposed (At\_Most)                & \textbf{0.9226}                & 6.4810s                            & 1586.02                                       & 0.8737    & 0.9325   \\
-                                        & Proposed (At\_Least)               & N/A                            & N/A                            & N/A                                       & N/A    & N/A   \\ \hline \hline
-            \multirow{6}{*}{DBpedia}    & Gemma2                             & N/A                          & N/A                            & N/A                                       & \textbf{N/A}    & \textbf{N/A }   \\
-                                        & Qwen2.5                            & N/A                          & N/A                            & N/A                                       & N/A     & N/A    \\
-                                        & LLama3.1                           & N/A                          & N/A                            & N/A                                       & N/A     & N/A    \\
-                                        & Mistral                            & N/A                          & N/A                            & N/A                                       & N/A     & N/A    \\ \cline{2-7}
-                                        & Proposed (At\_Most)                & \textbf{N/A }                & N/A                            & N/A                                       & N/A     & N/A    \\
-                                        & Proposed (At\_Least)               & \textbf{N/A }                & N/A                            & N/A                                       & N/A     & N/A    \\
-
-            \bottomrule
-        \end{tabular}
-        \begin{tablenotes}
-            \item[a] Consistency score for each individual model is calculated across all models, excluding the ensemble models.
-            \item[b] Each query uses two requests, so the average request duration is calculated based on the two requests.
-        \end{tablenotes}
+            \begin{tabular}{llcccc||cc}
+                \toprule
+                \textbf{Dataset}            & \textbf{Model}                     & \textbf{Consistency}\tnote{*}  & \shortstack{\textbf{Avg.}\\\textbf{request time}}                                & \shortstack{\textbf{Avg.}\\\textbf{input tokens}} & \shortstack{\textbf{Avg.}\\\textbf{output tokens}} & \textbf{Acc} & \textbf{F1} \\
+                \midrule
+                \multirow{6}{*}{FactBench}  & Gemma2                             & 0.8738                         & 2.32s                            & 1509.30                                       & 19.95            & 0.9014    & 0.9085   \\
+                                            & Qwen2.5                            & 0.8747                         & 2.46s                            & 1509.18                                       & 67.73            & 0.8746    & 0.8910   \\
+                                            & LLama3.1                           & 0.8296                         & 2.87s                            & 1509.24                                       & 104.65           & 0.8243    & 0.8378   \\
+                                            & Mistral                            & 0.8686                         & 1.73s                            & 1509.17                                       & 8.81             & 0.8507    & 0.8729   \\ \cline{2-8}
+                                            & Most (Qwen2.5:14b)                 & 0.9194                         & 27.66s                           & 1509.18                                       & 57.44            & 0.9057    & 0.9145   \\
+                                            & Least (Llama3.1:70b)               & 0.9195                         & 12.70s                           & 1749.14                                       & 8.73             & 0.9025    & 0.9124   \\ \hline \hline
+                \multirow{6}{*}{YAGO}       & Gemma2                             & 0.8882                         & 2.15s                            & 1508.83                                       & 17.06            & 0.8506    & 0.9191   \\
+                                            & Qwen2.5                            & 0.8884                         & 2.50s                            & 1509.35                                       & 72.87            & 0.8600    & 0.9246   \\
+                                            & LLama3.1                           & 0.8552                         & 7.20s                            & 1509.25                                       & 104.58           & 0.8333    & 0.9089   \\
+                                            & Mistral                            & 0.8920                         & 1.67s                            & 1509.31                                       & 8.03             & 0.9221    & 0.9594   \\ \cline{2-8}
+                                            & Most (Mistral-nemo:12b)            & 0.9311                         & 2.31s                            & 1560.97                                       & 9.13             & 0.8701    & 0.9304   \\
+                                            & Least (Llama3.1:70b)               & 0.9311                         & 11.60s                           & 1560.97                                       & 10.19            & 0.8853    & 0.9391   \\ \hline \hline
+                \multirow{6}{*}{DBpedia}    & Gemma2                             & 0.8207                         & 7.80s                            & 1551.69                                       & 27.15            & 0.6821    & 0.7865   \\
+                                            & Qwen2.5                            & 0.8247                         & 2.63s                            & 1552.02                                       & 73.41            & 0.7236    & 0.8211   \\
+                                            & LLama3.1                           & 0.7573                         & 3.06s                            & 1551.98                                       & 110.82           & 0.6224    & 0.7377   \\
+                                            & Mistral                            & 0.8162                         & 1.81s                            & 1551.95                                       & 8.76             & 0.7201    & 0.8192   \\ \cline{2-8}
+                                            & Most (Qwen2.5:14b)                 & 0.8858                         & 6.48s                            & 1695.92                                       & 84.47            & 0.7014    & 0.8020   \\
+                                            & Least (Llama3.1:70b)               & 0.8860                         & 12.82s                           & 1701.77                                       & 8.99             & 0.7099    & 0.8089   \\
+                \bottomrule
+            \end{tabular}
+            \begin{tablenotes}
+                \item[*] Consistency score for each individual model is calculated across all models, excluding the ensemble models.
+%                \item[b] Each query uses two requests, so the average request duration is calculated based on the two requests.
+            \end{tablenotes}
         \end{threeparttable}}
     \label{tab:evaluation_results-full-wo-category-all-datasets}
 \end{table}
 
-
 \subsection{Discussion of Results}\label{subsec:discussion-of-results}
-The empirical evaluation results presented in Table~\ref{tab:evaluation_results-full-wo-category-all-datasets} offer valuable insights into the performance of our proposed system and the individual candidate models across the three datasets: \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia}.
+Evaluation across three distinct datasets - \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia} - shows significant insights into the performance and efficiency of different language models for knowledge graph fact verification.
 
-Among the candidate models, \textit{Llama3.1} generates the reasoning most of the time and don't follow the instructions fully, this way the Avg completion tokens is higher than the other models.
+Based on Table~\ref{tab:evaluation_results-full-wo-category-all-datasets}, in the \textit{FactBench} dataset, \textit{Gemma2} emerged as the strongest individual performer, achieving an accuracy of 0.9014 and an F1 score of 0.9085.
+These results were further enhanced by the ensemble approach using \textit{Qwen2.5:14b}, which improved the accuracy to 0.9057 and F1 score to 0.9145.
+On the \textit{YAGO} dataset, Mistral demonstrated exceptional performance, reaching an accuracy of 0.9221 and an F1 score of 0.9594.
+The consistent high performance across models on this dataset suggests that well-structured, high-quality knowledge graphs can be effectively verified using our approach.
+The ensemble method with \textit{Mistral-nemo:12b} maintained strong results while providing additional verification confidence in ambiguous cases.
+The \textit{DBpedia} dataset proved more challenging, with overall lower performance across all models.
+\textit{Qwen2.5} achieved the best individual results with an accuracy of 0.7236 and an F1 score of 0.8211.
+This performance difference highlights the impact of dataset complexity and structure on verification accuracy.
 
-In terms of overall accuracy and F1 scores, the \textit{Gemma2} model outperforms the other individual models on the FactBench dataset.
-This superior performance can be attributed to Gemma2's advanced attention mechanisms, which employ a hybrid approach of sliding window attention and global attention to effectively capture both local and long-range dependencies in the input sequences.
-The model's ability to learn from larger teacher models during pre-training and its use of on-policy distillation post-training likely contribute to its strong performance relative to its size.
+\begin{table}[ht!]
+    \noindent
+    \caption{Statistical analysis of output tokens and request times per query across FactBench, YAGO, and DBpedia datasets for each used model.}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{lcccccccc||ccccccc}
+            \toprule
+                            & \multicolumn{2}{c}{\textbf{Gemma2}}       & \multicolumn{2}{c}{\textbf{Qwen2.5}}          & \multicolumn{2}{c}{\textbf{Llama3.1}}     & \multicolumn{2}{c||}{\textbf{Mistral}}      & \multicolumn{2}{c}{\textbf{Mistral-nemo}}     & \multicolumn{2}{c}{\textbf{Qwen2.5:14b}}  & \multicolumn{2}{c}{\textbf{Llama3.1:70b}} \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11} \cmidrule(lr){12-13} \cmidrule(lr){14-15}
+                            & \textbf{Avg} & \textbf{Std}               & \textbf{Avg} & \textbf{Std}                   & \textbf{Avg} & \textbf{Std}               & \textbf{Avg} & \textbf{Std}               & \textbf{Avg} & \textbf{Std}                   & \textbf{Avg} & \textbf{Std}               & \textbf{Avg} & \textbf{Std} \\
+            \midrule
+            Output tokens   & 24.98           & 24.91                   & 72.32     & 29.78                             & 108.11    & 87.26                         & 9.85      & 21.12                         & 9.13      & 12.83                             & 73.64      & 60.80                        & 10.06         & 13.94 \\
+            Request time    & 6.11s           & 51.38                   & 2.59s     & 0.68                              & 3.44s     & 19.59                         & 1.79s     & 0.55                          & 2.31      & 0.77                              & 11.18s     & 68.12                        & 13.94s        & 6.48 \\
+            \bottomrule
+        \end{tabular}}
+    \label{tab:evaluation_results-full-for-llms}
+\end{table}
 
-Interestingly, the \textit{Gemma2} model achieves the highest accuracy and F1 scores on the YAGO dataset, surpassing even \textit{Gemma2}.
-This may be due to Mistral's optimized transformer architecture, which incorporates innovations such as Grouped-Query Attention and Sliding Window Attention to improve inference speed and handle longer sequences more effectively.
+In terms of computational efficiency as showed in Tables~\ref{tab:evaluation_results-full-wo-category-all-datasets}, and~\ref{tab:evaluation_results-full-for-llms} , Mistral demonstrated remarkable performance, generating minimal output tokens (average 8.81-9.85) while maintaining competitive accuracy.
+This efficiency is especially remarkable when compared to \textit{LLama3.1}, which generated considerably more tokens (average 104.58-110.82) without any significant improvement in accuracy.
+Additionally, it suggests that \textit{LLama3.1} often failed to follow instructions closely, opting to reason through every fact rather than verifying correctness.
+Input token counts remained relatively consistent across models, ranging from approximately 1500 to 1700 tokens.
 
-The \textit{Qwen2.5} and \textit{LLama3.1} models generally fall in the middle of the pack in terms of accuracy and F1 scores.
-While both models leverage large-scale pre-training and instruction tuning, their performance suggests room for improvement in the specific task of knowledge graph fact verification.
+The processing time analysis reveals that \textit{Mistral} consistently achieved the fastest request times (1.73-1.81s), while ensemble methods required longer processing times.
+However, it's important to note that ensemble methods were only employed for tie-breaking scenarios, affecting approximately 5--10\% of the total queries.
+This selective application of ensemble methods effectively balances the trade-off between computational cost and accuracy improvement.
 
-Notably, our proposed system, which employs an ensemble approach using the combination strategy, consistently achieves competitive accuracy and F1 scores compared to the best-performing individual models.
-This highlights the effectiveness of combining the strengths of multiple models through majority voting and adaptive dispute resolution techniques.
-However, the increased computational cost of running multiple models in parallel is reflected in the higher average request duration for the proposed system.
-The stability scores provide another dimension for comparison, indicating the consistency of model outputs across different runs.
-The proposed system achieves the highest stability scores on datasets, showing the robustness gained by synthesizing results from multiple models.
+\begin{table}[ht!]
+    \noindent
+    \centering
+    \caption{Statistical analysis of request time per query across FactBench, YAGO, and DBpedia datasets.}
+    \resizebox{0.45\textwidth}{!}{
+        \begin{threeparttable}
+            \begin{tabular}{lcccccc}
+                \toprule
+                & \multicolumn{2}{c}{\textbf{FactBench}}    & \multicolumn{2}{c}{\textbf{YAGO}}             & \multicolumn{2}{c}{\textbf{DBpedia}} \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+                & \textbf{Avg} & \textbf{Std}               & \textbf{Avg} & \textbf{Std}                   & \textbf{Avg}      & \textbf{Std}     \\
+                \midrule
+                Request time\tnote{*}   & 4.59s           & 20.17                   & 4.55s     & 33.03                             & 6.32s             & 39.04            \\
+                \bottomrule
+            \end{tabular}
+            \begin{tablenotes}
+                \item[*] Time taken for the embedding phase and LLM request.
+            \end{tablenotes}
+        \end{threeparttable}}
+    \label{tab:evaluation_results-full-for-datasets}
+\end{table}
 
-%TODO: CHECK WHEN DBPEDIA COMPLETED
-Among the individual models, \textit{Gemma2} and \textit{Mistral} exhibit relatively high stability, while \textit{LLama3.1} has the lowest stability scores.
-\subsection{Key Findings}\label{subsec:empirical-evaluation:discussion-of-results:key-findings}
+The analysis from Tables~\ref{tab:evaluation_results-full-wo-category-all-datasets} and~~\ref{tab:evaluation_results-full-for-datasets} show notable patterns in the performance specific to each dataset.
+Models generally achieved better results on more structured datasets like \textit{FactBench} and \textit{YAGO} compared to \textit{DBpedia}.
+This pattern suggests that the clarity and consistency of the underlying knowledge graph significantly influence verification accuracy.
+Request times also varied across datasets, with \textit{DBpedia} queries requiring longer processing times (6.32s) compared to \textit{FactBench} (4.59s) and \textit{YAGO} (4.55s), likely due to its greater complexity and size.
+
+The ensemble approach proved particularly effective in resolving ambiguous cases.
+While the computational cost of ensemble methods is higher, their selective application only to uncertain cases (5-10\% of queries) makes this trade-off acceptable in practice.
+The high consistency scores observed in ensemble methods (>0.91) suggest more reliable predictions for challenging cases, justifying the additional computational investment for these specific instances.
+
 \subsection{Error Analysis}\label{subsec:empirical-evaluation:discussion-of-results:error-analysis}
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/clustering}
+    \end{minipage}
+    \caption{Collecting logs and leveraging LLM-generated reasoning, combined with contextual document embeddings (jxm/cde-small-v1), to cluster errors using a hierarchical density-based spatial technique.}
+    \label{fig:error-clustering-task}
+\end{figure}
+
+As depicted in Figure~\ref{fig:error-clustering-task}, our objective is to categorize errors by LLMs and text embedding model.
+This approach helps reveal common error types and patterns by clustering explanations into distinct groups.
+The process begins by gathering logs of incorrectly labeled data, referred to here as "wrongly labeled facts."
+These logs are analyzed, and we then prompt an LLM to generate explanations, or "reasons," for each error.
+This step provides context and may highlight underlying patterns or causes that contribute to these errors.
+The prompt template used for this reasoning process is detailed in Appendix~\ref{sec:prompt-templates:reasoning}.
+After obtaining explanations from the LLM, we use a specialized text embedding model named "jxm/cde-small-v1"~\footnote{\url{https://huggingface.co/jxm/cde-small-v1}}.
+We selected cde-small-v1 because it is the highest-ranked small model (under 400 million parameters) on the MTEB leaderboard for text embedding models, as of October 1, 2024.
+This model transforms each explanation into a contextualized embedding, capturing both semantic meaning and specific instruction-driven nuances for each error's context~\cite{morris2024contextualdocumentembeddings}.
+Next, these embeddings undergo dimensionality reduction using Uniform Manifold Approximation and Projection (UMAP), a technique that projects high-dimensional data into two or three dimensions while preserving local and some global structure.
+UMAP's visualization helps identify potential clusters or groupings of similar errors, making it easier to observe patterns that might be difficult to see in higher dimensions.
+Once reduced in dimensionality, the embeddings are fed into Hierarchical Density-Based Spatial Clustering of Applications with Noise (HDBSCAN), a clustering algorithm well-suited for discovering clusters in data with varying density.
+HDBSCAN clusters the error embeddings based on their density, identifying groups of similar errors and isolating outliers.
+Following clustering, we identify some reasons from each dataset.
+These representative reasons are then provided to an LLM to assign descriptive labels to each error category, which encapsulate the main types of errors across the dataset.
+
+The labeling data for each cluster is as follows:
+\begin{itemize}
+    \item \textbf{UnLabeled:} The information or context provided does not contain the claimed details, such as references to specific individuals, places, or events that are purportedly associated with the topic.
+    \item \textbf{Relationship Errors:} Errors arise from misstatements regarding relationships between people, such as marital status or religious affiliations that conflict with the provided details.
+    \item \textbf{Role Attribution Errors:} Errors are due to incorrect associations of individuals with particular roles, places, or teams that do not match the details in the context.
+    \item \textbf{Geographic/Nationality Errors:} This category includes errors related to locations, national affiliations, or settings that do not align with the context or provide contradictory information.
+    \item \textbf{Genre/Classification Errors:} Misclassifications of films, genres, or roles are highlighted here, especially when certain works are wrongly associated with people, studios, or genres.
+    \item \textbf{Identifier/Biographical Errors:} These errors involve incorrect identifiers or biographical details, such as award titles, label names, or authorship that don’t match the context.
+\end{itemize}
+
+
+\begin{table}[ht!]
+    \noindent
+    \caption{Dataset-wise error clustering based on LLM-generated reasoning, using Contextual Document Embeddings for embeddings, UMAP, and HDBSCAN.}
+    \resizebox{\textwidth}{!}{
+    \begin{threeparttable}
+        \begin{tabular}{llcccccc||c}
+            \toprule
+            \textbf{Dataset}            & \textbf{Model} & \textbf{UnLabeled} & \textbf{Relationship} & \textbf{Role Errors} & \textbf{Geo Errors} & \textbf{Classification} & \textbf{Identifiers} & \textbf{Total}\tnote{*} \\
+            \midrule
+            \multirow{5}{*}{FactBench}  & Gemma2                             & 4   & 36  & 45  & 176  & 13  & 1   & 275 \\
+            & Qwen2.5                            & 33  & 27  & 60  & 194  & 34  & 1   & 349 \\
+            & Llama3.1                           & 38  & 44  & 73  & 295  & 38  & 3   & 490 \\
+            & Mistral                            & 53  & 27  & 53  & 242  & 40  & 2   & 417 \\ \cline{2-9}
+            & Total                              & 128 & 134 & 231 & 907  & 125 & 7   & 1532 \\ \hline
+            \multirow{5}{*}{YAGO}       & Gemma2                             & 6   & 134 & 0   & 14   & 51  & 2   & 207 \\
+            & Qwen2.5                            & 7   & 109 & 0   & 13   & 63  & 2   & 194 \\
+            & Llama3.1                           & 8   & 98  & 0   & 19   & 104 & 2   & 231 \\
+            & Mistral                            & 7   & 54  & 0   & 10   & 34  & 3   & 108 \\ \cline{2-9}
+            & Total                              & 28  & 395 & 0   & 56   & 252 & 9   & 740 \\ \hline
+            \multirow{5}{*}{DBpedia}    & Gemma2                             & 353 & 22  & 98  & 1730 & 459 & 300 & 1962 \\
+            & Qwen2.5                            & 339 & 19  & 91  & 1525 & 357 & 237 & 1568 \\
+            & Llama3.1                           & 382 & 28  & 109 & 2172 & 509 & 318 & 2720 \\
+            & Mistral                            & 325 & 20  & 94  & 1487 & 438 & 241 & 1932 \\ \cline{2-9}
+            & Total                              & 1399 & 89  & 392 & 5914 & 1753 & 1096 & 10115 \\ \hline
+            Total                       & -----                              & 1555 & 618 & 392 & 6877 & 2130 & 1112 & 12084 \\
+            \bottomrule
+        \end{tabular}
+    \begin{tablenotes}
+         \item[*] Some errors may not be included in this analysis because we did not receive any responses for them. While we classify these as incorrect predictions, they are not considered in the error analysis section.
+    \end{tablenotes}
+    \end{threeparttable}}
+    \label{tab:error_results-full-wo-category-all-datasets}
+\end{table}
+
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{0.42\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/radarChart-normalized}
+        \caption{Normalized distribution of error clusters across datasets.}
+        \label{fig:normalized_distribution_of_error_clusters}
+    \end{minipage}
+    \hspace{0.05\textwidth} % Space between the images
+    \begin{minipage}[b]{0.42\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/radarChart-normalized-llms}
+        \caption{Distribution of error clusters across selected LLMs.}
+        \label{fig:distribution_of_error_clusters}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{0.42\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/radarChart-normalized-llms-1}
+    \end{minipage}
+    \hspace{0.05\textwidth} % Space between the images
+    \begin{minipage}[b]{0.42\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/radarChart-normalized-llms-4}
+    \end{minipage}
+    \caption{Distribution of tendency to be wrong across gemma2, qwen2.5, \textit{LLama3.1} and mistral models. The right chart illustrates the distribution of fully incorrect predictions (4/4) detailing the instances where all predictions made by the models were incorrect. The left chart depicts the distribution of just one wrong predictions (1/4).}
+    \label{fig:distribution_of_error_clusters_1_4}
+\end{figure}
+
+Table~\ref{tab:error_results-full-wo-category-all-datasets} alongside Figures~\ref{fig:normalized_distribution_of_error_clusters}, ~\ref{fig:distribution_of_error_clusters}, and~\ref{fig:distribution_of_error_clusters_1_4} reveals significant insights into the challenges these models face in fact validation tasks.
+The study encompassed four leading models \textit{Gemma2}, \textit{LLama3.1}, \textit{Mistral}, and \textit{Qwen2.5} evaluated across three distinct datasets: \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia}.
+The results highlight both common challenges and model-specific characteristics in fact validation performance.
+
+Geographic and nationality-related errors emerged as the predominant challenge, accounting for 56.9\% of total errors across all models and datasets.
+This pattern was particularly pronounced in the \textit{DBpedia} dataset, where geographic errors constituted 58.5\% of all errors, suggesting a systematic challenge in processing and validating location-based information.
+This pervasive difficulty across all models indicates a fundamental challenge in handling geographic relationships and facts.
+
+The analysis of dataset-specific patterns revealed distinct characteristics and challenges.
+The \textit{DBpedia} dataset proved to be the most challenging, generating the highest error count and showing particular vulnerability to geographic and classification errors.
+In contrast, the \textit{FactBench} dataset demonstrated a more balanced distribution of errors across categories, though still showing a predominance of geographic errors.
+The \textit{YAGO} dataset exhibited a unique pattern, with relationship errors being the most frequent, followed by classification errors, and notably showing no role attribution errors a distinctive characteristic that sets it apart from other datasets.
+
+When examining model-specific performance, \textit{LLama3.1} consistently generated the highest error counts across datasets, showing particular vulnerability to geographic errors in the \textit{DBpedia} dataset and elevated classification errors compared to other models.
+\textit{Mistral}, on the other hand, demonstrated stronger overall performance, particularly in the \textit{YAGO} dataset.
+\textit{Gemma2} and \textit{Qwen2.5} showed similar error patterns and counts, positioning themselves between \textit{LLama3.1} and \textit{Mistral} in terms of performance.
+
+The hierarchical distribution of error types shows a consistent pattern across models.
+This consistency in error distribution suggests that these challenges are inherent to the task rather than model-specific limitations.
+
+Despite varying error counts, models maintained similar error distribution patterns within each dataset, indicating that these challenges are systematic rather than model-specific.
+The analysis suggests several critical areas for future development in LLM fact validation capabilities.
+Primary attention should be directed toward enhancing geographic and location-based reasoning capabilities, given their dominant role in error generation.
+Additionally, improving classification tasks and the handling of insufficient context or ambiguous information could significantly enhance overall performance.
+The consistent patterns across models suggest that these improvements would benefit the field broadly rather than being model-specific enhancements.
+

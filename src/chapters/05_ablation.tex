@@ -655,9 +655,10 @@ Based on the provided configurations the model selected for \textit{At\_Most} me
     \caption{Performance evaluation of various models on the FactBench dataset.}
     {\scriptsize ms-marco-MiniLM-L-6-v2, BAAI/bge-small-en-v1.5, Sliding Window (ws 3), Similarity Cut-off (Original), Top\_k 6}
     \resizebox{\textwidth}{!}{
+        \begin{threeparttable}
         \begin{tabular}{lccc||cc}
             \toprule
-            \textbf{Model}                     & \textbf{Consistency}             & \textbf{Avg. Request Duration} & \textbf{Avg. tokens per request}          & \textbf{ACC} & \textbf{F1} \\
+            \textbf{Model}                     & \textbf{Consistency}\tnote{a}             & \textbf{Avg. Request Time}\tnote{b} & \textbf{Avg. tokens per request}\tnote{c}          & \textbf{ACC} & \textbf{F1} \\
             \midrule
             Gemma2                             & 0.8720                         & 5.6826s                            & 1605.29                                       & \textbf{0.9032}    & \textbf{0.9101}   \\
             Qwen2.5                            & 0.8685                         & 6.3094s                            & 1652.66                                       & 0.8729    & 0.8888   \\
@@ -665,7 +666,13 @@ Based on the provided configurations the model selected for \textit{At\_Most} me
             Mistral                            & 0.8650                         & 4.6692s                            & 1594.76                                       & 0.8511    & 0.8733   \\ \hline
             Proposed (At\_Most)                & \textbf{0.9176}                & 16.815s                            & 1604.196                                      & 0.8964    & 0.9071   \\
             \bottomrule
-        \end{tabular}}
+        \end{tabular}
+        \begin{tablenotes}
+            \item[a] Consistency score for each individual model is calculated across all models, excluding the ensemble models.
+            \item[b] Each query uses two requests, so the average request duration is calculated based on the two requests.
+            \item[c] The average is calculated based on the total number of input and output tokens combined.
+        \end{tablenotes}
+    \end{threeparttable}}
     \label{tab:evaluation_results-full-wo-category}
 \end{table}
 
@@ -733,7 +740,7 @@ This indicates that the model has some difficulty in correctly identifying profe
         \centering
         \includegraphics[width=\textwidth]{res/radar-error-1}
     \end{minipage}
-    \caption{Prediction accuracy on the FactBench dataset, focusing on incorrect predictions. The left chart illustrates the Distribution of Fully Incorrect Predictions (4/4), detailing the instances where all predictions made by the model were incorrect. The right chart depicts the Distribution of Partially Incorrect Predictions (3/4).}
+    \caption{Prediction accuracy on the FactBench dataset, focusing on incorrect predictions. The right chart illustrates the Distribution of Fully Incorrect Predictions (4/4), detailing the instances where all predictions made by the models were incorrect. The left chart depicts the Distribution of Partially Incorrect Predictions (3/4).}
     \label{fig:wrong_prediction_distribution}
 \end{figure}
 

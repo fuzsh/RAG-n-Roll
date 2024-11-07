@@ -106,3 +106,20 @@ should be "yes". If the triple is incorrect, the value should be "no".
 Query: {query_str}
 Answer:
 \end{Verbatim}
+
+\section{Reasoning Prompt}\label{sec:prompt-templates:reasoning}
+\begin{Verbatim}[fontsize=\small, frame=single, label={Prompt template for generate reason}]
+Context information is below.
+---------------------
+{context_str}
+---------------------
+Given the context information without your knowledge,
+you evaluate that the fact '{fact}' is {correct/wrong}, now explain
+your reasoning for your evaluation. write you're answer in this format
+
+'The claim is {correct/wrong} because: 'REASON''
+
+without any further description or writing fact again, consider that you
+can't change you're mind and you should reason why it's {correct/wrong}
+\end{Verbatim}
+
