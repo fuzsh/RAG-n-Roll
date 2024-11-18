@@ -402,6 +402,50 @@ The ensemble approach proved particularly effective in resolving ambiguous cases
 While the computational cost of ensemble methods is higher, their selective application only to uncertain cases (5-10\% of queries) makes this trade-off acceptable in practice.
 The high consistency scores observed in ensemble methods (>0.91) suggest more reliable predictions for challenging cases, justifying the additional computational investment for these specific instances.
 
+Since \textit{DBpedia} proved to be the most challenging dataset in our evaluation, we performed a deeper analysis based on the dataset stratification established by Marchesin et al.~\cite{Marchesin_Silvello_Alonso_2024}.
+Each knowledge graph triple was assigned to one of seven partitions, numbered 1--7, where partition 1 represents the least popular/common knowledge and partition 7 represents the most popular/common knowledge.
+This stratification helps us understand how our verification system performs across different levels of fact popularity and complexity within \textit{DBpedia}.
+The analysis can reveal whether the system's accuracy varies between common, well-documented facts versus more obscure or specialized knowledge.
+This insight is valuable for identifying areas where the system needs improvement and understanding its real-world applicability across different types of knowledge.
+
+\begin{table}[ht!]
+    \noindent
+    \caption{Partition-wise evaluation results of the proposed system and candidate LLMs over the DBpedia dataset.}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{lccccccccccccccc}
+            \toprule
+            & \multirow{2}{*}{\textbf{Size}} & \multicolumn{2}{c}{\textbf{Gemma2}}       & \multicolumn{2}{c}{\textbf{Qwen2.5}}          & \multicolumn{2}{c}{\textbf{Llama3.1}}         & \multicolumn{2}{c}{\textbf{Mistral}}     & \multicolumn{2}{c}{\textbf{Qwen2.5:14b}}         & \multicolumn{2}{c}{\textbf{Llama3.1:70b}} \\ \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10} \cmidrule(lr){11-12} \cmidrule(lr){13-14}
+            & & \textbf{Acc}         & \textbf{F1}       & \textbf{Acc}          & \textbf{F1}           & \textbf{Acc}            & \textbf{F1}         & \textbf{Acc}             & \textbf{F1}     & \textbf{Acc}               & \textbf{F1}         & \textbf{Acc}                & \textbf{F1} \\
+            \midrule
+            Stratum 1       & 2223 & 0.672                & 0.773             & 0.708                 & 0.804                 & 0.600                   & 0.712               & 0.710                   & 0.806          & 0.688                      & 0.786               & 0.700                       & 0.797       \\
+            Stratum 2       & 1695 & 0.697                & 0.796             & 0.720                 & 0.816                 & 0.627                   & 0.738               & 0.726                   & 0.820          & 0.711                      & 0.807               & 0.720                       & 0.814       \\
+            Stratum 3       & 1588 & 0.689                & 0.791             & 0.736                 & 0.828                 & 0.632                   & 0.743               & 0.719                   & 0.819          & 0.708                      & 0.806               & 0.719                       & 0.815       \\
+            Stratum 4       & 1327 & 0.689                & 0.797             & 0.737                 & 0.835                 & 0.628                   & 0.747               & 0.709                   & 0.815          & 0.706                      & 0.811               & 0.714                       & 0.817       \\
+            Stratum 5       & 1058 & 0.666                & 0.780             & 0.705                 & 0.813                 & 0.638                   & 0.758               & 0.724                   & 0.826          & 0.690                      & 0.800               & 0.695                       & 0.804       \\
+            Stratum 6       & 814  & 0.692                & 0.800             & 0.719                 & 0.822                 & 0.614                   & 0.739               & 0.733                   & 0.833          & 0.709                      & 0.813               & 0.708                       & 0.812       \\
+            Stratum 7       & 629  & 0.671                & 0.776             & 0.779                 & 0.864                 & 0.650                   & 0.762               & 0.754                   & 0.848          & 0.731                      & 0.826               & 0.747                       & 0.838       \\
+            \bottomrule
+        \end{tabular}}
+    \label{tab:evaluation_results-partition-wise-dbpedia}
+\end{table}
+
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/F1_ACC_Analysis_Across_Stratum}
+    \end{minipage}
+    \caption{Partition-wise Model Performance Comparison: Accuracy and F1-scores for knowledge graph fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale).}
+    \label{fig:F1_ACC_Analysis_Across_Stratum}
+\end{figure}
+
+Based on Table~\ref{tab:evaluation_results-partition-wise-dbpedia} and Figure~\ref{fig:F1_ACC_Analysis_Across_Stratum}, the models demonstrate a clear trend of improved performance on more common knowledge.
+\textit{Qwen2.5} exhibits particularly strong performance, with accuracy increasing from 0.708 in Stratum 1 to 0.779 in Stratum 7, and F1-scores following a similar upward trajectory.
+This suggests that the model benefits from the richer context and more consistent representation of popular facts in the knowledge base.
+
+The performance disparity between lower and higher strata highlights a common challenge in knowledge graph verification: the system's reliability varies with fact popularity.
+This insight is particularly valuable for real-world applications, where handling both common and specialized knowledge is crucial.
+
 \subsection{Qualitative Error Analysis}\label{subsec:empirical-evaluation:discussion-of-results:error-analysis}
 \begin{figure}[ht!]
     \centering
@@ -476,6 +520,24 @@ The labeling data for each cluster is as follows:
 
 \begin{figure}[ht!]
     \centering
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/overlap_heatmaps_by_dataset}
+    \end{minipage}
+    \caption{Model Overlap Heatmaps by Category and Dataset. Each cell shows the percentage overlap in errors between model pairs. Matrices are organized by error category (UnLabeled, Relationship, Role Errors, etc.) and dataset (DBpedia, FactBench, YAGO), revealing patterns in how models agree or disagree when making verification errors."}
+    \label{fig:overlap_heatmaps_by_dataset}
+\end{figure}
+
+The heatmaps in Figure~\ref{fig:overlap_heatmaps_by_dataset} visualize the overlap in error patterns between different models across error categories and datasets.
+The overlap matrices reveal distinct patterns of agreement and disagreement between models when making errors, with darker colors indicating higher overlap percentages.
+For \textit{DBpedia}, we observe moderate to high overlap (45-75\%) between models across most error categories, suggesting similar challenges in handling complex factual relationships.
+The \textit{FactBench} dataset shows lower overlap percentages (30-40\% typical), indicating more independent error patterns between models.
+\textit{YAGO} exhibits variable overlap, with particularly high agreement in unlabeled errors (75-85\% overlap) but lower overlap in relationship errors (23-35\%).
+These patterns suggest that while models often struggle with similar types of facts, they also make distinct errors, supporting the value of ensemble approaches.
+The lower overlap in \textit{FactBench} errors particularly validates our multi-model verification strategy.
+
+\begin{figure}[ht!]
+    \centering
     \begin{minipage}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{res/radarChart-normalized}
@@ -532,3 +594,26 @@ Primary attention should be directed toward enhancing geographic and location-ba
 Additionally, improving classification tasks and the handling of insufficient context or ambiguous information could significantly enhance overall performance.
 The consistent patterns across models suggest that these improvements would benefit the field broadly rather than being model-specific enhancements.
 
+Building on our previous analysis of \textit{DBpedia} results, we conducted a stratum-wise error analysis to better understand how error distributions vary across different data partitions.
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/error_model-comparison_partition-wise}
+    \end{minipage}
+    \caption{Error Distribution Analysis Across Stratum per Categories.}
+    \label{fig:error_model-comparison_partition-wise.png}
+\end{figure}
+
+The experimental results showed in Figure~\ref{fig:error_model-comparison_partition-wise.png} reveals varying patterns in how language models handle knowledge across different commonality levels, providing insights into individual model performance and general trends in knowledge representation.
+
+The relationship between knowledge commonality and error rates shows differing levels of linear correlation across models:
+\begin{itemize}
+    \item Mistral exhibits the strongest linear correlation (R² = 0.579, p = 0.0470), indicating a statistically significant and predictable performance improvement as knowledge becomes more common.
+    \item Llama 3.1 has the highest mean error rate (37.31\%) but only a moderate linear correlation (R² = 0.395), with no statistical significance (p = 0.1309), suggesting that its performance improvement is inconsistent across strata.
+    \item Qwen 2.5 and Mistral show similar mean error rates (27.04\% and 27.50\%, respectively). However, Qwen 2.5's correlation with knowledge commonality is weaker (R² = 0.296, p = 0.2064), indicating less predictable performance compared to Mistral.
+    \item Gemma 2 stands out with a mean error rate of 31.77\%, the weakest linear correlation (R² = 0.056), and the highest p-value (0.6083). This suggests its performance is relatively stable across strata, potentially reflecting either robust knowledge representation or limited adaptability to knowledge commonality.
+\end{itemize}
+
+The convergence of error rates in the common knowledge strata (6-7) remains notable, but statistical analysis reveals this trend is less systematic than previously assumed.
+The variation in correlation strengths and significance levels highlights the complexity of the relationship between knowledge commonality and model performance, suggesting it cannot be fully captured by a simple linear trend.
