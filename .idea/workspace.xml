@@ -5,28 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="wip(overall): add stratum-wise analysis - need revise">
-      <change afterPath="$PROJECT_DIR$/src/res/error_rates_analysis.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/04_analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/04_analysis.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/chapters/01_introduction.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/01_introduction.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/chapters/02_related_works.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/02_related_works.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/chapters/03_pipeline.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/03_pipeline.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/04_analysis.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/04_analysis.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/05_ablation.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/05_ablation.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/99_appendix.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/99_appendix.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.loa" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.loa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.bcf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.bcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.blg" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.blg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.lof" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lof" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.lol" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.lot" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.lot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.out" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.toc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/pdfa.xmpi" beforeDir="false" afterPath="$PROJECT_DIR$/out/pdfa.xmpi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/03_pipeline.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/03_pipeline.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chapters/04_analysis.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/04_analysis.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/Error_Distribution_Analysis_Across_Stratum_per_Categories.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/clustering.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/clustering.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/error_model-comparison_partition-wise.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/05_ablation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/05_ablation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/references.bib" beforeDir="false" afterPath="$PROJECT_DIR$/src/references.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/F1_ACC_Analysis_Across_Stratum.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/F1_ACC_Analysis_Across_Stratum.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/category_distribution_analysis.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/category_distribution_analysis.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/error_rates_analysis.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/error_rates_analysis.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/radarChart-normalized-llms-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/radarChart-normalized-llms-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/radarChart-normalized-llms-4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/radarChart-normalized-llms-4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/radarChart-normalized-llms.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/radarChart-normalized-llms.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/radarChart-normalized.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/radarChart-normalized.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -344,7 +352,7 @@
       <workItem from="1731952390267" duration="140000" />
       <workItem from="1731959427631" duration="1151000" />
       <workItem from="1732006684055" duration="3000" />
-      <workItem from="1732008321259" duration="4700000" />
+      <workItem from="1732008321259" duration="12216000" />
     </task>
     <task id="LOCAL-00001" summary="feat(pipeline): Add the sections related to LLMs &amp; Voting Systems &amp; ..">
       <option name="closed" value="true" />

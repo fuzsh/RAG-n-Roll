@@ -78,30 +78,32 @@
 \newlabel{tab:evaluation_results-full-for-llms}{{4.5}{50}{Statistical analysis of output tokens and request times per query across FactBench, YAGO, and DBpedia datasets for each used model}{table.caption.48}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.6}{\ignorespaces Statistical analysis of request time per query across FactBench, YAGO, and DBpedia datasets.}}{51}{table.caption.49}\protected@file@percent }
 \newlabel{tab:evaluation_results-full-for-datasets}{{4.6}{51}{Statistical analysis of request time per query across FactBench, YAGO, and DBpedia datasets}{table.caption.50}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.7}{\ignorespaces Partition-wise evaluation results of the proposed system and candidate LLMs over the DBpedia dataset.}}{52}{table.caption.51}\protected@file@percent }
-\newlabel{tab:evaluation_results-partition-wise-dbpedia}{{4.7}{52}{Partition-wise evaluation results of the proposed system and candidate LLMs over the DBpedia dataset}{table.caption.51}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Partition-wise Model Performance Comparison: Accuracy and F1-scores for knowledge graph fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale).}}{52}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:F1_ACC_Analysis_Across_Stratum}{{4.1}{52}{Partition-wise Model Performance Comparison: Accuracy and F1-scores for knowledge graph fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale)}{figure.caption.52}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Qualitative Error Analysis}{53}{subsection.4.4.2}\protected@file@percent }
-\newlabel{subsec:empirical-evaluation:discussion-of-results:error-analysis}{{4.4.2}{53}{Qualitative Error Analysis}{subsection.4.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Collecting logs and leveraging LLM-generated reasoning, combined with contextual document embeddings (jxm/cde-small-v1), to cluster errors using a hierarchical density-based spatial technique.}}{53}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:error-clustering-task}{{4.2}{53}{Collecting logs and leveraging LLM-generated reasoning, combined with contextual document embeddings (jxm/cde-small-v1), to cluster errors using a hierarchical density-based spatial technique}{figure.caption.53}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.8}{\ignorespaces Dataset-wise error clustering based on LLM-generated reasoning, using Contextual Document Embeddings for embeddings, UMAP, and HDBSCAN.}}{55}{table.caption.54}\protected@file@percent }
-\newlabel{tab:error_results-full-wo-category-all-datasets}{{4.8}{55}{Dataset-wise error clustering based on LLM-generated reasoning, using Contextual Document Embeddings for embeddings, UMAP, and HDBSCAN}{table.caption.55}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Model Overlap Heatmaps by Category and Dataset. Each cell shows the percentage overlap in errors between model pairs. Matrices are organized by error category (UnLabeled, Relationship, Role Errors, etc.) and dataset (DBpedia, FactBench, YAGO), revealing patterns in how models agree or disagree when making verification errors."}}{55}{figure.caption.56}\protected@file@percent }
-\newlabel{fig:overlap_heatmaps_by_dataset}{{4.3}{55}{Model Overlap Heatmaps by Category and Dataset. Each cell shows the percentage overlap in errors between model pairs. Matrices are organized by error category (UnLabeled, Relationship, Role Errors, etc.) and dataset (DBpedia, FactBench, YAGO), revealing patterns in how models agree or disagree when making verification errors."}{figure.caption.56}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Normalized distribution of error clusters across datasets.}}{56}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:normalized_distribution_of_error_clusters}{{4.4}{56}{Normalized distribution of error clusters across datasets}{figure.caption.57}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Distribution of error clusters across selected LLMs.}}{56}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:distribution_of_error_clusters}{{4.5}{56}{Distribution of error clusters across selected LLMs}{figure.caption.57}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Distribution of tendency to be wrong across gemma2, qwen2.5, \textit  {LLama3.1} and mistral models. The right chart illustrates the distribution of fully incorrect predictions (4/4) detailing the instances where all predictions made by the models were incorrect. The left chart depicts the distribution of just one wrong predictions (1/4).}}{56}{figure.caption.58}\protected@file@percent }
-\newlabel{fig:distribution_of_error_clusters_1_4}{{4.6}{56}{Distribution of tendency to be wrong across gemma2, qwen2.5, \textit {LLama3.1} and mistral models. The right chart illustrates the distribution of fully incorrect predictions (4/4) detailing the instances where all predictions made by the models were incorrect. The left chart depicts the distribution of just one wrong predictions (1/4)}{figure.caption.58}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Error Distribution Analysis Across Different Language Models and Frequency Strata.}}{58}{figure.caption.59}\protected@file@percent }
-\newlabel{fig:error_model-comparison_partition-wise}{{4.7}{58}{Error Distribution Analysis Across Different Language Models and Frequency Strata}{figure.caption.59}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Distribution of Error Categories Across Different Language Models and Frequency Strata}}{59}{figure.caption.60}\protected@file@percent }
-\newlabel{fig:category_distribution_analysis}{{4.8}{59}{Distribution of Error Categories Across Different Language Models and Frequency Strata}{figure.caption.60}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Qualitative Error Analysis}{51}{subsection.4.4.2}\protected@file@percent }
+\newlabel{subsec:empirical-evaluation:discussion-of-results:error-analysis}{{4.4.2}{51}{Qualitative Error Analysis}{subsection.4.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Collecting logs and leveraging LLM-generated reasoning, combined with contextual document embeddings (jxm/cde-small-v1)~\blx@tocontentsinit {0}\cite {morris2024contextualdocumentembeddings}, to cluster errors using a hierarchical density-based spatial technique.}}{52}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:error-clustering-task}{{4.1}{52}{Collecting logs and leveraging LLM-generated reasoning, combined with contextual document embeddings (jxm/cde-small-v1)~\cite {morris2024contextualdocumentembeddings}, to cluster errors using a hierarchical density-based spatial technique}{figure.caption.51}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.7}{\ignorespaces Dataset-wise error clustering based on LLM-generated reasoning, using Contextual Document Embeddings for embeddings, UMAP, and HDBSCAN.}}{53}{table.caption.52}\protected@file@percent }
+\newlabel{tab:error_results-full-wo-category-all-datasets}{{4.7}{53}{Dataset-wise error clustering based on LLM-generated reasoning, using Contextual Document Embeddings for embeddings, UMAP, and HDBSCAN}{table.caption.53}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Model overlap heatmaps by category and dataset. Each cell shows the percentage overlap in errors between model pairs. Matrices are organized by error category (UnLabeled, Relationship, Role Errors, etc.) and dataset (DBpedia, FactBench, YAGO), revealing patterns in how models agree or disagree when making verification errors.}}{54}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:overlap_heatmaps_by_dataset}{{4.2}{54}{Model overlap heatmaps by category and dataset. Each cell shows the percentage overlap in errors between model pairs. Matrices are organized by error category (UnLabeled, Relationship, Role Errors, etc.) and dataset (DBpedia, FactBench, YAGO), revealing patterns in how models agree or disagree when making verification errors}{figure.caption.54}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Normalized distribution of error clusters across datasets.}}{55}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:normalized_distribution_of_error_clusters}{{4.3}{55}{Normalized distribution of error clusters across datasets}{figure.caption.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Distribution of error clusters across selected LLMs.}}{55}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:distribution_of_error_clusters}{{4.4}{55}{Distribution of error clusters across selected LLMs}{figure.caption.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Distribution of tendency to be wrong across gemma2, qwen2.5, LLama3.1 and mistral models. The right chart illustrates the distribution of fully incorrect predictions (4/4) detailing the instances where all predictions made by the models were incorrect. The left chart depicts the distribution of just one wrong predictions (1/4).}}{55}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:distribution_of_error_clusters_1_4}{{4.5}{55}{Distribution of tendency to be wrong across gemma2, qwen2.5, LLama3.1 and mistral models. The right chart illustrates the distribution of fully incorrect predictions (4/4) detailing the instances where all predictions made by the models were incorrect. The left chart depicts the distribution of just one wrong predictions (1/4)}{figure.caption.56}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}DBpedia Analysis in Depth}{56}{subsection.4.4.3}\protected@file@percent }
+\newlabel{subsec:db}{{4.4.3}{56}{DBpedia Analysis in Depth}{subsection.4.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.8}{\ignorespaces Partition-wise evaluation results of the proposed system and candidate LLMs over the DBpedia dataset.}}{57}{table.caption.57}\protected@file@percent }
+\newlabel{tab:evaluation_results-partition-wise-dbpedia}{{4.8}{57}{Partition-wise evaluation results of the proposed system and candidate LLMs over the DBpedia dataset}{table.caption.57}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Partition-wise model performance comparison: Accuracy and F1-scores for knowledge graph fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale).}}{57}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:F1_ACC_Analysis_Across_Stratum}{{4.6}{57}{Partition-wise model performance comparison: Accuracy and F1-scores for knowledge graph fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale)}{figure.caption.58}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Error distribution analysis across different language models and frequency strata.}}{58}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:error_model-comparison_partition-wise}{{4.7}{58}{Error distribution analysis across different language models and frequency strata}{figure.caption.59}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces distribution of error categories across different language models and frequency strata}}{59}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:category_distribution_analysis}{{4.8}{59}{distribution of error categories across different language models and frequency strata}{figure.caption.60}{}}
 \@setckpt{chapters/04_analysis}{
-\setcounter{page}{60}
+\setcounter{page}{61}
 \setcounter{equation}{0}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
@@ -112,7 +114,7 @@
 \setcounter{part}{0}
 \setcounter{chapter}{4}
 \setcounter{section}{4}
-\setcounter{subsection}{2}
+\setcounter{subsection}{3}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
@@ -120,8 +122,8 @@
 \setcounter{table}{8}
 \setcounter{section@level}{0}
 \setcounter{Item}{8}
-\setcounter{Hfootnote}{19}
-\setcounter{bookmark@seq@number}{62}
+\setcounter{Hfootnote}{17}
+\setcounter{bookmark@seq@number}{63}
 \setcounter{parentequation}{0}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
@@ -146,7 +148,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{36}
+\setcounter{instcount}{40}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}

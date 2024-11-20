@@ -150,7 +150,7 @@ Higher values indicate greater agreement between models in identifying similar d
         \centering
         \includegraphics[width=\textwidth]{res/ret_result_sim_1}
     \end{minipage}
-    \caption{Document Retrieval Confusion Matrix based on Jaccard Similarity between documents retrieved by each model.}
+    \caption{Document retrieval confusion matrix based on Jaccard similarity between documents retrieved by each model.}
     \label{fig:document_retrieval_confusion_matrix}
 \end{figure}
 We can figure out that Bm25-Okapi stands out as the most distinct model, with low similarity scores (0.20-0.24) to the others, suggesting it employs fundamentally different retrieval mechanisms.
@@ -402,7 +402,7 @@ In this method, we parsed documents into three levels of chunks with appending t
 \end{itemize}
 Each smaller chunk maintains a reference to its parent chunks, allowing the system to retrieve additional context when needed.
 
-\begin{lstlisting}[language=Python, caption=Small2Big Chunking Method, label=lst:small2big_chunking]
+\begin{lstlisting}[language=Python, caption=Small2Big chunking method, label=lst:small2big_chunking]
 # ...previous code
 sub_chunk_sizes = [128, 256, 512]
 sub_node_parsers = [SimpleNodeParser.from_defaults(chunk_size=c) for c in sub_chunk_sizes]

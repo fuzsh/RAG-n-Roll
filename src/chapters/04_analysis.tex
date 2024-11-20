@@ -312,20 +312,20 @@ The tests are run on a server with the following specifications:
                                             & Qwen2.5                            & 0.8747                         & 2.46s                            & 1509.18                                       & 67.73            & 0.8746    & 0.8910   \\
                                             & LLama3.1                           & 0.8296                         & 2.87s                            & 1509.24                                       & 104.65           & 0.8243    & 0.8378   \\
                                             & Mistral                            & 0.8686                         & 1.73s                            & 1509.17                                       & 8.81             & 0.8507    & 0.8729   \\ \cline{2-8}
-                                            & Most (Qwen2.5:14b)                 & 0.9194                         & 27.66s                           & 1509.18                                       & 57.44            & 0.9057    & 0.9145   \\
-                                            & Least (Llama3.1:70b)               & 0.9195                         & 12.70s                           & 1749.14                                       & 8.73             & 0.9025    & 0.9124   \\ \hline \hline
+                                            & Most (Qwen2.5:14b)                 & --                             & 27.66s                           & 1509.18                                       & 57.44            & 0.9057    & 0.9145   \\
+                                            & Least (Llama3.1:70b)               & --                             & 12.70s                           & 1749.14                                       & 8.73             & 0.9025    & 0.9124   \\ \hline \hline
                 \multirow{6}{*}{YAGO}       & Gemma2                             & 0.8882                         & 2.15s                            & 1508.83                                       & 17.06            & 0.8506    & 0.9191   \\
                                             & Qwen2.5                            & 0.8884                         & 2.50s                            & 1509.35                                       & 72.87            & 0.8600    & 0.9246   \\
                                             & LLama3.1                           & 0.8552                         & 7.20s                            & 1509.25                                       & 104.58           & 0.8333    & 0.9089   \\
                                             & Mistral                            & 0.8920                         & 1.67s                            & 1509.31                                       & 8.03             & 0.9221    & 0.9594   \\ \cline{2-8}
-                                            & Most (Mistral-nemo:12b)            & 0.9311                         & 2.31s                            & 1560.97                                       & 9.13             & 0.8701    & 0.9304   \\
-                                            & Least (Llama3.1:70b)               & 0.9311                         & 11.60s                           & 1560.97                                       & 10.19            & 0.8853    & 0.9391   \\ \hline \hline
+                                            & Most (Mistral-nemo:12b)            & --                             & 2.31s                            & 1560.97                                       & 9.13             & 0.8701    & 0.9304   \\
+                                            & Least (Llama3.1:70b)               & --                             & 11.60s                           & 1560.97                                       & 10.19            & 0.8853    & 0.9391   \\ \hline \hline
                 \multirow{6}{*}{DBpedia}    & Gemma2                             & 0.8207                         & 7.80s                            & 1551.69                                       & 27.15            & 0.6821    & 0.7865   \\
                                             & Qwen2.5                            & 0.8247                         & 2.63s                            & 1552.02                                       & 73.41            & 0.7236    & 0.8211   \\
                                             & LLama3.1                           & 0.7573                         & 3.06s                            & 1551.98                                       & 110.82           & 0.6224    & 0.7377   \\
                                             & Mistral                            & 0.8162                         & 1.81s                            & 1551.95                                       & 8.76             & 0.7201    & 0.8192   \\ \cline{2-8}
-                                            & Most (Qwen2.5:14b)                 & 0.8858                         & 6.48s                            & 1695.92                                       & 84.47            & 0.7014    & 0.8020   \\
-                                            & Least (Llama3.1:70b)               & 0.8860                         & 12.82s                           & 1701.77                                       & 8.99             & 0.7099    & 0.8089   \\
+                                            & Most (Qwen2.5:14b)                 & --                             & 6.48s                            & 1695.92                                       & 84.47            & 0.7014    & 0.8020   \\
+                                            & Least (Llama3.1:70b)               & --                             & 12.82s                           & 1701.77                                       & 8.99             & 0.7099    & 0.8089   \\
                 \bottomrule
             \end{tabular}
             \begin{tablenotes}
@@ -403,50 +403,6 @@ The ensemble approach proved particularly effective in resolving ambiguous cases
 While the computational cost of ensemble methods is higher, their selective application only to uncertain cases (5-10\% of queries) makes this trade-off acceptable in practice.
 The high consistency scores observed in ensemble methods (>0.91) suggest more reliable predictions for challenging cases, justifying the additional computational investment for these specific instances.
 
-Since \textit{DBpedia} proved to be the most challenging dataset in our evaluation, we performed a deeper analysis based on the dataset stratification established by Marchesin et al.~\cite{Marchesin_Silvello_Alonso_2024}.
-Each knowledge graph triple was assigned to one of seven partitions, numbered 1--7, where partition 1 represents the least popular/common knowledge and partition 7 represents the most popular/common knowledge.
-This stratification helps us understand how our verification system performs across different levels of fact popularity and complexity within \textit{DBpedia}.
-The analysis can reveal whether the system's accuracy varies between common, well-documented facts versus more obscure or specialized knowledge.
-This insight is valuable for identifying areas where the system needs improvement and understanding its real-world applicability across different types of knowledge.
-
-\begin{table}[ht!]
-    \noindent
-    \caption{Partition-wise evaluation results of the proposed system and candidate LLMs over the DBpedia dataset.}
-    \resizebox{\textwidth}{!}{
-        \begin{tabular}{lcccccccccccccccc}
-            \toprule
-            & \multirow{2}{*}{\textbf{Weight}} & \multirow{2}{*}{\textbf{Size}} & \multicolumn{2}{c}{\textbf{Gemma2}}       & \multicolumn{2}{c}{\textbf{Qwen2.5}}          & \multicolumn{2}{c}{\textbf{Llama3.1}}         & \multicolumn{2}{c}{\textbf{Mistral}}     & \multicolumn{2}{c}{\textbf{Qwen2.5:14b}}         & \multicolumn{2}{c}{\textbf{Llama3.1:70b}} \\ \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11} \cmidrule(lr){12-13} \cmidrule(lr){14-15}
-            & & & \textbf{Acc}         & \textbf{F1}       & \textbf{Acc}          & \textbf{F1}           & \textbf{Acc}            & \textbf{F1}         & \textbf{Acc}             & \textbf{F1}     & \textbf{Acc}               & \textbf{F1}         & \textbf{Acc}                & \textbf{F1} \\
-            \midrule
-            Stratum 1    &  0.9120   & 2223 & 0.672                & 0.773             & 0.708                 & 0.804                 & 0.600                   & 0.712               & 0.710                   & 0.806          & 0.688                      & 0.786               & 0.700                       & 0.797       \\
-            Stratum 2    &  0.0616   & 1695 & 0.697                & 0.796             & 0.720                 & 0.816                 & 0.627                   & 0.738               & 0.726                   & 0.820          & 0.711                      & 0.807               & 0.720                       & 0.814       \\
-            Stratum 3    &  0.0177   & 1588 & 0.689                & 0.791             & 0.736                 & 0.828                 & 0.632                   & 0.743               & 0.719                   & 0.819          & 0.708                      & 0.806               & 0.719                       & 0.815       \\
-            Stratum 4    &  0.0044   & 1327 & 0.689                & 0.797             & 0.737                 & 0.835                 & 0.628                   & 0.747               & 0.709                   & 0.815          & 0.706                      & 0.811               & 0.714                       & 0.817       \\
-            Stratum 5    &  0.0029   & 1058 & 0.666                & 0.780             & 0.705                 & 0.813                 & 0.638                   & 0.758               & 0.724                   & 0.826          & 0.690                      & 0.800               & 0.695                       & 0.804       \\
-            Stratum 6    &  0.0010   & 814  & 0.692                & 0.800             & 0.719                 & 0.822                 & 0.614                   & 0.739               & 0.733                   & 0.833          & 0.709                      & 0.813               & 0.708                       & 0.812       \\
-            Stratum 7    &  0.0001   & 629  & 0.671                & 0.776             & 0.779                 & 0.864                 & 0.650                   & 0.762               & 0.754                   & 0.848          & 0.731                      & 0.826               & 0.747                       & 0.838       \\
-            \bottomrule
-        \end{tabular}}
-    \label{tab:evaluation_results-partition-wise-dbpedia}
-\end{table}
-
-\begin{figure}[ht!]
-    \centering
-    \begin{minipage}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{res/F1_ACC_Analysis_Across_Stratum}
-    \end{minipage}
-    \caption{Partition-wise Model Performance Comparison: Accuracy and F1-scores for knowledge graph fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale).}
-    \label{fig:F1_ACC_Analysis_Across_Stratum}
-\end{figure}
-
-Based on Table~\ref{tab:evaluation_results-partition-wise-dbpedia} and Figure~\ref{fig:F1_ACC_Analysis_Across_Stratum}, the models demonstrate a clear trend of improved performance on more common knowledge.
-\textit{Qwen2.5} exhibits particularly strong performance, with accuracy increasing from 0.708 in Stratum 1 to 0.779 in Stratum 7, and F1-scores following a similar upward trajectory.
-This suggests that the model benefits from the richer context and more consistent representation of popular facts in the knowledge base.
-
-The performance disparity between lower and higher strata highlights a common challenge in knowledge graph verification: the system's reliability varies with fact popularity.
-This insight is particularly valuable for real-world applications, where handling both common and specialized knowledge is crucial.
-
 \subsection{Qualitative Error Analysis}\label{subsec:empirical-evaluation:discussion-of-results:error-analysis}
 \begin{figure}[ht!]
     \centering
@@ -454,7 +410,7 @@ This insight is particularly valuable for real-world applications, where handlin
         \centering
         \includegraphics[width=\textwidth]{res/clustering}
     \end{minipage}
-    \caption{Collecting logs and leveraging LLM-generated reasoning, combined with contextual document embeddings (jxm/cde-small-v1), to cluster errors using a hierarchical density-based spatial technique.}
+    \caption{Collecting logs and leveraging LLM-generated reasoning, combined with contextual document embeddings (jxm/cde-small-v1)~\cite{morris2024contextualdocumentembeddings}, to cluster errors using a hierarchical density-based spatial technique.}
     \label{fig:error-clustering-task}
 \end{figure}
 
@@ -525,7 +481,7 @@ The labeling data for each cluster is as follows:
         \centering
         \includegraphics[width=\textwidth]{res/overlap_heatmaps_by_dataset}
     \end{minipage}
-    \caption{Model Overlap Heatmaps by Category and Dataset. Each cell shows the percentage overlap in errors between model pairs. Matrices are organized by error category (UnLabeled, Relationship, Role Errors, etc.) and dataset (DBpedia, FactBench, YAGO), revealing patterns in how models agree or disagree when making verification errors."}
+    \caption{Model overlap heatmaps by category and dataset. Each cell shows the percentage overlap in errors between model pairs. Matrices are organized by error category (UnLabeled, Relationship, Role Errors, etc.) and dataset (DBpedia, FactBench, YAGO), revealing patterns in how models agree or disagree when making verification errors.}
     \label{fig:overlap_heatmaps_by_dataset}
 \end{figure}
 
@@ -565,13 +521,11 @@ The lower overlap in \textit{FactBench} errors particularly validates our multi-
         \centering
         \includegraphics[width=\textwidth]{res/radarChart-normalized-llms-4}
     \end{minipage}
-    \caption{Distribution of tendency to be wrong across gemma2, qwen2.5, \textit{LLama3.1} and mistral models. The right chart illustrates the distribution of fully incorrect predictions (4/4) detailing the instances where all predictions made by the models were incorrect. The left chart depicts the distribution of just one wrong predictions (1/4).}
+    \caption{Distribution of tendency to be wrong across gemma2, qwen2.5, LLama3.1 and mistral models. The right chart illustrates the distribution of fully incorrect predictions (4/4) detailing the instances where all predictions made by the models were incorrect. The left chart depicts the distribution of just one wrong predictions (1/4).}
     \label{fig:distribution_of_error_clusters_1_4}
 \end{figure}
 
-Table~\ref{tab:error_results-full-wo-category-all-datasets} alongside Figures~\ref{fig:normalized_distribution_of_error_clusters}, ~\ref{fig:distribution_of_error_clusters}, and~\ref{fig:distribution_of_error_clusters_1_4} reveals significant insights into the challenges these models face in fact validation tasks.
-The study encompassed four leading models \textit{Gemma2}, \textit{LLama3.1}, \textit{Mistral}, and \textit{Qwen2.5} evaluated across three distinct datasets: \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia}.
-The results highlight both common challenges and model-specific characteristics in fact validation performance.
+Results from Table~\ref{tab:error_results-full-wo-category-all-datasets} alongside Figures~\ref{fig:normalized_distribution_of_error_clusters}, ~\ref{fig:distribution_of_error_clusters}, and~\ref{fig:distribution_of_error_clusters_1_4} highlight both common challenges and model-specific characteristics in fact validation performance.
 
 Geographic and nationality-related errors emerged as the predominant challenge, accounting for 56.9\% of total errors across all models and datasets.
 This pattern was particularly pronounced in the \textit{DBpedia} dataset, where geographic errors constituted 58.5\% of all errors, suggesting a systematic challenge in processing and validating location-based information.
@@ -595,6 +549,54 @@ Primary attention should be directed toward enhancing geographic and location-ba
 Additionally, improving classification tasks and the handling of insufficient context or ambiguous information could significantly enhance overall performance.
 The consistent patterns across models suggest that these improvements would benefit the field broadly rather than being model-specific enhancements.
 
+\subsection{DBpedia Analysis in Depth}\label{subsec:db}
+Since \textit{DBpedia} proved to be the most challenging dataset in our evaluation, we performed a deeper analysis based on the dataset stratification established by Marchesin et al.~\cite{Marchesin_Silvello_Alonso_2024}.
+Each knowledge graph triple was assigned to one of seven partitions, numbered 1--7, where partition 1 represents the least popular/common knowledge and partition 7 represents the most popular/common knowledge.
+This stratification helps us understand how our verification system performs across different levels of fact popularity and complexity within \textit{DBpedia}.
+The analysis can reveal whether the system's accuracy varies between common, well-documented facts versus more obscure or specialized knowledge.
+This insight is valuable for identifying areas where the system needs improvement and understanding its real-world applicability across different types of knowledge.
+
+\begin{table}[ht!]
+    \noindent
+    \caption{Partition-wise evaluation results of the proposed system and candidate LLMs over the DBpedia dataset.}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{lcccccccccccccccc}
+            \toprule
+            & \multirow{2}{*}{\textbf{Weight}} & \multirow{2}{*}{\textbf{Size}} & \multicolumn{2}{c}{\textbf{Gemma2}}       & \multicolumn{2}{c}{\textbf{Qwen2.5}}          & \multicolumn{2}{c}{\textbf{Llama3.1}}         & \multicolumn{2}{c}{\textbf{Mistral}}     & \multicolumn{2}{c}{\textbf{Qwen2.5:14b}}         & \multicolumn{2}{c}{\textbf{Llama3.1:70b}} \\ \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11} \cmidrule(lr){12-13} \cmidrule(lr){14-15}
+            & & & \textbf{Acc}         & \textbf{F1}       & \textbf{Acc}          & \textbf{F1}           & \textbf{Acc}            & \textbf{F1}         & \textbf{Acc}             & \textbf{F1}     & \textbf{Acc}               & \textbf{F1}         & \textbf{Acc}                & \textbf{F1} \\
+            \midrule
+            Stratum 1    &  0.9120   & 2223 & 0.672                & 0.773             & 0.708                 & 0.804                 & 0.600                   & 0.712               & 0.710                   & 0.806          & 0.688                      & 0.786               & 0.700                       & 0.797       \\
+            Stratum 2    &  0.0616   & 1695 & 0.697                & 0.796             & 0.720                 & 0.816                 & 0.627                   & 0.738               & 0.726                   & 0.820          & 0.711                      & 0.807               & 0.720                       & 0.814       \\
+            Stratum 3    &  0.0177   & 1588 & 0.689                & 0.791             & 0.736                 & 0.828                 & 0.632                   & 0.743               & 0.719                   & 0.819          & 0.708                      & 0.806               & 0.719                       & 0.815       \\
+            Stratum 4    &  0.0044   & 1327 & 0.689                & 0.797             & 0.737                 & 0.835                 & 0.628                   & 0.747               & 0.709                   & 0.815          & 0.706                      & 0.811               & 0.714                       & 0.817       \\
+            Stratum 5    &  0.0029   & 1058 & 0.666                & 0.780             & 0.705                 & 0.813                 & 0.638                   & 0.758               & 0.724                   & 0.826          & 0.690                      & 0.800               & 0.695                       & 0.804       \\
+            Stratum 6    &  0.0010   & 814  & 0.692                & 0.800             & 0.719                 & 0.822                 & 0.614                   & 0.739               & 0.733                   & 0.833          & 0.709                      & 0.813               & 0.708                       & 0.812       \\
+            Stratum 7    &  0.0001   & 629  & 0.671                & 0.776             & 0.779                 & 0.864                 & 0.650                   & 0.762               & 0.754                   & 0.848          & 0.731                      & 0.826               & 0.747                       & 0.838       \\
+            \bottomrule
+        \end{tabular}}
+    \label{tab:evaluation_results-partition-wise-dbpedia}
+\end{table}
+
+The weights declared in Table~\ref{tab:evaluation_results-partition-wise-dbpedia} are gathered by Marchesin et al.~\cite{Marchesin_Silvello_Alonso_2024}, stratum 1 contains the vast majority of the triplets in DBpedia.
+This makes sense because stratum 1 represents the lowest-utility facts - those that are rarely used in queries.
+
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/F1_ACC_Analysis_Across_Stratum}
+    \end{minipage}
+    \caption{Partition-wise model performance comparison: Accuracy and F1-scores for knowledge graph fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale).}
+    \label{fig:F1_ACC_Analysis_Across_Stratum}
+\end{figure}
+
+Table~\ref{tab:evaluation_results-partition-wise-dbpedia} and Figure~\ref{fig:F1_ACC_Analysis_Across_Stratum}, demonstrate that the models have a clear trend of improved performance on more common knowledge.
+\textit{Qwen2.5} exhibits particularly strong performance, with accuracy increasing from 0.708 in Stratum 1 to 0.779 in Stratum 7, and F1-scores following a similar upward trajectory.
+This suggests that the model benefits from the richer context and more consistent representation of popular facts in the knowledge base.
+
+The performance disparity between lower and higher strata highlights a common challenge in knowledge graph verification: the system's reliability varies with fact popularity.
+This insight is particularly valuable for real-world applications, where handling both common and specialized knowledge is crucial.
+
 Building on our previous analysis of \textit{DBpedia} results, we conducted a stratum-wise error analysis to better understand how error distributions vary across different data partitions.
 Our analysis of error patterns across knowledge strata showed in Figure~\ref{fig:error_model-comparison_partition-wise} declares distinct performance characteristics among the four LLMs.
 The models demonstrated varying levels of effectiveness in handling knowledge from different popularity strata, with error rates showing notable patterns across the commonality spectrum.
@@ -605,7 +607,7 @@ The models demonstrated varying levels of effectiveness in handling knowledge fr
         \centering
         \includegraphics[width=\textwidth]{res/error_rates_analysis}
     \end{minipage}
-    \caption{Error Distribution Analysis Across Different Language Models and Frequency Strata.}
+    \caption{Error distribution analysis across different language models and frequency strata.}
     \label{fig:error_model-comparison_partition-wise}
 \end{figure}
 
@@ -627,7 +629,7 @@ In general, it has the most uniform error distribution across strata.
         \centering
         \includegraphics[width=\textwidth]{res/category_distribution_analysis}
     \end{minipage}
-    \caption{Distribution of Error Categories Across Different Language Models and Frequency Strata}
+    \caption{distribution of error categories across different language models and frequency strata}
     \label{fig:category_distribution_analysis}
 \end{figure}
 
