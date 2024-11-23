@@ -20,11 +20,12 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Partition-wise model performance comparison: Accuracy and F1-scores for knowledge graph fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale).}}{57}{figure.caption.58}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Error distribution analysis across different language models and frequency strata.}}{58}{figure.caption.59}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces distribution of error categories across different language models and frequency strata}}{59}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Comparative analysis of language model error rates across knowledge domains. (Left) domain-specific error ratesacross 13 knowledge categories, with overlaid sample distribution bars. (Right) distribution of error rates for each model}}{60}{figure.caption.61}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Document retrieval confusion matrix based on Jaccard similarity between documents retrieved by each model.}}{67}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Node sentence window replacement technique as described by Liu~\blx@tocontentsinit {0}\cite {liu2023tweet}.}}{78}{figure.caption.72}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Category-wise performance of different models in identifying Positive Labels (left) and Negative Labels (right) on the FactBench dataset.}}{82}{figure.caption.79}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy on the FactBench dataset, focusing on incorrect predictions. The right chart illustrates the Distribution of Fully Incorrect Predictions (4/4), detailing the instances where all predictions made by the models were incorrect. The left chart depicts the Distribution of Partially Incorrect Predictions (3/4).}}{85}{figure.caption.84}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Document retrieval confusion matrix based on Jaccard similarity between documents retrieved by each model.}}{67}{figure.caption.63}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Node sentence window replacement technique as described by Liu~\blx@tocontentsinit {0}\cite {liu2023tweet}.}}{78}{figure.caption.73}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Category-wise performance of different models in identifying Positive Labels (left) and Negative Labels (right) on the FactBench dataset.}}{82}{figure.caption.80}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy on the FactBench dataset, focusing on incorrect predictions. The right chart illustrates the Distribution of Fully Incorrect Predictions (4/4), detailing the instances where all predictions made by the models were incorrect. The left chart depicts the Distribution of Partially Incorrect Predictions (3/4).}}{85}{figure.caption.85}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

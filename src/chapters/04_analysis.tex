@@ -639,3 +639,28 @@ Classification errors maintained relatively consistent proportions across all st
 
 These findings suggest that while newer models like \textit{Qwen2.5} achieve lower overall error rates, they may be more sensitive to knowledge popularity, performing notably better with common knowledge.
 In contrast, models like \textit{Gemma2} offer more consistent performance across knowledge types, potentially making them more reliable for applications requiring uniform handling of both common and rare knowledge.
+
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/combined-model-analysis}
+    \end{minipage}
+    \caption{Comparative analysis of language model error rates across knowledge domains. (Left) domain-specific error ratesacross 13 knowledge categories, with overlaid sample distribution bars. (Right) distribution of error rates for each model}
+    \label{fig:topic_distribution_analysis}
+\end{figure}
+
+By employing BERTopic from the work of Marchesin et al.~\cite{Marchesin_Silvello_Alonso_2024} to generate interpretable clusters, we obtained 64 distinct clusters, which were manually scrutinized and aggregated to form a set of 13 broad topics.
+These topics encompass “Architecture", "Business", "Education", "Entertainment", "Geography", "High Tech", "History", "Law and Politics", "News", "Religion", "Science", "Sports", and  "Transportation".
+Some facts were not assigned to any topic or were assigned to multiple topics.
+
+As showed in Figure~\ref{fig:topic_distribution_analysis} "Education" and "News" domains consistently show lower error rates across all models.
+"Architecture" and "Transportation" categories present higher error rates, particularly for \textit{Llama3.1}.
+High variance is observed in the "Business" and "Law and Politics" domains, suggesting these may be more challenging areas for current models.
+Also we figured out that \textit{Qwen2.5} and \textit{Mistral} have compact distributions, indicating consistent performance, but \textit{Llama3.1} exhibits the broadest distribution, suggesting more variable performance across domains
+
+Correlation analysis reveals varying relationships between sample count and error rates.
+\textit{Gemma2} shows a strong positive correlation (0.410), suggesting lower reliability in less-sampled domains.
+\textit{Llama3.1} exhibits a weak positive correlation (0.204).
+\textit{Mistral} shows negligible correlation (0.006), indicating consistent performance regardless of sample size.
+\textit{Qwen2.5} demonstrates a slight negative correlation (-0.101), hinting at better performance in less-sampled domains.
