@@ -1,38 +1,63 @@
 \chapter{Introduction}\label{ch:intro}
-With the rise of big data and AI, it's crucial to have the ability to verify facts and analyze information.
-Knowledge graphs, which represent knowledge through entities and their relationships, have emerged as an effective tool for arranging and querying massive amounts of structured data.
-Maintaining the accuracy and dependability of knowledge graphs is a significant challenge.
-This thesis presents a novel technique for checking facts in knowledge graphs using retrieval-augmented generation, which combines the benefits of \ac{IR}, \ac{NLP}, and \ac{ML}.
-\section{Background and Motivation}\label{sec:background}
-A lot of different kinds of apps use knowledge graphs now, from search engines and recommendation systems to question-answering sites and virtual helpers.
-They store information in a structured way that makes it easy to question and draw conclusions.
-But current knowledge graphs are so big and complicated that it's hard to check every fact they contain by hand.
-Because of this, automated fact-checking systems are needed to keep these knowledge sources legitimate and reliable.
+%TODO: REFRENCE
+\acp{KG} have become an indispensable component of modern information systems and are widely used in different categories, including search engines, recommendation systems, and question-answering platforms.
+\acp{KG}, which represent knowledge through entities (nodes) and their relationships (edges), have appears as an effective tool for arranging and querying massive amounts of structured data.
+Maintaining the accuracy and dependability of \acp{KG} is a significant challenge, as their effectiveness is directly related to the correctness of the information they contain.
+Basically we should maintain the accuracy of each piece of information inside the \ac{KG}.
 
-Rule-based systems or simple statistical methods are often used in traditional ways to check facts.
-These methods can work for some types of facts, but they don't work well for more complicated or subtle data.
-Recent progress in \ac{ML} and \ac{NLP} has made it possible for fact checking systems to become smarter.
-\ac{LLMs} have shown amazing skills in understanding and producing text that sounds like it was written by a person.
-This makes them very likely to be successful in tasks that need to verify facts.
-On the other hand, LLMs have some problems.
-They can sometimes make up information that sounds reasonable but isn't true, This is called "hallucination."
-Also, the data they were taught on is all they know, and that data may become out-of-date over time.
-To get around these problems, this research has come up with retrieval-augmented generation (RAG) methods that mix the best parts of LLMs with information from outside sources.
+On the other side, in the past few years, the increasing volume of online content, coupled with the rise of misinformation and disinformation, necessitate the need ways to verify the correctness of the information.
+So, ensuring the truthfulness of the information is an important task to maintain the reliability in knowledge-driven applications, particularly as \ac{AI} and automated decision-making systems become more prevalent.
 
+Performing fact verification on \acp{KG} is a challenging task due to the complexity and diversity of the data they contain.
+To evaluate the correctness of a fact, humans need to check the information against several external sources, which can be time-consuming and error-prone.
+Evaluating the reliability of each source is another challenge.
+This process can take even professional fact-checkers a long time to complete, and it's not always easy to know if the information is correct.
+As this process is time-consuming and the amount of information is increasing day by day, we can notice that manual fact-checking is not a feasible solution.
+
+To address these challenges, there were two types of methods in the past that automate the process of fact-checking:
+(1) Statistical and rule-based techniques and (2) Sampling techniques that try to reduce the human effort in the fact-checking process by using the samples the data from datasets.
+The first type of methods can work for some types of facts~\footnote{In this work, we use the terms fact, claim and triple interchangeably.}, but they don't work well for more complicated or subtle data.
+The second type of methods can be more effective, but they do not check all aspects of the data, and they may not be able to verify all the facts.
+
+In response to these limitations, the past few years have witnessed the growing adoption of \ac{ML} and \ac{NLP} techniques as new possibilities in this field.
+These techniques have shown remarkable success and change the traditional methods to be more effective and somehow automatic.
+With advances in \ac{NLP} and the emergence of \acp{LLM}, the fact-checking process changed dramatically.
+
+\acp{LLM} have shown remarkable capabilities in understanding and generating human-like text, making them well-suited for tasks that require reasoning and understanding of textual information.
+However, \acp{LLM} have some limitations, such as hallucination, where they generate plausible but incorrect information, and the fact that they are limited to the data they were trained on, which may become outdated over time.
+Furthermore, training data for \acp{LLM} is not always reliable, and the models may not be able to verify the correctness of the information they generate.
+These models store a lot of information in their parameters, and their performance lags behind task-specific architectures.
+To address these limitations, researchers have proposed combining \acp{LLM} with external information retrieval to improve the accuracy and reliability of fact verification and named this technique \ac{RAG}~\cite{lewis2021retrievalaugmentedgenerationknowledgeintensivenlp}.
+
+By combining the strengths of \acp{LLM} with external information, we introduce a novel system for automated fact verification in \acp{KG} using \ac{RAG}.
+In this thesis, we introduce \texttt{FactCheck}, a system that employs a multi-model ensemble approach by merging the outputs of different LLMs through majority voting to verify facts in KGs.
+
+\newpage
 \section{Problem Statement}\label{sec:problem}
-This thesis tackles the issue of automated fact verification in knowledge graphs with a RAG-based methodology.
-Our objective is to create a system capable of:
-\begin{itemize}
-    \item Retrieve relevant information from external sources to support or refute claims in a knowledge graph.
-    \item Utilize \ac{LLMs} to reason about the retrieved information and generate accurate assessments of fact truthfulness.
-    \item Handle a wide range of fact types and domains, from simple statements to more complex relational facts.
-    \item Provide multiple responses for its verification decisions, enhancing transparency and trust in the system.
-\end{itemize}
+This thesis tackles the issue of automated fact verification in \acp{KG} with a RAG-based methodology.
+Our objective is to create a system capable of
+(1) Retrieve relevant information from external sources to support or refute claims in a \ac{KG};
+(2) Utilize \acp{LLM} to reason about the retrieved information and generate accurate assessments of fact truthfulness;
+(3) Handle a wide range of fact types and domains, from simple statements to more complex relational facts;
+and finally (4) Using Multiple \acp{LLM}, provide multiple responses for its verification decisions, enhancing transparency and trust in the system.
 
-\section{Proposed Approach}\label{sec:approach}
-Our proposed approach combines several key components to create a robust fact verification system:
+
+\section{Proposed System}\label{sec:approach}
+Our proposed system combines several key components to create a fact verification system as you can see the overview in Figure~\ref{fig:factcheck-overview}.
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}[b]{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res/FactCheckOverview}
+        \caption{Overview of the FactCheck system for fact verification. The system processes a \ac{KG} triple through multiple stages: (1) \ac{KG} humanization, converting structured data into natural language; (2) Generation of aspect-specific questions to probe the fact; (3) Google search retrieval based on generated questions; (4) Analysis of retrieved documents containing relevant information; (5) Deployment of multiple \ac{LLMs} as open-source fact-checkers; (6) Final fact verification through majority voting; and (7) tie-breaker module.}
+        \label{fig:factcheck-overview}
+    \end{minipage}
+\end{figure}
+\newpage
+
+The general idea behind the FactCheck system is as follows:
 \begin{itemize}
-    \item \textbf{Knowledge Graph Representation:} We start by representing facts from the knowledge graph in a format suitable for processing by language models and \ac{IR} systems. This involves converting the subject-predicate-object triples of the knowledge graph into natural language statements.
+    \item \textbf{\ac{KG} Representation:} We start by representing facts from the \ac{KG} in a format suitable for processing by language models and \ac{IR} systems. This involves converting the subject-predicate-object triples of the \ac{KG} into natural language statements.
     \item \textbf{Query Generation:} For each fact to be verified, we generate multiple queries designed to retrieve relevant information from external sources. These queries are formulated to capture different aspects of the fact and potential supporting or contradicting evidence.
     \item \textbf{\ac{IR}:} We use advanced \ac{IR} techniques to search for relevant documents or passages from a large corpus of trusted sources. This step leverages both traditional search algorithms and dense retrieval methods based on neural networks.
     \item \textbf{Context Processing:} The retrieved information is processed and combined to create a comprehensive context for each fact. This may involve techniques such as text summarization, entity linking, and coreference resolution to create a coherent representation of the relevant information.
@@ -41,42 +66,65 @@ Our proposed approach combines several key components to create a robust fact ve
 \end{itemize}
 
 \section{Contributions}\label{sec:contributions}
-This thesis makes several key contributions to the field of knowledge graph fact verification:
-\begin{itemize}
-    \item A novel pipeline for fact verification that integrates state-of-the-art techniques in \ac{IR}, \ac{NLP}, \ac{ML}.
-    \item A comprehensive evaluation of different retrieval methods, embedding techniques, and language models for the task of fact verification.
-    \item New strategies for generating effective queries and processing retrieved information to support fact verification.
-    \item Analysis of the advantages and drawbacks of employing \ac{LLMs} for reasoning regarding factual knowledge.
-    \item A detailed analysis of the system's performance across different types of facts and knowledge domains.
-\end{itemize}
+This thesis presents several significant contributions to the field of \ac{NLP} and knowledge verification systems.
+Our investigation into the capabilities of \acp{LLM} within \ac{RAG} frameworks reveals their considerable potential for fact-verification tasks.
+Through experimentation, we have substantiated that these models show remarkable aptitude in assimilating and contextualizing external knowledge sources—a crucial capability for reliable information validation in contemporary applications.
+By examining \acp{LLM} reasoning patterns and pathways, we provide insights into how these models arrive at verification decisions when confronted with factual claims of varying complexity.
+This deeper understanding improves our theoretical grasp of these systems and suggests practical improvements for their implementation in real-world scenarios.
+A particularly noteworthy aspect of this work is the assessment of computational efficiency.
+Contrary to prevailing assumptions about LLMs requiring substantial computational resources, our findings indicate that effective fact-verification processes can indeed be executed on modestly provisioned local infrastructures.
+This discovery holds significant implications for democratizing access to sophisticated AI capabilities across diverse research environments with varying resource constraints.
+Finally, We conduct error taxonomy that categorizes the failure modes observed during fact-verification exercises.
+Through this analysis, we have identified distinct error categories including context mismatches, relationship errors, role attribution discrepancies, geographic inaccuracies, and more.
+This categorization exposes the current limitations of these systems and suggest ways for targeted improvements in subsequent model post-training or fine-tuning.
+%
+%In general, the key contributions of this work are summarized as follows:
+%\begin{enumerate}
+%    \item \textbf{Verification of Suitability:} We evaluate the efficacy of \ac{LLMs} in performing fact-verification tasks within \ac{RAG} frameworks, emphasizing their capability to integrate and contextualize external knowledge.
+%    \item \textbf{Enhanced Understanding:} We delve into the internal mechanisms of \ac{LLMs} within the \ac{RAG} process, shedding light on their reasoning patterns and decision-making behaviors in fact-validation scenarios.
+%    \item \textbf{Resource Efficiency:} We explore the feasibility of executing these procedures locally, aiming to determine whether \ac{LLMs}, often perceived as resource-intensive, can deliver high performance on computationally constrained infrastructures.
+%    \item \textbf{Error Taxonomy and Analysis:} We establish a taxonomy of error types encountered in fact-verification scenarios, categorizing them as context mismatches, relationship errors, role attribution discrepancies, geographic inaccuracies, and more. This analysis provides valuable insight into the model's limitations and highlights areas for improvement in future development.
+%\end{enumerate}
+
+To evaluate FactCheck, extensive experiments were conducted using four open-source \ac{LLMs} — Gemma2, Qwen2.5, Llama3.1, and Mistral.
+These models ranged in size from 7B to 9B parameters, covering various capabilities for dense retrieval, logical reasoning, and interpretability.
+Experiments were carried out on 13,530 facts.
+The evaluation used accuracy, F1 scores, computational latency, and resource consumption as core metrics.
+Additional ablation studies further validated the robustness of our system.
+This broad setup underscores the scale and rigor of the investigation.
 
 \section{Thesis Structure}\label{sec:structure}
 The remainder of this thesis is organized as follows:
 
 Chapter~\ref{ch:related_works} provides a comprehensive review of the related works in fact verification, \ac{IR}, and language model applications through \ac{LLMs}.
-It situates our work within the broader context of these research areas and highlights the gaps that our approach aims to address.
-
-Chapter~\ref{ch:pipeline} presents a detailed description of our proposed pipeline for fact verification.
+It situates our work within the broader context of these research areas and highlights the gaps that our system aims to address.
+Chapter~\ref{ch:pipeline} presents a detailed description of our proposed FactCheck system for fact verification.
 It explains each component of the system, including the rationale behind design choices and implementation details.
-
 Chapter~\ref{ch:empirical-evaluation} describes the experimental setup used to evaluate our system.
-This includes details on the datasets used, evaluation metrics, and baseline systems for comparison and offers an in-depth discussion of the results, exploring the implications of our findings and their potential impact on the field of knowledge graph fact verification.
-
-Chapter~\ref{ch:ablation} Presents a study that investigates the impact of various pipeline components on the system's overall performance, while also exploring different methodologies for each component to determine the optimal final pipeline configuration.
-% TODO: Check the data here and make sure it's correct, because we see the key components of the pipeline in the previous section.
-Finally, chapter~\ref{ch:conclusions} concludes the thesis by summarizing the key contributions, discussing limitations of the current approach, and outlining promising directions for future research.
+This includes details on the datasets used, evaluation metrics, and baseline systems for comparison and offers an in-depth discussion of the results, exploring the implications of our findings and their potential impact on the field of \ac{KG} fact verification.
+Chapter~\ref{ch:ablation} Presents a study that investigates the impact of various parameters on the system's overall performance, while also exploring different methodologies for each component to determine the optimal final setting configuration for the system.
+% TODO: Check the data here and make sure it's correct, because we see the key components of the system in the previous section.
+Finally, chapter~\ref{ch:conclusions} concludes the thesis by summarizing the contributions, discussing limitations of the current approach, and outlining promising directions for future research.
 
 \section{Significance and Potential Applications}\label{sec:significance}
-The development of effective fact verification systems for knowledge graphs has far-reaching implications across various domains:
-\begin{itemize}
-    \item \textbf{Information Integrity:} Our solution facilitates the automatic verification of facts, hence enhancing the correctness and dependability of extensive knowledge bases. This is especially crucial in a time when disinformation may disseminate swiftly online.
-    \item \textbf{Decision Support:} In sectors such as healthcare, finance, and law, where judgments frequently depend on factual information, our technology could function as an essential instrument for validating crucial data points.
-    \item \textbf{Educational Applications:} Fact verification systems can be used in educational settings to help students critically evaluate information and develop digital literacy skills.
-    \item \textbf{Content Moderation:} Social media platforms and content aggregators may employ similar techniques to detect and flag potentially inaccurate or misleading information.
-    \item \textbf{Scientific Research:} In the scientific community, our approach could assist in fact-checking research claims, cross-referencing findings, and identifying potential inconsistencies in the literature.
-\end{itemize}
+The development of effective fact verification systems for \acp{KG} has far-reaching implications across various domains.
+One important aspect is the improvement of information integrity; by automating the verification of facts, our system improves the correctness and reliability of extensive knowledge bases, a feature that is particularly important in an era when disinformation can spread rapidly online.
+Moreover, in areas such as healthcare, finance, and law—where decisions are often contingent upon accurate data.
+This system offers significant support by serving as a critical tool for validating essential information.
+Its utility extends to educational settings as well, where fact verification can empower students to assess information and build digital literacy skills.
+The underlying techniques can also be adapted for content moderation, enabling social media platforms and content aggregators to identify and flag information that may be inaccurate or misleading.
+In addition, within the scientific community, the system can assist in verifying research claims, cross-referencing findings, and detecting inconsistencies within the literature.
+By addressing the challenge of fact verification in knowledge graphs, this thesis contributes to the broader goal of establishing more reliable and trustworthy information systems.
 
-By addressing the challenge of knowledge graph fact verification, this thesis aims to contribute to the broader goal of creating more reliable and trustworthy information systems.
-As the volume and complexity of digital information continue to grow, the need for sophisticated fact verification tools becomes increasingly critical.
-Our work represents a step towards meeting this need, combining the latest advances in artificial intelligence with rigorous \ac{IR} techniques.
-In the following chapters, we will delve into the technical details of our approach, present our findings, and explore the implications of this research for the future of knowledge management and information verification.
+%\begin{itemize}
+%    \item \textbf{Information Integrity:} Our system facilitates the automatic verification of facts, hence improving the correctness and dependability of extensive knowledge bases. This is especially crucial in a time when disinformation may disseminate swiftly online.
+%    \item \textbf{Decision Support:} In sectors such as healthcare, finance, and law, where judgments frequently depend on factual information, our system could function as an essential instrument for validating crucial data points.
+%    \item \textbf{Educational Applications:} Fact verification systems can be used in educational settings to help students critically evaluate information and develop digital literacy skills.
+%    \item \textbf{Content Moderation:} Social media platforms and content aggregators may use similar techniques to detect and flag potentially inaccurate or misleading information.
+%    \item \textbf{Scientific Research:} In the scientific community, our system could assist in fact-checking research claims, cross-referencing findings, and identifying potential inconsistencies in the literature.
+%\end{itemize}
+%
+%By addressing the challenge of \ac{KG} fact verification, this thesis aims to contribute to the broader goal of creating more reliable and trustworthy information systems.
+%As the volume and complexity of digital information continue to grow, the need for sophisticated fact verification tools becomes increasingly critical.
+%Our work represents a step towards meeting this need, combining the latest advances in artificial intelligence with rigorous \ac{IR} techniques.
+%In the following chapters, we will delve into the technical details of our system, present our findings, and explore the implications of this research for the future of knowledge management and information verification.

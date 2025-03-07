@@ -1,11 +1,25 @@
 %!TEX root = ../main.tex
 \begin{abstract}
-    Ensuring the truthfulness of knowledge graphs is critical as they serve as foundational tools in powering many AI systems, search engines, and decision-support systems.
-    This thesis proposes a novel approach using retrieval-augmented generation (RAG) to verify facts in knowledge graphs.
-    The system combines large language models, information retrieval techniques, and a multi-stage verification process to evaluate the veracity of knowledge graph facts.
-    Key components include generating queries from knowledge graph triples, integrating web search for external evidence retrieval, employing embedding-based document chunking and retrieval, and utilizing an ensemble of language models for fact verification.
-    The system aggregates outputs from multiple models using adaptive dispute resolution techniques and majority voting.
-    Comprehensive experiments evaluate various text chunking techniques, embedding models, and document selection procedures.
-    Results demonstrate both the effectiveness of the proposed approach in verifying knowledge graph facts and areas for further optimization.
-    This work advances the evolving fields of knowledge base curation and automated fact checking.
+%    Ensuring the truthfulness of knowledge graphs is critical as they serve as foundational tools in powering many AI systems, search engines, and decision-support systems.
+%    This thesis proposes a novel approach using retrieval-augmented generation (RAG) to verify facts in knowledge graphs.
+%    The system combines large language models, information retrieval techniques, and a multi-stage verification process to evaluate the veracity of knowledge graph facts.
+%    Key components include generating queries from knowledge graph triples, integrating web search for external evidence retrieval, employing embedding-based document chunking and retrieval, and utilizing an ensemble of language models for fact verification.
+%    The system aggregates outputs from multiple models using adaptive dispute resolution techniques and majority voting.
+%    Comprehensive experiments evaluate various text chunking techniques, embedding models, and document selection procedures.
+%    Results demonstrate both the effectiveness of the proposed approach in verifying knowledge graph facts and areas for further optimization.
+%    This work advances the evolving fields of knowledge base curation and automated fact checking.
+    In today’s world of Artificial intelligence (AI) and big data, knowledge graphs (KGs) play an important role in powering many AI systems, search engines, and decision-support systems.
+    Small errors can propagate through connected systems and cause big problems, so ensuring their accuracy is a critical task.
+    This thesis addresses this challenge by introducing \texttt{FactCheck}, a fact-checking system for KGs.
+    Our method uses Retrieval-Augmented Generation (RAG) coupled with multiple language models to verify facts.
+    \texttt{FactCheck} works by generating questions about each KG fact, retrieving relevant documents, splitting them into chunks, and then feeding chunks as input to the large language models (LLMs).
+    Then the majority vote system with dispute resolution decides on the fact's correctness by considering the generated responses.
+    We tested our approach on three real-life datasets—FactBench, YAGO, and DBpedia—whereby comparing the FactCheck output with gold standard labels, we achieved prediction performance rates of 90, 87, and 70 percent, respectively.
+    On average, verifying a single fact requires processing about 1,550 tokens per LLM, and takes about 7 minutes to reach a final decision.
+    These metrics demonstrate the system's resource usage and performance.
+    For achieving these results, we tuned different components of RAG pipeline by selecting the best parameters/models for document selection, embedding, and chunking through systematic testing.
+    The system offers a reliable and scalable solution that is compatible with various KG environments and can be adapted to handle different types of facts.
+%    One of the key findings is that LLMs struggle with verifying ``geographic/nationality'' facts, often due to misunderstandings, cultural biases, or inconsistent mappings.
+%    Through systematic testing, we tuned the RAG components by selecting the best parameters for document selection, embedding models, and chunking strategies to significantly improve verification speed and accuracy.
+%    The system offers a reliable and scalable solution that is compatible with various KG environments and stands out for efficiently handling different types of facts.
 \end{abstract}

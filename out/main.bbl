@@ -3746,6 +3746,137 @@
       \verb https://arxiv.org/abs/2206.04624
       \endverb
     \endentry
+    \entry{10.1145/219717.219745}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2ef67f8a5050ae70229240f255d2ee45}{%
+           family={Lenat},
+           familyi={L\bibinitperiod},
+           given={Douglas\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{2ef67f8a5050ae70229240f255d2ee45}
+      \strng{fullhash}{2ef67f8a5050ae70229240f255d2ee45}
+      \strng{bibnamehash}{2ef67f8a5050ae70229240f255d2ee45}
+      \strng{authorbibnamehash}{2ef67f8a5050ae70229240f255d2ee45}
+      \strng{authornamehash}{2ef67f8a5050ae70229240f255d2ee45}
+      \strng{authorfullhash}{2ef67f8a5050ae70229240f255d2ee45}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Since 1984, a person-century of effort has gone into building CYC, a universal schema of roughly 105 general concepts spanning human reality. Most of the time has been spent codifying knowledge about these concepts; approximately 106 commonsense axioms have been handcrafted for and entered into CYC's knowledge base, and millions more have been inferred and cached by CYC. This article examines the fundamental assumptions of doing such a large-scale project, reviews the technical lessons learned by the developers, and surveys the range of applications that are or soon will be enabled by the technology.}
+      \field{issn}{0001-0782}
+      \field{journaltitle}{Commun. ACM}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{CYC: a large-scale investment in knowledge infrastructure}
+      \field{volume}{38}
+      \field{year}{1995}
+      \field{pages}{33\bibrangedash 38}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1145/219717.219745
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/219717.219745
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/219717.219745
+      \endverb
+    \endentry
+    \entry{lewis2021retrievalaugmentedgenerationknowledgeintensivenlp}{misc}{}
+      \name{author}{12}{}{%
+        {{hash=ecbe786a5668bf643d74bb24fe1c3cfe}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=79978685fd7b37606022b06c0f6419a1}{%
+           family={Perez},
+           familyi={P\bibinitperiod},
+           given={Ethan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d205faec67355b6e0ec49f82a492324c}{%
+           family={Piktus},
+           familyi={P\bibinitperiod},
+           given={Aleksandra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e1c32989a78998fe3c03c981d0da2dc7}{%
+           family={Petroni},
+           familyi={P\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b24392ebfb2c0a35979fc689c389c649}{%
+           family={Karpukhin},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=78a420900f50a8470ad085fb05231bf6}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Naman},
+           giveni={N\bibinitperiod}}}%
+        {{hash=4eadcf26f55e11fe4be834b52d9b7fdf}{%
+           family={Küttler},
+           familyi={K\bibinitperiod},
+           given={Heinrich},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c97f53fdeeb04c28de19e3324cb4bc0a}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d4d56d3d370b3afd4ad2ebf985fbd3f8}{%
+           family={Yih},
+           familyi={Y\bibinitperiod},
+           given={Wen-tau},
+           giveni={W\bibinithyphendelim t\bibinitperiod}}}%
+        {{hash=b3ff4029884ead9928954ea33714192c}{%
+           family={Rocktäschel},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6cd024b217f3f2f8126e253b8c84d24d}{%
+           family={Riedel},
+           familyi={R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ca01c762f4a52dd8a8548508f8d727c9}{%
+           family={Kiela},
+           familyi={K\bibinitperiod},
+           given={Douwe},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{fullhash}{22489b764620b23a8cc8547a492f0763}
+      \strng{bibnamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authorbibnamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authornamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authorfullhash}{22489b764620b23a8cc8547a492f0763}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2005.11401
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2005.11401
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2005.11401
+      \endverb
+    \endentry
     \entry{li2023generaltextembeddingsmultistage}{misc}{}
       \name{author}{6}{}{%
         {{hash=7246d27c9fd9a874245ede3cb8cfc00d}{%
@@ -3829,6 +3960,32 @@
       \endverb
       \verb{url}
       \verb https://twitter.com/jerryjliu0/status/1708147687084986504
+      \endverb
+    \endentry
+    \entry{llamaindex_chunk_size}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7c77198d15807c609126fc7b2fefbc51}{%
+           family={{LlamaIndex Team}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c77198d15807c609126fc7b2fefbc51}
+      \strng{fullhash}{7c77198d15807c609126fc7b2fefbc51}
+      \strng{bibnamehash}{7c77198d15807c609126fc7b2fefbc51}
+      \strng{authorbibnamehash}{7c77198d15807c609126fc7b2fefbc51}
+      \strng{authornamehash}{7c77198d15807c609126fc7b2fefbc51}
+      \strng{authorfullhash}{7c77198d15807c609126fc7b2fefbc51}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024-12-11}
+      \field{title}{Evaluating the Ideal Chunk Size for a RAG System Using LlamaIndex}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.llamaindex.ai/blog/evaluating-the-ideal-chunk-size-for-a-rag-system-using-llamaindex-6207e5d3fec5
+      \endverb
+      \verb{url}
+      \verb https://www.llamaindex.ai/blog/evaluating-the-ideal-chunk-size-for-a-rag-system-using-llamaindex-6207e5d3fec5
       \endverb
     \endentry
     \entry{mkqa}{misc}{}
@@ -4114,6 +4271,71 @@
       \verb https://aclanthology.org/D17-1183
       \endverb
     \endentry
+    \entry{DBLP:conf/semweb/Paulheim18a}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=4fd4dfc5ed27cd65c69fa6d692f4c161}{%
+           family={Paulheim},
+           familyi={P\bibinitperiod},
+           given={Heiko},
+           giveni={H\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=6f5eab98e65d7d968c2b306241f37fd6}{%
+           family={Erp},
+           familyi={E\bibinitperiod},
+           given={Marieke},
+           giveni={M\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=50974bd294a5dda26420241511aa9b87}{%
+           family={Atre},
+           familyi={A\bibinitperiod},
+           given={Medha},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bf656ab3de7a87a6322e6243f05a1a08}{%
+           family={López},
+           familyi={L\bibinitperiod},
+           given={Vanessa},
+           giveni={V\bibinitperiod}}}%
+        {{hash=4c5c4af363dc6a764d2a2dfbcec42355}{%
+           family={Srinivas},
+           familyi={S\bibinitperiod},
+           given={Kavitha},
+           giveni={K\bibinitperiod}}}%
+        {{hash=1c3d680ee2ba0da7bd2a74f2640d7d4d}{%
+           family={Fortuna},
+           familyi={F\bibinitperiod},
+           given={Carolina},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CEUR-WS.org}%
+      }
+      \strng{namehash}{4fd4dfc5ed27cd65c69fa6d692f4c161}
+      \strng{fullhash}{4fd4dfc5ed27cd65c69fa6d692f4c161}
+      \strng{bibnamehash}{4fd4dfc5ed27cd65c69fa6d692f4c161}
+      \strng{authorbibnamehash}{4fd4dfc5ed27cd65c69fa6d692f4c161}
+      \strng{authornamehash}{4fd4dfc5ed27cd65c69fa6d692f4c161}
+      \strng{authorfullhash}{4fd4dfc5ed27cd65c69fa6d692f4c161}
+      \strng{editorbibnamehash}{fd9f6e6d66056677f80b483605f1c8b5}
+      \strng{editornamehash}{fd9f6e6d66056677f80b483605f1c8b5}
+      \strng{editorfullhash}{b8af2ba5f7ac51da0969f4efae6ff2d8}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the {ISWC} 2018 Posters {\&} Demonstrations, Industry and Blue Sky Ideas Tracks co-located with 17th International Semantic Web Conference {(ISWC} 2018), Monterey, USA, October 8th - to - 12th, 2018}
+      \field{series}{{CEUR} Workshop Proceedings}
+      \field{title}{How much is a Triple? Estimating the Cost of Knowledge Graph Creation}
+      \field{volume}{2180}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://ceur-ws.org/Vol-2180/ISWC\_2018\_Outrageous\_Ideas\_paper\_10.pdf
+      \endverb
+      \verb{url}
+      \verb https://ceur-ws.org/Vol-2180/ISWC%5C_2018%5C_Outrageous%5C_Ideas%5C_paper%5C_10.pdf
+      \endverb
+    \endentry
     \entry{reimers-2019-sentence-bert}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=da9947b27b0d1c4c912e2b391426d443}{%
@@ -4149,6 +4371,39 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/abs/1908.10084
+      \endverb
+    \endentry
+    \entry{One_Knowledge_Graph}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=60b76c6152e84c2f5682cd38383a3e16}{%
+           family={Ringler},
+           familyi={R\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4fd4dfc5ed27cd65c69fa6d692f4c161}{%
+           family={Paulheim},
+           familyi={P\bibinitperiod},
+           given={Heiko},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{db1705ecb5ea491e7c1aa256c6d0b60c}
+      \strng{fullhash}{db1705ecb5ea491e7c1aa256c6d0b60c}
+      \strng{bibnamehash}{db1705ecb5ea491e7c1aa256c6d0b60c}
+      \strng{authorbibnamehash}{db1705ecb5ea491e7c1aa256c6d0b60c}
+      \strng{authornamehash}{db1705ecb5ea491e7c1aa256c6d0b60c}
+      \strng{authorfullhash}{db1705ecb5ea491e7c1aa256c6d0b60c}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-319-67189-5}
+      \field{month}{09}
+      \field{title}{One Knowledge Graph to Rule Them All? Analyzing the Differences Between DBpedia, YAGO, Wikidata & co.}
+      \field{year}{2017}
+      \field{pages}{366\bibrangedash 372}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1007/978-3-319-67190-1_33
       \endverb
     \endentry
     \entry{bm25}{inproceedings}{}
@@ -4495,6 +4750,59 @@
       \verb{url}
       \verb https://arxiv.org/abs/2308.11884
       \endverb
+    \endentry
+    \entry{10.1145/3269206.3269308}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=c37805ace72755a85e511f5aa476c741}{%
+           family={Syed},
+           familyi={S\bibinitperiod},
+           given={Zafar\bibnamedelima Habeeb},
+           giveni={Z\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=46b2f13d42748a566e9d8a5fe6452afd}{%
+           family={Röder},
+           familyi={R\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aaffae6ab501c5d30bd5ba943863c330}{%
+           family={Ngonga\bibnamedelima Ngomo},
+           familyi={N\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Axel-Cyrille},
+           giveni={A\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Torino, Italy}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{4136392d3bb9a888acef37abd9025051}
+      \strng{fullhash}{4136392d3bb9a888acef37abd9025051}
+      \strng{bibnamehash}{4136392d3bb9a888acef37abd9025051}
+      \strng{authorbibnamehash}{4136392d3bb9a888acef37abd9025051}
+      \strng{authornamehash}{4136392d3bb9a888acef37abd9025051}
+      \strng{authorfullhash}{4136392d3bb9a888acef37abd9025051}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With the increasing uptake of knowledge graphs comes an increasing need for validating the knowledge contained in these graphs. However, the sheer size and number of knowledge bases used in real-world applications makes manual fact checking impractical. In this paper, we employ sentence coherence features gathered from trustworthy source documents to outperform the state of the art in fact checking. Our approach, FactCheck, uses this information to score how likely a fact is to be true and provides the user the evidence used to validate the input facts. We evaluated our approach on two different benchmark datasets and two different corpora. Our results show that FactCheck outperforms the state of the art by up to 13.3\% in F-measure and 19.3\% AUC. FactCheck is open-source and is available at https://github.com/dice-group/FactCheck.}
+      \field{booktitle}{Proceedings of the 27th ACM International Conference on Information and Knowledge Management}
+      \field{isbn}{9781450360142}
+      \field{series}{CIKM '18}
+      \field{title}{FactCheck: Validating RDF Triples Using Textual Evidence}
+      \field{year}{2018}
+      \field{pages}{1599\bibrangedash 1602}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1145/3269206.3269308
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3269206.3269308
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3269206.3269308
+      \endverb
+      \keyw{knowledge graphs,fact checking,dependency parsing}
     \endentry
     \entry{gemmateam2024gemma2improvingopen}{misc}{}
       \name{author}{198}{}{%
@@ -5711,45 +6019,102 @@
       \verb https://arxiv.org/abs/2402.05672
       \endverb
     \endentry
-    \entry{bge_embedding}{misc}{}
-      \name{author}{4}{}{%
-        {{hash=d71b1119f50662a9107099735aa4912f}{%
-           family={Xiao},
-           familyi={X\bibinitperiod},
-           given={Shitao},
-           giveni={S\bibinitperiod}}}%
-        {{hash=7e48bdec050a7bea1bb0d4acff3023eb}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Zheng},
+    \entry{wang2024searchingbestpracticesretrievalaugmented}{misc}{}
+      \name{author}{14}{}{%
+        {{hash=c55febcdb36e6b15ef219efde054401b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xiaohua},
+           giveni={X\bibinitperiod}}}%
+        {{hash=502c5bf131ed4b1c9062fb23d6747479}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhenghua},
            giveni={Z\bibinitperiod}}}%
-        {{hash=6d65862b32d88d540bffb1875cb56520}{%
+        {{hash=ff0b94e43b027d10c0b6d69a96c05ad0}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Xuan},
+           giveni={X\bibinitperiod}}}%
+        {{hash=7ed833e1dfe1d26d742b5ee72ffd744b}{%
            family={Zhang},
            familyi={Z\bibinitperiod},
-           given={Peitian},
-           giveni={P\bibinitperiod}}}%
-        {{hash=a2deb8466aa6f0edfe3cc805f9d776d8}{%
-           family={Muennighoff},
-           familyi={M\bibinitperiod},
-           given={Niklas},
-           giveni={N\bibinitperiod}}}%
+           given={Feiran},
+           giveni={F\bibinitperiod}}}%
+        {{hash=73a330faaad926584d1fd300b262919d}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yixin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4ad5e908c277b3e173c50030c2e1783d}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zhibo},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=b6f85784b1d0a2a8aa43d3831a89b43d}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Tianyuan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=dcf99967345a89a67d3f4fc9d76c8475}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhengyuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=e9f44ef59e92e7a53fb4604eb4e76b1b}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Shizheng},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2552ce900f90a65e9981774d8911835c}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Qi},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=3dbfdac07644aa1518f24d703118a364}{%
+           family={Yin},
+           familyi={Y\bibinitperiod},
+           given={Ruicheng},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9d9d5e313684da80a0c7b984a8e34309}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={Changze},
+           giveni={C\bibinitperiod}}}%
+        {{hash=960deaf1c28d838494639cd2ab3cd411}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Xiaoqing},
+           giveni={X\bibinitperiod}}}%
+        {{hash=ed0f3403ef6238bb67876d4c6ad27464}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Xuanjing},
+           giveni={X\bibinitperiod}}}%
       }
-      \strng{namehash}{e6624e348e5a85e4cd33702c24a9f2b0}
-      \strng{fullhash}{59f5d1c6c004a3915fe1efb94d8d20af}
-      \strng{bibnamehash}{e6624e348e5a85e4cd33702c24a9f2b0}
-      \strng{authorbibnamehash}{e6624e348e5a85e4cd33702c24a9f2b0}
-      \strng{authornamehash}{e6624e348e5a85e4cd33702c24a9f2b0}
-      \strng{authorfullhash}{59f5d1c6c004a3915fe1efb94d8d20af}
-      \field{sortinit}{X}
-      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \strng{namehash}{1b8786c0f188ba168bc9a7023c510762}
+      \strng{fullhash}{7a13f06e602534984a19c49b319a4f66}
+      \strng{bibnamehash}{1b8786c0f188ba168bc9a7023c510762}
+      \strng{authorbibnamehash}{1b8786c0f188ba168bc9a7023c510762}
+      \strng{authornamehash}{1b8786c0f188ba168bc9a7023c510762}
+      \strng{authorfullhash}{7a13f06e602534984a19c49b319a4f66}
+      \field{extraname}{3}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.CL}
       \field{eprinttype}{arXiv}
-      \field{title}{C-Pack: Packaged Resources To Advance General Chinese Embedding}
-      \field{year}{2023}
+      \field{title}{Searching for Best Practices in Retrieval-Augmented Generation}
+      \field{year}{2024}
       \verb{eprint}
-      \verb 2309.07597
+      \verb 2407.01219
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2407.01219
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2407.01219
       \endverb
     \endentry
     \entry{qwen2}{article}{}

@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="wip(overall): add stratum-wise analysis - need revise">
+    <list default="true" id="2a52aadc-0a65-4a50-8976-92ca2710b1dc" name="Changes" comment="fix(overall): change the introduction and related work">
+      <change afterPath="$PROJECT_DIR$/src/res/FactCheckOverview.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/chapters/01_introduction.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/01_introduction.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/chapters/02_related_works.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/02_related_works.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/chapters/03_pipeline.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/03_pipeline.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/04_analysis.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/04_analysis.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/05_ablation.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/05_ablation.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/98_conclusions.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/chapters/99_appendix.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/chapters/99_appendix.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.bbl" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.bbl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.bcf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.bcf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.blg" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.blg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.loa" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.loa" afterDir="false" />
@@ -22,8 +27,21 @@
       <change beforePath="$PROJECT_DIR$/out/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.xmpdata" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.xmpdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/pdfa.xmpi" beforeDir="false" afterPath="$PROJECT_DIR$/out/pdfa.xmpi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DEIThesis.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/DEIThesis.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/01_introduction.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/01_introduction.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/02_related_works.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/02_related_works.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/03_pipeline.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/03_pipeline.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chapters/04_analysis.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/04_analysis.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapters/05_ablation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapters/05_ablation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontmatter/abstract.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontmatter/abstract.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontmatter/dedication.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontmatter/dedication.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontmatter/glossary.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontmatter/glossary.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontmatter/thanks.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontmatter/thanks.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/references.bib" beforeDir="false" afterPath="$PROJECT_DIR$/src/references.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/pipeline.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/system.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,30 +67,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-20&quot;,
-    &quot;jdk.selected.LATEX_MODULE_TYPE&quot;: &quot;TeX Live SDK&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/farzad/Documents/Thesis/msc-thesis/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.43793103&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "corretto-20",
+    "jdk.selected.LATEX_MODULE_TYPE": "TeX Live SDK",
+    "last_opened_file_path": "/Users/farzad/Documents/Thesis/msc-thesis/src/res",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.43793103",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/res" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -347,7 +365,17 @@
       <workItem from="1732006684055" duration="3000" />
       <workItem from="1732008321259" duration="13192000" />
       <workItem from="1732285645931" duration="1496000" />
-      <workItem from="1732354291044" duration="1344000" />
+      <workItem from="1732354291044" duration="2204000" />
+      <workItem from="1733304730961" duration="614000" />
+      <workItem from="1733477971490" duration="15738000" />
+      <workItem from="1733563821804" duration="1066000" />
+      <workItem from="1733766008312" duration="582000" />
+      <workItem from="1733766875538" duration="648000" />
+      <workItem from="1734606697197" duration="798000" />
+      <workItem from="1734635590888" duration="4000" />
+      <workItem from="1741093509954" duration="1954000" />
+      <workItem from="1741165221957" duration="1499000" />
+      <workItem from="1741166730721" duration="42475000" />
     </task>
     <task id="LOCAL-00001" summary="feat(pipeline): Add the sections related to LLMs &amp; Voting Systems &amp; ..">
       <option name="closed" value="true" />
@@ -507,6 +535,7 @@
     <MESSAGE value="fix(overall): fix the minor issues" />
     <MESSAGE value="fix(overall): add stratum-wise analysis" />
     <MESSAGE value="wip(overall): add stratum-wise analysis - need revise" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip(overall): add stratum-wise analysis - need revise" />
+    <MESSAGE value="fix(overall): change the introduction and related work" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(overall): change the introduction and related work" />
   </component>
 </project>

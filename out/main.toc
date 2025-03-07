@@ -1,123 +1,131 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{List of Figures}{xi}{section*.3}%
-\contentsline {chapter}{List of Tables}{xiii}{section*.5}%
-\contentsline {chapter}{List of Algorithms}{xvii}{section*.7}%
-\contentsline {chapter}{List of Code Snippets}{xvii}{section*.9}%
-\contentsline {chapter}{List of Acronyms}{xix}{section*.11}%
+\contentsline {chapter}{List of Figures}{xi}{section*.5}%
+\contentsline {chapter}{List of Tables}{xiii}{section*.8}%
+\contentsline {chapter}{List of Algorithms}{xvii}{section*.10}%
+\contentsline {chapter}{List of Code Snippets}{xvii}{section*.12}%
+\contentsline {chapter}{List of Acronyms}{xix}{section*.14}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Background and Motivation}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Problem Statement}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Proposed Approach}{2}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Contributions}{3}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Thesis Structure}{4}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Significance and Potential Applications}{4}{section.1.6}%
+\contentsline {section}{\numberline {1.1}Problem Statement}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Proposed System}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Contributions}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Thesis Structure}{5}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Significance and Potential Applications}{6}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Related Works}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Entailment Verification and Language Models}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Claim Verification in the Age of Large Language Models}{9}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Retrieval-Augmented Fact Verification by Synthesizing Contrastive Arguments}{11}{section.2.3}%
-\contentsline {section}{\numberline {2.4}RAGAR: RAG-Augmented Reasoning for Political Fact-Checking using Multimodal LLMs}{12}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Pipeline}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Knowledge Graph Dataset}{17}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Definition and Purpose}{17}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Structure and Components}{17}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Role in the Overall Pipeline}{18}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Query Generation and Processing}{18}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Human-Understandable Text Generation}{18}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Question Formulation Techniques}{19}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Cross-Encoder for Query Relevance Scoring}{20}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Relevance Threshold and Sorting}{21}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Information Retrieval Mechanisms}{22}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Google Search Integration}{22}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Process and Extract Links}{23}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Data Pool Creation}{25}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Data filtering}{26}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Embedding and Retrieval Tasks}{26}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Embedding Techniques for Smaller Chunks}{27}{subsection.3.4.1}%
-\contentsline {subsubsection}{Challenges and Considerations}{27}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Similarity Cutoff Strategy}{28}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}LLMs}{28}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Integration of Multiple LLMs}{29}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Roles of LLMs in the Pipeline}{30}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Voting System and Conflict Resolution}{30}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Majority Voting System}{31}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Conflict Resolution Strategies}{31}{subsection.3.6.2}%
-\contentsline {subsubsection}{Final Judge Implementation:}{32}{subsection.3.6.2}%
-\contentsline {subsubsection}{Adaptive Conflict Resolution}{32}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}Performance Report}{33}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Pipeline Flow and Decision Points}{34}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Ethical Considerations and Limitations}{36}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Ethical Considerations}{36}{subsection.3.9.1}%
-\contentsline {subsubsection}{Misinformation and Harmful Content}{36}{subsection.3.9.1}%
-\contentsline {subsubsection}{Environmental Considerations}{37}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Limitations}{37}{subsection.3.9.2}%
-\contentsline {chapter}{\numberline {4}Empirical Evaluation}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Dataset Analysis}{39}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}FactBench Dataset}{39}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}YAGO Dataset}{40}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}DBpedia Dataset}{41}{subsection.4.1.3}%
-\contentsline {subsubsection}{Dataset Summary}{42}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Candidate Models}{42}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Gemma2}{42}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Qwen2.5}{43}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Llama3.1}{44}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Mistral}{44}{subsection.4.2.4}%
-\contentsline {subsubsection}{Candidate Model Summary}{45}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Experimental Setup}{46}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Performance Metrics and Evaluation}{46}{subsection.4.3.1}%
-\contentsline {subsubsection}{Correct and Incorrect Criteria}{46}{subsection.4.3.1}%
-\contentsline {subsubsection}{Relevance and Accuracy Metrics}{46}{subsection.4.3.1}%
-\contentsline {subsubsection}{Latency and Efficiency Measures}{46}{subsection.4.3.1}%
-\contentsline {subsubsection}{Consistency Evaluation}{47}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}System Configurations}{48}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Comparative Analysis}{49}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Discussion of Results}{49}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Qualitative Error Analysis}{51}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}DBpedia Analysis in Depth}{56}{subsection.4.4.3}%
-\contentsline {chapter}{\numberline {5}Ablation Study}{61}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Evaluation Methodology}{62}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Iterative Optimization Process}{62}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Evaluation Metrics}{62}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Significance of the Methodology}{63}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Document Selection}{63}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Unsupervised Methods}{64}{subsection.5.2.1}%
-\contentsline {subsubsection}{BM25}{64}{subsection.5.2.1}%
-\contentsline {subsubsection}{Contriever}{64}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Supervised Methods}{65}{subsection.5.2.2}%
-\contentsline {subsubsection}{Jina.ai Reranker}{65}{subsection.5.2.2}%
-\contentsline {subsubsection}{MS MARCO MiniLM}{66}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Evaluation with Large Language Models}{67}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Embedding Models}{69}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Gte-large-en-v1.5}{69}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Jina-embeddings-v3}{70}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Stella\_en\_1.5B\_v5}{71}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Multilingual-e5-large-instruct}{72}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}bge-small-en-v1.5}{73}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Comparative Analysis}{73}{subsection.5.3.6}%
-\contentsline {subsubsection}{Model Size and Efficiency}{73}{subsection.5.3.6}%
-\contentsline {subsubsection}{Language Coverage}{74}{table.caption.70}%
-\contentsline {subsubsection}{Conclusion}{74}{table.caption.70}%
-\contentsline {section}{\numberline {5.4}Chunking Strategies}{76}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Parsing Documents into Text Chunks}{76}{subsection.5.4.1}%
-\contentsline {subsubsection}{Methodology}{76}{subsection.5.4.1}%
-\contentsline {subsubsection}{Chunk Sizes}{76}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}{76}{subsection.5.4.2}%
-\contentsline {subsubsection}{Methodology}{77}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Sentence Window Retrieval}{77}{subsection.5.4.3}%
-\contentsline {subsubsection}{Methodology}{78}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Advantages and Limitations}{78}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Evaluation}{79}{subsection.5.4.5}%
-\contentsline {section}{\numberline {5.5}Similarity Cut-off}{80}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Top K}{81}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Evaluation}{82}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Failure Analysis}{83}{section.5.8}%
-\contentsline {subsubsection}{Error Type Categorization}{83}{section.5.8}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Works}{87}{chapter.6}%
-\contentsline {chapter}{Appendices}{89}{section*.86}%
-\contentsline {chapter}{\numberline {A}Prompt Templates}{89}{appendix.1.A}%
-\contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{89}{section.1.A.1}%
-\contentsline {section}{\numberline {A.2}Question Generation Prompt}{90}{section.1.A.2}%
-\contentsline {section}{\numberline {A.3}RAG Prompt}{91}{section.1.A.3}%
-\contentsline {section}{\numberline {A.4}Reasoning Prompt}{92}{section.1.A.4}%
-\contentsline {chapter}{\numberline {B}Chunking Strategies}{93}{appendix.1.B}%
-\contentsline {chapter}{References}{97}{section*.90}%
-\contentsline {chapter}{Acknowledgments}{101}{section*.92}%
+\contentsline {section}{\numberline {2.1}\ac {KG} and Fact-Checking}{7}{section.2.1}%
+\contentsline {paragraph}{Fact-Checking using KG Structured Data:}{7}{section.2.1}%
+\contentsline {paragraph}{KG Fact-Checking using External Data:}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}DeFacto}{8}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Validating RDF Triples Using Textual Evidence}{8}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}LLMs and Retrieval-Augmented Generation}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Entailment Verification and Language Models}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Claim Verification in the Age of Large Language Models}{11}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}RAG-Based Fact Verification by Synthesizing Contrastive Arguments}{13}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}RAGAR: RAG-Augmented Reasoning for Political Fact-Checking using Multimodal LLMs}{15}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Best Practices}{16}{subsection.2.2.5}%
+\contentsline {section}{\numberline {2.3}Cost Estimation}{17}{section.2.3}%
+\contentsline {chapter}{\numberline {3}FactCheck}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}\ac {KG} Dataset}{21}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Definition and Purpose}{21}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Structure and Components}{22}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Role in the Overall system}{22}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Query Generation and Processing}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Human-Understandable Text Generation}{23}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Question Formulation Techniques}{23}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Query Scoring}{25}{subsection.3.2.3}%
+\contentsline {paragraph}{Cross-Encoder Component:}{25}{subsection.3.2.3}%
+\contentsline {paragraph}{Similarity Threshold and Sorting:}{26}{figure.caption.31}%
+\contentsline {section}{\numberline {3.3}\ac {IR} Mechanisms}{27}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Google Search Integration}{27}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Process and Extract Links}{28}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Data Pool Creation}{31}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Data filtering}{31}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Embedding and Retrieval Tasks}{32}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Embedding Techniques for Smaller Chunks}{32}{subsection.3.4.1}%
+\contentsline {paragraph}{Challenges and Considerations:}{32}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Similarity Cutoff Strategy}{33}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}LLMs}{34}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Integration of Multiple LLMs}{34}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Roles of LLMs in the system}{35}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Voting System and Conflict Resolution}{36}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Majority Voting System}{36}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Conflict Resolution Strategies}{37}{subsection.3.6.2}%
+\contentsline {paragraph}{Final Judge Implementation:}{37}{subsection.3.6.2}%
+\contentsline {paragraph}{Adaptive Conflict Resolution:}{38}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Performance Report}{39}{section.3.7}%
+\contentsline {section}{\numberline {3.8}system Flow and Decision Points}{39}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Ethical Considerations and Limitations}{42}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Ethical Considerations}{42}{subsection.3.9.1}%
+\contentsline {paragraph}{Misinformation and Harmful Content:}{42}{subsection.3.9.1}%
+\contentsline {paragraph}{Environmental Considerations:}{43}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Limitations}{43}{subsection.3.9.2}%
+\contentsline {chapter}{\numberline {4}Empirical Evaluation}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dataset Analysis}{45}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}FactBench Dataset}{45}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}YAGO Dataset}{46}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}DBpedia Dataset}{47}{subsection.4.1.3}%
+\contentsline {paragraph}{Dataset Summary:}{48}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Candidate Models}{49}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Gemma2}{49}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Qwen2.5}{49}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Llama3.1}{50}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Mistral}{51}{subsection.4.2.4}%
+\contentsline {paragraph}{Candidate Model Summary:}{51}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Experimental Setup}{51}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Performance Metrics and Evaluation}{51}{subsection.4.3.1}%
+\contentsline {paragraph}{Correct and Incorrect Criteria:}{52}{subsection.4.3.1}%
+\contentsline {paragraph}{Relevance and Accuracy Metrics:}{52}{subsection.4.3.1}%
+\contentsline {paragraph}{Latency and Efficiency Measures:}{52}{subsection.4.3.1}%
+\contentsline {paragraph}{Consistency Evaluation:}{53}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}System Configurations}{54}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Comparative Analysis}{55}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Discussion of Results}{55}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Qualitative Error Analysis}{57}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}DBpedia Analysis in Depth}{62}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}Ablation Study}{69}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Evaluation Methodology}{70}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Iterative Optimization Process}{70}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Evaluation Metrics}{70}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Significance of the Methodology}{71}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Document Selection}{71}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Unsupervised Methods}{72}{subsection.5.2.1}%
+\contentsline {paragraph}{BM25:}{72}{subsection.5.2.1}%
+\contentsline {paragraph}{Contriever:}{72}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Supervised Methods}{73}{subsection.5.2.2}%
+\contentsline {paragraph}{Jina.ai Reranker:}{73}{subsection.5.2.2}%
+\contentsline {paragraph}{MS MARCO MiniLM:}{74}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Evaluation with Large Language Models}{75}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Embedding Models}{77}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Gte-large-en-v1.5}{77}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Jina-embeddings-v3}{78}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Stella\_en\_1.5B\_v5}{79}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Multilingual-e5-large-instruct}{80}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}bge-small-en-v1.5}{81}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Comparative Analysis}{81}{subsection.5.3.6}%
+\contentsline {paragraph}{Model Size and Efficiency:}{82}{subsection.5.3.6}%
+\contentsline {paragraph}{Language Coverage:}{82}{table.caption.73}%
+\contentsline {paragraph}{Conclusion:}{82}{table.caption.73}%
+\contentsline {section}{\numberline {5.4}Chunking Strategies}{84}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Parsing Documents into Text Chunks}{84}{subsection.5.4.1}%
+\contentsline {paragraph}{Methodology:}{84}{subsection.5.4.1}%
+\contentsline {paragraph}{Chunk Sizes:}{84}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}{84}{subsection.5.4.2}%
+\contentsline {paragraph}{Methodology:}{85}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Sentence Window Retrieval}{85}{subsection.5.4.3}%
+\contentsline {paragraph}{Methodology:}{86}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Advantages and Limitations}{86}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Evaluation}{87}{subsection.5.4.5}%
+\contentsline {section}{\numberline {5.5}Similarity Cut-off}{88}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Top K}{89}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Evaluation}{90}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Failure Analysis}{91}{section.5.8}%
+\contentsline {paragraph}{Error Type Categorization:}{91}{section.5.8}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Works}{95}{chapter.6}%
+\contentsline {chapter}{Appendices}{97}{section*.89}%
+\contentsline {chapter}{\numberline {A}Prompt Templates}{97}{appendix.1.A}%
+\contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{97}{section.1.A.1}%
+\contentsline {section}{\numberline {A.2}Question Generation Prompt}{98}{section.1.A.2}%
+\contentsline {section}{\numberline {A.3}RAG Prompt}{99}{section.1.A.3}%
+\contentsline {section}{\numberline {A.4}Reasoning Prompt}{100}{section.1.A.4}%
+\contentsline {chapter}{\numberline {B}Chunking Strategies}{101}{appendix.1.B}%
+\contentsline {chapter}{References}{105}{section*.93}%
+\contentsline {chapter}{Acknowledgments}{111}{section*.95}%

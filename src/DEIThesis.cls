@@ -152,15 +152,15 @@
 % reduce spacing for items and enumerations
 \let\saveditemize=\itemize
 \let\savedenditemize=\enditemize
-\renewenvironment{itemize}
-  {\begin{spacing}{0.5}\saveditemize}
-  {\savedenditemize\end{spacing}}
+%\renewenvironment{itemize}
+%  {\begin{spacing}{0.5}\saveditemize}
+%  {\savedenditemize\end{spacing}}
 
 \let\savedenumerate=\enumerate
 \let\savedendenumerate=\endenumerate
-\renewenvironment{enumerate}
-  {\begin{spacing}{0.5}\savedenumerate}
-  {\savedendenumerate\end{spacing}}
+%\renewenvironment{enumerate}
+%  {\begin{spacing}{0.5}\savedenumerate}
+%  {\savedendenumerate\end{spacing}}
 
 % italic for quotes
 \let\savedquote\quote

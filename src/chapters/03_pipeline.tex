@@ -1,111 +1,98 @@
-\chapter{Pipeline}\label{ch:pipeline}
-%This chapter presents a detailed examination of a multi-stage NLP pipeline designed to enhance information retrieval and question answering capabilities.
-%The pipeline integrates various cutting-edge technologies and methodologies, creating a synergistic system that pushes the boundaries of what is possible in automated information processing and response generation.
-%However, the challenges of accurately interpreting user queries, retrieving relevant information from vast datasets, and generating coherent and contextually appropriate responses remain significant.
-%This pipeline addresses these challenges through a carefully orchestrated series of processes, each designed to refine and enhance the quality of information flow from input to output.
-%
-%At its core, the pipeline leverages a knowledge graph dataset, serving as the foundational repository of interconnected information.
-%This graph structure allows for the representation of complex relationships between entities, facilitating more nuanced understanding and retrieval of information.
-%The pipeline then employs a series of sophisticated mechanisms, including query generation, cross-encoding for relevance assessment, and multi-tiered information retrieval strategies, to navigate this knowledge landscape effectively.
-%
-%One of the key innovations in this pipeline is its approach to context processing and information synthesis.
-%By breaking down retrieved information into manageable chunks and employing advanced embedding techniques, the system can perform more granular and accurate analyses of textual data.
-%This granularity, combined with the implementation of multiple LLMs working in concert, allows for a more robust and nuanced interpretation of complex queries and generation of comprehensive responses.
-%
-%The integration of external information sources, notably through the incorporation of Google Search capabilities, further enhances the pipeline's ability to access and process up-to-date and diverse information.
-%This hybrid approach, combining structured knowledge graphs with dynamic web-based information retrieval, positions the pipeline at the forefront of adaptive and responsive AI systems.
-%
-%Critical to the pipeline's effectiveness is its sophisticated decision-making architecture.
-%Employing strategies such as majority voting among multiple models and the implementation of a final judge for conflict resolution, the system strives to achieve a balance between diverse perspectives and the need for coherent, unified outputs.
-%This approach not only enhances the accuracy and reliability of the generated responses but also provides a framework for managing the inherent uncertainties and potential biases in AI-driven decision-making processes.
-%
-%As we delve deeper into each component of this pipeline, it is crucial to maintain a critical perspective on both its capabilities and limitations.
-%While the system represents a significant advancement in NLP and information retrieval technologies, it also raises important questions about the ethical implications of AI-driven information processing, the potential for bias in knowledge representation and model training, and the broader societal impacts of increasingly sophisticated question-answering systems.
+\chapter{FactCheck}\label{ch:system}
+This chapter outlines a multi-stage NLP system developed specifically for fact verification in \acp{KG}.
+The system integrates advanced techniques and methodologies to address core challenges in verifying information accuracy, interpreting user queries, retrieving relevant data from external sources (\eg large-scale web searches), and generating factually consistent responses.
 
-This chapter outlines a multi-stage NLP pipeline developed specifically for fact verification.
-The pipeline integrates advanced technologies and methodologies to address core challenges in verifying information accuracy, interpreting user queries, retrieving relevant data from large datasets, and generating factually consistent responses.
+The FactCheck build on top of \acp{LLM} and focus on graph data, the system is able to provide the correctness of different aspects of each fact inside the \ac{KG} datasets.
+The system is designed to handle and effectively process different categories of facts, such as people, places, events, and abstract concepts.
+This system is specifically designed for fact verification in \ac{KG} datasets (\eg FactBench, DBpedia, YAGO, NELL), but this approach can be easily adopted and extended to other categories of fact-verification systems by changing some parts of the system.
 
-The pipeline's foundation is a knowledge graph dataset, which captures complex relationships between entities to support in-depth retrieval and verification.
-The pipeline applies query generation, cross-encoding for relevance, and multi-layered retrieval strategies to effectively analyze and cross-check information against this structured data.
+There are some key features in the system:
+(1) To access diverse and up-to-date sources, the system incorporates Google Search, blending structured knowledge with real-time information retrieval to improve verification accuracy.
+(2) To ensure the correctness of facts the system performs precise analyses by dividing retrieved data into manageable chunks and utilizing embedding techniques,
+and (3) To make the system more reliable, reduce errors and manage potential biases, the decision-making framework in the system leverages majority voting across \acp{LLM} to decide and employs a final judge to resolve inconsistencies, creating a balanced and coherent output.
+\newpage
+The system's general architecture is illustrated in Figure~\ref{fig:system}, highlighting the key components and their interactions.
 
-To access diverse and up-to-date sources, the pipeline incorporates Google Search, blending structured knowledge with real-time information retrieval to enhance verification accuracy.
-
-A key feature of the pipeline is its approach to context processing and information synthesis.
-By dividing retrieved data into manageable sections and utilizing embedding techniques, the pipeline performs precise analyses, enabling a robust assessment of facts with the support of multiple LLMs, and ensuring thorough verification.
-
-The decision-making framework in the pipeline leverages majority voting across models and employs a final judge to resolve inconsistencies, creating a balanced and coherent output.
-This approach helps reduce errors and manage potential biases, strengthening the reliability of verified information.
-
-As each pipeline component is further explored, critical insights into its strengths and limitations are addressed.
-This includes ethical considerations in AI-driven fact verification, potential biases in knowledge representation, and the broader impacts of advanced verification systems.
 \begin{figure}[ht!]
     \centering
     \begin{minipage}[b]{\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{res/pipeline}
-        \caption{RAG-based fact verification pipeline}
-        \label{fig:pipeline}
+        \includegraphics[width=\textwidth]{res/system}
+        \caption{FactCheck: RAG-based KG fact verification system}
+        \label{fig:system}
     \end{minipage}
 \end{figure}
 
-This chapter aims to provide a comprehensive analysis of each stage of the pipeline as showed on Figure~\ref{fig:pipeline}, examining not only the technical aspects of its implementation but also the theoretical underpinnings and practical implications of its design choices.
+This chapter aims to provide a complete analysis of each stage of the system as showed on Figure~\ref{fig:system}, examining not only the technical aspects of its implementation but also the theoretical underpinnings and practical implications of its design choices.
 By understanding the intricacies of this system, we can gain valuable insights into the current state of NLP technologies and the potential future directions for research and development in this rapidly advancing field.
-As we proceed, we will explore each component in detail, starting with the foundational knowledge graph dataset and progressing through the various stages of query processing, information retrieval, context analysis, and response generation.
+As we proceed, we will explore each component in detail, starting with the \ac{KG} dataset and progressing through the various stages of query processing, information retrieval, context analysis, and response generation.
 This exploration will shed light on the complex interplay between different AI technologies and methodologies, offering a holistic view of how modern NLP systems can be architected to tackle some of the most challenging problems in information processing and human-computer interaction.
+Also, as we proceed, we will explore the ethical considerations and potential biases inherent in the system, highlighting the importance of responsible AI development and the need for ongoing scrutiny and oversight in the deployment of advanced technologies.
 
-\section{Knowledge Graph Dataset}\label{sec:knowledge-graph-dataset}
-The foundation of our multi-stage RAG pipeline is the Knowledge Graph Dataset, which acts as the primary source of factual information for the ensuing processing stages.
-This section clarifies the attributes and aims of the knowledge graph and its use in our pipeline.
+Note that in this chapter we just outline each component and its role in the system, and in the next chapters, we will provide parameters we used in each component and the results of the system.
+
+\section{\ac{KG} Dataset}\label{sec:knowledge-graph-dataset}
+The foundation of our multi-stage RAG system is the \ac{KG} Dataset, which acts as the primary source of factual information for the ensuing processing stages.
+This section clarifies the attributes and aims of the \ac{KG} and its use in our system.
 
 \subsection{Definition and Purpose}\label{subsec:definition-and-purpose}
-In the form of a graph, a knowledge graph is an ordered way to show information that models real-world things and how they relate to each other.
-The Knowledge Graph Dataset is a huge collection of facts, ideas, and connections that are all linked together in our process.
+In the form of a graph, a \ac{KG} is an ordered way to show information that models real-world things and how they relate to each other.
+The \ac{KG} dataset is a huge collection of facts, ideas, and connections that are all linked together in our process.
 Its main job is to give a lot of background information so that complicated queries can be understood and processed.
 
-The implementation of a knowledge graph fulfills multiple essential functions:
+The implementation of a \ac{KG} fulfills multiple essential functions:
 \begin{itemize}
-    \item \textbf{Semantic Representation:} Unlike traditional relational databases, knowledge graphs capture semantic relationships between entities, allowing for more nuanced and context-aware information retrieval.
+    \item \textbf{Semantic Representation:} Unlike traditional relational databases, \acp{KG} capture semantic relationships between entities, allowing for more nuanced and context-aware information retrieval.
     \item \textbf{Inferential Capabilities:} The interconnected nature of the graph enables the system to make inferences and connections that may not be explicitly stated, enhancing the depth and breadth of responses.
-    \item \textbf{Scalability:} Knowledge graphs can efficiently handle large volumes of heterogeneous data, making them ideal for systems that need to process diverse types of information.
+    \item \textbf{Scalability:} \acp{KG} can efficiently handle large volumes of heterogeneous data, making them ideal for systems that need to process diverse types of information.
     \item \textbf{Flexibility:} The graph structure allows for easy updates and expansions, ensuring that the knowledge base can evolve with new information and changing requirements.
 \end{itemize}
 
 \subsection{Structure and Components}\label{subsec:structure-and-components}
-The Knowledge Graph Dataset in our pipeline is composed of several key components:
+The \ac{KG} Dataset in our system is composed of several key components:
 \begin{itemize}
     \item \textbf{Nodes:} Representing entities or concepts, nodes are the fundamental units of information in the graph. Each node typically corresponds to a distinct piece of knowledge, such as a person, place, event, or abstract concept.
-    \item \textbf{Edges:} These are the connections between nodes, representing relationships or interactions. Edges are often directional and labeled to indicate the nature of the relationship (\ex, "is\_a", "part\_of", "created\_by").
+    \item \textbf{Edges:} These are the connections between nodes, representing relationships or interactions. Edges are often directional and labeled to indicate the nature of the relationship (\eg "is\_a", "part\_of", "created\_by").
     \item \textbf{Properties:} Nodes and edges can have associated properties or attributes that provide additional details or metadata about the entity or relationship.
 \end{itemize}
+Many \acp{KG} currently represent extracted facts in the form of Subject-Predicate-Object (SPO) triples which is in line with the standard prescribed by RDF (Resource Description Framework).
+In this case the subject and object are nodes, and the predicate is the edge connecting them.
 
-\subsection{Role in the Overall Pipeline}\label{subsec:role-in-the-overall-pipeline}
-As illustrated in the pipeline diagram, the Knowledge Graph Dataset is the thing that we want to verify the correctness of it.
-The pipeline uses the knowledge graph to generate queries, retrieve relevant information, and synthesize responses to find the correctness of the knowledge graph.
+\subsection{Role in the Overall system}\label{subsec:role-in-the-overall-system}
+As illustrated in the system diagram, the \ac{KG} dataset is the thing that we want to verify the correctness of it.
+The system uses the \ac{KG} to generate queries, retrieve relevant information, and synthesize responses to find the correctness of the \ac{KG}.
 
 \section{Query Generation and Processing}\label{sec:query-generation-and-processing}
-The Query Generation and Processing step, following to the basic Knowledge Graph Dataset, is a pivotal point in our pipeline, wherein user inputs are converted into structured queries suitable for efficient processing by later components.
-This section clarifies the techniques and methodologies utilized in this critical phase for subsequent actions in the information retrieval process.
+The Query Generation and Processing step, following to the \ac{KG} dataset, is a point wherein spo triples (\ie facts) are converted into human-understandable text suitable for efficient processing by later components.
+This text is then used to generate questions.
+These questions alongside the text are then used to retrieve information from external sources.
+This section clarifies the techniques and methodologies utilized in this phase for subsequent actions in the information retrieval process.
 
 \subsection{Human-Understandable Text Generation}\label{subsec:human-understandable-text-generation}
-In the first step of the pipeline, we use a LLM (\ie LLama3~\cite{dubey2024llama3herdmodels}, Gemma2~\cite{gemmateam2024gemma2improvingopen}) to easily generate human-readable text by submitting prompts.
+In the first step of this stage, we use a LLM (\eg LLama3~\cite{dubey2024llama3herdmodels}, Gemma2~\cite{gemmateam2024gemma2improvingopen}) to easily generate human-readable text by submitting prompts.
 This approach bridges the gap between representing raw data and conveying it in natural language, making the information more accessible and understandable.
+
 For additional information, consult the prompt template in Appendix~\ref{sec:prompt-templates:human-understandable} to observe the sentence generation process.
+This step can be done using other techniques, such as rule-based systems, but the \acp{LLM} are more efficient as they do not require manual intervention and can be easily adapted to different types of data.
 
 Key aspects of this process include:
 \begin{itemize}
-    \item \textbf{Contextual Awareness:} Integrating relevant context from the Knowledge Graph to guarantee that the output content is relevant and useful.
+    \item \textbf{Contextual Awareness:} Integrating relevant context from the \ac{KG} to guarantee that the output content is relevant and useful.
     \item \textbf{Adaptability:} Customizing the generated text to accommodate various complexity levels, catering to diverse user needs and query types.
     \item \textbf{Semantic Enrichment:} Enhancing the generated text with semantic annotations to facilitate more accurate downstream processing.
 \end{itemize}
 
-Be aware that certain knowledge graph datasets are human-readable, whereas others are not; for instance, the FactBench~\cite{GERBER201585} dataset may be easily comprehended by concatenating the subject, predicate, and object of each triple.
+Be aware that certain \ac{KG} datasets are human-readable, whereas others are not; for instance, the FactBench~\cite{GERBER201585} dataset may be easily comprehended by concatenating the subject, predicate, and object of each triple.
+Table \ref{tab:Text-Generation} provides examples of human-understandable text generation from various \acp{KG} datasets.
+This table shown that the generated text is more readable and more understandable than the raw triples.
+Also, we can figure out that the \acp{LLM} can be compatible with different types of \acp{KG} datasets.
 \begin{table}[h!]
     \noindent
-    \caption{Examples of human-understandable text generation, illustrates entries from multiple knowledge graphs, detailing the transformation of raw triples into readable sentences.}
+    \caption{Examples of human-understandable text generation, illustrates entries from multiple \acp{KG}, detailing the transformation of raw triples into readable sentences.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{p{3cm} p{3cm} p{3cm} c c p{3cm}}
             \toprule
-            \multicolumn{3}{c}{\textbf{Knowledge Graph}} & \multirow{2}{*}{\textbf{Source}} & \multirow{2}{*}{\textbf{Is Generated ?}} & \multirow{2}{*}{\textbf{Final Text}} \\
+            \multicolumn{3}{c}{\textbf{\ac{KG}}} & \multirow{2}{*}{\textbf{Source}} & \multirow{2}{*}{\textbf{Is Generated ?}} & \multirow{2}{*}{\textbf{Final Text}} \\
             \cmidrule(lr){1-3} \
             Subject & Predicate & Object & & & \\
             \midrule
@@ -122,7 +109,8 @@ Be aware that certain knowledge graph datasets are human-readable, whereas other
 \end{table}
 
 \subsection{Question Formulation Techniques}\label{subsec:question-formulation-techniques}
-A cornerstone of our pipeline is its ability to generate 10 questions about the input sentence, as illustrated in the diagram.
+A cornerstone of our system is its ability to generate questions about the input spo triple, as illustrated in the diagram.
+We generate 10 questions about the input sentence to ensure all the spo triple aspects are covered and disambiguated.
 
 This multi-question approach serves several purposes:
 \begin{itemize}
@@ -132,11 +120,18 @@ This multi-question approach serves several purposes:
     \item \textbf{Robustness:} The diversity of questions increases the likelihood of capturing the user's true intent, even if the original input is vague or imprecise.
 \end{itemize}
 
-Implementing this technique involves using \ac{LLMs} to generate 10 questions about the input sentence, leveraging the models’ language understanding capabilities to ensure the questions are relevant and contextually appropriate.
+Implementing this technique involves using \acp{LLM} to generate 10 questions about the input sentence, using the models’ language understanding capabilities to ensure the questions are relevant and contextually appropriate.
 The prompt template used to guide the question generation process is reported in Appendix~\ref{sec:prompt-templates:10-question}.
 
-\subsection{Cross-Encoder for Query Relevance Scoring}\label{subsec:cross-encoder-for-query-relevance-scoring}
-The Cross-Encoder component is essential for evaluating the relevance of the generated questions.
+From now as we want to submit the generated questions to the Google Search engine, we named the generated questions as queries.
+
+\subsection{Query Scoring}\label{subsec:cross-encoder-for-query-relevance-scoring}
+In this step, we want to evaluate the similarity of the generated queries to the input sentence.
+This way we can filter out the irrelevant queries and just keep the relevant ones.
+For this purpose we use the Cross-Encoder component, which assesses the similarity of generated queries by taking multiple input pairs and assigning a similarity score to each, supporting query evaluation and refinement.
+
+\paragraph{Cross-Encoder Component:}\label{par:cross-encoder-component}
+The Cross-Encoder component is essential for evaluating the similarity of the generated queries.
 As indicated in the Figure~\ref{fig:cross-encoder-articture}, this module takes multiple inputs and produces relevance scores for each question.
 
 \begin{figure}[ht!]
@@ -145,7 +140,7 @@ As indicated in the Figure~\ref{fig:cross-encoder-articture}, this module takes 
         \centering
         \includegraphics[width=\textwidth]{res/Cross-Encoder}
     \end{minipage}
-    \caption{Cross-Encoder component, which assesses the relevance of generated questions by taking multiple input pairs and assigning a relevance score to each, supporting question evaluation and refinement.}
+    \caption{Cross-Encoder component, which assesses the similarity of generated questions by taking multiple input pairs and assigning a relevance score to each, supporting question evaluation and refinement.}
     \label{fig:cross-encoder-articture}
 \end{figure}
 
@@ -161,10 +156,10 @@ Key features of the Cross-Encoder include:
     \item \textbf{Comparative Analysis:} By processing all inputs simultaneously, the Cross-Encoder can perform nuanced comparisons between the original input and each generated question, as well as among the questions themselves.
 \end{itemize}
 
-In this case we use the \textit{jinaai/jina-reranker-v1-turbo-en}\footnote{\url{https://huggingface.co/jinaai/jina-reranker-v1-turbo-en}} model from the Hugging Face Transformers library.
+In our case we use the \textit{jinaai/jina-reranker-v1-turbo-en}\footnote{\url{https://huggingface.co/jinaai/jina-reranker-v1-turbo-en}} model from the Hugging Face Transformers library.
 This model is designed for blazing-fast re-ranking while maintaining competitive performance.
 It leverages the power of JinaBERT~\cite{günther2024jinaembeddings28192token} model as its foundation.
-The model employs a process known as knowledge distillation to attain exceptional speed and efficiency, making it the optimal selection for our pipeline.
+The model employs a process known as knowledge distillation as shown in the Figure~\ref{fig:knowledge-distill}, to attain exceptional speed and efficiency, making it the optimal selection for our system.
 
 \begin{figure}[ht!]
     \centering
@@ -175,11 +170,12 @@ The model employs a process known as knowledge distillation to attain exceptiona
     \caption{Knowledge Distillation Process for Enhanced Re-Ranking Efficiency}
     \label{fig:knowledge-distill}
 \end{figure}
-\subsection{Relevance Threshold and Sorting}\label{subsec:relevance-threshold-and-sorting}
-Following the Cross-Encoder's scoring, the pipeline implements a crucial decision point:
+
+\paragraph{Similarity Threshold and Sorting:}\label{par:relevance-threshold-and-sorting}
+Following the Cross-Encoder's scoring, the system implements a crucial decision point:
 \begin{itemize}
     \item \textbf{Sorting:} Questions are sorted based on their relevance scores, establishing a priority order for further processing.
-    \item \textbf{Threshold Evaluation:} The system checks if the top question's score exceeds an upper threshold. This step ensures that only sufficiently relevant questions proceed further in the pipeline.
+    \item \textbf{Threshold Evaluation:} The system checks if the top question's score exceeds an upper threshold. This step ensures that only sufficiently relevant questions proceed further in the system.
     \item \textbf{Feedback Loop:} If the threshold is not met, the process must loop back to generate new questions to adjust the existing ones, maintaining the quality of queries entering subsequent stages.
 \end{itemize}
 
@@ -206,20 +202,25 @@ Following the Cross-Encoder's scoring, the pipeline implements a crucial decisio
     \label{tab:Question scoring}
 \end{table}
 
-\section{Information Retrieval Mechanisms}\label{sec:information-retrieval-mechanisms}
-The Information Retrieval Mechanisms are an essential element of our pipeline, connecting query processing and content synthesis.
+Table~\ref{tab:Question scoring} provides an example of generated questions by the Gemma2 model with similarity scores assigned by the Jina Re-ranker Cross-Encoder.
+The top question is highlighted, indicating that it has the highest similarity score and is likely to be the most pertinent for further processing.
+If the top question's score exceeds the predefined threshold, it proceeds to the next stage of the system.
+Otherwise, the system must loop back to generate new queries till the threshold is met.
+
+\section{\ac{IR} Mechanisms}\label{sec:information-retrieval-mechanisms}
+The \ac{IR} Mechanisms are an essential element of FactCheck, connecting query processing and content synthesis.
 This phase is tasked with gathering relevant data from internal and external sources, thereby establishing a comprehensive data repository for further analysis and response formulation.
 The mechanisms employed in this phase are designed to ensure breadth, depth, and relevance in the retrieved information.
 
 \subsection{Google Search Integration}\label{subsec:google-search-integration}
-A key feature of our information retrieval process is the integration of Google Search capabilities, as prominently displayed in the pipeline diagram.
-This integration serves to expand the information horizon beyond the confines of our internal Knowledge Graph Dataset.
+A key feature of our information retrieval process is the integration of Google Search capabilities, as prominently displayed in the system diagram.
+This integration serves to expand the information horizon beyond the confines of our internal \ac{KG} Dataset.
 Key aspects of this integration include:
 
 \begin{itemize}
-    \item \textbf{Query Submission:} The system submits the $N$ top questions (where $N$ is a predefined number) along with the main question to Google Search. This approach ensures a multi-faceted search that captures various aspects of the original query.
+    \item \textbf{Query Submission:} The system submits the $N$ top queries (where $N$ is a predefined number) along with the human-understandable text to Google Search. This approach ensures a multi-faceted search that captures various aspects of the original query.
     \item \textbf{Result Fetching:} As indicated in the diagram, the system retrieves the top 100 search results. This number strikes a balance between comprehensiveness and computational efficiency.
-    \item \textbf{Dynamic Information Access:} By leveraging Google Search, the system gains access to up-to-date information, complementing the more static nature of the internal Knowledge Graph.
+    \item \textbf{Dynamic Information Access:} By leveraging Google Search, the system gains access to up-to-date information, complementing the more static nature of the internal \ac{KG}.
     \item \textbf{Diverse Source Types:} Google Search results typically include a variety of source types (\eg, websites, news articles, academic papers), enriching the diversity of the retrieved information.
 \end{itemize}
 
@@ -229,20 +230,20 @@ Key aspects of this integration include:
         \centering
         \includegraphics[width=\textwidth]{res/Google-Search-Result}
     \end{minipage}
-    \caption{Fetching results from Google Search engine for top $N$ questions and the main knowledge graph query.}
+    \caption{Fetching results from Google Search engine for top $N$ questions and the main \ac{KG} query.}
     \label{fig:google-search-result}
 \end{figure}
 
 Implementation considerations:
 \begin{itemize}
     \item The system may employ proxies or other mechanisms to manage rate limits and ensure uninterrupted access to search results.
-    \item The search query may be customized based on the specific requirements of the pipeline, such as language restrictions, geolocation preferences, or result quantity. parameters are \textit{lr}, \textit{hl}, \textit{gl}, and \textit{num}.
+    \item The search query may be customized based on the specific requirements of the system, such as language restrictions, geolocation preferences, or result quantity. parameters are \textit{lr}, \textit{hl}, \textit{gl}, and \textit{num}.
 \end{itemize}
 
 Take note that the code base is generic, and it means that you can use any search engine, not only Google Search.
 
 \subsection{Process and Extract Links}\label{subsec:process-and-extract-links}
-Following the retrieval of search results, the pipeline incorporates a crucial step of processing and extracting links from the gathered information.
+Following the retrieval of search results, the system incorporates an important step of processing and extracting links from the gathered information.
 This process likely involves:
 \begin{itemize}
     \item \textbf{Parsing \ac{HTML} Content:} Extracting relevant textual information from the retrieved web pages.
@@ -288,7 +289,7 @@ There are several faults in the mentioned approach~\ref{lst:crawling-urls} that 
 
 We can use the \textit{Selenium}\footnote{\url{https://www.selenium.dev/}} library to handle the first issue, and for the second and third issues, we can use the \textit{Scrapy}\footnote{\url{https://scrapy.org/}} library, but we stick with the provided approach for simplicity and speed.
 
-With the extracted content, the system can now proceed to the next stage of the pipeline, where the information is further processed and analyzed.
+With the extracted content, the system can now proceed to the next stage of the system, where the information is further processed and analyzed.
 For extracting the content of the page, as our webpage are from vast sources, we need to use a robust and efficient library to extract the content of the page.
 We use \textit{newspaper4k}\footnote{\url{https://newspaper4k.readthedocs.io/en/latest/}} library to extract the content of the page.
 \textit{newspaper4k} is a Python library designed for extracting and parsing newspaper articles. It's an updated and improved version of the original newspaper3k library, offering enhanced functionality and compatibility with modern Python versions.
@@ -316,41 +317,36 @@ Key features of the \textit{newspaper4k} library include:
 
 For our purpose, we only use the text content of the page.
 \subsection{Data Pool Creation}\label{subsec:data-pool-creation}
-The processed and extracted information culminates in the creation of a data pool, a centralized repository of relevant information that serves as the foundation for subsequent stages of the pipeline.
+The processed and extracted information culminates in the creation of a data pool, a centralized repository of relevant information that serves as the foundation for subsequent stages of the system.
 
 Key features of the data pool include:
 \begin{itemize}
     \item \textbf{Structured Storage:} Organizing the retrieved information in a format that facilitates efficient querying and analysis.
-    \item \textbf{Source Diversity:} Maintaining a balance between information from web searches and the internal Knowledge Graph.
+    \item \textbf{Source Diversity:} Maintaining a balance between information from web searches and the internal \ac{KG}.
     \item \textbf{Relevance Scoring:} Potentially implementing a scoring system to prioritize more relevant or authoritative pieces of information within the pool.
     \item \textbf{Deduplication:} Employing mechanisms to identify and merge duplicate or highly similar pieces of information to reduce redundancy.
 \end{itemize}
 \subsection{Data filtering}\label{subsec:data-filtering}
-The data filtering process aims to refine our data pool by removing information from sources that are already part of creation of the Knowledge Graph.
+The data filtering process aims to refine our data pool by removing information from sources that are already part of creation of the \ac{KG}.
 This ensures the uniqueness and independence of our data, for example, when working with the FactBench dataset, we exclude data from the following sources: wikipedia.org, wikimedia.org, wikidata.org and other similar wiki-based platforms.
 
-On the other hand, we just keep the top 10 relevant information for the pipeline using cross-encoders discussed in Section~\ref{subsec:cross-encoder-for-query-relevance-scoring}, this way we ensure about the quality of the data.
+On the other hand, we just keep the top 10 relevant information for the system using cross-encoders discussed in Section~\ref{subsec:cross-encoder-for-query-relevance-scoring}, this way we ensure about the quality of the data.
 %More details about the data filtering process methodology are provided in the section~\ref{sec:document-selction}.
 
-Specifically:
-\begin{itemize}
-    \item We start with a larger pool of data.
-    \item We identify sources that are already the source of the Knowledge Graph.
-    \item We remove any data points that come from these identified sources.
-\end{itemize}
+Specifically (1) We start with a larger pool of data; Then (2) We identify sources that are already the source of the \ac{KG} and Finally (3) We remove any data points that come from these identified sources.
 
 \section{Embedding and Retrieval Tasks}\label{sec:embedding-and-retrieval-tasks}
-An important step in our pipeline is the Embedding and Retrieval Tasks, which connect machine-interpretable vector representations to unprocessed textual input.
+In the Embedding and Retrieval section, we aim to connect machine-interpretable vector representations to unprocessed textual input.
 This component is essential for improving the efficiency and accuracy of information retrieval and subsequent processing stages.
 
-This section emphasizes embedding for retrieval tasks, specifically for small information segments, as depicted in the pipeline diagram.
+This section emphasizes embedding for retrieval tasks, specifically for small information chunks, as depicted in the system diagram.
 
 \subsection{Embedding Techniques for Smaller Chunks}\label{subsec:embedding-techniques-for-smaller-chunks}
-The pipeline employs advanced embedding techniques to transform textual data into dense vector representations, facilitating more efficient and semantically aware retrieval processes.
+The system employs advanced embedding techniques to transform textual data into dense vector representations, facilitating more efficient and semantically aware retrieval processes.
 
 Key aspects of this embedding process include:
 \begin{itemize}
-    \item \textbf{Granularity:} The focus on "Smaller Chunks" suggests a fine-grained approach to embedding, where text is broken down into manageable units. This granularity allows for more precise retrieval and relevance assessment.
+    \item \textbf{Granularity:} The focus on ``Smaller Chunks'' suggests a fine-grained approach to embedding, where text is broken down into manageable units. This granularity allows for more precise retrieval and relevance assessment.
     \item \textbf{Dimensionality Reduction:} Transforming high-dimensional textual data into lower-dimensional vector spaces while preserving semantic relationships.
 \end{itemize}
 
@@ -371,7 +367,7 @@ Key aspects of this embedding process include:
 %
 %There is example of the \textit{SentenceWindowNodeParser} and \textit{MetadataReplacementNodePostProcessor} in the Appendix~\ref{sec:chunking:sliding-window}.
 
-\subsubsection{Challenges and Considerations}
+\paragraph{Challenges and Considerations:}
 Several challenges and considerations are inherent in the Embedding and Retrieval Tasks:
 \begin{itemize}
     \item \textbf{Multilingual Support:} Extending embedding capabilities to support multiple languages, potentially through multilingual or language-agnostic models.
@@ -382,7 +378,9 @@ Several challenges and considerations are inherent in the Embedding and Retrieva
 \end{itemize}
 
 \subsection{Similarity Cutoff Strategy}\label{subsec:similarity-cutoff-strategy}
-One of the most important aspects that is highlighted in the pipeline diagram is the "Similarity Cutoff Strategy," which is significant since it is responsible for filtering and prioritizing the information that is included.
+For making the system to be more accurate and efficient, we need to filter out the irrelevant chunks.
+As highlighted in the system diagram, we use ``Similarity Cutoff Strategy'' strategy for filtering and prioritizing the information that is included.
+The architecture of this process has many similarities to the query scoring section.
 
 This strategy likely involves:
 \begin{itemize}
@@ -398,14 +396,14 @@ The Similarity Cutoff Strategy serves several critical functions:
     \item \textbf{Relevance Enhancement:} Ensuring that only the most pertinent information is retained for query resolution and response generation.
 \end{itemize}
 
-It can be switched off if the dataset is small or if the similarity cutoff is not needed.
+Note that this procedure can be disabled if the dataset is small or if the similarity cutoff is not needed.
 
-\section{LLMs}\label{sec:large-language-models-llms-in-the-pipeline}
-\ac{LLMs} play a pivotal role in our advanced NLP pipeline, serving as the cornerstone for sophisticated information synthesis and response generation.
-As illustrated in the pipeline diagram, multiple LLMs are employed, contributing to a robust and nuanced approach to question answering and information processing.
+\section{LLMs}\label{sec:large-language-models-llms-in-the-system}
+\ac{LLMs} play a pivotal role in our FactCheck system, serving as the cornerstone for sophisticated information synthesis and response generation.
+As illustrated in the system diagram, multiple LLMs are employed, contributing to a robust and nuanced approach to question answering and information processing.
 
 \subsection{Integration of Multiple LLMs}\label{subsec:integration-of-multiple-llms}
-The pipeline incorporates multiple LLMs working in concert, a design choice that offers several significant advantages:
+The system incorporates multiple LLMs working in concert, a design choice that offers several significant advantages:
 \begin{itemize}
     \item \textbf{Diversity of Perspectives:} By utilizing multiple models, the system can capture a broader range of interpretations and approaches to information synthesis.
     \item \textbf{Specialization:} Different LLMs may be fine-tuned or specialized for particular types of queries or domains, allowing for more targeted and accurate responses in specific contexts.
@@ -439,22 +437,24 @@ Performance Considerations and Limitations of \textit{Ollama}:
     \end{itemize}
 \end{itemize}
 
-\subsection{Roles of LLMs in the Pipeline}\label{subsec:roles-of-llms-in-the-pipeline}
-Based on the pipeline diagram, the LLMs serve several crucial functions:
+\subsection{Roles of LLMs in the system}\label{subsec:roles-of-llms-in-the-system}
+Based on the system diagram, the LLMs serve several crucial functions:
 \begin{itemize}
     \item \textbf{Information Synthesis:} Integrating and coherently combining information from various sources.
     \item \textbf{Context Processing:} Analyzing and interpreting the broader context of queries and retrieved information to generate more accurate and relevant responses.
-    \item \textbf{Reasoning and Inference:} Drawing logical conclusions and making inferences based on the available information, potentially finding the correctness of the knowledge graph.
+    \item \textbf{Reasoning and Inference:} Drawing logical conclusions and making inferences based on the available information, potentially finding the correctness of the \ac{KG}.
 \end{itemize}
 
 The prompt template used for RAG approach reported in Appendix~\ref{sec:prompt-templates:rag}, we use the selected chunks from the previous steps to feed the LLMs context and also provide few examples to the LLMs to generate the better response.
 
 \section{Voting System and Conflict Resolution}\label{sec:model-diversity-and-conflict-resolution}
-Our state-of-the-art pipeline for natural language processing relies heavily on the integration of many models and the deployment of procedures to resolve conflicts.
+Our state-of-the-art system relies heavily on the integration of many models and the deployment of procedures to resolve conflicts.
 To ensure robust and trustworthy outcomes, this section covers the ways adopted to resolve disputes and harness model diversity.
+We use majorty voting over four models to select the final response, and in the cases where we have a tie, we use a more advanced approach to resolve the conflict.
 
 \subsection{Majority Voting System}\label{subsec:majority-voting-system}
-A significant aspect of the LLM integration, is the establishment of a majority voting mechanism for response creation.
+A significant aspect of our LLM integration, is the establishment of a majority voting mechanism for response creation.
+The majority vote decides the final response based on the outputs of multiple models.
 
 This method provides numerous advantages:
 \begin{itemize}
@@ -470,14 +470,16 @@ Implementation challenges:
     \item \textbf{Threshold Setting:} Establishing the criteria for what constitutes a "majority" and how to handle cases with no clear consensus.
     \item \textbf{Combining Diverse Outputs:} Developing methods to meaningfully aggregate potentially disparate outputs from different models into a coherent final response.
 \end{itemize}
-The pipeline incorporates several mechanisms for resolving conflicts that may arise from divergent model outputs.
+The system incorporates several mechanisms for resolving conflicts that may arise from divergent model outputs.
 
 \subsection{Conflict Resolution Strategies}\label{subsec:conflict-resolution-strategies}
 As previously discussed~\ref{subsec:majority-voting-system}, the system employs a majority voting approach among LLMs to determine the most appropriate response.
 This serves as a primary conflict resolution mechanism, leveraging the wisdom of the collective to mitigate individual model errors or biases.
-\subsubsection{Final Judge Implementation:}
-A crucial component in the conflict resolution process is the "final judge" module, as indicated in the pipeline diagram.
-This element plays a pivotal role in resolving conflicts and ensuring coherence in the system's outputs.
+
+\paragraph{Final Judge Implementation:}
+A crucial component in the conflict resolution process is the ``final judge'' module, as indicated in the system diagram.
+This element's role is resolving conflicts and ensuring coherence in the system's outputs.
+Basically, this component is responsible for making the final decision based on the majority voting results.
 
 Key aspects of the final judge implementation:
 \begin{itemize}
@@ -489,9 +491,9 @@ Key aspects of the final judge implementation:
 
 The final judge module used a system named \textit{Adaptive Conflict Resolution}, which is an adaptive approach to conflict resolution based on the specified settings.
 
-\subsubsection{Adaptive Conflict Resolution}
-The pipeline demonstrates an adaptive approach to conflict resolution, as evidenced by the following feature:
-"When two of the language models believe the answer is correct, and two believe it is wrong, we switch to a more advanced model, such as a commercial one or a model with more parameters."
+\paragraph{Adaptive Conflict Resolution:}
+The system demonstrates an adaptive approach to conflict resolution, as evidenced by the following feature:
+``When two of the language models believe the answer is correct, and two believe it is wrong, we switch to a more advanced model, such as a commercial one or a model with more parameters.''
 There are two ways to apply this adaptive method: 1) Directly selecting commercial models (\eg, GPT-4), or 2) Using a more advanced, open-source model with more parameters (\eg, Gemma2:27b).
 For the second option, we use the algorithm shown in Algorithm~\ref{alg:model-selection}.
 This algorithm uses the mapping between the already used and final models to select the final model.
@@ -509,7 +511,7 @@ Implementation challenges:
 \begin{itemize}
     \item \textbf{Threshold Definition:} Determining the exact criteria for when to invoke the more advanced models.
     \item \textbf{Model Selection:} Choosing which advanced model to use based on the nature of the conflict and the query context.
-    \item \textbf{Integration:} Ensuring smooth handover and result incorporation from the advanced models back into the main pipeline.
+    \item \textbf{Integration:} Ensuring smooth handover and result incorporation from the advanced models back into the main system.
 \end{itemize}
 
 \begin{algorithm}
@@ -537,9 +539,10 @@ Implementation challenges:
         \EndProcedure
     \end{algorithmic}\label{alg:model-selection}
 \end{algorithm}
+
 \section{Performance Report}\label{sec:performance-report}
-In Tables~\ref{tab:pipeline-performance-report},~\ref{tab:pipeline-performance-report-2}, we provide a detailed performance report, highlighting key metrics that demonstrate the pipeline's efficiency.
-Other sections of the pipeline, such as RAG and conflict resolution mechanisms, will be evaluated in future chapters.
+In Tables~\ref{tab:system-performance-report},~\ref{tab:system-performance-report-2}, we provide a detailed performance report, highlighting key metrics that demonstrate the system's efficiency.
+Other sections of the system, such as RAG and conflict resolution mechanisms, will be evaluated in future chapters.
 \begin{table}[ht!]
     \noindent
     \caption{Performance of our LLM-based tasks in production, generated by Openlit with Gemma2 model.}
@@ -557,7 +560,7 @@ Other sections of the pipeline, such as RAG and conflict resolution mechanisms, 
                 \item[*] The average time is calculated on the Macbook Pro with M2 max chip and 32GB of RAM\@.
             \end{tablenotes}
         \end{threeparttable}}
-    \label{tab:pipeline-performance-report}
+    \label{tab:system-performance-report}
 \end{table}
 \begin{table}[ht!]
 %    \noindent
@@ -577,15 +580,15 @@ Other sections of the pipeline, such as RAG and conflict resolution mechanisms, 
             \item[*] The average time is calculated on the unix based server with 2 cores and 4GB of RAM\@.
         \end{tablenotes}
     \end{threeparttable}
-    \label{tab:pipeline-performance-report-2}
+    \label{tab:system-performance-report-2}
 \end{table}
 
-\section{Pipeline Flow and Decision Points}\label{sec:pipeline-flow-and-decision-points}
-The architecture of our pipeline is characterized by a sophisticated flow of information and a series of critical decision points.
+\section{system Flow and Decision Points}\label{sec:system-flow-and-decision-points}
+The architecture of our system is characterized by a sophisticated flow of information and a series of critical decision points.
 This structure enables the system to process complex queries, retrieve and synthesize relevant information, and generate accurate responses.
-This section provides a comprehensive analysis of the pipeline's flow and the key decision points that guide the processing of information.
+This section provides a comprehensive analysis of the system's flow and the key decision points that guide the processing of information.
 
-The pipeline flow can be broadly categorized into several main stages, each with its own set of processes and decision points:
+The system flow can be broadly categorized into several main stages, each with its own set of processes and decision points:
 \begin{itemize}
     \item Input Processing and Query Generation
     \item Information Retrieval and Enrichment
@@ -593,17 +596,17 @@ The pipeline flow can be broadly categorized into several main stages, each with
     \item Multi-Model Processing and Synthesis
     \item Conflict Resolution and Final Output Generation
 \end{itemize}
-Let's examine each of these stages in detail in table~\ref{tab:pipeline-decision-points}, focusing on the flow of information and the critical decision points within each.
+Let's examine each of these stages in detail in table~\ref{tab:system-decision-points}, focusing on the flow of information and the critical decision points within each.
 \begin{table}[ht!]
     \noindent
-    \caption{Comprenhensive list of decision points in the pipeline flow.}
+    \caption{Comprenhensive list of decision points in the system flow.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lp{11cm}}
             \toprule
             \textbf{Component} & \textbf{Decision Point} \\
             \midrule
             \multicolumn{2}{c}{\colorbox{pink}{\textit{Input Processing and Query Generation}}} \\
-            Knowledge Graph Dataset Integration & Extent and nature of knowledge graph integration based on input complexity. \\
+            \ac{KG} Dataset Integration & Extent and nature of \ac{KG} integration based on input complexity. \\
             Human-Understandable Text Generation & Selection of the most appropriate natural language generation technique based on input and context. \\
             Question Generation & Assessment of the quality and relevance of generated questions. \\
             Cross-Encoder for Query Relevance & Determination of whether the top question score exceeds the upper threshold. \\
@@ -632,42 +635,42 @@ Let's examine each of these stages in detail in table~\ref{tab:pipeline-decision
             Response Generation & Selection of the most appropriate format and level of detail for the response. \\
             \bottomrule
         \end{tabular}}
-    \label{tab:pipeline-decision-points}
+    \label{tab:system-decision-points}
 \end{table}
 
-Several challenges and considerations are associated with managing the pipeline flow and decision points:
+Several challenges and considerations are associated with managing the system flow and decision points:
 \begin{itemize}
     \item \textbf{Computational Efficiency:} Balancing the depth of processing at each stage with the need for timely responses.
     \item \textbf{Error Propagation:} Ensuring that errors or biases introduced at early stages don't disproportionately affect the final output.
     \item \textbf{Adaptability:} Designing decision points that can adapt to different query types and complexity levels.
-    \item \textbf{Transparency:} Maintaining traceability of decisions made throughout the pipeline for accountability and debugging purposes.
-    \item \textbf{Scalability:} Ensuring that the pipeline can handle increasing query volumes without significant degradation in performance or accuracy.
+    \item \textbf{Transparency:} Maintaining traceability of decisions made throughout the system for accountability and debugging purposes.
+    \item \textbf{Scalability:} Ensuring that the system can handle increasing query volumes without significant degradation in performance or accuracy.
 \end{itemize}
 
-In conclusion, the Pipeline Flow and Decision Points represent a complex yet well-structured approach to natural language processing and question answering.
+In conclusion, the system Flow and Decision Points represent a complex yet well-structured approach to natural language processing and question answering.
 By implementing a series of carefully designed stages and critical decision points, the system aims to process information in a manner that maximizes accuracy, relevance, and reliability.
-The adaptive nature of the pipeline, particularly in its approach to conflict resolution and model selection, demonstrates a commitment to handling a wide range of query complexities and scenarios.
+The adaptive nature of the system, particularly in its approach to conflict resolution and model selection, demonstrates a commitment to handling a wide range of query complexities and scenarios.
 However, the intricate nature of this flow also underscores the importance of ongoing optimization, monitoring, and refinement to ensure that the system continues to perform effectively and ethically in the face of evolving challenges and requirements in the field of AI and natural language processing.
 
 \section{Ethical Considerations and Limitations}\label{sec:ethical-considerations-and-limitations}
-The development and deployment of advanced pipelines, such as the one described in this thesis, necessitate a thorough examination of ethical considerations and an acknowledgment of system limitations.
+The development and deployment of advanced systems, such as the one described in this thesis, necessitate a thorough examination of ethical considerations and an acknowledgment of system limitations.
 This section explores the ethical implications of our fact-checking system and discusses its inherent constraints.
 
 \subsection{Ethical Considerations}\label{subsec:ethical-considerations}
-While the pipeline diagram does not explicitly highlight ethical components, several aspects of the system raise important ethical considerations:
+While the system diagram does not explicitly highlight ethical components, several aspects of the system raise important ethical considerations:
 
-\subsubsection{Misinformation and Harmful Content}\label{subsubsec:misinformation-and-harmful-content}
+\paragraph{Misinformation and Harmful Content:}\label{subsubsec:misinformation-and-harmful-content}
 The system's ability to synthesize information from various sources poses risks related to misinformation:
 \begin{itemize}
     \item \textbf{Propagation of False Information:} Potential for the system to inadvertently spread misinformation present in retrieved data.
     \item \textbf{Generation of Harmful Content:} Risk of producing responses that could be considered harmful, offensive, or inappropriate.
 \end{itemize}
 
-\subsubsection{Environmental Considerations}\label{subsubsec:environmental-considerations}
+\paragraph{Environmental Considerations:}\label{subsubsec:environmental-considerations}
 The computational resources required to run multiple LLMs and process large volumes of data raise environmental concerns:
 \begin{itemize}
     \item \textbf{Energy Consumption:} High energy usage associated with running complex AI models and large-scale data processing.
-    \item \textbf{Carbon Footprint:} Environmental impact of the infrastructure required to support the pipeline.
+    \item \textbf{Carbon Footprint:} Environmental impact of the infrastructure required to support the system.
 \end{itemize}
 
 \subsection{Limitations}\label{subsec:limitations}
@@ -675,7 +678,7 @@ Understanding and acknowledging the limitations of the system is crucial for eth
 
 \begin{table}[h!]
     \noindent
-    \caption{Limitations of the pipeline, categorized by scope of knowledge.}
+    \caption{Limitations of the system, categorized by scope of knowledge.}
     \resizebox{\textwidth}{!}{
         \begin{tabular}{lp{11cm}}
             \toprule
@@ -703,5 +706,5 @@ Understanding and acknowledging the limitations of the system is crucial for eth
             \bottomrule
             \end{tabular}
     }
-    \label{tab:pipeline-limitations}
+    \label{tab:system-limitations}
 \end{table}

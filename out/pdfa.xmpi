@@ -62,7 +62,7 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
-   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Knowledge Graph Fact Verification using Retrieval-Augmented Generation</rdf:li></rdf:Alt></dc:title>
+   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">FactCheck: Knowledge Graph Fact Verification Through Retrieval-Augmented Generation Using a Multi-Model Ensemble Approach</rdf:li></rdf:Alt></dc:title>
    <dc:creator><rdf:Seq><rdf:li>Farzad Shmai</rdf:li></rdf:Seq></dc:creator>
    <dc:language><rdf:Bag><rdf:li>en-EN</rdf:li></rdf:Bag></dc:language>
    <dc:subject><rdf:Bag><rdf:li>Computer Engineering</rdf:li>
@@ -78,15 +78,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2024-11-23T10:56:52+01:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2024-11-23T10:56:52+01:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2024-11-23T10:56:52+01:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2025-03-07T13:43:36+01:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2025-03-07T13:43:36+01:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2025-03-07T13:43:36+01:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:DF005B57-2A06-8753-7167-92D8CE935460</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:411649C6-2BD0-8A0F-9845-84A4D0E50558</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:8B36A3B7-A0E6-A0A0-D225-433EACA41B91</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

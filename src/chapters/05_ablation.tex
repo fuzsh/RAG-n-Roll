@@ -64,7 +64,7 @@ The goal is to identify the most effective methods for finding documents that pe
 We consider both unsupervised and supervised approaches.
 Using these methods, we aim to find the most relevant documents from the data pool we have collected through web scraping~\ref{subsec:data-pool-creation}.
 \subsection{Unsupervised Methods}\label{subsec:unsupervised-methods}
-\subsubsection{BM25}
+\paragraph{BM25:}
 BM25~\cite{bm25} is a widely used unsupervised retrieval method that relies on term frequency and inverse document frequency (TF-IDF) weighting.
 It estimates the relevance of documents to a query based on the frequency of query terms in each document, offset by the rarity of those terms across the full document collection.
 BM25 has proven to be a robust baseline for many retrieval tasks.
@@ -84,7 +84,7 @@ However, it relies on lexical matching between query and document terms, which c
     n(q_i) &: \text{number of documents containing } q_i
 \end{align*}
 
-\subsubsection{Contriever}
+\paragraph{Contriever:}
 \textit{Contriever} is a more recently proposed unsupervised method by Izacard et al.\cite{izacard2022unsuperviseddenseinformationretrieval} that leverages contrastive learning to train dense retrieval models.
 Rather than relying on term matching, Contriever learns to map semantically similar text pairs to nearby embeddings in a continuous vector space.
 At query time, Contriever embeds the query and retrieves the documents whose embeddings are nearest to the query under cosine similarity.
@@ -101,7 +101,7 @@ Here's why:
 \end{itemize}
 
 \subsection{Supervised Methods}\label{subsec:supervised-methods}
-\subsubsection{Jina.ai Reranker}
+\paragraph{Jina.ai Reranker:}
 The Jina.ai Reranker is a supervised neural ranking model.
 Jina Reranker employs a cross-encoder architecture, which represents a paradigm shift from traditional bi-encoder models used in embedding-based search.
 While bi-encoder models separately encode queries and documents, cross-encoders jointly process query-document pairs, allowing for more nuanced semantic understanding and relevance assessment.
@@ -114,7 +114,7 @@ In multilingual tasks, it achieved state-of-the-art recall@10 scores on the MKQA
 Notably, it secured the top position on the AirBench leaderboard upon its release \footnote{\url{https://huggingface.co/spaces/AIR-Bench/leaderboard}}.
 
 These capabilities make the model particularly valuable for multilingual information retrieval, agentic RAG systems, and even in programming and software development support.
-\subsubsection{MS MARCO MiniLM}
+\paragraph{MS MARCO MiniLM:}
 The \textit{MS MARCO MiniLM} is another supervised neural model, based on the popular BERT architecture trained on the MS MARCO dataset but distilled to a smaller size for efficiency.
 \begin{table}[ht!]
     \centering
@@ -277,7 +277,7 @@ Evaluation on the MIRACL~\cite{zhang-etal-2023-miracl} multilingual retrieval be
 Despite the excellent performance on high-resource languages, the model shows a little degradation in performance for low-resource languages, a common limitation of multilingual models, but still outperforms many other models in this category.
 The use of contrastive learning and instruction tuning enables the model to generate highly effective embeddings for information retrieval tasks.
 \subsection{bge-small-en-v1.5}\label{subsec:baai}
-The \textit{\textit{bge-small-en-v1.5}} model is part of the BGE (BAAI General Embeddings) series developed by the Beijing Academy of Artificial Intelligence~\cite{bge_embedding}.
+The \textit{\textit{bge-small-en-v1.5}} model is part of the BGE (BAAI General Embeddings) series developed by the Beijing Academy of Artificial Intelligenceina-embeddings-v3.
 It is a compact English-specific model with just 33.4M parameters, making it highly efficient for deployment in resource-constrained environments.
 The model architecture is BERT-like which goes through three-stage of training.
 \textit{\textit{bge-small-en-v1.5}} follows a two-stage training pipeline similar to other BGE models:
@@ -297,7 +297,7 @@ It presents an attractive option for applications requiring low-latency inferenc
 \subsection{Comparative Analysis}\label{subsec:comparative-analysis}
 We examine their model size and efficiency, language coverage, supported features, and overall performance to provide insights for selecting the most suitable model based on specific requirements.
 
-\subsubsection{Model Size and Efficiency}
+\paragraph{Model Size and Efficiency:}
 Table~\ref{tab:comparison-embeddings} compares the model size, memory usage, embedding dimensions, and maximum token length of the five models. 
 The \textit{stella\_en\_1.5B\_v5} model has the largest size with 1,543 million parameters, while \textit{bge-small-en-v1.5} is the smallest with only 33 million parameters.
 Larger models generally require more memory and computational resources, which may be a consideration for resource-constrained environments.
@@ -326,11 +326,11 @@ Practitioners should consider the trade-off between embedding quality and effici
     \label{tab:comparison-embeddings}
 \end{table}
 
-\subsubsection{Language Coverage}
+\paragraph{Language Coverage:}
 Language coverage is a crucial aspect when selecting an embedding model for multilingual applications. The \textit{Multilingual-e5-large-instruct} model stands out in this regard, as it supports a wide range of languages.
 This model leverages instruction fine-tuning on multilingual data, enabling it to generate high-quality embeddings for various languages.
 The \textit{Jina-embeddings-v3} model also offers multilingual support, although the exact language coverage is not specified in the provided context. On the other hand, the \textit{Bge-small-en-v1.5}, \textit{Stella\_en\_1.5B\_v5}, and \textit{Gte-large-en-v1.5} models primarily focus on English embeddings, making them more suitable for monolingual English applications.
-\subsubsection{Conclusion}
+\paragraph{Conclusion:}
 The choice of text embedding model depends on various factors, including the specific application, language coverage requirements, available computational resources, and desired features. For monolingual English applications, the \textit{Gte-large-en-v1.5} and \textit{Stella\_en\_1.5B\_v5} models offer high-quality embeddings with support for longer input sequences.
 The \textit{Stella\_en\_1.5B\_v5} model, in particular, provides prompt-based adaptability for information retrieval and semantic similarity tasks.
 For multilingual applications, the \textit{Multilingual-e5-large-instruct} and \textit{Jina-embeddings-v3} models are strong contenders.
@@ -380,10 +380,10 @@ This section examines three distinct chunking methods for \ac{RAG} systems, each
 The first method we will explore involves parsing documents into text chunks, also referred to as nodes, of fixed sizes.
 This approach is straightforward and widely used in many RAG implementations.
 We will investigate three different chunk sizes: 256, 512, and 1024 tokens.
-\subsubsection{Methodology}
+\paragraph{Methodology:}
 In this method, documents are sequentially divided into chunks of the specified size.
 If the final chunk is smaller than the designated size, it is typically padded or left as is, depending on the implementation.
-\subsubsection{Chunk Sizes}
+\paragraph{Chunk Sizes:}
 \begin{itemize}
     \item \textbf{256-token chunks:} This size offers fine granularity, potentially allowing for more precise retrieval of relevant information. However, it may result in a loss of context for more complex topics that require broader context.
     \item \textbf{512-token chunks:} This medium-sized chunk strikes a balance between granularity and context preservation. It is often considered a good default choice for many applications.
@@ -393,7 +393,7 @@ If the final chunk is smaller than the designated size, it is typically padded o
 \subsection{Smaller Child Chunks Referring to Bigger Parent Chunks (Small2Big)}\label{subsec:smaller-child-chunks-referring-to-bigger-parent-chunks}
 The second method, which we will refer to as \textit{Small2Big}, involves creating a hierarchical structure of chunks, where smaller child chunks refer to larger parent chunks.
 This approach aims to combine the benefits of fine-grained retrieval with the context preservation of larger chunks.
-\subsubsection{Methodology}
+\paragraph{Methodology:}
 In this method, we parsed documents into three levels of chunks with appending the original text chunk of size 1024:
 \begin{itemize}
     \item Smallest children: 128-token chunks
@@ -424,7 +424,7 @@ all_nodes_dict = {n.node_id: n for n in all_nodes}
 
 \subsection{Sentence Window Retrieval}\label{subsec:sentence-window-retrieval}
 The third method, Sentence Window Retrieval, focuses on maintaining semantic coherence by chunking based on sentences and incorporating surrounding context through windows.
-\subsubsection{Methodology}
+\paragraph{Methodology:}
 In this approach, documents are first split into individual sentences.
 For each sentence, a \textit{window} of surrounding sentences is included to provide context.
 we use the \textit{SentenceWindowNodeParser} to parse documents into single sentences per node.
@@ -441,7 +441,6 @@ Each node also contains a \textit{"window"} with the sentences on either side of
 Then, after retrieval, before passing the retrieved sentences to the LLM, the single sentences are replaced with a window containing the surrounding sentences using the MetadataReplacementNodePostProcessor.
 This is most useful for large documents/indexes, as it helps to retrieve more fine-grained details.
 We will examine two window sizes: 3 and 6.
-%There is example of the \textit{SentenceWindowNodeParser} and \textit{MetadataReplacementNodePostProcessor} in the Appendix~\ref{ch:chunking}.
 \subsection{Advantages and Limitations}\label{subsec:advantages-and-limitations}
 Table~\ref{tab:window-segmentation-analysis} provides an analysis of the advantages and limitations of each text segmentation method based on their methodological approach.
 Each of the three chunking methods presented in this section offers distinct advantages and limitations for RAG systems.
@@ -690,7 +689,7 @@ Based on the provided configurations the model selected for \textit{At\_Most} me
 \section{Failure Analysis}\label{sec:faiure-analysis}
 To gain a deeper understanding of the limitations and challenges faced by our fact-checking system, we conducted a comprehensive failure analysis using the \textit{FactBench} dataset.
 By examining the instances where our system, based on the majority vote, failed to correctly verify the facts, we aimed to identify the main error types and provide insights into the reasons behind these failures.
-\subsubsection{Error Type Categorization}
+\paragraph{Error Type Categorization:}
 After analyzing the failure cases, we categorized the errors into four main types:
 \begin{itemize}
     \item \textbf{Insufficient or Irrelevant Context:} In some cases, the provided context information does not directly support or refute the given triple. The LLMs struggle to make accurate judgments when the necessary facts are missing or the available information is tangentially related to the claim.
