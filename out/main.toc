@@ -1,9 +1,9 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{List of Figures}{xi}{section*.5}%
-\contentsline {chapter}{List of Tables}{xiii}{section*.8}%
-\contentsline {chapter}{List of Algorithms}{xvii}{section*.10}%
-\contentsline {chapter}{List of Code Snippets}{xvii}{section*.12}%
-\contentsline {chapter}{List of Acronyms}{xix}{section*.14}%
+\contentsline {chapter}{List of Figures}{xi}{section*.3}%
+\contentsline {chapter}{List of Tables}{xiii}{section*.7}%
+\contentsline {chapter}{List of Algorithms}{xvii}{section*.9}%
+\contentsline {chapter}{List of Code Snippets}{xvii}{section*.11}%
+\contentsline {chapter}{List of Acronyms}{xix}{section*.13}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Problem Statement}{3}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Proposed System}{3}{section.1.2}%
@@ -11,9 +11,9 @@
 \contentsline {section}{\numberline {1.4}Thesis Structure}{5}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Significance and Potential Applications}{6}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Related Works}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}\ac {KG} and Fact-Checking}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.1}Knowledge Graph and Fact-Checking}{7}{section.2.1}%
 \contentsline {paragraph}{Fact-Checking using KG Structured Data:}{7}{section.2.1}%
-\contentsline {paragraph}{KG Fact-Checking using External Data:}{7}{section.2.1}%
+\contentsline {paragraph}{Knowledge Graph Fact-Checking using External Data:}{7}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}DeFacto}{8}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Validating RDF Triples Using Textual Evidence}{8}{subsection.2.1.2}%
 \contentsline {section}{\numberline {2.2}LLMs and Retrieval-Augmented Generation}{9}{section.2.2}%
@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {2.2.5}Best Practices}{16}{subsection.2.2.5}%
 \contentsline {section}{\numberline {2.3}Cost Estimation}{17}{section.2.3}%
 \contentsline {chapter}{\numberline {3}FactCheck}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}\ac {KG} Dataset}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.1}KG Dataset}{21}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Definition and Purpose}{21}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Structure and Components}{22}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Role in the Overall system}{22}{subsection.3.1.3}%
@@ -33,8 +33,8 @@
 \contentsline {subsection}{\numberline {3.2.2}Question Formulation Techniques}{23}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Query Scoring}{25}{subsection.3.2.3}%
 \contentsline {paragraph}{Cross-Encoder Component:}{25}{subsection.3.2.3}%
-\contentsline {paragraph}{Similarity Threshold and Sorting:}{26}{figure.caption.31}%
-\contentsline {section}{\numberline {3.3}\ac {IR} Mechanisms}{27}{section.3.3}%
+\contentsline {paragraph}{Similarity Threshold and Sorting:}{26}{figure.caption.33}%
+\contentsline {section}{\numberline {3.3}Information Retrieval Mechanisms}{27}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Google Search Integration}{27}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Process and Extract Links}{28}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Data Pool Creation}{31}{subsection.3.3.3}%
@@ -102,8 +102,8 @@
 \contentsline {subsection}{\numberline {5.3.5}bge-small-en-v1.5}{81}{subsection.5.3.5}%
 \contentsline {subsection}{\numberline {5.3.6}Comparative Analysis}{81}{subsection.5.3.6}%
 \contentsline {paragraph}{Model Size and Efficiency:}{82}{subsection.5.3.6}%
-\contentsline {paragraph}{Language Coverage:}{82}{table.caption.73}%
-\contentsline {paragraph}{Conclusion:}{82}{table.caption.73}%
+\contentsline {paragraph}{Language Coverage:}{82}{table.caption.75}%
+\contentsline {paragraph}{Conclusion:}{82}{table.caption.75}%
 \contentsline {section}{\numberline {5.4}Chunking Strategies}{84}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Parsing Documents into Text Chunks}{84}{subsection.5.4.1}%
 \contentsline {paragraph}{Methodology:}{84}{subsection.5.4.1}%
@@ -120,12 +120,12 @@
 \contentsline {section}{\numberline {5.8}Failure Analysis}{91}{section.5.8}%
 \contentsline {paragraph}{Error Type Categorization:}{91}{section.5.8}%
 \contentsline {chapter}{\numberline {6}Conclusions and Future Works}{95}{chapter.6}%
-\contentsline {chapter}{Appendices}{97}{section*.89}%
+\contentsline {chapter}{Appendices}{97}{section*.91}%
 \contentsline {chapter}{\numberline {A}Prompt Templates}{97}{appendix.1.A}%
 \contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{97}{section.1.A.1}%
 \contentsline {section}{\numberline {A.2}Question Generation Prompt}{98}{section.1.A.2}%
 \contentsline {section}{\numberline {A.3}RAG Prompt}{99}{section.1.A.3}%
 \contentsline {section}{\numberline {A.4}Reasoning Prompt}{100}{section.1.A.4}%
 \contentsline {chapter}{\numberline {B}Chunking Strategies}{101}{appendix.1.B}%
-\contentsline {chapter}{References}{105}{section*.93}%
-\contentsline {chapter}{Acknowledgments}{111}{section*.95}%
+\contentsline {chapter}{References}{105}{section*.95}%
+\contentsline {chapter}{Acknowledgments}{111}{section*.97}%

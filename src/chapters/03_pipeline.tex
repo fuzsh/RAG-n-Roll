@@ -31,7 +31,7 @@ Also, as we proceed, we will explore the ethical considerations and potential bi
 
 Note that in this chapter we just outline each component and its role in the system, and in the next chapters, we will provide parameters we used in each component and the results of the system.
 
-\section{\ac{KG} Dataset}\label{sec:knowledge-graph-dataset}
+\section{KG Dataset}\label{sec:knowledge-graph-dataset}
 The foundation of our multi-stage RAG system is the \ac{KG} Dataset, which acts as the primary source of factual information for the ensuing processing stages.
 This section clarifies the attributes and aims of the \ac{KG} and its use in our system.
 
@@ -55,7 +55,7 @@ The \ac{KG} Dataset in our system is composed of several key components:
     \item \textbf{Edges:} These are the connections between nodes, representing relationships or interactions. Edges are often directional and labeled to indicate the nature of the relationship (\eg "is\_a", "part\_of", "created\_by").
     \item \textbf{Properties:} Nodes and edges can have associated properties or attributes that provide additional details or metadata about the entity or relationship.
 \end{itemize}
-Many \acp{KG} currently represent extracted facts in the form of Subject-Predicate-Object (SPO) triples which is in line with the standard prescribed by RDF (Resource Description Framework).
+Many \acp{KG} currently represent extracted facts in the form of \ac{SPO} triples which is in line with the standard prescribed by \ac{RDF}.
 In this case the subject and object are nodes, and the predicate is the edge connecting them.
 
 \subsection{Role in the Overall system}\label{subsec:role-in-the-overall-system}
@@ -207,7 +207,7 @@ The top question is highlighted, indicating that it has the highest similarity s
 If the top question's score exceeds the predefined threshold, it proceeds to the next stage of the system.
 Otherwise, the system must loop back to generate new queries till the threshold is met.
 
-\section{\ac{IR} Mechanisms}\label{sec:information-retrieval-mechanisms}
+\section{Information Retrieval Mechanisms}\label{sec:information-retrieval-mechanisms}
 The \ac{IR} Mechanisms are an essential element of FactCheck, connecting query processing and content synthesis.
 This phase is tasked with gathering relevant data from internal and external sources, thereby establishing a comprehensive data repository for further analysis and response formulation.
 The mechanisms employed in this phase are designed to ensure breadth, depth, and relevance in the retrieved information.

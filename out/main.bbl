@@ -42,6 +42,116 @@
       \field{title}{Introducing LLaMA 3: Advancing Open Foundation Models}
       \field{year}{2023}
     \endentry
+    \entry{ali2020keenuniverseecosystemknowledge}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=9ae68d2491ec65a53aed1adcd3b4b69c}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Mehdi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fb42838196924cf63f4c5311876e4493}{%
+           family={Jabeen},
+           familyi={J\bibinitperiod},
+           given={Hajira},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5161c2f1a604208b5e9f95441d6546cb}{%
+           family={Hoyt},
+           familyi={H\bibinitperiod},
+           given={Charles\bibnamedelima Tapley},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=7877f2f0b7c828f6137dd980f6859e30}{%
+           family={Lehman},
+           familyi={L\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0dbacb04ef297b263f6af3da61978d1f}
+      \strng{fullhash}{9f94cf0327ecad17fe10d298b507efe7}
+      \strng{bibnamehash}{0dbacb04ef297b263f6af3da61978d1f}
+      \strng{authorbibnamehash}{0dbacb04ef297b263f6af3da61978d1f}
+      \strng{authornamehash}{0dbacb04ef297b263f6af3da61978d1f}
+      \strng{authorfullhash}{9f94cf0327ecad17fe10d298b507efe7}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{The KEEN Universe: An Ecosystem for Knowledge Graph Embeddings with a Focus on Reproducibility and Transferability}
+      \field{year}{2020}
+      \verb{eprint}
+      \verb 2001.10560
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2001.10560
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2001.10560
+      \endverb
+    \endentry
+    \entry{10.1145/1376616.1376746}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=ce01584e202d64431c8b7889319481a0}{%
+           family={Bollacker},
+           familyi={B\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3593ed4669e16f4a0524358f9fc8171d}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod}}}%
+        {{hash=55270a611ff3dd88f70ba0d716973f9b}{%
+           family={Paritosh},
+           familyi={P\bibinitperiod},
+           given={Praveen},
+           giveni={P\bibinitperiod}}}%
+        {{hash=5f4b2170b80cf38d1238582a037fa88b}{%
+           family={Sturge},
+           familyi={S\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a28e183ec849a77f08443fb86b58e2be}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Jamie},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vancouver, Canada}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{10c6bb4fa5901d0a9ba0b53a9104e6d0}
+      \strng{fullhash}{2a6958e2a4b469cb3dd2b969e6e2da8c}
+      \strng{bibnamehash}{10c6bb4fa5901d0a9ba0b53a9104e6d0}
+      \strng{authorbibnamehash}{10c6bb4fa5901d0a9ba0b53a9104e6d0}
+      \strng{authornamehash}{10c6bb4fa5901d0a9ba0b53a9104e6d0}
+      \strng{authorfullhash}{2a6958e2a4b469cb3dd2b969e6e2da8c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Freebase is a practical, scalable tuple database used to structure general human knowledge. The data in Freebase is collaboratively created, structured, and maintained. Freebase currently contains more than 125,000,000 tuples, more than 4000 types, and more than 7000 properties. Public read/write access to Freebase is allowed through an HTTP-based graph-query API using the Metaweb Query Language (MQL) as a data query and manipulation language. MQL provides an easy-to-use object-oriented interface to the tuple data in Freebase and is designed to facilitate the creation of collaborative, Web-based data-oriented applications.}
+      \field{booktitle}{Proceedings of the 2008 ACM SIGMOD International Conference on Management of Data}
+      \field{isbn}{9781605581026}
+      \field{series}{SIGMOD '08}
+      \field{title}{Freebase: a collaboratively created graph database for structuring human knowledge}
+      \field{year}{2008}
+      \field{pages}{1247\bibrangedash 1250}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1145/1376616.1376746
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/1376616.1376746
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/1376616.1376746
+      \endverb
+      \keyw{collaborative systems,semantic network,tuple store}
+    \endentry
     \entry{https://doi.org/10.48550/arxiv.2210.11416}{misc}{}
       \name{author}{31}{}{%
         {{hash=10118dd89bd210596b82c1b6feb26faf}{%
@@ -402,6 +512,89 @@
       \verb{url}
       \verb https://arxiv.org/abs/2408.14317
       \endverb
+    \endentry
+    \entry{10.1145/2623330.2623623}{inproceedings}{}
+      \name{author}{9}{}{%
+        {{hash=1396bd1cc9571700d9ac864e619ae646}{%
+           family={Dong},
+           familyi={D\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=835fa77790b1d554c00910dc1147619d}{%
+           family={Gabrilovich},
+           familyi={G\bibinitperiod},
+           given={Evgeniy},
+           giveni={E\bibinitperiod}}}%
+        {{hash=35ee1e5ee1966d32fa93a89ec21b93a2}{%
+           family={Heitz},
+           familyi={H\bibinitperiod},
+           given={Geremy},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d17943cf770dd1ceda3eeefbe0d09126}{%
+           family={Horn},
+           familyi={H\bibinitperiod},
+           given={Wilko},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d9e5985236f468da29059654cd8447c4}{%
+           family={Lao},
+           familyi={L\bibinitperiod},
+           given={Ni},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d01ba1edf5711066e4d420d9df8d8f43}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=068e3c31135cb744eae25d09ec3efed9}{%
+           family={Strohmann},
+           familyi={S\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a0043ad353838be4f658781084d332a1}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Shaohua},
+           giveni={S\bibinitperiod}}}%
+        {{hash=25bbf4047d900f3760c65b01ee899dba}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, New York, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{e686e9d38af1905ffbc863000c4d2753}
+      \strng{fullhash}{cf176ae86fa03bfcbedc204b1550c61f}
+      \strng{bibnamehash}{e686e9d38af1905ffbc863000c4d2753}
+      \strng{authorbibnamehash}{e686e9d38af1905ffbc863000c4d2753}
+      \strng{authornamehash}{e686e9d38af1905ffbc863000c4d2753}
+      \strng{authorfullhash}{cf176ae86fa03bfcbedc204b1550c61f}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent years have witnessed a proliferation of large-scale knowledge bases, including Wikipedia, Freebase, YAGO, Microsoft's Satori, and Google's Knowledge Graph. To increase the scale even further, we need to explore automatic methods for constructing knowledge bases. Previous approaches have primarily focused on text-based extraction, which can be very noisy. Here we introduce Knowledge Vault, a Web-scale probabilistic knowledge base that combines extractions from Web content (obtained via analysis of text, tabular data, page structure, and human annotations) with prior knowledge derived from existing knowledge repositories. We employ supervised machine learning methods for fusing these distinct information sources. The Knowledge Vault is substantially bigger than any previously published structured knowledge repository, and features a probabilistic inference system that computes calibrated probabilities of fact correctness. We report the results of multiple studies that explore the relative utility of the different information sources and extraction methods.}
+      \field{booktitle}{Proceedings of the 20th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}
+      \field{isbn}{9781450329569}
+      \field{series}{KDD '14}
+      \field{title}{Knowledge vault: a web-scale approach to probabilistic knowledge fusion}
+      \field{year}{2014}
+      \field{pages}{601\bibrangedash 610}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/2623330.2623623
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2623330.2623623
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2623330.2623623
+      \endverb
+      \keyw{information extraction,knowledge bases,machine learning,probabilistic models}
     \endentry
     \entry{dubey2024llama3herdmodels}{misc}{}
       \name{author}{535}{}{%
@@ -3214,6 +3407,32 @@
       \endverb
       \keyw{Web of Data,Fact validation,NLP,Provenance}
     \endentry
+    \entry{google_knowledge_graph}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=618b4bad69c9c1361c8c86f5feae1c2f}{%
+           family={Google-Blog},
+           familyi={G\bibinithyphendelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{618b4bad69c9c1361c8c86f5feae1c2f}
+      \strng{fullhash}{618b4bad69c9c1361c8c86f5feae1c2f}
+      \strng{bibnamehash}{618b4bad69c9c1361c8c86f5feae1c2f}
+      \strng{authorbibnamehash}{618b4bad69c9c1361c8c86f5feae1c2f}
+      \strng{authornamehash}{618b4bad69c9c1361c8c86f5feae1c2f}
+      \strng{authorfullhash}{618b4bad69c9c1361c8c86f5feae1c2f}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024-12-09}
+      \field{title}{Introducing the Knowledge Graph: things, not strings}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://blog.google/products/search/introducing-knowledge-graph-things-not/
+      \endverb
+      \verb{url}
+      \verb https://blog.google/products/search/introducing-knowledge-graph-things-not/
+      \endverb
+    \endentry
     \entry{günther2024jinaembeddings28192token}{misc}{}
       \name{author}{13}{}{%
         {{hash=36e06ec0bef21ce0f1cb5421ff73bacc}{%
@@ -3304,6 +3523,68 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/abs/2310.19923
+      \endverb
+    \endentry
+    \entry{guo2020surveyknowledgegraphbasedrecommender}{misc}{}
+      \name{author}{7}{}{%
+        {{hash=3c539ce749ae7c71cfb16cdee9a72815}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Qingyu},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=f80c633bdaeb37dfe8ee7a8562a118b0}{%
+           family={Zhuang},
+           familyi={Z\bibinitperiod},
+           given={Fuzhen},
+           giveni={F\bibinitperiod}}}%
+        {{hash=efa14006b4be39c2fca0f7dc33c26238}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Chuan},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9b711e1aff9a8c67d1eb39bca853aa41}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Hengshu},
+           giveni={H\bibinitperiod}}}%
+        {{hash=0801da56d6877e3eff32e6a6030425d3}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Xing},
+           giveni={X\bibinitperiod}}}%
+        {{hash=aa0c7ab0b9dad5902ab8fc501f57cd77}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7c27f1b2b48feefb0593a05e9c6a8b12}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Qing},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{7f6b255c1e2d63035812588a75f5f0ae}
+      \strng{fullhash}{b43804649d87557f8a50f2dbe5783c77}
+      \strng{bibnamehash}{7f6b255c1e2d63035812588a75f5f0ae}
+      \strng{authorbibnamehash}{7f6b255c1e2d63035812588a75f5f0ae}
+      \strng{authornamehash}{7f6b255c1e2d63035812588a75f5f0ae}
+      \strng{authorfullhash}{b43804649d87557f8a50f2dbe5783c77}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.IR}
+      \field{eprinttype}{arXiv}
+      \field{title}{A Survey on Knowledge Graph-Based Recommender Systems}
+      \field{year}{2020}
+      \verb{eprint}
+      \verb 2003.00911
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2003.00911
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2003.00911
       \endverb
     \endentry
     \entry{hu2022lora}{inproceedings}{}
@@ -3745,6 +4026,82 @@
       \verb{url}
       \verb https://arxiv.org/abs/2206.04624
       \endverb
+    \endentry
+    \entry{lehmann2015dbpedia}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=045d4294ee6b6936c99d278b857478b4}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8141c99e7d68accc3a51a99c8a6c672c}{%
+           family={Isele},
+           familyi={I\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=057759be8d73ed324cad1e3b8691d679}{%
+           family={Jakob},
+           familyi={J\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a863dfec74c0821f8abbb0322e67647d}{%
+           family={Jentzsch},
+           familyi={J\bibinitperiod},
+           given={Anja},
+           giveni={A\bibinitperiod}}}%
+        {{hash=aad97cc17257a23ec41f28e1b3fa68b3}{%
+           family={Kontokostas},
+           familyi={K\bibinitperiod},
+           given={Dimitris},
+           giveni={D\bibinitperiod}}}%
+        {{hash=743a8ed2667131ee9eeb6a1fb50f27d2}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Pablo\bibnamedelima N},
+           giveni={P\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=aaa7f45375892594264f2815449fc349}{%
+           family={Hellmann},
+           familyi={H\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=85232fcc0e87c512fe54baaa66c503d7}{%
+           family={Morsey},
+           familyi={M\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b3c22d90ed82b9f95313651dce488232}{%
+           family={Van\bibnamedelima Kleef},
+           familyi={V\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=74de32830575f67e1479f58f47d2111d}{%
+           family={Auer},
+           familyi={A\bibinitperiod},
+           given={Sören},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOS Press}%
+      }
+      \strng{namehash}{f3943df71780a02de8efff3344001915}
+      \strng{fullhash}{bf254fa19970ed934dc7637a51e42535}
+      \strng{bibnamehash}{f3943df71780a02de8efff3344001915}
+      \strng{authorbibnamehash}{f3943df71780a02de8efff3344001915}
+      \strng{authornamehash}{f3943df71780a02de8efff3344001915}
+      \strng{authorfullhash}{bf254fa19970ed934dc7637a51e42535}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Semantic web}
+      \field{number}{2}
+      \field{title}{Dbpedia--a large-scale, multilingual knowledge base extracted from wikipedia}
+      \field{volume}{6}
+      \field{year}{2015}
+      \field{pages}{167\bibrangedash 195}
+      \range{pages}{29}
     \endentry
     \entry{10.1145/219717.219745}{article}{}
       \name{author}{1}{}{%
@@ -4269,6 +4626,53 @@
       \endverb
       \verb{url}
       \verb https://aclanthology.org/D17-1183
+      \endverb
+    \endentry
+    \entry{omar2023universalquestionansweringplatformknowledge}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=af4ffa837c8e704cca5384322e180f03}{%
+           family={Omar},
+           familyi={O\bibinitperiod},
+           given={Reham},
+           giveni={R\bibinitperiod}}}%
+        {{hash=618d30930386b90fb3599d485e8d85f4}{%
+           family={Dhall},
+           familyi={D\bibinitperiod},
+           given={Ishika},
+           giveni={I\bibinitperiod}}}%
+        {{hash=cfeddfb4f7ceacfc0fb41b0b7e7574b9}{%
+           family={Kalnis},
+           familyi={K\bibinitperiod},
+           given={Panos},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ce9d3e5464179ac02bede75af1cf7165}{%
+           family={Mansour},
+           familyi={M\bibinitperiod},
+           given={Essam},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{d53d768310cfed5567904d708615294e}
+      \strng{fullhash}{72bd0421f05e9bfc3fff6e2c0c339611}
+      \strng{bibnamehash}{d53d768310cfed5567904d708615294e}
+      \strng{authorbibnamehash}{d53d768310cfed5567904d708615294e}
+      \strng{authornamehash}{d53d768310cfed5567904d708615294e}
+      \strng{authorfullhash}{72bd0421f05e9bfc3fff6e2c0c339611}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.AI}
+      \field{eprinttype}{arXiv}
+      \field{title}{A Universal Question-Answering Platform for Knowledge Graphs}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2303.00595
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2303.00595
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2303.00595
       \endverb
     \endentry
     \entry{DBLP:conf/semweb/Paulheim18a}{inproceedings}{}
@@ -5901,6 +6305,55 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/abs/2104.08663
+      \endverb
+    \endentry
+    \entry{10.1145/2629489}{article}{}
+      \name{author}{2}{}{%
+        {{hash=debdf3094c90d754fc4568176bc4572c}{%
+           family={Vrandecic},
+           familyi={V\bibinitperiod},
+           given={Denny},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4021361fb70d4ee13e85adcce7d9073b}{%
+           family={Krotzsch},
+           familyi={K\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{e3d130a084463ce3f4ad445d97a81097}
+      \strng{fullhash}{e3d130a084463ce3f4ad445d97a81097}
+      \strng{bibnamehash}{e3d130a084463ce3f4ad445d97a81097}
+      \strng{authorbibnamehash}{e3d130a084463ce3f4ad445d97a81097}
+      \strng{authornamehash}{e3d130a084463ce3f4ad445d97a81097}
+      \strng{authorfullhash}{e3d130a084463ce3f4ad445d97a81097}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This collaboratively edited knowledgebase provides a common source of data for Wikipedia, and everyone else.}
+      \field{issn}{0001-0782}
+      \field{journaltitle}{Commun. ACM}
+      \field{month}{9}
+      \field{number}{10}
+      \field{title}{Wikidata: a free collaborative knowledgebase}
+      \field{volume}{57}
+      \field{year}{2014}
+      \field{pages}{78\bibrangedash 85}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1145/2629489
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2629489
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2629489
       \endverb
     \endentry
     \entry{wang2024improvingtextembeddingslarge}{misc}{}

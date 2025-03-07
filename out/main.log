@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  7 MAR 2025 13:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.28)  7 MAR 2025 18:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1859,12 +1859,7 @@ LaTeX Font Info:    Trying to load font information for U+npxsyc on input line
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/newpx/unpxsyc.fd
 File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
-)
-Package acronym Info: Label `acro:KG' newly defined as it shall be overridden
-although it is yet undefined on input line 14.
- [7]
-Package acronym Info: Label `acro:IR' newly defined as it shall be overridden
-although it is yet undefined on input line 37.
+) [7]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 68.
  [8]
@@ -1873,6 +1868,8 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 \openout8 = `main.toc'.
 
  [10] (/Users/farzad/Documents/Thesis/msc-thesis/out/main.lof
+Package acronym Info: Label `acro:KG' newly defined as it shall be overridden
+although it is yet undefined on input line 3.
 Package acronym Info: Label `acro:LLMs' newly defined as it shall be overridden
 
 although it is yet undefined on input line 3.
@@ -1900,7 +1897,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.xiii}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.22 ... the Gemma2 model.}}{76}{table.caption.68}
+l.22 ... the Gemma2 model.}}{76}{table.caption.67}
                                                   % [13
 
 
@@ -1962,7 +1959,24 @@ l.22     \acro{RS}{Rejection Sampling}
                                        [19
 
 
-])
+]
+
+LaTeX Warning: Hyper reference `acro:SPO' on page xx undefined on input line 24
+.
+
+
+LaTeX Warning: Hyper reference `acro:SPO' on page xx undefined on input line 24
+.
+
+
+LaTeX Warning: Hyper reference `acro:RDF' on page xx undefined on input line 25
+.
+
+
+LaTeX Warning: Hyper reference `acro:RDF' on page xx undefined on input line 25
+.
+
+)
 pdfTeX warning (ext4): destination with the same identifier (name{page.xx}) has
  been already used, duplicate ignored
 <to be read again> 
@@ -1975,6 +1989,15 @@ l.55     \frontmatter
 Chapter 1.
 Package acronym Info: Label `acro:AI' newly defined as it shall be overridden
 although it is yet undefined on input line 9.
+[1
+
+
+
+
+
+
+
+]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 8.8pt on input line 19.
 LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
@@ -1985,15 +2008,6 @@ LaTeX Font Info:    Font shape `OT1/zpltlf/m/n' will be
 (Font)              scaled to size 5.5pt on input line 19.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 7.3pt on input line 19.
-[1
-
-
-
-
-
-
-
-]
 Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
 although it is yet undefined on input line 22.
 Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
@@ -2001,36 +2015,35 @@ although it is yet undefined on input line 22.
 Package acronym Info: Label `acro:LLM' newly defined as it shall be overridden
 although it is yet undefined on input line 24.
 Package acronym Info: Label `acro:RAG' newly defined as it shall be overridden
-although it is yet undefined on input line 30.
+although it is yet undefined on input line 31.
  [2]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 36.
+(Font)              scaled to size 17.28pt on input line 37.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 17.28pt on input line 36.
+(Font)              scaled to size 17.28pt on input line 37.
 
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./res/FactCheckOverview.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<res/FactCheckOverview.pdf, id=981, 2516.65219pt x 1290.32062pt>
+<res/FactCheckOverview.pdf, id=994, 2516.65219pt x 1290.32062pt>
 File: res/FactCheckOverview.pdf Graphic file (type pdf)
 <use res/FactCheckOverview.pdf>
-Package pdftex.def Info: res/FactCheckOverview.pdf  used on input line 51.
+Package pdftex.def Info: res/FactCheckOverview.pdf  used on input line 52.
 (pdftex.def)             Requested size: 418.25368pt x 214.42943pt.
 [3 <./res/FactCheckOverview.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+zpltlf on input lin
-e 60.
+e 61.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/newpx/ts1zpltlf.fd
 File: ts1zpltlf.fd 2021/11/24 v1.0 fd file for TS1/zpltlf
 )
 LaTeX Font Info:    Font shape `TS1/zpltlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 60.
- [4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}]
+(Font)              scaled to size 12.0pt on input line 61.
+Package acronym Info: Label `acro:IR' newly defined as it shall be overridden
+although it is yet undefined on input line 61.
+ [4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}] [5]
 
-LaTeX Warning: Reference `ch:pipeline' on page 5 undefined on input line 101.
-
-[5]
-Overfull \hbox (1.57419pt too wide) in paragraph at lines 110--118
+Overfull \hbox (1.57419pt too wide) in paragraph at lines 112--114
 []\T1/zpltlf/m/n/12 The de-vel-op-ment of ef-fec-tive fact ver-i-fi-ca-tion sys
 -tems for []s[] has far-reaching
  []
@@ -2040,10 +2053,6 @@ Overfull \hbox (1.57419pt too wide) in paragraph at lines 110--118
 
  (./chapters/02_related_works.tex
 Chapter 2.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ac' on input line 6.
-
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
 (Font)              scaled to size 14.4pt on input line 19.
 [7
@@ -2061,7 +2070,7 @@ although it is yet undefined on input line 75.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-<res/rel-human-llm-inference.png, id=1071, 599.23875pt x 703.62875pt>
+<res/rel-human-llm-inference.png, id=1082, 599.23875pt x 703.62875pt>
 File: res/rel-human-llm-inference.png Graphic file (type png)
 <use res/rel-human-llm-inference.png>
 Package pdftex.def Info: res/rel-human-llm-inference.png  used on input line 82
@@ -2076,12 +2085,12 @@ Overfull \hbox (9.54247pt too wide) in paragraph at lines 107--109
 
 
 Overfull \hbox (8.919pt too wide) in paragraph at lines 110--111
-[]\T1/zpltlf/m/n/12 Zhang and Gao [[][]47[][]] in-tro-duced the Hi-er-ar-chi-ca
+[]\T1/zpltlf/m/n/12 Zhang and Gao [[][]55[][]] in-tro-duced the Hi-er-ar-chi-ca
 l Step-by-Step (HiSS) prompt-
  []
 
 [11]
-<res/rel-claim-verification.png, id=1097, 402.50375pt x 444.66125pt>
+<res/rel-claim-verification.png, id=1106, 402.50375pt x 444.66125pt>
 File: res/rel-claim-verification.png Graphic file (type png)
 <use res/rel-claim-verification.png>
 Package pdftex.def Info: res/rel-claim-verification.png  used on input line 119
@@ -2094,13 +2103,13 @@ Overfull \hbox (1.57443pt too wide) in paragraph at lines 139--143
  []
 
 [13]
-<res/rel-rafts.png, id=1116, 787.94376pt x 367.3725pt>
+<res/rel-rafts.png, id=1125, 787.94376pt x 367.3725pt>
 File: res/rel-rafts.png Graphic file (type png)
 <use res/rel-rafts.png>
 Package pdftex.def Info: res/rel-rafts.png  used on input line 152.
 (pdftex.def)             Requested size: 418.25368pt x 195.00359pt.
  [14 <./res/rel-rafts.png>]
-<res/rel-ragar.png, id=1125, 465.74pt x 599.23875pt>
+<res/rel-ragar.png, id=1134, 465.74pt x 599.23875pt>
 File: res/rel-ragar.png Graphic file (type png)
 <use res/rel-ragar.png>
 Package pdftex.def Info: res/rel-ragar.png  used on input line 179.
@@ -2123,17 +2132,30 @@ Chapter 3.
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./res/system.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<res/system.pdf, id=1182, 5051.37187pt x 3845.36626pt>
+<res/system.pdf, id=1191, 5051.37187pt x 3845.36626pt>
 File: res/system.pdf Graphic file (type pdf)
 <use res/system.pdf>
 Package pdftex.def Info: res/system.pdf  used on input line 20.
 (pdftex.def)             Requested size: 418.25368pt x 318.3732pt.
-[20 <./res/system.pdf>]
+[20 <./res/system.pdf>] [21]
+Package acronym Info: Label `acro:SPO' newly defined as it shall be overridden
+although it is yet undefined on input line 58.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ac' on input line 34.
 
-[21] [22]
+Package acronym Warning: Acronym `SPO' is not defined on input line 58.
+
+
+Package acronym Warning: Acronym `SPO' is not defined on input line 58.
+
+Package acronym Info: Label `acro:RDF' newly defined as it shall be overridden
+although it is yet undefined on input line 58.
+
+Package acronym Warning: Acronym `RDF' is not defined on input line 58.
+
+
+Package acronym Warning: Acronym `RDF' is not defined on input line 58.
+
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 107--107
 []|\T1/zpltlf/m/it/12 Albert Ein-stein
  []
@@ -2222,10 +2244,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--107
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [23]
-Underfull \vbox (badness 3724) has occurred while \output is active []
+Underfull \vbox (badness 4229) has occurred while \output is active []
 
  [24]
-<res/Cross-Encoder.png, id=1247, 7831.2575pt x 1920.17375pt>
+<res/Cross-Encoder.png, id=1257, 7831.2575pt x 1920.17375pt>
 File: res/Cross-Encoder.png Graphic file (type png)
 <use res/Cross-Encoder.png>
 Package pdftex.def Info: res/Cross-Encoder.png  used on input line 141.
@@ -2234,7 +2256,7 @@ LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 (Font)              scaled to size 10.0pt on input line 159.
 
 [25 <./res/Cross-Encoder.png>]
-<res/knowledge-distill.png, id=1259, 3573.35pt x 1159.33125pt>
+<res/knowledge-distill.png, id=1269, 3573.35pt x 1159.33125pt>
 File: res/knowledge-distill.png Graphic file (type png)
 <use res/knowledge-distill.png>
 Package pdftex.def Info: res/knowledge-distill.png  used on input line 168.
@@ -2243,12 +2265,8 @@ Package pdftex.def Info: res/knowledge-distill.png  used on input line 168.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ac' on input line 210.
-
 [26 <./res/knowledge-distill.png>] [27]
-<res/Google-Search-Result.png, id=1279, 9867.86626pt x 4028.04875pt>
+<res/Google-Search-Result.png, id=1288, 9867.86626pt x 4028.04875pt>
 File: res/Google-Search-Result.png Graphic file (type png)
 <use res/Google-Search-Result.png>
 Package pdftex.def Info: res/Google-Search-Result.png  used on input line 231.
@@ -2277,7 +2295,7 @@ ave pro-tec-tion mech-a-nisms against
  []
 
 [30]
-<res/Google-Search-Result-Content.png, id=1333, 9995.3425pt x 2480.26625pt>
+<res/Google-Search-Result-Content.png, id=1339, 9995.3425pt x 2480.26625pt>
 File: res/Google-Search-Result-Content.png Graphic file (type png)
 <use res/Google-Search-Result-Content.png>
 Package pdftex.def Info: res/Google-Search-Result-Content.png  used on input li
@@ -2492,7 +2510,7 @@ roach us-ing \T1/zpltlf/m/it/12 Qwen2.5:14b\T1/zpltlf/m/n/12 ,
  []
 
 [55] [56]
-<res/clustering.png, id=1547, 8002.89874pt x 3342.4875pt>
+<res/clustering.png, id=1555, 8002.89874pt x 3342.4875pt>
 File: res/clustering.png Graphic file (type png)
 <use res/clustering.png>
 Package pdftex.def Info: res/clustering.png  used on input line 409.
@@ -2502,32 +2520,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 445--473
 [][]
  []
 
-<res/overlap_heatmaps_by_dataset.png, id=1568, 1780.0101pt x 870.6126pt>
+<res/overlap_heatmaps_by_dataset.png, id=1576, 1780.0101pt x 870.6126pt>
 File: res/overlap_heatmaps_by_dataset.png Graphic file (type png)
 <use res/overlap_heatmaps_by_dataset.png>
 Package pdftex.def Info: res/overlap_heatmaps_by_dataset.png  used on input lin
 e 479.
 (pdftex.def)             Requested size: 418.25368pt x 204.56741pt.
 [59]
-<res/radarChart-normalized.png, id=1574, 578.16pt x 578.16pt>
+<res/radarChart-normalized.png, id=1582, 578.16pt x 578.16pt>
 File: res/radarChart-normalized.png Graphic file (type png)
 <use res/radarChart-normalized.png>
 Package pdftex.def Info: res/radarChart-normalized.png  used on input line 497.
 
 (pdftex.def)             Requested size: 175.66577pt x 175.66365pt.
-<res/radarChart-normalized-llms.png, id=1575, 578.16pt x 578.16pt>
+<res/radarChart-normalized-llms.png, id=1583, 578.16pt x 578.16pt>
 File: res/radarChart-normalized-llms.png Graphic file (type png)
 <use res/radarChart-normalized-llms.png>
 Package pdftex.def Info: res/radarChart-normalized-llms.png  used on input line
  504.
 (pdftex.def)             Requested size: 175.66577pt x 175.66365pt.
-<res/radarChart-normalized-llms-1.png, id=1576, 578.16pt x 578.16pt>
+<res/radarChart-normalized-llms-1.png, id=1584, 578.16pt x 578.16pt>
 File: res/radarChart-normalized-llms-1.png Graphic file (type png)
 <use res/radarChart-normalized-llms-1.png>
 Package pdftex.def Info: res/radarChart-normalized-llms-1.png  used on input li
 ne 514.
 (pdftex.def)             Requested size: 175.66577pt x 175.66365pt.
-<res/radarChart-normalized-llms-4.png, id=1577, 578.16pt x 578.16pt>
+<res/radarChart-normalized-llms-4.png, id=1585, 578.16pt x 578.16pt>
 File: res/radarChart-normalized-llms-4.png Graphic file (type png)
 <use res/radarChart-normalized-llms-4.png>
 Package pdftex.def Info: res/radarChart-normalized-llms-4.png  used on input li
@@ -2539,27 +2557,27 @@ Underfull \vbox (badness 4353) has occurred while \output is active []
  [60 <./res/overlap_heatmaps_by_dataset.png>] [61 <./res/radarChart-normalized.
 png> <./res/radarChart-normalized-llms.png> <./res/radarChart-normalized-llms-1
 .png> <./res/radarChart-normalized-llms-4.png>] [62]
-<res/F1_ACC_Analysis_Across_Stratum.png, id=1605, 1073.9322pt x 423.984pt>
+<res/F1_ACC_Analysis_Across_Stratum.png, id=1615, 1073.9322pt x 423.984pt>
 File: res/F1_ACC_Analysis_Across_Stratum.png Graphic file (type png)
 <use res/F1_ACC_Analysis_Across_Stratum.png>
 Package pdftex.def Info: res/F1_ACC_Analysis_Across_Stratum.png  used on input 
 line 584.
 (pdftex.def)             Requested size: 418.25368pt x 165.12665pt.
  [63 <./res/F1_ACC_Analysis_Across_Stratum.png>]
-<res/error_rates_analysis.png, id=1618, 1437.2094pt x 569.4876pt>
+<res/error_rates_analysis.png, id=1626, 1437.2094pt x 569.4876pt>
 File: res/error_rates_analysis.png Graphic file (type png)
 <use res/error_rates_analysis.png>
 Package pdftex.def Info: res/error_rates_analysis.png  used on input line 605.
 (pdftex.def)             Requested size: 418.25368pt x 165.72937pt.
  [64 <./res/error_rates_analysis.png>]
-<res/category_distribution_analysis.png, id=1624, 864.831pt x 569.2467pt>
+<res/category_distribution_analysis.png, id=1632, 864.831pt x 569.2467pt>
 File: res/category_distribution_analysis.png Graphic file (type png)
 <use res/category_distribution_analysis.png>
 Package pdftex.def Info: res/category_distribution_analysis.png  used on input 
 line 627.
 (pdftex.def)             Requested size: 418.25368pt x 275.30258pt.
  [65 <./res/category_distribution_analysis.png>]
-<res/combined-model-analysis.png, id=1631, 1405.1697pt x 533.1117pt>
+<res/combined-model-analysis.png, id=1640, 1405.1697pt x 533.1117pt>
 File: res/combined-model-analysis.png Graphic file (type png)
 <use res/combined-model-analysis.png>
 Package pdftex.def Info: res/combined-model-analysis.png  used on input line 64
@@ -2603,7 +2621,7 @@ Overfull \hbox (0.46967pt too wide) in paragraph at lines 105--110
  []
 
 [73] [74]
-<res/ret_result_sim_1.png, id=1712, 722.7pt x 578.16pt>
+<res/ret_result_sim_1.png, id=1720, 722.7pt x 578.16pt>
 File: res/ret_result_sim_1.png Graphic file (type png)
 <use res/ret_result_sim_1.png>
 Package pdftex.def Info: res/ret_result_sim_1.png  used on input line 151.
@@ -2676,7 +2694,7 @@ Overfull \hbox (1.24141pt too wide) in paragraph at lines 397--398
 rsed doc-u-ments into three lev-els of chunks
  []
 
-<res/window-ret.png, id=1813, 2848.6425pt x 1128.215pt>
+<res/window-ret.png, id=1823, 2848.6425pt x 1128.215pt>
 File: res/window-ret.png Graphic file (type png)
 <use res/window-ret.png>
 Package pdftex.def Info: res/window-ret.png  used on input line 435.
@@ -2686,13 +2704,13 @@ Package pdftex.def Info: res/window-ret.png  used on input line 435.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [87] [88] [89]
-<res/combined_correct_radar_chart.png, id=1871, 578.16pt x 578.16pt>
+<res/combined_correct_radar_chart.png, id=1882, 578.16pt x 578.16pt>
 File: res/combined_correct_radar_chart.png Graphic file (type png)
 <use res/combined_correct_radar_chart.png>
 Package pdftex.def Info: res/combined_correct_radar_chart.png  used on input li
 ne 614.
 (pdftex.def)             Requested size: 167.2989pt x 167.29158pt.
-<res/combined_wrong_radar_chart.png, id=1872, 578.16pt x 578.16pt>
+<res/combined_wrong_radar_chart.png, id=1883, 578.16pt x 578.16pt>
 File: res/combined_wrong_radar_chart.png Graphic file (type png)
 <use res/combined_wrong_radar_chart.png>
 Package pdftex.def Info: res/combined_wrong_radar_chart.png  used on input line
@@ -2732,12 +2750,12 @@ Underfull \hbox (badness 2409) in paragraph at lines 716--716
  []
 
 [92]
-<res/radar-error-0.jpg, id=1892, 575.14874pt x 537.00626pt>
+<res/radar-error-0.jpg, id=1903, 575.14874pt x 537.00626pt>
 File: res/radar-error-0.jpg Graphic file (type jpg)
 <use res/radar-error-0.jpg>
 Package pdftex.def Info: res/radar-error-0.jpg  used on input line 735.
 (pdftex.def)             Requested size: 167.2989pt x 156.20308pt.
-<res/radar-error-1.jpg, id=1893, 575.14874pt x 537.00626pt>
+<res/radar-error-1.jpg, id=1904, 575.14874pt x 537.00626pt>
 File: res/radar-error-1.jpg Graphic file (type jpg)
 <use res/radar-error-1.jpg>
 Package pdftex.def Info: res/radar-error-1.jpg  used on input line 740.
@@ -2797,19 +2815,26 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ]
+Overfull \hbox (29.08772pt too wide) in paragraph at lines 69--69
+\T1/zpltlf/m/n/12 2024-12-09. 2012. \T1/zpltlf/m/sc/12 url\T1/zpltlf/m/n/12 : [
+][]$\T1/npxtt/m/n/12 https : / / blog . google / products / search / introducin
+g -[]
+ []
+
+[106]
 Overfull \hbox (27.48851pt too wide) in paragraph at lines 69--69
 \T1/zpltlf/m/n/12 2023. \T1/zpltlf/m/sc/12 url\T1/zpltlf/m/n/12 : [][]$\T1/npxt
 t/m/n/12 https : / / twitter . com / jerryjliu0 / status / 1708147687084986504$
 [][]\T1/zpltlf/m/n/12 . 
  []
 
-[106]
+
 Overfull \hbox (5.51793pt too wide) in paragraph at lines 69--69
 []\T1/zpltlf/m/n/12 Stefano March-esin, Gi-an-maria Sil-vello, and Omar Alonso.
  ^^P  Utility-Oriented
  []
 
-[107]
+[107] [108]
 ./main.tex:69: Misplaced alignment tab character &.
 <argument> ...es Between DBpedia, YAGO, Wikidata &
                                                    co.
@@ -2822,16 +2847,15 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[108]
+[109]
 Overfull \hbox (4.19168pt too wide) in paragraph at lines 69--69
 []\T1/zpltlf/m/n/12 An Yang et al. ^^P  Qwen2 Tech-ni-cal Re-port^^Q. In: \T1/z
 pltlf/m/it/12 arXiv preprint arXiv:2407.10671
  []
 
-[109] [110
+[110] (./frontmatter/thanks.tex) [111
 
 
-] (./frontmatter/thanks.tex) [111
 
 
 ]
@@ -2860,28 +2884,20 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 1FA0A5DAEB3A5D3C3B121CC05EF9F749;7936
-(rerunfilecheck)             After:  87A092232F67F357CB66BE1790DC5BC0;7936.
+(rerunfilecheck)             Before: BBAECFA28C8E4071D9C6F82C77E864EF;7973
+(rerunfilecheck)             After:  E71C4F565D49530C84F368BA1CD68275;7973.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49819 strings out of 474116
- 912454 string characters out of 5743682
+ 49869 strings out of 474116
+ 914520 string characters out of 5743682
  2053187 words of memory out of 5000000
- 70806 multiletter control sequences out of 15000+600000
+ 70842 multiletter control sequences out of 15000+600000
  686571 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,18n,131p,1654b,3962s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{table.caption.83} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.76} has been referenced but does not 
-exist, replaced by a fixed one
-
 
 pdfTeX warning (dest): name{Hfootnote.25} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2911,16 +2927,12 @@ pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exis
 t, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.57} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.56} has been referenced but does not 
 exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exis
 t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.54} has been referenced but does not 
-exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not exis
@@ -2959,6 +2971,10 @@ pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
 , replaced by a fixed one
 
 
+pdfTeX warning (dest): name{table.caption.37} has been referenced but does not 
+exist, replaced by a fixed one
+
+
 pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
 , replaced by a fixed one
 
@@ -2991,103 +3007,119 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{section*.48} has been referenced but does not exist
+pdfTeX warning (dest): name{section*.43} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{section*.73} has been referenced but does not exist
+pdfTeX warning (dest): name{section*.44} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{section*.35} has been referenced but does not exist
+pdfTeX warning (dest): name{section*.70} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{section*.24} has been referenced but does not exist
+pdfTeX warning (dest): name{section*.69} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{table.caption.93} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.88} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.66} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.61} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.43} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.33} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.30} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.89} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.84} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.77} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.67} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.65} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.60} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.55} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.34} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.32} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.29} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.22} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section*.94} has been referenced but does not exist
+pdfTeX warning (dest): name{section*.34} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{section*.90} has been referenced but does not exist
+pdfTeX warning (dest): name{table.caption.91} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.90} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.85} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.78} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.74} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.73} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.65} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.60} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.49} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.48} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.36} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.32} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.29} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.88} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.83} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.76} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.62} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.58} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.57} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.54} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.31} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.30} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section*.93} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section*.89} has been referenced but does not exist
 , replaced by a fixed one
 
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/
@@ -3101,10 +3133,10 @@ onts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
 newpx/zplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newpx/zpl
 ri.pfb>
 Output written on /Users/farzad/Documents/Thesis/msc-thesis/out/main.pdf (133 p
-ages, 15835671 bytes).
+ages, 15839622 bytes).
 PDF statistics:
- 2271 PDF objects out of 2487 (max. 8388607)
- 2024 compressed objects within 21 object streams
- 510 named destinations out of 1000 (max. 500000)
+ 2305 PDF objects out of 2487 (max. 8388607)
+ 2059 compressed objects within 21 object streams
+ 524 named destinations out of 1000 (max. 500000)
  994 words of extra memory for PDF output out of 10000 (max. 10000000)
 

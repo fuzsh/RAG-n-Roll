@@ -1,8 +1,8 @@
-\BOOKMARK [0][-]{section*.5}{List\040of\040Figures}{}% 1
-\BOOKMARK [0][-]{section*.8}{List\040of\040Tables}{}% 2
-\BOOKMARK [0][-]{section*.10}{List\040of\040Algorithms}{}% 3
-\BOOKMARK [0][-]{section*.12}{List\040of\040Code\040Snippets}{}% 4
-\BOOKMARK [0][-]{section*.14}{List\040of\040Acronyms}{}% 5
+\BOOKMARK [0][-]{section*.3}{List\040of\040Figures}{}% 1
+\BOOKMARK [0][-]{section*.7}{List\040of\040Tables}{}% 2
+\BOOKMARK [0][-]{section*.9}{List\040of\040Algorithms}{}% 3
+\BOOKMARK [0][-]{section*.11}{List\040of\040Code\040Snippets}{}% 4
+\BOOKMARK [0][-]{section*.13}{List\040of\040Acronyms}{}% 5
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 6
 \BOOKMARK [1][-]{section.1.1}{Problem\040Statement}{chapter.1}% 7
 \BOOKMARK [1][-]{section.1.2}{Proposed\040System}{chapter.1}% 8
@@ -10,7 +10,7 @@
 \BOOKMARK [1][-]{section.1.4}{Thesis\040Structure}{chapter.1}% 10
 \BOOKMARK [1][-]{section.1.5}{Significance\040and\040Potential\040Applications}{chapter.1}% 11
 \BOOKMARK [0][-]{chapter.2}{Related\040Works}{}% 12
-\BOOKMARK [1][-]{section.2.1}{KG\040and\040Fact-Checking}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.1}{Knowledge\040Graph\040and\040Fact-Checking}{chapter.2}% 13
 \BOOKMARK [2][-]{subsection.2.1.1}{DeFacto}{section.2.1}% 14
 \BOOKMARK [2][-]{subsection.2.1.2}{Validating\040RDF\040Triples\040Using\040Textual\040Evidence}{section.2.1}% 15
 \BOOKMARK [1][-]{section.2.2}{LLMs\040and\040Retrieval-Augmented\040Generation}{chapter.2}% 16
@@ -29,7 +29,7 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{Human-Understandable\040Text\040Generation}{section.3.2}% 29
 \BOOKMARK [2][-]{subsection.3.2.2}{Question\040Formulation\040Techniques}{section.3.2}% 30
 \BOOKMARK [2][-]{subsection.3.2.3}{Query\040Scoring}{section.3.2}% 31
-\BOOKMARK [1][-]{section.3.3}{IR\040Mechanisms}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.3}{Information\040Retrieval\040Mechanisms}{chapter.3}% 32
 \BOOKMARK [2][-]{subsection.3.3.1}{Google\040Search\040Integration}{section.3.3}% 33
 \BOOKMARK [2][-]{subsection.3.3.2}{Process\040and\040Extract\040Links}{section.3.3}% 34
 \BOOKMARK [2][-]{subsection.3.3.3}{Data\040Pool\040Creation}{section.3.3}% 35
@@ -92,12 +92,12 @@
 \BOOKMARK [1][-]{section.5.7}{Evaluation}{chapter.5}% 92
 \BOOKMARK [1][-]{section.5.8}{Failure\040Analysis}{chapter.5}% 93
 \BOOKMARK [0][-]{chapter.6}{Conclusions\040and\040Future\040Works}{}% 94
-\BOOKMARK [0][-]{section*.89}{Appendices}{}% 95
+\BOOKMARK [0][-]{section*.91}{Appendices}{}% 95
 \BOOKMARK [0][-]{appendix.1.A}{Prompt\040Templates}{}% 96
 \BOOKMARK [1][-]{section.1.A.1}{Human-understandable\040text\040generation\040Prompt}{appendix.1.A}% 97
 \BOOKMARK [1][-]{section.1.A.2}{Question\040Generation\040Prompt}{appendix.1.A}% 98
 \BOOKMARK [1][-]{section.1.A.3}{RAG\040Prompt}{appendix.1.A}% 99
 \BOOKMARK [1][-]{section.1.A.4}{Reasoning\040Prompt}{appendix.1.A}% 100
 \BOOKMARK [0][-]{appendix.1.B}{Chunking\040Strategies}{}% 101
-\BOOKMARK [0][-]{section*.93}{References}{}% 102
-\BOOKMARK [0][-]{section*.95}{Acknowledgments}{}% 103
+\BOOKMARK [0][-]{section*.95}{References}{}% 102
+\BOOKMARK [0][-]{section*.97}{Acknowledgments}{}% 103

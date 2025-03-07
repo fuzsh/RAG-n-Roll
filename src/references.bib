@@ -599,3 +599,119 @@ note = {Accessed: 2024-10-17}
   isbn = {978-3-319-67189-5},
   doi = {10.1007/978-3-319-67190-1_33}
 }
+@misc{ali2020keenuniverseecosystemknowledge,
+  title={The KEEN Universe: An Ecosystem for Knowledge Graph Embeddings with a Focus on Reproducibility and Transferability},
+  author={Mehdi Ali and Hajira Jabeen and Charles Tapley Hoyt and Jens Lehman},
+  year={2020},
+  eprint={2001.10560},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2001.10560},
+}
+
+@inproceedings{10.1145/1376616.1376746,
+  author = {Bollacker, Kurt and Evans, Colin and Paritosh, Praveen and Sturge, Tim and Taylor, Jamie},
+  title = {Freebase: a collaboratively created graph database for structuring human knowledge},
+  year = {2008},
+  isbn = {9781605581026},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/1376616.1376746},
+  doi = {10.1145/1376616.1376746},
+  abstract = {Freebase is a practical, scalable tuple database used to structure general human knowledge. The data in Freebase is collaboratively created, structured, and maintained. Freebase currently contains more than 125,000,000 tuples, more than 4000 types, and more than 7000 properties. Public read/write access to Freebase is allowed through an HTTP-based graph-query API using the Metaweb Query Language (MQL) as a data query and manipulation language. MQL provides an easy-to-use object-oriented interface to the tuple data in Freebase and is designed to facilitate the creation of collaborative, Web-based data-oriented applications.},
+  booktitle = {Proceedings of the 2008 ACM SIGMOD International Conference on Management of Data},
+  pages = {1247–1250},
+  numpages = {4},
+  keywords = {collaborative systems, semantic network, tuple store},
+  location = {Vancouver, Canada},
+  series = {SIGMOD '08}
+}
+
+@inproceedings{10.1145/2623330.2623623,
+  author = {Dong, Xin and Gabrilovich, Evgeniy and Heitz, Geremy and Horn, Wilko and Lao, Ni and Murphy, Kevin and Strohmann, Thomas and Sun, Shaohua and Zhang, Wei},
+  title = {Knowledge vault: a web-scale approach to probabilistic knowledge fusion},
+  year = {2014},
+  isbn = {9781450329569},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2623330.2623623},
+  doi = {10.1145/2623330.2623623},
+  abstract = {Recent years have witnessed a proliferation of large-scale knowledge bases, including Wikipedia, Freebase, YAGO, Microsoft's Satori, and Google's Knowledge Graph. To increase the scale even further, we need to explore automatic methods for constructing knowledge bases. Previous approaches have primarily focused on text-based extraction, which can be very noisy. Here we introduce Knowledge Vault, a Web-scale probabilistic knowledge base that combines extractions from Web content (obtained via analysis of text, tabular data, page structure, and human annotations) with prior knowledge derived from existing knowledge repositories. We employ supervised machine learning methods for fusing these distinct information sources. The Knowledge Vault is substantially bigger than any previously published structured knowledge repository, and features a probabilistic inference system that computes calibrated probabilities of fact correctness. We report the results of multiple studies that explore the relative utility of the different information sources and extraction methods.},
+  booktitle = {Proceedings of the 20th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages = {601–610},
+  numpages = {10},
+  keywords = {information extraction, knowledge bases, machine learning, probabilistic models},
+  location = {New York, New York, USA},
+  series = {KDD '14}
+}
+
+@article{10.1145/2629489,
+  author = {Vrandecic, Denny and Krotzsch, Markus},
+  title = {Wikidata: a free collaborative knowledgebase},
+  year = {2014},
+  issue_date = {October 2014},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {57},
+  number = {10},
+  issn = {0001-0782},
+  url = {https://doi.org/10.1145/2629489},
+  doi = {10.1145/2629489},
+  abstract = {This collaboratively edited knowledgebase provides a common source of data for Wikipedia, and everyone else.},
+  journal = {Commun. ACM},
+  month = sep,
+  pages = {78–85},
+  numpages = {8}
+}
+
+@article{lehmann2015dbpedia,
+  title={Dbpedia--a large-scale, multilingual knowledge base extracted from wikipedia},
+  author={Lehmann, Jens and Isele, Robert and Jakob, Max and Jentzsch, Anja and Kontokostas, Dimitris and Mendes, Pablo N and Hellmann, Sebastian and Morsey, Mohamed and Van Kleef, Patrick and Auer, S{\"o}ren and others},
+  journal={Semantic web},
+  volume={6},
+  number={2},
+  pages={167--195},
+  year={2015},
+  publisher={IOS Press}
+}
+
+@misc{google_knowledge_graph,
+  title = {Introducing the Knowledge Graph: things, not strings},
+  author = {Google-Blog},
+  year = {2012},
+  url = {https://blog.google/products/search/introducing-knowledge-graph-things-not/},
+  note = {Accessed: 2024-12-09}
+}
+
+@Article{info14060336,
+  AUTHOR = {Agrawal, Garima and Bertsekas, Dimitri and Liu, Huan},
+  TITLE = {Auction-Based Learning for Question Answering over Knowledge Graphs},
+  JOURNAL = {Information},
+  VOLUME = {14},
+  YEAR = {2023},
+  NUMBER = {6},
+  ARTICLE-NUMBER = {336},
+  URL = {https://www.mdpi.com/2078-2489/14/6/336},
+  ISSN = {2078-2489},
+  ABSTRACT = {Knowledge graphs are graph-based data models which can represent real-time data that is constantly growing with the addition of new information. The question-answering systems over knowledge graphs (KGQA) retrieve answers to a natural language question from the knowledge graph. Most existing KGQA systems use static knowledge bases for offline training. After deployment, they fail to learn from unseen new entities added to the graph. There is a need for dynamic algorithms which can adapt to the evolving graphs and give interpretable results. In this research work, we propose using new auction algorithms for question answering over knowledge graphs. These algorithms can adapt to changing environments in real-time, making them suitable for offline and online training. An auction algorithm computes paths connecting an origin node to one or more destination nodes in a directed graph and uses node prices to guide the search for the path. The prices are initially assigned arbitrarily and updated dynamically based on defined rules. The algorithm navigates the graph from the high-price to the low-price nodes. When new nodes and edges are dynamically added or removed in an evolving knowledge graph, the algorithm can adapt by reusing the prices of existing nodes and assigning arbitrary prices to the new nodes. For subsequent related searches, the “learned” prices provide the means to “transfer knowledge” and act as a “guide”: to steer it toward the lower-priced nodes. Our approach reduces the search computational effort by 60% in our experiments, thus making the algorithm computationally efficient. The resulting path given by the algorithm can be mapped to the attributes of entities and relations in knowledge graphs to provide an explainable answer to the query. We discuss some applications for which our method can be used.},
+  DOI = {10.3390/info14060336}
+}
+@misc{guo2020surveyknowledgegraphbasedrecommender,
+  title={A Survey on Knowledge Graph-Based Recommender Systems},
+  author={Qingyu Guo and Fuzhen Zhuang and Chuan Qin and Hengshu Zhu and Xing Xie and Hui Xiong and Qing He},
+  year={2020},
+  eprint={2003.00911},
+  archivePrefix={arXiv},
+  primaryClass={cs.IR},
+  url={https://arxiv.org/abs/2003.00911},
+}
+
+@misc{omar2023universalquestionansweringplatformknowledge,
+  title={A Universal Question-Answering Platform for Knowledge Graphs},
+  author={Reham Omar and Ishika Dhall and Panos Kalnis and Essam Mansour},
+  year={2023},
+  eprint={2303.00595},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  url={https://arxiv.org/abs/2303.00595},
+}

@@ -12,9 +12,8 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces FactCheck: RAG-based KG fact verification system}}{20}{figure.caption.28}\protected@file@percent }
 \newlabel{fig:system}{{3.1}{20}{FactCheck: RAG-based KG fact verification system}{figure.caption.28}{}}
 \acronymused{KG}
-\acronymused{KG}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}\ac {KG} Dataset}{21}{section.3.1}\protected@file@percent }
-\newlabel{sec:knowledge-graph-dataset}{{3.1}{21}{\ac {KG} Dataset}{section.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}KG Dataset}{21}{section.3.1}\protected@file@percent }
+\newlabel{sec:knowledge-graph-dataset}{{3.1}{21}{KG Dataset}{section.3.1}{}}
 \acronymused{KG}
 \acronymused{KG}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Definition and Purpose}{21}{subsection.3.1.1}\protected@file@percent }
@@ -28,6 +27,12 @@
 \newlabel{subsec:structure-and-components}{{3.1.2}{22}{Structure and Components}{subsection.3.1.2}{}}
 \acronymused{KG}
 \acronymused{KG}
+\AC@undonewlabel{acro:SPO}
+\newlabel{acro:SPO}{{3.1.2}{22}{Structure and Components}{section*.29}{}}
+\acronymused{SPO}
+\AC@undonewlabel{acro:RDF}
+\newlabel{acro:RDF}{{3.1.2}{22}{Structure and Components}{section*.30}{}}
+\acronymused{RDF}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Role in the Overall system}{22}{subsection.3.1.3}\protected@file@percent }
 \newlabel{subsec:role-in-the-overall-system}{{3.1.3}{22}{Role in the Overall system}{subsection.3.1.3}{}}
 \acronymused{KG}
@@ -46,45 +51,42 @@
 \acronymused{KG}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Question Formulation Techniques}{23}{subsection.3.2.2}\protected@file@percent }
 \newlabel{subsec:question-formulation-techniques}{{3.2.2}{23}{Question Formulation Techniques}{subsection.3.2.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Examples of human-understandable text generation, illustrates entries from multiple \acp {KG}, detailing the transformation of raw triples into readable sentences.}}{24}{table.caption.29}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Examples of human-understandable text generation, illustrates entries from multiple \acp {KG}, detailing the transformation of raw triples into readable sentences.}}{24}{table.caption.31}\protected@file@percent }
 \acronymused{KG}
 \acronymused{KG}
-\newlabel{tab:Text-Generation}{{3.1}{24}{Examples of human-understandable text generation, illustrates entries from multiple \acp {KG}, detailing the transformation of raw triples into readable sentences}{table.caption.29}{}}
+\newlabel{tab:Text-Generation}{{3.1}{24}{Examples of human-understandable text generation, illustrates entries from multiple \acp {KG}, detailing the transformation of raw triples into readable sentences}{table.caption.31}{}}
 \acronymused{LLM}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Query Scoring}{25}{subsection.3.2.3}\protected@file@percent }
 \newlabel{subsec:cross-encoder-for-query-relevance-scoring}{{3.2.3}{25}{Query Scoring}{subsection.3.2.3}{}}
 \@writefile{toc}{\contentsline {paragraph}{Cross-Encoder Component:}{25}{subsection.3.2.3}\protected@file@percent }
 \newlabel{par:cross-encoder-component}{{3.2.3}{25}{Cross-Encoder Component:}{subsection.3.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Cross-Encoder component, which assesses the similarity of generated questions by taking multiple input pairs and assigning a relevance score to each, supporting question evaluation and refinement.}}{25}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:cross-encoder-articture}{{3.2}{25}{Cross-Encoder component, which assesses the similarity of generated questions by taking multiple input pairs and assigning a relevance score to each, supporting question evaluation and refinement}{figure.caption.30}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Knowledge Distillation Process for Enhanced Re-Ranking Efficiency}}{26}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:knowledge-distill}{{3.3}{26}{Knowledge Distillation Process for Enhanced Re-Ranking Efficiency}{figure.caption.31}{}}
-\@writefile{toc}{\contentsline {paragraph}{Similarity Threshold and Sorting:}{26}{figure.caption.31}\protected@file@percent }
-\newlabel{par:relevance-threshold-and-sorting}{{3.2.3}{26}{Similarity Threshold and Sorting:}{figure.caption.31}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Example of generated questions by the Gemma2 model with relevance scores assigned by the Jina Re-ranker Cross-Encoder.}}{27}{table.caption.32}\protected@file@percent }
-\newlabel{tab:Question scoring}{{3.2}{27}{Example of generated questions by the Gemma2 model with relevance scores assigned by the Jina Re-ranker Cross-Encoder}{table.caption.32}{}}
-\acronymused{IR}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}\ac {IR} Mechanisms}{27}{section.3.3}\protected@file@percent }
-\newlabel{sec:information-retrieval-mechanisms}{{3.3}{27}{\ac {IR} Mechanisms}{section.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Cross-Encoder component, which assesses the similarity of generated questions by taking multiple input pairs and assigning a relevance score to each, supporting question evaluation and refinement.}}{25}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:cross-encoder-articture}{{3.2}{25}{Cross-Encoder component, which assesses the similarity of generated questions by taking multiple input pairs and assigning a relevance score to each, supporting question evaluation and refinement}{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Knowledge Distillation Process for Enhanced Re-Ranking Efficiency}}{26}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:knowledge-distill}{{3.3}{26}{Knowledge Distillation Process for Enhanced Re-Ranking Efficiency}{figure.caption.33}{}}
+\@writefile{toc}{\contentsline {paragraph}{Similarity Threshold and Sorting:}{26}{figure.caption.33}\protected@file@percent }
+\newlabel{par:relevance-threshold-and-sorting}{{3.2.3}{26}{Similarity Threshold and Sorting:}{figure.caption.33}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Example of generated questions by the Gemma2 model with relevance scores assigned by the Jina Re-ranker Cross-Encoder.}}{27}{table.caption.34}\protected@file@percent }
+\newlabel{tab:Question scoring}{{3.2}{27}{Example of generated questions by the Gemma2 model with relevance scores assigned by the Jina Re-ranker Cross-Encoder}{table.caption.34}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Information Retrieval Mechanisms}{27}{section.3.3}\protected@file@percent }
+\newlabel{sec:information-retrieval-mechanisms}{{3.3}{27}{Information Retrieval Mechanisms}{section.3.3}{}}
 \acronymused{IR}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Google Search Integration}{27}{subsection.3.3.1}\protected@file@percent }
 \newlabel{subsec:google-search-integration}{{3.3.1}{27}{Google Search Integration}{subsection.3.3.1}{}}
 \acronymused{KG}
-\acronymused{IR}
 \acronymused{KG}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Fetching results from Google Search engine for top $N$ questions and the main \ac {KG} query.}}{28}{figure.caption.33}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Fetching results from Google Search engine for top $N$ questions and the main \ac {KG} query.}}{28}{figure.caption.35}\protected@file@percent }
 \acronymused{KG}
-\newlabel{fig:google-search-result}{{3.4}{28}{Fetching results from Google Search engine for top $N$ questions and the main \ac {KG} query}{figure.caption.33}{}}
+\newlabel{fig:google-search-result}{{3.4}{28}{Fetching results from Google Search engine for top $N$ questions and the main \ac {KG} query}{figure.caption.35}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Process and Extract Links}{28}{subsection.3.3.2}\protected@file@percent }
 \newlabel{subsec:process-and-extract-links}{{3.3.2}{28}{Process and Extract Links}{subsection.3.3.2}{}}
 \AC@undonewlabel{acro:HTML}
-\newlabel{acro:HTML}{{3.3.2}{28}{Process and Extract Links}{section*.34}{}}
+\newlabel{acro:HTML}{{3.3.2}{28}{Process and Extract Links}{section*.36}{}}
 \acronymused{HTML}
 \newlabel{lst:crawling-urls}{{3.1}{29}{Crawling the extracted URLs}{lstlisting.3.1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}{\ignorespaces Crawling the extracted URLs}}{29}{lstlisting.3.1}\protected@file@percent }
-\acronymused{IR}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Extracted content from the crawled URLs using newspaper4k library.}}{31}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:google-search-result-content}{{3.5}{31}{Extracted content from the crawled URLs using newspaper4k library}{figure.caption.35}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Extracted content from the crawled URLs using newspaper4k library.}}{31}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:google-search-result-content}{{3.5}{31}{Extracted content from the crawled URLs using newspaper4k library}{figure.caption.37}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Data Pool Creation}{31}{subsection.3.3.3}\protected@file@percent }
 \newlabel{subsec:data-pool-creation}{{3.3.3}{31}{Data Pool Creation}{subsection.3.3.3}{}}
 \acronymused{KG}
@@ -121,14 +123,14 @@
 \newlabel{sec:performance-report}{{3.7}{39}{Performance Report}{section.3.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.8}system Flow and Decision Points}{39}{section.3.8}\protected@file@percent }
 \newlabel{sec:system-flow-and-decision-points}{{3.8}{39}{system Flow and Decision Points}{section.3.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Performance of our LLM-based tasks in production, generated by Openlit with Gemma2 model.}}{40}{table.caption.36}\protected@file@percent }
-\newlabel{tab:system-performance-report}{{3.3}{40}{Performance of our LLM-based tasks in production, generated by Openlit with Gemma2 model}{table.caption.37}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Performance of our information retrieval mechanisms.}}{40}{table.caption.38}\protected@file@percent }
-\newlabel{tab:system-performance-report-2}{{3.4}{40}{Performance of our information retrieval mechanisms}{table.caption.39}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Comprenhensive list of decision points in the system flow.}}{41}{table.caption.40}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Performance of our LLM-based tasks in production, generated by Openlit with Gemma2 model.}}{40}{table.caption.38}\protected@file@percent }
+\newlabel{tab:system-performance-report}{{3.3}{40}{Performance of our LLM-based tasks in production, generated by Openlit with Gemma2 model}{table.caption.39}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Performance of our information retrieval mechanisms.}}{40}{table.caption.40}\protected@file@percent }
+\newlabel{tab:system-performance-report-2}{{3.4}{40}{Performance of our information retrieval mechanisms}{table.caption.41}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Comprenhensive list of decision points in the system flow.}}{41}{table.caption.42}\protected@file@percent }
 \acronymused{KG}
 \acronymused{KG}
-\newlabel{tab:system-decision-points}{{3.5}{41}{Comprenhensive list of decision points in the system flow}{table.caption.40}{}}
+\newlabel{tab:system-decision-points}{{3.5}{41}{Comprenhensive list of decision points in the system flow}{table.caption.42}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.9}Ethical Considerations and Limitations}{42}{section.3.9}\protected@file@percent }
 \newlabel{sec:ethical-considerations-and-limitations}{{3.9}{42}{Ethical Considerations and Limitations}{section.3.9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.9.1}Ethical Considerations}{42}{subsection.3.9.1}\protected@file@percent }
@@ -139,8 +141,8 @@
 \newlabel{subsubsec:environmental-considerations}{{3.9.1}{43}{Environmental Considerations:}{subsection.3.9.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.9.2}Limitations}{43}{subsection.3.9.2}\protected@file@percent }
 \newlabel{subsec:limitations}{{3.9.2}{43}{Limitations}{subsection.3.9.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Limitations of the system, categorized by scope of knowledge.}}{43}{table.caption.41}\protected@file@percent }
-\newlabel{tab:system-limitations}{{3.6}{43}{Limitations of the system, categorized by scope of knowledge}{table.caption.41}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Limitations of the system, categorized by scope of knowledge.}}{43}{table.caption.43}\protected@file@percent }
+\newlabel{tab:system-limitations}{{3.6}{43}{Limitations of the system, categorized by scope of knowledge}{table.caption.43}{}}
 \@setckpt{chapters/03_pipeline}{
 \setcounter{page}{44}
 \setcounter{equation}{0}
@@ -187,7 +189,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{34}
+\setcounter{instcount}{42}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
