@@ -2,9 +2,9 @@
 
 \section{Dataset Analysis}\label{sec:empirical-evaluation:dataset-analysis}
 This section presents an analysis of the three datasets used in our empirical evaluation: \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia}.
-Each dataset offers unique characteristics and challenges, providing a comprehensive basis for assessing our knowledge graph fact verification system.
+Each dataset offers unique characteristics and challenges, providing a comprehensive basis for assessing our \ac{KG} fact verification system.
 \subsection{FactBench Dataset}\label{subsec:empirical-evaluation:dataset-analysis:factbench}
-\textit{FactBench} is a multilingual dataset specifically designed for fact-checking in knowledge graphs~\footnote{\url{https://github.com/DeFacto/FactBench}}~\cite{GERBER201585}.
+\textit{FactBench} is a multilingual dataset specifically designed for fact-checking in \acp{KG}~\footnote{\url{https://github.com/DeFacto/FactBench}}~\cite{GERBER201585}.
 It comprises 2,800 facts, 1.500 true and 1.300 false, across three languages: English, German, and French.
 The dataset covers various domains, including geography, politics, and entertainment.
 The data was automatically extracted from Wikipedia\footnote{\url{https://www.wikipedia.org/}} (DBpedia respectively) and Freebase\footnote{\url{https://developers.google.com/freebase}}.
@@ -33,7 +33,7 @@ Key characteristics of \textit{FactBench} include:
 In our analysis, we found that \textit{FactBench} presents a balanced challenge for our system, with a mix of straightforward and complex fact verification tasks.
 \subsection{YAGO Dataset}\label{subsec:empirical-evaluation:dataset-analysis:yago}
 YAGO (Yet Another Great Ontology) is a large-scale knowledge base derived from Wikipedia, WordNet~\footnote{\url{https://wordnet.princeton.edu/}}, and GeoNames~\footnote{\url{https://www.geonames.org/}}.
-For our evaluation, we use \textit{YAGO2-sample}~\footnote{\url{https://aclanthology.org/attachments/D17-1183.Attachment.zip}}~\cite{ojha-talukdar-2017-kgeval}, a subset of the full YAGO2 knowledge graph derived from AMIE horn clauses~\cite{Yago_AMIE}.
+For our evaluation, we use \textit{YAGO2-sample}~\footnote{\url{https://aclanthology.org/attachments/D17-1183.Attachment.zip}}~\cite{ojha-talukdar-2017-kgeval}, a subset of the full YAGO2 \ac{KG} derived from AMIE horn clauses~\cite{Yago_AMIE}.
 This sample consists of 1,386 beliefs spanning 16 unique predicates.
 
 Key characteristics of the \textit{YAGO} dataset in our evaluation include:
@@ -66,12 +66,12 @@ To ensure annotation quality, Marchesin et al. implemented several measures:
 \end{itemize}
 
 The dataset was carefully curated to ensure a manageable yet representative evaluation set, derived from the vast scale of \textit{DBpedia}.
-By utilizing this curated subset of \textit{DBpedia}, we benefit from a balance between the richness of a real-world knowledge graph and the practicality required for thorough empirical evaluation.
+By utilizing this curated subset of \textit{DBpedia}, we benefit from a balance between the richness of a real-world \ac{KG} and the practicality required for thorough empirical evaluation.
 For our evaluation system, we use subset of this annotated dataset, by removing facts with \textit{<UNK>} labels, resulting in 9,344 facts.
 
 \paragraph{Dataset Summary:}\label{par:summary}
 To conclude, our empirical evaluation utilizes three distinct datasets: \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia}.
-Each dataset offers unique characteristics that allow us to assess our knowledge graph veracity framework across diverse scenarios.
+Each dataset offers unique characteristics that allow us to assess our \ac{KG} veracity framework across diverse scenarios.
 Table~\ref{tab:dataset-summary} summarizes the key features of these datasets:
 
 \begin{table}[h!]
@@ -92,14 +92,14 @@ Table~\ref{tab:dataset-summary} summarizes the key features of these datasets:
 \end{table}
 
 \textit{FactBench} provides a good distribution of true and false statements across multiple domains, offering a robust testbed for fact verification.
-\textit{YAGO}, with its high accuracy, challenges our framework to detect subtle inaccuracies in an otherwise highly reliable knowledge graph.
+\textit{YAGO}, with its high accuracy, challenges our framework to detect subtle inaccuracies in an otherwise highly reliable \ac{KG}.
 The \textit{DBpedia} subset, curated specifically for entity-oriented search tasks, allows us to evaluate our framework in the context of query-dependent fact checking.
 This diverse selection of datasets enables a comprehensive evaluation of our veracity estimation framework.
 
 \section{Candidate Models}\label{sec:empirical-evaluation:candidate-models}
 \subsection{Gemma2}\label{subsec:empirical-evaluation:candidate-models:gemma2}
 Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models~\footnote{\url{https://deepmind.google/technologies/gemini/#introduction}}.
-They are text-to-text, decoder-only large language models, available in English, with open weights for both pre-trained variants and instruction-tuned variants.
+They are text-to-text, decoder-only \acp{LLM}, available in English, with open weights for both pre-trained variants and instruction-tuned variants.
 Gemma 2 implements a similar architecture to the original Gemma model, with a few key differences.
 The model alternates between local sliding window attention with a 4096-token span and global attention with an 8192-token span in alternate layers.
 Logits are capped within a specified range to stabilize the values during attention and final layers, with soft\_cap set to 50 for self-attention layers and 30 for the final layer.
@@ -146,13 +146,13 @@ With innovations such as \ac{GQA} and \ac{SWA}, Mistral offers faster inference 
 We selected the \textit{Mistral-7b} model for our evaluation, which has 7.3 billion parameters, its structure allows it to be both cost-effective and memory efficient, making it suitable for a wide variety of real-world applications
 
 \paragraph{Candidate Model Summary:}\label{par:summary2}
-The selection of candidate models for our system was guided by the need for diversity, efficiency, and reliability in processing fact verification tasks within knowledge graphs.
+The selection of candidate models for our system was guided by the need for diversity, efficiency, and reliability in processing fact verification tasks within \acp{KG}.
 We chose \textit{Gemma2}, \textit{Qwen2.5}, \textit{Llama3.1}, and \textit{Mistral} for their specific strengths in handling diverse linguistic queries, reasoning capabilities, and compatibility with RAG pipelines.
 Each of these models brings unique advantages to our verification framework, as summarized in Table~\ref{tab:candidate_models}.
 
 \begin{table}[h!]
     \footnotesize
-    \caption{Summary of key strengths of selected candidate LLMs for knowledge graph fact verification.}
+    \caption{Summary of key strengths of selected candidate LLMs for \ac{KG} fact verification.}
     \begin{xltabular}{\linewidth}{cp{3.6cm}X}
         \toprule
         \textbf{Model} & \textbf{Key Strengths} & \textbf{Description} \\
@@ -171,7 +171,7 @@ Each of these models brings unique advantages to our verification framework, as 
 
 For model selection, we can choose either instruction-tuned and quantized models with similar architectures or with different architectures.
 Here, we opted for models with varied architectures to make the ensemble more versatile and capable of handling a wide range of query scenarios.
-Using diverse models in the ensemble offers a balanced approach to complex fact verification tasks across knowledge graphs.
+Using diverse models in the ensemble offers a balanced approach to complex fact verification tasks across \acp{KG}.
 This multi-model setup enhances adaptability and reliability, allowing the system to respond accurately to diverse verification scenarios, even when they differ in nature.
 
 \section{Experimental Setup}\label{sec:empirical-evaluation:experimental-setup}
@@ -335,12 +335,12 @@ The tests are run on a server with the following specifications:
 \end{table}
 
 \subsection{Discussion of Results}\label{subsec:discussion-of-results}
-Evaluation across three distinct datasets - \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia} - shows significant insights into the performance and efficiency of different language models for knowledge graph fact verification.
+Evaluation across three distinct datasets - \textit{FactBench}, \textit{YAGO}, and \textit{DBpedia} - shows significant insights into the performance and efficiency of different language models for \ac{KG} fact verification.
 
 Based on Table~\ref{tab:evaluation_results-full-wo-category-all-datasets}, in the \textit{FactBench} dataset, \textit{Gemma2} emerged as the strongest individual performer, achieving an accuracy of 0.9014 and an F1 score of 0.9085.
 These results were further enhanced by the ensemble approach using \textit{Qwen2.5:14b}, which improved the accuracy to 0.9057 and F1 score to 0.9145.
 On the \textit{YAGO} dataset, Mistral demonstrated exceptional performance, reaching an accuracy of 0.9221 and an F1 score of 0.9594.
-The consistent high performance across models on this dataset suggests that well-structured, high-quality knowledge graphs can be effectively verified using our approach.
+The consistent high performance across models on this dataset suggests that well-structured, high-quality \acp{KG} can be effectively verified using our approach.
 The ensemble method with \textit{Mistral-nemo:12b} maintained strong results while providing additional verification confidence in ambiguous cases.
 The \textit{DBpedia} dataset proved more challenging, with overall lower performance across all models.
 \textit{Qwen2.5} achieved the best individual results with an accuracy of 0.7236 and an F1 score of 0.8211.
@@ -394,7 +394,7 @@ This selective application of ensemble methods effectively balances the trade-of
 
 The analysis from Tables~\ref{tab:evaluation_results-full-wo-category-all-datasets} and~~\ref{tab:evaluation_results-full-for-datasets} show notable patterns in the performance specific to each dataset.
 Models generally achieved better results on more structured datasets like \textit{FactBench} and \textit{YAGO} compared to \textit{DBpedia}.
-This pattern suggests that the clarity and consistency of the underlying knowledge graph significantly influence verification accuracy.
+This pattern suggests that the clarity and consistency of the underlying \ac{KG} significantly influence verification accuracy.
 Request times also varied across datasets, with \textit{DBpedia} queries requiring longer processing times (6.32s) compared to \textit{FactBench} (4.59s) and \textit{YAGO} (4.55s), likely due to its greater complexity and size.
 
 The ensemble approach proved particularly effective in resolving ambiguous cases.
@@ -547,8 +547,11 @@ Additionally, improving classification tasks and the handling of insufficient co
 The consistent patterns across models suggest that these improvements would benefit the field broadly rather than being model-specific enhancements.
 
 \subsection{DBpedia Analysis in Depth}\label{subsec:db}
-Since \textit{DBpedia} proved to be the most challenging dataset in our evaluation, we performed a deeper analysis based on the dataset stratification established by Marchesin et al.~\cite{Marchesin_Silvello_Alonso_2024}.
-Each knowledge graph triple was assigned to one of seven partitions, numbered 1--7, where partition 1 represents the least popular/common knowledge and partition 7 represents the most popular/common knowledge.
+Since \textit{DBpedia} proved to be the most challenging dataset in our evaluation, we performed a deeper analysis based on this dataset.
+%Here we focus on the partition-wise evaluation and the impact of fact popularity on verification performance.
+Here we focus on the partition-wise evaluation and topic-wise analysis to understand the impact of fact popularity on verification performance.
+\paragraph{Partition-wise:} We performed deeper analysis on stratification established by Marchesin et al.~\cite{Marchesin_Silvello_Alonso_2024}.
+Each \ac{KG} triple was assigned to one of seven partitions, numbered 1--7, where partition 1 represents the least popular/common knowledge and partition 7 represents the most popular/common knowledge.
 This stratification helps us understand how our verification system performs across different levels of fact popularity and complexity within \textit{DBpedia}.
 The analysis can reveal whether the system's accuracy varies between common, well-documented facts versus more obscure or specialized knowledge.
 This insight is valuable for identifying areas where the system needs improvement and understanding its real-world applicability across different types of knowledge.
@@ -583,7 +586,7 @@ This makes sense because stratum 1 represents the lowest-utility facts - those t
         \centering
         \includegraphics[width=\textwidth]{res/F1_ACC_Analysis_Across_Stratum}
     \end{minipage}
-    \caption{Partition-wise model performance comparison: Accuracy and F1-scores for knowledge graph fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale).}
+    \caption{Partition-wise model performance comparison: Accuracy and F1-scores for \ac{KG} fact verification on DBpedia dataset. Gray bars indicate stratum weights (log scale).}
     \label{fig:F1_ACC_Analysis_Across_Stratum}
 \end{figure}
 
@@ -591,7 +594,7 @@ Table~\ref{tab:evaluation_results-partition-wise-dbpedia} and Figure~\ref{fig:F1
 \textit{Qwen2.5} exhibits particularly strong performance, with accuracy increasing from 0.708 in Stratum 1 to 0.779 in Stratum 7, and F1-scores following a similar upward trajectory.
 This suggests that the model benefits from the richer context and more consistent representation of popular facts in the knowledge base.
 
-The performance disparity between lower and higher strata highlights a common challenge in knowledge graph verification: the system's reliability varies with fact popularity.
+The performance disparity between lower and higher strata highlights a common challenge in \ac{KG} verification: the system's reliability varies with fact popularity.
 This insight is particularly valuable for real-world applications, where handling both common and specialized knowledge is crucial.
 
 Building on our previous analysis of \textit{DBpedia} results, we conducted a stratum-wise error analysis to better understand how error distributions vary across different data partitions.
@@ -647,13 +650,14 @@ In contrast, models like \textit{Gemma2} offer more consistent performance acros
     \label{fig:topic_distribution_analysis}
 \end{figure}
 
+\paragraph{Topic-wise:}
 By employing BERTopic from the work of Marchesin et al.~\cite{Marchesin_Silvello_Alonso_2024} to generate interpretable clusters, we obtained 64 distinct clusters, which were manually scrutinized and aggregated to form a set of 13 broad topics.
-These topics encompass “Architecture", "Business", "Education", "Entertainment", "Geography", "High Tech", "History", "Law and Politics", "News", "Religion", "Science", "Sports", and  "Transportation".
+These topics encompass ``Architecture'', ``Business'', ``Education'', ``Entertainment'', ``Geography'', ``High Tech'', ``History'', ``Law and Politics'', ``News'', ``Religion'', ``Science'', ``Sports'', and  ``Transportation''.
 Some facts were not assigned to any topic or were assigned to multiple topics.
 
-As showed in Figure~\ref{fig:topic_distribution_analysis} "Education" and "News" domains consistently show lower error rates across all models.
-"Architecture" and "Transportation" categories present higher error rates, particularly for \textit{Llama3.1}.
-High variance is observed in the "Business" and "Law and Politics" domains, suggesting these may be more challenging areas for current models.
+As showed in Figure~\ref{fig:topic_distribution_analysis} ``Education'' and ``News'' domains consistently show lower error rates across all models.
+``Architecture'' and ``Transportation'' categories present higher error rates, particularly for \textit{Llama3.1}.
+High variance is observed in the ``Business'' and ``Law and Politics'' domains, suggesting these may be more challenging areas for current models.
 Also we figured out that \textit{Qwen2.5} and \textit{Mistral} have compact distributions, indicating consistent performance, but \textit{Llama3.1} exhibits the broadest distribution, suggesting more variable performance across domains
 
 Correlation analysis reveals varying relationships between sample count and error rates.
@@ -661,3 +665,4 @@ Correlation analysis reveals varying relationships between sample count and erro
 \textit{Llama3.1} exhibits a weak positive correlation (0.204).
 \textit{Mistral} shows negligible correlation (0.006), indicating consistent performance regardless of sample size.
 \textit{Qwen2.5} demonstrates a slight negative correlation (-0.101), hinting at better performance in less-sampled domains.
+This results suggest that \textit{Mistral} may be the most reliable model across different knowledge domains.

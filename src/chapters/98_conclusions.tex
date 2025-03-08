@@ -1,19 +1,31 @@
 \chapter{Conclusions and Future Works}\label{ch:conclusions}
-This thesis has presented a novel approach to knowledge graph fact verification using RAG. Through extensive experimentation and analysis, we have demonstrated the effectiveness of combining multiple large language models with sophisticated information retrieval techniques to verify facts in knowledge graphs.
-The key findings and contributions of this work can be summarized as follows:
-\begin{itemize}
-    \item \textbf{Pipeline Architecture:} We have developed a comprehensive pipeline that integrates web search, document processing, and multiple language models to verify knowledge graph facts. The pipeline's modular design allows for flexibility and future improvements in individual components.
-    \item \textbf{Multi-Model Integration:} Our approach of combining multiple language models through majority voting and adaptive dispute resolution has proven effective in improving the overall accuracy and reliability of fact verification. The system achieved an acceptable accuracy and F1 score on the FactBench and Yago datasets, demonstrating its capability to handle diverse fact types.
-    \item \textbf{Processing Optimization:} Through ablation studies, we identified optimal configurations for document selection, embedding models, and chunking strategies.
-    \item \textbf{Error Analysis:} Our detailed analysis of failure cases has provided valuable insights into the system's limitations and areas requiring improvement, particularly in handling complex relationships and insufficient context scenarios.
-\end{itemize}
+\acp{LLM} show that they have changed the role of automated fact-checking, yet given the complexity and limitations of these models, while they are not 100\% accurate, it is foreseeable that they will be able to act completely as human annotators in the future.
 
+This thesis has presented FactCheck, a novel approach to \ac{KG} fact verification using RAG.
+Through extensive experimentation and analysis, we have demonstrated the effectiveness of combining multiple \acp{LLM} with sophisticated \ac{IR} techniques to verify facts in \acp{KG}.
+FactCheck's prediction performance that measured against gold standard labels is 90\% on \textit{FactBench}, 87\% on \textit{YAGO}, and 70\% on \textit{DBpedia}.
+These results emphasize using \acp{LLM} to address fact verification in \acp{KG}.
+
+One of our observations is that differences in \acp{LLM} architectures make them interpret the evidence differently and reach different conclusions despite accessing the same evidence.
+Additionally, another observation is the existence of particular challenges in geographic and nationality facts.
+This issue points to deeper issues in how language models process contextual information, indicating that improvements in basic reasoning capabilities may prove more valuable than simple increases in model scale.
+
+Also, in fact-verification tasks, when a binary evaluation is requested (\ie determining whether a statement is correct or incorrect), \acp{LLM} often explain when they classify a statement as incorrect.
+However, when predicting a statement is correct, they typically do not explain further if not explicitly requested.
+
+The empirical evidence challenges the conventional wisdom that larger models invariably yield better results - our experiments with embedding models and text chunking techniques demonstrate that carefully optimized smaller models can match or exceed the performance of their larger counterparts when supported by robust retrieval mechanisms.
+This finding has profound implications for practical deployments, particularly in resource-constrained environments where computational efficiency is paramount.
+
+Our analysis highlights a key challenge in current verification methods: ensemble techniques improve reliability by using consensus, but they also require a lot of computing power, which can be a problem for large-scale applications.
+This suggests a critical direction for future research, the development of more efficient verification strategies that maintain accuracy while reducing computational demands.
+
+Finally, as \acp{KG} continue to grow in importance for real-world applications, these insights provide crucial guidance for developing more efficient and reliable verification systems that balance accuracy with practical constraints.
 Based on our findings and identified limitations, several promising directions for future research emerge:
 \begin{enumerate}
     \item \textbf{Enhanced Context Processing:} Develop more sophisticated methods for handling cases with insufficient or irrelevant context. Implement better techniques for identifying and resolving contradictions in retrieved information.
     \item \textbf{Model Integration:} Explore additional strategies for combining model outputs beyond majority voting. Investigate dynamic model selection based on query characteristics. Implement more sophisticated tie-breaking mechanisms.
     \item \textbf{Retrieval Optimization:} Improve query generation for better coverage of fact verification requirements. Develop more effective filtering mechanisms for irrelevant information. Enhance the similarity cut-off strategy for more precise document selection.
-    \item \textbf{Scalability Improvements:} Optimize computational resource usage for handling larger knowledge graphs. Develop more efficient document processing and embedding techniques. Implement parallel processing capabilities for faster verification.
+    \item \textbf{Scalability Improvements:} Optimize computational resource usage for handling larger \acp{KG}. Develop more efficient document processing and embedding techniques. Implement parallel processing capabilities for faster verification.
     \item \textbf{Explainability and Transparency:} Develop better methods for explaining verification decisions. Implement confidence scoring mechanisms. Create visualization tools for the verification process.
     \item \textbf{Domain Adaptation:} Create specialized verification strategies for different types of facts. Develop domain-specific knowledge integration mechanisms. Implement adaptive learning capabilities for new domains.
 \end{enumerate}

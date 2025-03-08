@@ -64,23 +64,25 @@
 \contentsline {subsection}{\numberline {4.1.2}YAGO Dataset}{46}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}DBpedia Dataset}{47}{subsection.4.1.3}%
 \contentsline {paragraph}{Dataset Summary:}{48}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Candidate Models}{49}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Gemma2}{49}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.2}Candidate Models}{48}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Gemma2}{48}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Qwen2.5}{49}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Llama3.1}{50}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}Mistral}{51}{subsection.4.2.4}%
 \contentsline {paragraph}{Candidate Model Summary:}{51}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Experimental Setup}{51}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Performance Metrics and Evaluation}{51}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.3}Experimental Setup}{52}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Performance Metrics and Evaluation}{52}{subsection.4.3.1}%
 \contentsline {paragraph}{Correct and Incorrect Criteria:}{52}{subsection.4.3.1}%
 \contentsline {paragraph}{Relevance and Accuracy Metrics:}{52}{subsection.4.3.1}%
 \contentsline {paragraph}{Latency and Efficiency Measures:}{52}{subsection.4.3.1}%
 \contentsline {paragraph}{Consistency Evaluation:}{53}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}System Configurations}{54}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}System Configurations}{53}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Comparative Analysis}{55}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Discussion of Results}{55}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.1}Discussion of Results}{56}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Qualitative Error Analysis}{57}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}DBpedia Analysis in Depth}{62}{subsection.4.4.3}%
+\contentsline {paragraph}{Partition-wise:}{62}{subsection.4.4.3}%
+\contentsline {paragraph}{Topic-wise:}{66}{figure.caption.66}%
 \contentsline {chapter}{\numberline {5}Ablation Study}{69}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Evaluation Methodology}{70}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Iterative Optimization Process}{70}{subsection.5.1.1}%
@@ -120,12 +122,12 @@
 \contentsline {section}{\numberline {5.8}Failure Analysis}{91}{section.5.8}%
 \contentsline {paragraph}{Error Type Categorization:}{91}{section.5.8}%
 \contentsline {chapter}{\numberline {6}Conclusions and Future Works}{95}{chapter.6}%
-\contentsline {chapter}{Appendices}{97}{section*.91}%
-\contentsline {chapter}{\numberline {A}Prompt Templates}{97}{appendix.1.A}%
-\contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{97}{section.1.A.1}%
-\contentsline {section}{\numberline {A.2}Question Generation Prompt}{98}{section.1.A.2}%
-\contentsline {section}{\numberline {A.3}RAG Prompt}{99}{section.1.A.3}%
-\contentsline {section}{\numberline {A.4}Reasoning Prompt}{100}{section.1.A.4}%
-\contentsline {chapter}{\numberline {B}Chunking Strategies}{101}{appendix.1.B}%
-\contentsline {chapter}{References}{105}{section*.95}%
-\contentsline {chapter}{Acknowledgments}{111}{section*.97}%
+\contentsline {chapter}{Appendices}{99}{section*.91}%
+\contentsline {chapter}{\numberline {A}Prompt Templates}{99}{appendix.1.A}%
+\contentsline {section}{\numberline {A.1}Human-understandable text generation Prompt}{99}{section.1.A.1}%
+\contentsline {section}{\numberline {A.2}Question Generation Prompt}{100}{section.1.A.2}%
+\contentsline {section}{\numberline {A.3}RAG Prompt}{101}{section.1.A.3}%
+\contentsline {section}{\numberline {A.4}Reasoning Prompt}{102}{section.1.A.4}%
+\contentsline {chapter}{\numberline {B}Chunking Strategies}{103}{appendix.1.B}%
+\contentsline {chapter}{References}{107}{section*.95}%
+\contentsline {chapter}{Acknowledgments}{113}{section*.97}%
