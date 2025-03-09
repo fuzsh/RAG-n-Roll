@@ -76,12 +76,12 @@
 \contentsline {paragraph}{Relevance and Accuracy Metrics:}{52}{subsection.4.3.1}%
 \contentsline {paragraph}{Latency and Efficiency Measures:}{52}{subsection.4.3.1}%
 \contentsline {paragraph}{Consistency Evaluation:}{53}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}System Configurations}{53}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}System Configurations}{54}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Comparative Analysis}{55}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Discussion of Results}{56}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.1}Discussion of Results}{55}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Qualitative Error Analysis}{57}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}DBpedia Analysis in Depth}{62}{subsection.4.4.3}%
-\contentsline {paragraph}{Partition-wise:}{62}{subsection.4.4.3}%
+\contentsline {paragraph}{Partition-wise:}{63}{subsection.4.4.3}%
 \contentsline {paragraph}{Topic-wise:}{66}{figure.caption.66}%
 \contentsline {chapter}{\numberline {5}Ablation Study}{69}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Evaluation Methodology}{70}{section.5.1}%
